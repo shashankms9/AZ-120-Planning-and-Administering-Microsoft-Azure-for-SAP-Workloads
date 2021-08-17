@@ -61,7 +61,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 1. In the Cloud Shell pane, run the following command to set the value of the variable `RESOURCE_GROUP_NAME` to the name of the resource group containing the resources you provisioned in the previous task:
 
     ```cli
-    RESOURCE_GROUP_NAME='az12003a-sap-RG'
+    RESOURCE_GROUP_NAME='az12003a-sap-RG-DeploymentID'
     ```
 
 1.  In the Cloud Shell pane, run the following command to create a resource group in the region you specified:
