@@ -51,7 +51,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     -   Subscription: *the name of your Azure subscription*
 
-    -   Resource group: *the name of a new resource group* **az12001b-ad-RG-deployment ID**
+    -   Resource group: * Select the name of a resource group* **az12001b-ad-RG-deployment ID**
     >  **Note**: Get deployment ID from environment page.
 
     -   Location: *an Azure region where you can deploy Azure VMs*
@@ -91,11 +91,11 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 1.  From the **New** blade, initiate provisioning of a **Windows Server 2019 Datacenter** Azure VM with the following settings:
 
-   ![image.](../images/az12002.png)
+    ![image.](../images/az12002.png)
 
     -   Subscription: *the name of your Azure subscription*
 
-    -   Resource group: *the name of a new resource group* **az12001b-cl-RG-deployment Id**
+    -   Resource group: *Select  the name of a resource group* **az12001b-cl-RG-deployment Id**
 
     -   Virtual machine name: **az12001b-cl-vm0**
 
@@ -233,7 +233,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 1. In the Cloud Shell pane, run the following command to set the value of the variable `$resourceGroupName` to the name of the resource group containing the resources you provisioned in the previous task:
 
     ```
-    $resourceGroupName = 'az12001b-cl-RG-deploment Id'
+    $resourceGroupName = 'az12001b-cl-RG-deployment Id'
     ```
 
 1.  In the Cloud Shell pane, run the following command, to create the first set of 4 managed disks that you will attach to the first Azure VM you deployed in the previous task:
@@ -464,7 +464,7 @@ Duration: 40 minutes
 
 1.  In Active Directory Administrative Center, create a new organizational unit named **Clusters** in the root of the adatum.com domain.
 
-   ![image.](../images/az12004.png)
+      ![image.](../images/az12004.png)
    
 1.  In Active Directory Administrative Center, move the computer accounts of **az12001b-cl-vm0** and **az12001b-cl-vm1** from the **Computers** container to the **Clusters** organizational unit.
 
@@ -513,7 +513,7 @@ Duration: 40 minutes
 1.  Within the Windows PowerShell ISE session, set the Cloud Witness quorum of the new cluster by running the following:
 
     ```
-    $resourceGroupName = 'az12001b-cl-RG'
+    $resourceGroupName = 'az12001b-cl-RG-deployment ID'
 
     $cwStorageAccountName = (Get-AzStorageAccount -ResourceGroupName $resourceGroupName)[0].StorageAccountName
 
@@ -658,7 +658,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 1. In the Cloud Shell pane, run the following command to set the value of the variable `$resourceGroupName` to the name of the resource group containing the pair of **Windows Server 2019 Datacenter** Azure VMs you provisioned in the first exercise of this lab:
 
     ```
-    $resourceGroupName = 'az12001b-cl-RG'
+    $resourceGroupName = 'az12001b-cl-RG-deployment ID'
     ```
 
 1.  In the Cloud Shell pane, run the following command to create the public IP address to be used by the second load balancer:
