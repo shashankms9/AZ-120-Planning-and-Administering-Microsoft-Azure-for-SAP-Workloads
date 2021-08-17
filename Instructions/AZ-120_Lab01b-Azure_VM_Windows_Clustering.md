@@ -43,15 +43,18 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 1.  If prompted, sign in with the work or school or personal Microsoft account with the owner or contributor role to the Azure subscription you will be using for this lab.
 
-1.  Open a new web browser tab, navigate to Azure Quickstart Templates page at <https://github.com/polichtm/azure-quickstart-templates>, locate the template named **Create 2 new Windows VMs, create a new AD Forest, Domain, and 2 DCs in an availability set**, and initiate its deployment by clicking **Deploy to Azure** button.
+1.  Open a new web browser tab, navigate to Azure Quickstart Templates page at <https://github.com/polichtm/azure-quickstart-templates/tree/master/active-directory-new-domain-ha-2-dc>, locate the template named **Create 2 new Windows VMs, create a new AD Forest, Domain, and 2 DCs in an availability set**, and initiate its deployment by clicking **Deploy to Azure** button.
+
+     ![image.](../images/Az12001.png)
 
 1.  On the **Custom deployment** blade, specify the following settings and click **Review + create**, followed by **Create** to initiate the deployment:
 
-    -   Subscription: *the name of your Azure subscription*
+    -   Subscription: the name of your Azure subscription
 
-    -   Resource group: *the name of a new resource group* **az12001b-ad-RG**
+    -   Resource group:  Select the name of a resource group **az12001b-ad-RG-Deployment-id**
+    >  **Note**: you will get the Deployment-id from environment page link of the lab guide.
 
-    -   Location: *an Azure region where you can deploy Azure VMs*
+    -   Location: an Azure region where you can deploy Azure VMs
 
     > **Note**: Consider using **East US** or **East US2** regions for deployment of your resources. 
 
@@ -69,7 +72,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     -   _artifacts Location: **https://raw.githubusercontent.com/polichtm/azure-quickstart-templates/master/active-directory-new-domain-ha-2-dc/**
 
-    -   _artifacts Location Sas Token: *leave blank*
+    -   _artifacts Location Sas Token: leave blank
 
     > **Note**: The deployment should take about 35 minutes. Wait for the deployment to complete before you proceed to the next task.
 
@@ -79,7 +82,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
        - in the Azure portal, navigate to the blade of the VM(s) you identified in the previous step, select **Extensions**, and from the **Extensions** blade, remove the CustomScript extension
 
-       - in the Azure portal, navigate to the **az12001b-ad-RG** resource group blade, select **Deployments**, select the link to the failed deployment, and select **Redeploy**, select the target resource group (**az12001b-ad-RG**) and provide the password for the root account (**Pa55w.rd1234**).
+       - in the Azure portal, navigate to the **az12001b-ad-RG-Deployment-id** resource group blade, select **Deployments**, select the link to the failed deployment, and select **Redeploy**, select the target resource group (**az12001b-ad-RG-Deployment-id**) and provide the password for the root account (**Pa55w.rd1234**).
 
 
 ### Task 2: Deploy a pair of Azure VMs running Windows Server 2019 in a new availability set.
@@ -88,9 +91,11 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 1.  From the **New** blade, initiate provisioning of a **Windows Server 2019 Datacenter** Azure VM with the following settings:
 
-    -   Subscription: *the name of your Azure subscription*
+    ![image.](../images/az12002.png)
 
-    -   Resource group: *the name of a new resource group* **az12001b-cl-RG**
+    -   Subscription: the name of your Azure subscription
+
+    -   Resource group: Select  the name of a resource group **az12001b-cl-RG-Deployment-id**
 
     -   Virtual machine name: **az12001b-cl-vm0**
 
@@ -118,11 +123,11 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     -   Virtual network: **adVNET**
 
-    -   Subnet name: *a new subnet named* **clSubnet**
+    -   Subnet name: a new subnet named **clSubnet**
 
     -   Subnet address range: **10.0.1.0/24**
 
-    -   Public IP address: *a new IP address named* **az12001b-cl-vm0-ip**
+    -   Public IP address: a new IP address named **az12001b-cl-vm0-ip**
 
     -   NIC network security group: **Basic**
 
@@ -134,7 +139,6 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     -   Place this virtual machine behind an existing load balancing solutions: **No**
 
-    -   Enable basic plan for free: **No**
 
     -   Boot diagnostics: **Disable**
 
@@ -146,23 +150,23 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     -   Enable auto-shutdown: **Off**
 
-    -   Enable backup: **Off**
+    -   Enable Disaster Recovery: **Off**
 
-    -   Extensions: *None*
+    -   Extensions: None
 
-    -   Tags: *None*
+    -   Tags: None
 
 1.  Do not wait for the provisioning to complete but continue to the next step.
 
 1.  Provision another **Windows Server 2019 Datacenter** Azure VM with the following settings:
 
-    -   Subscription: *the name of your Azure subscription*
+    -   Subscription: the name of your Azure subscription
 
-    -   Resource group: *the name of the resource group you used when deploying the first **Windows Server 2019 Datacenter** Azure VM in this task*
+    -   Resource group: the name of the resource group you used when deploying the first **Windows Server 2019 Datacenter** Azure VM in this task
 
     -   Virtual machine name: **az12001b-cl-vm1**
 
-    -   Region: *the same Azure region where you deployed the first **Windows Server 2019 Datacenter** Azure VM in this task*
+    -   Region: the same Azure region where you deployed the first **Windows Server 2019 Datacenter** Azure VM in this task
 
     -   Availability options: **Availability set**
 
@@ -188,7 +192,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     -   Subnet name: **clSubnet**
 
-    -   Public IP address: *a new IP address named* **az12001b-cl-vm1-ip**
+    -   Public IP address: a new IP address named **az12001b-cl-vm1-ip**
 
     -   NIC network security group: **Basic**
 
@@ -200,8 +204,6 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     -   Place this virtual machine behind an existing load balancing solutions: **No**
 
-    -   Enable basic plan for free: **No**
-
     -   Boot diagnostics: **Disable**
 
     -   OS guest diagnostics: **Off**
@@ -212,11 +214,11 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     -   Enable auto-shutdown: **Off**
 
-    -   Enable backup: **Off**
+    -   Enable Disaster Recovery: **Off**
 
-    -   Extensions: *None*
+    -   Extensions: None
 
-    -   Tags: *None*
+    -   Tags: *None
 
 1.  Wait for the provisioning to complete. This should take a few minutes.
 
@@ -225,11 +227,13 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 1.  In the Azure Portal, start a PowerShell session in Cloud Shell. 
 
     > **Note**: If this is the first time you are launching Cloud Shell in the current Azure subscription, you will be asked to create an Azure file share to persist Cloud Shell files. If so, accept the defaults, which will result in creation of a storage account in an automatically generated resource group.
+    
+    ![image.](../images/Az12003.png)
 
 1. In the Cloud Shell pane, run the following command to set the value of the variable `$resourceGroupName` to the name of the resource group containing the resources you provisioned in the previous task:
 
     ```
-    $resourceGroupName = 'az12001b-cl-RG'
+    $resourceGroupName = 'az12001b-cl-RG-Deployment-id'
     ```
 
 1.  In the Cloud Shell pane, run the following command, to create the first set of 4 managed disks that you will attach to the first Azure VM you deployed in the previous task:
@@ -304,7 +308,7 @@ Duration: 40 minutes
 1. In the Cloud Shell pane, run the following command to set the value of the variable `$resourceGroupName` to the name of the resource group containing the pair of **Windows Server 2019 Datacenter** Azure VMs you provisioned in the previous exercise:
 
     ```
-    $resourceGroupName = 'az12001b-cl-RG'
+    $resourceGroupName = 'az12001b-cl-RG-Deployment-id'
     ```
 
 1.  In the Cloud Shell pane, run the following command, to join the Windows Server 2019 Azure VMs you deployed in the second task of the previous exercise to the **adatum.com** Active Directory domain:
@@ -341,7 +345,7 @@ Duration: 40 minutes
 1.  Navigate to the **Storage Pools** view and verify that you see all the disks you attached to the Azure VM in the previous exercise.
 
 1.  Use the **New Storage Pools Wizard** to create a new storage pool with the following settings:
-
+      (Tasks>New Storage Pools Wizard)
     -   Name: **Data Storage Pool**
 
     -   Physical Disks: *select the 3 disks with disk numbers corresponding to the first three LUN numbers (0-2) and set their allocation to* **Automatic**
@@ -432,7 +436,7 @@ Duration: 40 minutes
 
     -   Performance: **Standard**
 
-    -   Account kind: **Storage (general purpose v1)**
+    -   Account kind: **Storage (general purpose v2)**
 
     -   Replication: **Locally-redundant storage (LRS)**
 
@@ -460,6 +464,8 @@ Duration: 40 minutes
 
 1.  In Active Directory Administrative Center, create a new organizational unit named **Clusters** in the root of the adatum.com domain.
 
+      ![image.](../images/az12004.png)
+   
 1.  In Active Directory Administrative Center, move the computer accounts of **az12001b-cl-vm0** and **az12001b-cl-vm1** from the **Computers** container to the **Clusters** organizational unit.
 
 1.  Within the RDP session to az12001b-cl-vm0, start a Windows PowerShell ISE session and create a new cluster by running the following:
@@ -507,7 +513,7 @@ Duration: 40 minutes
 1.  Within the Windows PowerShell ISE session, set the Cloud Witness quorum of the new cluster by running the following:
 
     ```
-    $resourceGroupName = 'az12001b-cl-RG'
+    $resourceGroupName = 'az12001b-cl-RG-Deployment-id'
 
     $cwStorageAccountName = (Get-AzStorageAccount -ResourceGroupName $resourceGroupName)[0].StorageAccountName
 
@@ -635,7 +641,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
     -   Backend port: **1433**
 
-    -   Backend pool: **az12001b-cl-lb0-bepool (2 virtual machines)**
+    -   Backend pool: **az12001b-cl-lb0-bepool**
 
     -   Health probe:**az12001b-cl-lb0-hprobe (TCP:59999)**
 
@@ -652,7 +658,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 1. In the Cloud Shell pane, run the following command to set the value of the variable `$resourceGroupName` to the name of the resource group containing the pair of **Windows Server 2019 Datacenter** Azure VMs you provisioned in the first exercise of this lab:
 
     ```
-    $resourceGroupName = 'az12001b-cl-RG'
+    $resourceGroupName = 'az12001b-cl-RG-Deployment-id'
     ```
 
 1.  In the Cloud Shell pane, run the following command to create the public IP address to be used by the second load balancer:
@@ -729,7 +735,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
     -   Backend port: **80**
 
-    -   Backend pool: **az12001b-cl-lb1-bepool (2 virtual machines)**
+    -   Backend pool: **az12001b-cl-lb1-bepool**
 
     -   Health probe:**az12001b-cl-lb1-hprobe (TCP:80)**
 
