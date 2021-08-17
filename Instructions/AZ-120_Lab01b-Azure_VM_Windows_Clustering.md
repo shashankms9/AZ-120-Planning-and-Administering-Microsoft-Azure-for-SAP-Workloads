@@ -44,6 +44,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 1.  If prompted, sign in with the work or school or personal Microsoft account with the owner or contributor role to the Azure subscription you will be using for this lab.
 
 1.  Open a new web browser tab, navigate to Azure Quickstart Templates page at <https://github.com/polichtm/azure-quickstart-templates/tree/master/active-directory-new-domain-ha-2-dc>, locate the template named **Create 2 new Windows VMs, create a new AD Forest, Domain, and 2 DCs in an availability set**, and initiate its deployment by clicking **Deploy to Azure** button.
+
      ![image.](../images/Az12001.png)
 
 1.  On the **Custom deployment** blade, specify the following settings and click **Review + create**, followed by **Create** to initiate the deployment:
@@ -89,6 +90,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 1.  From the lab computer, in the Azure portal, click **+ Create a resource**.
 
 1.  From the **New** blade, initiate provisioning of a **Windows Server 2019 Datacenter** Azure VM with the following settings:
+
    ![image.](../images/az12002.png)
 
     -   Subscription: *the name of your Azure subscription*
@@ -225,6 +227,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 1.  In the Azure Portal, start a PowerShell session in Cloud Shell. 
 
     > **Note**: If this is the first time you are launching Cloud Shell in the current Azure subscription, you will be asked to create an Azure file share to persist Cloud Shell files. If so, accept the defaults, which will result in creation of a storage account in an automatically generated resource group.
+    
     ![image.](../images/Az12003.png)
 
 1. In the Cloud Shell pane, run the following command to set the value of the variable `$resourceGroupName` to the name of the resource group containing the resources you provisioned in the previous task:
