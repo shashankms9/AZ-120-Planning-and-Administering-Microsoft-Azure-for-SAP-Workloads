@@ -61,13 +61,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 1. In the Cloud Shell pane, run the following command to set the value of the variable `RESOURCE_GROUP_NAME` to the name of the resource group containing the resources you provisioned in the previous task:
 
     ```cli
-    RESOURCE_GROUP_NAME='az12003a-sap-RG-DeploymentID'
-    ```
-
-1.  In the Cloud Shell pane, run the following command to create a resource group in the region you specified:
-
-    ```cli
-    az group create --resource-group $RESOURCE_GROUP_NAME --location $LOCATION
+    RESOURCE_GROUP_NAME='az12003a-sap-RG'
     ```
 
 1.  In the Cloud Shell pane, run the following command to create a virtual network with a single subnet in the resource group you created:
@@ -94,9 +88,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 ### Task 2: Deploy Azure Resource Manager template provisioning Azure VMs running Linux SUSE that will host a highly available SAP NetWeaver deployment
 
-1.  On the lab computer, in the Azure portal, search for and select **Template deployment (deploy using custom template)**.
-
-1.  On the **Custom deployment** blade, in the **Quickstart template (disclaimer)** drop-down list, type **sap-3-tier-marketplace-image-md** and click **Select template**.
+1.  On the lab computer, in the Azure portal, search for and select **Template deployment (deploy using custom template)** or use link to open directly https://github.com/Azure/azure-quickstart-templates/tree/master/application-workloads/sap/sap-3-tier-marketplace-image-md scroll down and select **Deploy to Azure**.
 
     > **Note**: Make sure to use Microsoft Edge or a third party browser. Do not use Internet Explorer.
 
@@ -297,7 +289,7 @@ In this exercise, you will configure Azure VMs running SUSE Linux Enterprise Ser
     ```
     df -h
     ```
-
+    >Note: Do not close the tab(open new putty and login for i20-db-1)
 1.  Repeat the previous steps on the i20-db-1 Azure VM.
 
 
@@ -625,41 +617,4 @@ In this exercise, you will configure clustering on Azure VMs running Linux to su
 
 1.  Verify that the cluster status is healthy. If you are seeing a message indicating that one of two cluster nodes is unclean, restart that node from the Azure portal.
 
-> **Result**: After you completed this exercise, you have configured clustering on Azure VMs running Linux to support a highly available SAP NetWeaver deployment
-
-
-## Exercise 4: Remove lab resources
-
-Duration: 10 minutes
-
-In this exercise, you will remove resources provisioned in this lab.
-
-#### Task 1: Open Cloud Shell
-
-1. At the top of the portal, click the **Cloud Shell** icon to open Cloud Shell pane and choose Bash as the shell.
-
-1. In the Cloud Shell pane, run the following command to set the value of the variable `RESOURCE_GROUP_PREFIX` to the prefix of the name of the resource group containing the resources you provisioned in this lab:
-
-    ```cli
-    RESOURCE_GROUP_PREFIX='az12003a-'
-    ```
-
-1. In the Cloud Shell pane, run the following command to list all resource groups you created in this lab:
-
-    ```cli
-    az group list --query "[?starts_with(name,'$RESOURCE_GROUP_PREFIX')]".name --output tsv
-    ```
-
-1. Verify that the output contains only the resource group you created in this lab. This resource group with all of their resources will be deleted in the next task.
-
-#### Task 2: Delete resource groups
-
-1. In the Cloud Shell pane, run the following command to delete the resource group and their resources.
-
-    ```cli
-    az group list --query "[?starts_with(name,'$RESOURCE_GROUP_PREFIX')]".name --output tsv | xargs -L1 bash -c 'az group delete --name $0 --no-wait --yes'
-    ```
-
-1. Close the Cloud Shell pane.
-
-> **Result**: After you completed this exercise, you have removed the resources used in this lab.
+> **Result**: After you completed this exercise, you have configured clustering on Azure VMs running Linux to support a highly available SAP NetWeaver deployment.
