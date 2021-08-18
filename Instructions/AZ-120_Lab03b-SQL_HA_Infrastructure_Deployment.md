@@ -25,7 +25,7 @@ After completing this lab, you will be able to:
 
 ## Requirements
 
--   A Microsoft Azure subscription with the sufficient number of available DSv2 , D4_v3  and Dsv3 vCPUs (four Standard_DS1_v2 VM with 1 vCPU , two standard_D4_v3 with 4vCPU and four Standard_D4s_v3 VMs with 4 vCPUs each) in an Azure region that supports availability zones
+-   A Microsoft Azure subscription with the sufficient number of available DSv2 , D4_v3  and Dsv3 vCPUs (four Standard_DS1_v2 VM with 1 vCPU , two standard_D4_v3 VM with 4vCPU and four Standard_D4s_v3 VMs with 4 vCPUs each) in an Azure region that supports availability zones
 
 -   A lab computer with an Azure Cloud Shell-compatible web browser and access to Azure
 
