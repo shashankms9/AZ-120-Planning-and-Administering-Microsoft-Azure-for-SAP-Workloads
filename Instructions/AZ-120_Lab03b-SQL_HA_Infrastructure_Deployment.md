@@ -25,7 +25,7 @@ After completing this lab, you will be able to:
 
 ## Requirements
 
--   A Microsoft Azure subscription with the sufficient number of available DSv2 and Dsv3 vCPUs (four Standard_DS1_v2 VM with 1 vCPU and six Standard_D4s_v3 VMs with 4 vCPUs each) in an Azure region that supports availability zones
+-   A Microsoft Azure subscription with the sufficient number of available DSv2 , D4_v3  and Dsv3 vCPUs (four Standard_DS1_v2 VM with 1 vCPU , two standard_D4_v3 with 4vCPU and four Standard_D4s_v3 VMs with 4 vCPUs each) in an Azure region that supports availability zones
 
 -   A lab computer with an Azure Cloud Shell-compatible web browser and access to Azure
 
@@ -70,7 +70,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     -   DnsPrefix: *accept the default value*
 
-    -   Vm Size: **Standard D4S\_v3**
+    -   Vm Size: **Standard D4S_v3**
 
     -   _artifacts Location: *accept the default value*
 
@@ -110,7 +110,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 1.  In the Azure Portal, start a PowerShell session in Cloud Shell. 
 
-    > **Note**: If this is the first time you are launching Cloud Shell in the current Azure subscription, you will be asked to create an Azure file share to persist Cloud Shell files. If so, accept the defaults, which will result in creation of a storage account in an automatically generated resource group.
+    > **Note**: If this is the first time you are launching Cloud Shell in the current Azure subscription. Select Powershell, When prompted, select **Show advanced settings** and then select **Use existing** and choose existing resource group. Then select **Create new** against Storage account as well as File Share and provide a unique value in both of the fields and then click on **Create storage**, and wait for the Azure Cloud Shell to initialize.
 
 1. In the Cloud Shell pane, run the following command to set the value of the variable `$resourceGroupName` to the name of the resource group containing the resources you provisioned in the previous task:
 
@@ -214,7 +214,7 @@ In this task, you will deploy the scale-out file server (SOFS) cluster that will
 
     -   Name Prefix: **i20**
 
-    -   Vm Size: **Standard D4S\_v3**
+    -   Vm Size: **Standard_D4_v3**
 
     -   Enable Accelerated Networking: **true**
 
@@ -421,19 +421,28 @@ In this exercise, you will configure operating system of Azure VMs running Windo
     -   Performance: **Standard**
 
     -   Account kind: **Storage (general purpose v1)**
-
+    
     -   Replication: **Locally-redundant storage (LRS)**
 
-    -   Connectivity method: **Public endpoint (all networks)**
+1. Click on **advanced**
+
+    -   Hierarchical namespace: **Disabled**
+    
+    -   Large file shares: **Disabled**
 
     -   Secure transfer required: **Enabled**
 
-    -   Large file shares: **Disabled**
+1. Next Click on **Networking**
+    
+    -   Connectivity method: **Public endpoint (all networks)**
+
+ 1. Click on **Data Protection**   
 
     -   Blob soft delete: **Disabled**
 
-    -   Hierarchical namespace: **Disabled**
+1. Click on **Tags**. On this page click on **Review+create**
 
+1. After validation passed. Click on **Create**. Wait till the deployment gets succeeded.
 
 ### Task 4: Configure Failover Clustering on Azure VMs running Windows Server 2016 to support a highly available database tier of the SAP NetWeaver installation.
 
@@ -448,6 +457,8 @@ In this exercise, you will configure operating system of Azure VMs running Windo
 1.  Within the RDP session to i20-db-0.adatum.com, from the **Tools** menu in Server Manager, start **Active Directory Administrative Center**.
 
 1.  In Active Directory Administrative Center, create a new organizational unit named **Clusters** in the root of the adatum.com domain.
+
+1. For creating a new cluster, select the adatum.com domain , select new organizational unit. Name the organizational unit as mentioned above.
 
 1.  In Active Directory Administrative Center, move the computer accounts of i20-db-0 and i20-db-1 from the Computers container to the Clusters organizational unit.
 
@@ -481,7 +492,13 @@ In this exercise, you will configure operating system of Azure VMs running Windo
 
     ```
     Install-PackageProvider -Name NuGet -Force
+    
+    [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
+    
+    Register-PSRepository -Default -Verbose
 
+    Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
+    
     Install-Module -Name Az -Force
     ```
 
@@ -562,6 +579,12 @@ In this exercise, you will configure operating system of Azure VMs running Windo
 
     ```
     Install-PackageProvider -Name NuGet -Force
+    
+    [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
+    
+    Register-PSRepository -Default -Verbose
+    
+    Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
 
     Install-Module -Name Az -Force
     ```
