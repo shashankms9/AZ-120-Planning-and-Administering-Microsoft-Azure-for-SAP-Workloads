@@ -512,7 +512,7 @@ Duration: 40 minutes
 1.  Within the Windows PowerShell ISE session, set the Cloud Witness quorum of the new cluster by running the following:
 
     ```
-    $resourceGroupName = 'az12001b-cl-RG-Deployment-id'
+    $resourceGroupName = 'az12001b-cl-RG'
 
     $cwStorageAccountName = (Get-AzStorageAccount -ResourceGroupName $resourceGroupName)[0].StorageAccountName
 
