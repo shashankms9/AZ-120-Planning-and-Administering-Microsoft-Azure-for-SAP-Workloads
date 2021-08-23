@@ -54,13 +54,9 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     -   Subscription: *the name of your Azure subscription*
 
-    -   Resource group: *the name of a existing resource group* **az12003b-ad-RG-DeploymentID**
-
-      >**Note**: DeploymentID can be found in the **Environment Details Tab**
+    -   Resource group: *the name of a existing resource group* **az12003b-ad-RG**
 
     -   Location: *an Azure region where you can deploy Azure VMs*
-
-    > **Note**: Consider using **East US** or **East US2** regions for deployment of your resources. 
 
     -   Admin Username: **Student**
 
@@ -92,9 +88,9 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 ### Task 2: Provision subnets that will host Azure VMs running highly available SAP NetWeaver deployment and the S2D cluster.
 
-1.  In the Azure Portal, navigate to the blade of the **az12003b-ad-RG-DID** resource group.
+1.  In the Azure Portal, navigate to the blade of the **az12003b-ad-RG** resource group.
 
-1.  On the **az12003b-ad-RG-DID** resource group blade, in the list of resources, locate the **adVNET** virtual network and click its entry to display the **adVNET** blade.
+1.  On the **az12003b-ad-RG** resource group blade, in the list of resources, locate the **adVNET** virtual network and click its entry to display the **adVNET** blade.
 
 1.  From the **adVNET** blade, navigate to its **adVNET - Subnets** blade. 
 
@@ -117,12 +113,10 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 1. In the Cloud Shell pane, run the following command to set the value of the variable `$resourceGroupName` to the name of the resource group containing the resources you provisioned in the previous task:
 
     ```
-    $resourceGroupName = 'az12003b-ad-RG-DeploymentID'
+    $resourceGroupName = 'az12003b-ad-RG'
     ```
 
-  >NOTE : DeploymentID can be found in the **Environment Details Tab**
-
-1.  In the Cloud Shell pane, run the following command to identify the virtual network created in the previous task:
+ 1.  In the Cloud Shell pane, run the following command to identify the virtual network created in the previous task:
 
     ```
     $vNetName = 'adVNet'
@@ -162,9 +156,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     -   Subscription: *the name of your Azure subscription*
 
-    -   Resource group: *the name of a existing resource group* **az12003b-sap-RG-DeploymentID**
-
-        >NOTE: DeploymentID can be found in the **Environment Details Tab**.
+    -   Resource group: *the name of a existing resource group* **az12003b-sap-RG**
 
     -   Location: *the same Azure region that you specified in the first task of this exercise*
 
@@ -214,7 +206,7 @@ In this task, you will deploy the scale-out file server (SOFS) cluster that will
 
     -   Subscription: **Your Azure subscription name**.
 
-    -   Resource group: *the name of a existing resource group* **az12003b-s2d-RG-DeploymentID**
+    -   Resource group: *the name of a existing resource group* **az12003b-s2d-RG**
 
     -   Region: *the same Azure region where you deployed Azure VMs in the previous tasks of this exercise*
 
@@ -278,7 +270,7 @@ In this task, you will deploy the scale-out file server (SOFS) cluster that will
 
     -   Subscription: *the name of your Azure subscription*
 
-    -   Resource group: *the name of a existing resource group* **az12003b-dmz-RG-DeploymentID**
+    -   Resource group: *the name of a existing resource group* **az12003b-dmz-RG**
 
     -   Virtual machine name: **az12003b-vm0**
 
@@ -358,10 +350,8 @@ In this exercise, you will configure operating system of Azure VMs running Windo
 1. In the Cloud Shell pane, run the following command to set the value of the variable `$resourceGroupName` to the name of the resource group containing the resources you provisioned in the previous task:
 
     ```
-    $resourceGroupName = 'az12003b-sap-RG-DeploymentID'
+    $resourceGroupName = 'az12003b-sap-RG'
     ```
-
->NOTE: DeploymentID can be found in the **Environment Details Tab**
 
 1.  In the Cloud Shell pane, run the following command, to join the Windows Server Azure VMs you deployed in the third task of the previous exercise to the **adatum.com** Active Directory domain:
 
@@ -521,10 +511,8 @@ In this exercise, you will configure operating system of Azure VMs running Windo
 1.  Within the Windows PowerShell ISE session, run the following command to set the value of the variable `$resourceGroupName` to the name of the resource group containing the storage account you provisioned in the previous task:
 
     ```
-    $resourceGroupName = 'az12003b-sap-RG-DeploymentID'
+    $resourceGroupName = 'az12003b-sap-RG'
     ```
-
-   >NOTE: DeploymentID can be found in the **Environment Details Tab**
 
 1.  Within the Windows PowerShell ISE session, run the following to set the Cloud Witness quorum of the new cluster:
 
@@ -610,12 +598,10 @@ In this exercise, you will configure operating system of Azure VMs running Windo
 1.  Within the Windows PowerShell ISE session, run the following command to set the value of the variable `$resourceGroupName` to the name of the resource group containing the storage account you provisioned earlier in this exercise:
 
     ```
-    $resourceGroupName = 'az12003b-sap-RG-DeploymentID'
+    $resourceGroupName = 'az12003b-sap-RG'
     ```
 
-  >NOTE : DeploymentID can be found in the **Environment Details Tab**
-
-1.  Within the Windows PowerShell ISE session, run the following to set the Cloud Witness quorum of the cluster:
+ 1.  Within the Windows PowerShell ISE session, run the following to set the Cloud Witness quorum of the cluster:
 
     ```
     $cwStorageAccountName = (Get-AzStorageAccount -ResourceGroupName $resourceGroupName)[0].StorageAccountName
