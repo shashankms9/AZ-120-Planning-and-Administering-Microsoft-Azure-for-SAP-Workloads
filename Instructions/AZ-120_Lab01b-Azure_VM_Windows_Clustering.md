@@ -51,12 +51,12 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     -   Subscription: the name of your Azure subscription
 
-    -   Resource group:  Select the name of a resource group **az12001b-ad-RG-Deployment-id**
+    -   Resource group:  Select the name of a resource group **az12001b-ad-RG**
     >  **Note**: you will get the Deployment-id from environment page link of the lab guide.
 
     -   Location: an Azure region where you can deploy Azure VMs
 
-    > **Note**: Consider using **East US** or **East US2** regions for deployment of your resources. 
+    > **Note**: Consider using **East US** or **East US2** regions for deployment of your resources: 
 
     -   Admin Username: **Student**
 
@@ -82,7 +82,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
        - in the Azure portal, navigate to the blade of the VM(s) you identified in the previous step, select **Extensions**, and from the **Extensions** blade, remove the CustomScript extension
 
-       - in the Azure portal, navigate to the **az12001b-ad-RG-Deployment-id** resource group blade, select **Deployments**, select the link to the failed deployment, and select **Redeploy**, select the target resource group (**az12001b-ad-RG-Deployment-id**) and provide the password for the root account (**Pa55w.rd1234**).
+       - in the Azure portal, navigate to the **az12001b-ad-RG** resource group blade, select **Deployments**, select the link to the failed deployment, and select **Redeploy**, select the target resource group (**az12001b-ad-RG**) and provide the password for the root account (**Pa55w.rd1234**).
 
 
 ### Task 2: Deploy a pair of Azure VMs running Windows Server 2019 in a new availability set.
@@ -95,7 +95,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     -   Subscription: the name of your Azure subscription
 
-    -   Resource group: Select  the name of a resource group **az12001b-cl-RG-Deployment-id**
+    -   Resource group: Select  the name of a resource group **az12001b-cl-RG**
 
     -   Virtual machine name: **az12001b-cl-vm0**
 
@@ -233,7 +233,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 1. In the Cloud Shell pane, run the following command to set the value of the variable `$resourceGroupName` to the name of the resource group containing the resources you provisioned in the previous task:
 
     ```
-    $resourceGroupName = 'az12001b-cl-RG-Deployment-id'
+    $resourceGroupName = 'az12001b-cl-RG'
     ```
 
 1.  In the Cloud Shell pane, run the following command, to create the first set of 4 managed disks that you will attach to the first Azure VM you deployed in the previous task:
@@ -308,7 +308,7 @@ Duration: 40 minutes
 1. In the Cloud Shell pane, run the following command to set the value of the variable `$resourceGroupName` to the name of the resource group containing the pair of **Windows Server 2019 Datacenter** Azure VMs you provisioned in the previous exercise:
 
     ```
-    $resourceGroupName = 'az12001b-cl-RG-Deployment-id'
+    $resourceGroupName = 'az12001b-cl-RG'
     ```
 
 1.  In the Cloud Shell pane, run the following command, to join the Windows Server 2019 Azure VMs you deployed in the second task of the previous exercise to the **adatum.com** Active Directory domain:
@@ -658,7 +658,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 1. In the Cloud Shell pane, run the following command to set the value of the variable `$resourceGroupName` to the name of the resource group containing the pair of **Windows Server 2019 Datacenter** Azure VMs you provisioned in the first exercise of this lab:
 
     ```
-    $resourceGroupName = 'az12001b-cl-RG-Deployment-id'
+    $resourceGroupName = 'az12001b-cl-RG'
     ```
 
 1.  In the Cloud Shell pane, run the following command to create the public IP address to be used by the second load balancer:
