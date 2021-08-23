@@ -118,16 +118,16 @@ In this exercise, you will deploy Azure infrastructure compute components necess
     -   Select inbound ports: **RDP (3389)**
 
     -   Would you like to use an existing Windows Server license?: **No**
-
+    
     -   OS disk type: **Premium SSD**
-
+        
     -   Virtual network: **adVNET**
 
-    -   Subnet name: a new subnet named **clSubnet**
+    -  Subnet name: a new subnet named **clSubnet**
 
-    -   Subnet address range: **10.0.1.0/24**
+    -  Subnet address range: **10.0.1.0/24**
 
-    -   Public IP address: a new IP address named **az12001b-cl-vm0-ip**
+    -  Public IP address: a new IP address named **az12001b-cl-vm0-ip**
 
     -   NIC network security group: **Basic**
 
