@@ -591,14 +591,18 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
     -   SKU: **Standard**
 
     -   Virtual network: **adVNET**
+       
+1.  From the **az12001b-cl-lb0** blade, add a Frontend pool with the following settings:
+      
+    -  Name: **az12001b-cl-lb0-fe**
 
-    -   Subnet: **clSubnet**
+    -  Subnet: **clSubnet**
 
-    -   IP address assignment: **Static**
+    -  IP address assignment: **Static**
 
-    -   IP address: **10.0.1.240**
+    -  IP address: **10.0.1.240**
 
-    -   Availability zone: **Zone-redundant**
+    -  Availability zone: **Zone-redundant**
 
 1.  Wait until the load balancer is provisioned and then navigate to its blade in the Azure portal.
 
@@ -610,11 +614,11 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
     -   VIRTUAL MACHINE: **az12001b-cl-vm0**  IP ADDRESS: **ipconfig1**
 
-    -   VIRTUAL MACHINE: **az12001b-cl-vm1**  IP ADDRESS: **ipconfig1**
+    -   VIRTUAL MACHINE: **az12001b-cl-vm1**  IP ADDRESS: **ipconfig1**.
 
 1.  From the **az12001b-cl-lb0** blade, add a health probe with the following settings:
 
-    -   Name: **az12001b-cl-lb0-hprobe**
+    -  Name: **az12001b-cl-lb0-hprobe**
 
     -   Protocol: **TCP**
 
@@ -630,7 +634,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
     -   IP version: **IPv4**
 
-    -   Frontend IP address: **192.168.0.240 (LoadBalancerFrontEnd)**
+    -   Frontend IP address: default
 
     -   HA Ports: **Disabled**
 
