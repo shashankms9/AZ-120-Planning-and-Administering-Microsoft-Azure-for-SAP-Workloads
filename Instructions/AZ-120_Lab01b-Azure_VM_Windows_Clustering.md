@@ -138,8 +138,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
     -   Accelerated networking: **On**
 
     -   Place this virtual machine behind an existing load balancing solutions: **No**
-
-
+    
     -   Boot diagnostics: **Disable**
 
     -   OS guest diagnostics: **Off**
