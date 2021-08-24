@@ -552,21 +552,21 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
 1.  From the **az12001b-cl-vm1-ip** blade, first disassociate the public IP address from the network interface and then delete it.
 
-1.  In the Azure portal, navigate to the blade of the **az12001a-vm0** Azure VM.
+1.  In the Azure portal, navigate to the blade of the **az12001b-c1-vm0** Azure VM.
 
-1.  From the **az12001a-vm0** blade, navigate to its **Networking** blade. 
+1.  From the **az12001b-c1-vm0** blade, navigate to its **Networking** blade. 
 
-1.  From the **az12001a-vm0 - Networking** blade, navigate to the network interface of the az12001a-vm0. 
+1.  From the **az12001b-c1-vm0 - Networking** blade, navigate to the network interface of the az12001a-vm0. 
 
 1.  From the blade of the network interface of the az12001a-vm0, navigate to its IP configurations blade and, from there, display its **ipconfig1** blade.
 
 1.  On the **ipconfig1** blade, set the private IP address assignment to **Static** and save the change.
 
-1.  In the Azure portal, navigate to the blade of the **az12001a-vm1** Azure VM.
+1.  In the Azure portal, navigate to the blade of the **az12001b-c1-vm1** Azure VM.
 
-1.  From the **az12001a-vm1** blade, navigate to its **Networking** blade. 
+1.  From the **az12001b-c1-vm1** blade, navigate to its **Networking** blade. 
 
-1.  From the **az12001a-vm1 - Networking** blade, navigate to the network interface of the az12001a-vm1. 
+1.  From the **az12001b-c1-vm1 - Networking** blade, navigate to the network interface of the az12001b-c1-vm1. 
 
 1.  From the blade of the network interface of the az12001a-vm1, navigate to its IP configurations blade and, from there, display its **ipconfig1** blade.
 
