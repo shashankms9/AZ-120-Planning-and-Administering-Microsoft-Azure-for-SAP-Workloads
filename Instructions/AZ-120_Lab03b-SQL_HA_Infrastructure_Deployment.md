@@ -110,13 +110,13 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     > **Note**: If this is the first time you are launching Cloud Shell in the current Azure subscription. Select Powershell, When prompted, select **Show advanced settings** and then select **Use existing** and choose existing resource group. Then select **Create new** against Storage account as well as File Share and provide a unique value in both of the fields and then click on **Create storage**, and wait for the Azure Cloud Shell to initialize.
 
-1. In the Cloud Shell pane, run the following command to set the value of the variable `$resourceGroupName` to the name of the resource group containing the resources you provisioned in the previous task:
+1.  In the Cloud Shell pane, run the following command to set the value of the variable `$resourceGroupName` to the name of the resource group containing the resources you provisioned in the previous task:
 
     ```
     $resourceGroupName = 'az12003b-ad-RG'
     ```
 
- 1.  In the Cloud Shell pane, run the following command to identify the virtual network created in the previous task:
+1.  In the Cloud Shell pane, run the following command to identify the virtual network created in the previous task:
 
     ```
     $vNetName = 'adVNet'
