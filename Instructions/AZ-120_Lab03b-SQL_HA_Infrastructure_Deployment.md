@@ -489,15 +489,19 @@ In this exercise, you will configure operating system of Azure VMs running Windo
 1.  Within the Windows PowerShell ISE session, install the Az PowerShell module by running the following:
 
     ```
-    Install-PackageProvider -Name NuGet -Force
-    
-    [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
-    
-    Register-PSRepository -Default -Verbose
+	Install-PackageProvider -Name NuGet -Force
 
-    Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
-    
-    Install-Module -Name Az -Force
+	[Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
+
+	Register-PSRepository -Default -Verbose
+
+	Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
+
+	$PSVersionTable.PSVersion
+
+	Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+	Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force
     ```
 
 1.  Within the Windows PowerShell ISE session, authenticate by using your Azure AD credentials by running the following:
