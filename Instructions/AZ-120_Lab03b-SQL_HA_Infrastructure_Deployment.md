@@ -605,7 +605,7 @@ In this exercise, you will configure operating system of Azure VMs running Windo
     $resourceGroupName = 'az12003b-sap-RG'
     ```
 
- 1.  Within the Windows PowerShell ISE session, run the following to set the Cloud Witness quorum of the cluster:
+1.  Within the Windows PowerShell ISE session, run the following to set the Cloud Witness quorum of the cluster:
 
     ```
     $cwStorageAccountName = (Get-AzStorageAccount -ResourceGroupName $resourceGroupName)[0].StorageAccountName
