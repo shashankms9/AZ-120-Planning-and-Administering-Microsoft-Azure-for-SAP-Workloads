@@ -138,7 +138,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 1.  On the lab computer, in the Azure portal, search for and select **Template deployment (deploy using custom template)**.
 
-1.  On the **Custom deployment** blade, in the **Quickstart template (disclaimer)** drop-down list, type **sap-3-tier-marketplace-image-md** and click **Select template**.
+1.  On the **Custom deployment** blade, in the **Quickstart template (disclaimer)** drop-down list, type **application-workloads/sap/sap-3-tier-marketplace-image-md** and click **Select template**.
 
     > **Note**: Make sure to use Microsoft Edge or a third party browser. Do not use Internet Explorer.
 
