@@ -66,11 +66,11 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     -   Domain Name: **adatum.com**
 
-    -   DnsPrefix: *accept the default value*
+    -   DnsPrefix: *any unique valid DNS prefix*
 
     -   Vm Size: **Standard D4S_v3**
 
-    -   _artifacts Location: *accept the default value*
+    -   _artifacts Location: *https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/application-workloads/active-directory/active-directory-new-domain-ha-2-dc-zones/*
 
     -   _artifacts Location Sas Token: *leave blank*
 
