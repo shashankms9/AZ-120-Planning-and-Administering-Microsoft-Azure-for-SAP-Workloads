@@ -47,11 +47,11 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
    - Subscription: **Select your Azure subscription**
 
-   - Resource group: Resource group: *select the existed resource group name* **az12001a-RG-DeploymentID**
+   - Resource group: Resource group: select the existed resource group name* **az12001a-RG-DeploymentID**
 
    > **Note**: Consider using the Resource group region, i.e **East US** or **East US2** for the deployment of your resources. 
 
-   - Region: *an Azure region where you can deploy Azure VMs*
+   - Region: **an Azure region where you can deploy Azure VMs**
 
    - Proximity placement group name: **az12001a-ppg**
 
@@ -65,11 +65,11 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
    - Subscription: **Select your Azure subscription**
 
-   - Resource group: *the name of the resource group you used earlier in this task*
+   - Resource group: **the name of the resource group you used earlier in this task**
 
    - Virtual machine name: **az12001a-vm0**
 
-   - Region: *the same Azure region you chose when creating the proximity placement group*
+   - Region: **the same Azure region you chose when creating the proximity placement group**
 
    - Availability options: **Availability set**
 
