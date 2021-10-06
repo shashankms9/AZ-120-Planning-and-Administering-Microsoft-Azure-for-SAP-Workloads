@@ -141,13 +141,13 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 1. On the **Basics** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Disks >** (leave all other settings with their default value):
 
-   - Subscription: *the name of your Azure subscription*
+   - Subscription: **Select your Azure subscription**
 
-   - Resource group: *the name of the resource group you used earlier in this task*
+   - Resource group: **the name of the resource group you used earlier in this task**
 
    - Virtual machine name: **az12001a-vm1**
 
-   - Region: *the same Azure region you chose when creating the first Azure VM*
+   - Region: **the same Azure region you chose when creating the first Azure VM**
 
    - Availability options: **Availability set**
 
@@ -220,7 +220,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 1. In the Cloud Shell pane, run the following command to set the value of the variable `RESOURCE_GROUP_NAME` to the name of the resource group containing the resources you provisioned in the previous task:
 
-   >**Note**: **Deployment ID** 
+   > **Note**: **Deployment ID** is provided under Environment tab.
 
    ```cli
    RESOURCE_GROUP_NAME='az12001a-RG-DeploymentId'
@@ -291,8 +291,10 @@ In this exercise, you will configure operating system and storage on Azure VMs r
 
 1. In the Cloud Shell pane, run the following command to set the value of the variable `RESOURCE_GROUP_NAME` to the name of the resource group containing the resources you provisioned in the previous exercise:
 
+   > **Note**: **Deployment ID** is provided under Environment tab.
+
    ```cli
-   RESOURCE_GROUP_NAME='az12001a-RG'
+   RESOURCE_GROUP_NAME='az12001a-RG-Deployment Id'
    ```
 
 1. In the Cloud Shell pane, run the following command to identify the public IP address of the first Azure VM you deployed in the previous exercise:
@@ -313,7 +315,7 @@ In this exercise, you will configure operating system and storage on Azure VMs r
 
 1. Open another Cloud Shell Bash session by clicking the **Open new session** icon in the Cloud Shell toolbar.
 
-1. In the newly opened Cloud Shell Bash session, repeat all of the steps in this tasks to connect to the **az12001a-vm1** Azure VM via its IP address **az12001a-vm0-ip**.
+1. In the newly opened Cloud Shell Bash session, repeat all of the steps in this tasks to connect to the **az12001a-vm1** Azure VM via its IP address **az12001a-vm1-ip**.
 
 
 ### Task 2: Configure storage of Azure VMs running Linux
@@ -668,13 +670,13 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
 1. From the **Basics** tab of the **Create load balancer** blade, specify the following settings and select **Review + create** (leave others with their default values):
 
-   - Subscription: *the name of your Azure subscription*
+   - Subscription: **Select your Azure subscription**
 
-   - Resource group: *the name of the resource group you used earlier in this lab*
+   - Resource group: **the name of the resource group you used earlier in this lab**
 
    - Name: **az12001a-lb0**
 
-   - Region: *the same Azure region where you deployed Azure VMs in the first exercise of this lab*
+   - Region: **the same Azure region where you deployed Azure VMs in the first exercise of this lab**
 
    - Type: **Internal**
 
@@ -804,9 +806,9 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
 1. On the **Basics** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Disks >** (leave all other settings with their default value):
 
-   - Subscription: *the name of your Azure subscription*
+   - Subscription: **Select your Azure subscription**
 
-   - Resource group: *the name of the resource group you used earlier in this lab*
+   - Resource group: **the name of the resource group you used earlier in this lab**
 
    - Virtual machine name: **az12001a-vm2**
 
