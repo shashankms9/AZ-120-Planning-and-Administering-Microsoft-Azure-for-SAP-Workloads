@@ -45,11 +45,11 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 1. On the **Basics** tab of the **Create Proximity Placement Groups** blade, specify the following settings and select **Review + create**:
 
-   - Subscription: *the name of your Azure subscription*
+   - Subscription: **Select your Azure subscription**
 
-   - Resource group: Resource group: *the name of a new resource group* **az12001a-RG**
+   - Resource group: Resource group: *select the existed resource group name* **az12001a-RG-DeploymentID**
 
-   > **Note**: Consider using **East US** or **East US2** regions for deployment of your resources. 
+   > **Note**: Consider using the Resource group region, i.e **East US** or **East US2** for the deployment of your resources. 
 
    - Region: *an Azure region where you can deploy Azure VMs*
 
@@ -63,7 +63,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 1. On the **Basics** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Disks >** (leave all other settings with their default value):
 
-   - Subscription: *the name of your Azure subscription*
+   - Subscription: **Select your Azure subscription**
 
    - Resource group: *the name of the resource group you used earlier in this task*
 
@@ -75,7 +75,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
    - Availability set: *a new availability set named* **az12001a-avset** *with 2 fault domains and 5 update domains*
 
-   - Image: **SUSE Enterprise Linux for SAP 12 SP5 - BYOS**
+   - Image: **SUSE Enterprise Linux for SAP 12 SP5 - BYOS- Gen1**
    
    > **Note**: To locate the image, click the **See all images** link, on the **Select an image** blade, in the search text box, type **SUSE Enterprise Linux for SAP 12 BYOS** and, in the list of results, click **SUSE Enterprise Linux for SAP 12 SP5 - BYOS**.
 
@@ -153,7 +153,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
    - Availability set: **az12001a-avset**
 
-   - Image: **SUSE Enterprise Linux for SAP 12 SP5 - BYOS**
+   - Image: **SUSE Enterprise Linux for SAP 12 SP5 - BYOS- Gen1**
    
    > **Note**: To locate the image, click the **See all images** link, on the **Select an image** blade, in the search text box, type **SUSE Enterprise Linux for SAP 12 BYOS** and, in the list of results, click **SUSE Enterprise Linux for SAP 12 SP5 - BYOS**.
 
@@ -220,8 +220,10 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 1. In the Cloud Shell pane, run the following command to set the value of the variable `RESOURCE_GROUP_NAME` to the name of the resource group containing the resources you provisioned in the previous task:
 
+   >**Note**: **Deployment ID** 
+
    ```cli
-   RESOURCE_GROUP_NAME='az12001a-RG'
+   RESOURCE_GROUP_NAME='az12001a-RG-DeploymentId'
    ```
 
 1. In the Cloud Shell pane, run the following command to create the first set of 8 managed disks that you will attach to the first Azure VM you deployed in the previous task:
