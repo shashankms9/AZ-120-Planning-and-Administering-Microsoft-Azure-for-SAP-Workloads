@@ -1,11 +1,11 @@
-# AZ 120 Module 1: Foundations of SAP on Azure
+# AZ 120 Module 2: Explore the foundations of IaaS for SAP on Azure
 # Lab 1b: Implementing Windows clustering on Azure VMs
 
 Estimated Time: 120 minutes
 
 All tasks in this lab are performed from the Azure portal (including the PowerShell Cloud Shell session)  
 
-   > **Note**: When not using Cloud Shell, the lab virtual machine must have Az PowerShell module installed [**https://docs.microsoft.com/en-us/powershell/azure/install-az-ps-msi?view=azps-2.8.0**](https://docs.microsoft.com/en-us/powershell/azure/install-az-ps-msi?view=azps-2.8.0).
+   > **Note**: When not using Cloud Shell, the lab virtual machine must have Az PowerShell module installed [**https://docs.microsoft.com/en-us/powershell/azure/install-az-ps-msi**](https://docs.microsoft.com/en-us/powershell/azure/install-az-ps-msi).
 
 Lab files: none
 
@@ -123,11 +123,11 @@ In this exercise, you will deploy Azure infrastructure compute components necess
         
     -   Virtual network: **adVNET**
 
-    -  Subnet name: a new subnet named **clSubnet**
+    -   Subnet name: *a new subnet named* **clSubnet**
 
     -  Subnet address range: **10.0.1.0/24**
 
-    -  Public IP address: a new IP address named **az12001b-cl-vm0-ip**
+    -   Public IP address: *a new IP address named* **az12001b-cl-vm0-ip**
 
     -   NIC network security group: **Basic**
 
@@ -138,6 +138,8 @@ In this exercise, you will deploy Azure infrastructure compute components necess
     -   Accelerated networking: **On**
 
     -   Place this virtual machine behind an existing load balancing solutions: **No**
+
+    -   Enable basic plan for free: **No**
     
     -   Boot diagnostics: **Disable**
 
@@ -148,6 +150,8 @@ In this exercise, you will deploy Azure infrastructure compute components necess
     -   Login with Azure AD: **Off**
 
     -   Enable auto-shutdown: **Off**
+
+    -   Enable backup: **Off**
 
     -   Enable Disaster Recovery: **Off**
 
@@ -203,6 +207,8 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     -   Place this virtual machine behind an existing load balancing solutions: **No**
 
+    -   Enable basic plan for free: **No**
+
     -   Boot diagnostics: **Disable**
 
     -   OS guest diagnostics: **Off**
@@ -212,6 +218,8 @@ In this exercise, you will deploy Azure infrastructure compute components necess
     -   Login with Azure AD: **Off**
 
     -   Enable auto-shutdown: **Off**
+
+    -   Enable backup: **Off**
 
     -   Enable Disaster Recovery: **Off**
 
