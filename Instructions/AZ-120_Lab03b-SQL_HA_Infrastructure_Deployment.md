@@ -1,11 +1,11 @@
-# AZ 120 Module 3: Implementing SAP on Azure
+# AZ 120 Module 4: Deploy SAP on Azure
 # Lab 3b: Implement SAP architecture on Azure VMs running Windows
 
 Estimated Time: 150 minutes
 
 All tasks in this lab are performed from the Azure portal (including a PowerShell Cloud Shell session)  
 
-   > **Note**: When not using Cloud Shell, the lab virtual machine must have Az PowerShell module installed [**https://docs.microsoft.com/en-us/powershell/azure/install-az-ps-msi?view=azps-2.8.0**](https://docs.microsoft.com/en-us/powershell/azure/install-az-ps-msi?view=azps-2.8.0).
+   > **Note**: When not using Cloud Shell, the lab virtual machine must have Az PowerShell module installed [**https://docs.microsoft.com/en-us/powershell/azure/install-az-ps-msi**](https://docs.microsoft.com/en-us/powershell/azure/install-az-ps-msi).
 
 Lab files: none
 
@@ -192,7 +192,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 1.  Do not wait for the deployment to complete but instead proceed to the next task. 
 
-### Task 5: Deploy the Scale-Out File Server (SOFS) cluster
+### Task 4: Deploy the Scale-Out File Server (SOFS) cluster
 
 In this task, you will deploy the scale-out file server (SOFS) cluster that will be hosting a file share for the SAP ASCS servers by using an Azure Resource Manager QuickStart template from GitHub available at [**https://github.com/robotechredmond/301-storage-spaces-direct-md**](https://github.com/robotechredmond/301-storage-spaces-direct-md). 
 
@@ -258,7 +258,7 @@ In this task, you will deploy the scale-out file server (SOFS) cluster that will
 
 1.  The deployment might take about 20 minutes. Do not wait for the deployment to complete but instead proceed to the next task.
 
-### Task 6: Deploy a jump host
+### Task 5: Deploy a jump host
 
    > **Note**: Since Azure VMs you deployed in the previous task are not accessible from Internet, you will deploy an Azure VM running Windows Server 2016 Datacenter that will serve as a jump host. 
 
@@ -533,7 +533,7 @@ In this exercise, you will configure operating system of Azure VMs running Windo
 1.  In the **Failover Cluster Manager** console, review the **az12003b-db-cl0** cluster configuration, including its nodes, as well as is witness and network settings. Note that the cluster does not have any shared storage.
 
 
-### Task 6: Configure Failover Clustering on Azure VMs running Windows Server 2016 to support a highly available ASCS tier of the SAP NetWeaver installation.
+### Task 5: Configure Failover Clustering on Azure VMs running Windows Server 2016 to support a highly available ASCS tier of the SAP NetWeaver installation.
 
 > **Note**: Ensure that the deployment of the S2D cluster you initiated in task 4 of exercise 1 has successfully completed before starting this task.
 
@@ -620,7 +620,7 @@ In this exercise, you will configure operating system of Azure VMs running Windo
 1.  In the **Failover Cluster Manager** console, review the **az12003b-ascs-cl0** cluster configuration, including its nodes, as well as is witness and network settings. Note that the cluster does not have any shared storage.
 
 
-### Task 7: Set permissions on the \\\\GLOBALHOST\\sapmnt share
+### Task 6: Set permissions on the \\\\GLOBALHOST\\sapmnt share
 
 In this task, you will set share-level permissions on the **\\\\GLOBALHOST\\sapmnt** share.
 
@@ -635,7 +635,7 @@ In this task, you will set share-level permissions on the **\\\\GLOBALHOST\\sapm
    
     ```
 
-### Task 8: Configure operating system prerequisites for installing SAP NetWeaver ASCS and database components
+### Task 7: Configure operating system prerequisites for installing SAP NetWeaver ASCS and database components
 
 1.  Within the Remote Desktop session to i20-ascs-0.adatum.com, from the Windows PowerShell ISE session, run the following to configure registry entries required to faciliate the installation of SAP ASCS components and the use of virtual names:
 
