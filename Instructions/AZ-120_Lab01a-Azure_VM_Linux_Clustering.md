@@ -872,7 +872,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
    - Enable backup: **Off**
 
-   - Guest OS updates: **Manual updates**
+   - Patch Orchestartion Option: **Manual updates**
 
 1. On the **Advanced** tab of the **Create a virtual machine** blade, select **Review + create** (leave all other settings with their default value):
 
