@@ -835,38 +835,3 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
 > **Result**: After you completed this exercise, you have provisioned Azure network resources necessary to support highly available SAP NetWeaver deployments
 
-## Exercise 4: Remove lab resources
-
-Duration: 10 minutes
-
-In this exercise, you will remove resources provisioned in this lab.
-
-#### Task 1: Open Cloud Shell
-
-1. At the top of the portal, click the **Cloud Shell** icon to open Cloud Shell pane and choose PowerShell as the shell.
-
-1. In the Cloud Shell pane, run the following command to set the value of the variable `$resourceGroupName` to the name of the resource group containing the pair of **Windows Server 2019 Datacenter** Azure VMs you provisioned in the first exercise of this lab:
-
-    ```
-    $resourceGroupNamePrefix = 'az12001b-'
-    ```
-
-1. In the Cloud Shell pane, run the following command to list all resource groups you created in this lab:
-
-    ```
-    Get-AzResourceGroup | Where-Object {$_.ResourceGroupName -like "$resourceGroupNamePrefix*"} | Select-Object ResourceGroupName
-    ```
-
-1. Verify that the output contains only the resource groups you created in this lab. These groups will be deleted in the next task.
-
-#### Task 2: Delete resource groups
-
-1. In the Cloud Shell pane, run the following command to delete the resource groups you created in this lab
-
-    ```
-    Get-AzResourceGroup | Where-Object {$_.ResourceGroupName -like "$resourceGroupNamePrefix*"} | Remove-AzResourceGroup -Force  
-    ```
-
-1. Close the Cloud Shell pane.
-
-> **Result**: After you completed this exercise, you have removed the resources used in this lab.
