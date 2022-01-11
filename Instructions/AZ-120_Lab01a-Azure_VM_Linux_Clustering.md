@@ -47,7 +47,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
    - Subscription: **Select your Azure subscription**
 
-   - Resource group: Resource group: select the existed resource group name* **az12001a-RG-DeploymentID**
+   - Resource group: Resource group: select the existed resource group name* **az12001a-RG**
 
    > **Note**: Consider using the Resource group region, i.e **East US** or **East US2** for the deployment of your resources. 
 
@@ -223,7 +223,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
    > **Note**: **Deployment ID** is provided under Environment tab.
 
    ```cli
-   RESOURCE_GROUP_NAME='az12001a-RG-DeploymentId'
+   RESOURCE_GROUP_NAME='az12001a-RG'
    ```
 
 1. In the Cloud Shell pane, run the following command to create the first set of 8 managed disks that you will attach to the first Azure VM you deployed in the previous task:
