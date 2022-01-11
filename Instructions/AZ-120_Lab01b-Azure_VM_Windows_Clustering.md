@@ -269,8 +269,6 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     -   Disk name: **az12001b-cl-vm0-DataDisk0**
 
-    -   Resource group: *the name of the resource group you used when deploying the pair of **Windows Server 2019 Datacenter** Azure VMs in the previous task*
-
     -   HOST CACHING: **Read-only**
 
 1.  Repeat the previous step to attach the remaining 3 disks with the prefix **az12001b-cl-vm0-DataDisk** (for the total of 4). Assign the LUN number matching the last character of the disk name. For the last disk (LUN **3**), set HOST CACHING to **None**.
@@ -286,8 +284,6 @@ In this exercise, you will deploy Azure infrastructure compute components necess
     -   LUN: **0**
 
     -   Disk name: **az12001b-cl-vm1-DataDisk0**
-
-    -   Resource group: *the name of the resource group you used when deploying the pair of **Windows Server 2019 Datacenter** Azure VMs in the previous task*
 
     -   HOST CACHING: **Read-only**
 
@@ -442,8 +438,6 @@ Duration: 40 minutes
     -   Location: *the same Azure region where you deployed the Azure VMs in the previous exercise*
 
     -   Performance: **Standard**
-
-    -   Account kind: **Storage (general purpose v2)**
 
     -   Replication: **Locally-redundant storage (LRS)**
 
