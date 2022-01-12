@@ -44,7 +44,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 1.  In the Azure Portal, start a Bash session in Cloud Shell. 
 
-    > **Note**: If this is the first time you are launching Cloud Shell in the current Azure subscription, you will be asked to create an Azure file share to persist Cloud Shell files. If so, accept the defaults, which will result in creation of a storage account in an automatically generated resource group.
+   **Note**: If this is the first time you are launching Cloud Shell in the current Azure subscription, you will be asked to create an Azure file share to persist Cloud Shell files. If so, accept the defaults, which will result in creation of a storage account in an automatically generated resource group.
 
 1.  In the Cloud Shell pane, run the following command to specify the Azure region that supports availability zones and where you want to create resources for this lab (replace `<region>` with the name of the Azure region which supports availablity zones):
 
@@ -261,11 +261,15 @@ In this exercise, you will configure Azure VMs running SUSE Linux Enterprise Ser
 
 1.  From the **az12003a-vm0** blade, connect to the Azure VM az12003a-vm0 via Remote Desktop. 
 
+    -   Login as: **.\student**
+
+    -   Password: **Pa55w.rd1234**
+
 1.  Within the RDP session to az12003a-vm0, in Server Manager, navigate to the **Local Server** view and turn off **IE Enhanced Security Configuration**.
 
 1.  Within the RDP session to az12003a-vm0, download and install PuTTY from [**https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html**](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
 
-1.  Use PuTTY to connect via SSH to **i20-db-0** Azure VM. Acknowledge the security alert and, when prompted, provide the following credentials:
+1.  Use PuTTY to connect via SSH to **i20-db-0** Azure VM using private ip that you configured in previous task. Acknowledge the security alert and, when prompted, provide the following credentials:
 
     -   Login as: **student**
 
@@ -413,7 +417,7 @@ In this exercise, you will configure Azure VMs running SUSE Linux Enterprise Ser
 
 1.  In the vi editor, replace `#DefaultTasksMax=512` with `DefaultTasksMax=4096`. 
 
-    > **Note**: In some cases, Pacemaker might create many processes, reaching the default limit imposed on their number and triggering a failover. This change increases the maximum number of allowed processes.
+   **Note**: In some cases, Pacemaker might create many processes, reaching the default limit imposed on their number and triggering a failover. This change increases the maximum number of allowed processes.
 
 1.  Save the changes and close the editor.
 
@@ -566,6 +570,7 @@ In this exercise, you will configure clustering on Azure VMs running Linux to su
 
 1.  Copy the resulting **Value** to Notepad (this entry is displayed only once, after you click **Add**). This will be referred to as **password** later in this exercise:
 
+1. copy the **Subscription ID** to Notepad.
 
 ### Task 5: Grant permissions to Azure VMs to the service principal of the STONITH app 
 
@@ -579,7 +584,9 @@ In this exercise, you will configure clustering on Azure VMs running Linux to su
 
     -   Assign access to: **Azure AD user, group, or service principal**
 
-    -   Select: **Stonith app**
+    -   Click on **ADD Member** and Select: **Stonith app**.
+
+1. once done, then click on **Review + Create** to create the role assignment.
 
 1.  Repeat the previous steps to assign the Stonith app the Virtual Machine Contributor role to the **i20-db-1** Azure VM
 
