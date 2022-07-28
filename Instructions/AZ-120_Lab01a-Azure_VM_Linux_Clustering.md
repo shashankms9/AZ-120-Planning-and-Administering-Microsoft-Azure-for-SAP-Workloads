@@ -294,7 +294,7 @@ In this exercise, you will configure operating system and storage on Azure VMs r
    > **Note**: **Deployment ID** is provided under Environment tab.
 
    ```cli
-   RESOURCE_GROUP_NAME='az12001a-RG-Deployment Id'
+   RESOURCE_GROUP_NAME='az12001a-RG'
    ```
 
 1. In the Cloud Shell pane, run the following command to identify the public IP address of the first Azure VM you deployed in the previous exercise:
