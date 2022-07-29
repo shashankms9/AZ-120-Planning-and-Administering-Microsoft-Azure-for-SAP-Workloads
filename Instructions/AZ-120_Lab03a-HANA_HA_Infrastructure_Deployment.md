@@ -88,7 +88,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 ### Task 2: Deploy Azure Resource Manager template provisioning Azure VMs running Linux SUSE that will host a highly available SAP NetWeaver deployment
 
-1.  On the lab computer, in the Azure portal, search for and select **Template deployment (deploy using custom template)** or use link to open directly https://github.com/Azure/azure-quickstart-templates/tree/master/application-workloads/sap/sap-3-tier-marketplace-image-md scroll down and select **Deploy to Azure**.
+1.  On the lab computer, start a browser and browse to https://github.com/Azure/azure-quickstart-templates/tree/master/application-workloads/sap/sap-3-tier-marketplace-image-md
 
     > **Note**: Make sure to use Microsoft Edge or a third party browser. Do not use Internet Explorer.
 
@@ -165,9 +165,9 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     -   Availability options: **No infrastructure redundancy required**
 
-    -   Image: **Windows Server 2019 Datacenter - Gen 1**
+    -   Image: **Windows Server 2019 Datacenter - Gen2**
 
-    -   Size: **Standard DS1 v2** or similar
+    -   Size: **Standard D2s_v3** or similar
 
     -   Username: **Student**
 
@@ -181,7 +181,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     -   OS disk type: **Standard HDD**
 
-    -   Virtual network: **az12003a-sap-vnet**
+    -   Virtual network: **az12003a-sap-vnet**(Used the existing one).
 
     -   Subnet: a new subnet named **bastionSubnet (10.3.255.0/24)**
 
