@@ -1,5 +1,5 @@
 # AZ 120 Module 2: Explore the foundations of IaaS for SAP on Azure
-# Lab 1a: Implement Linux clustering on Azure VMs
+# Lab 2a: Implement Linux clustering on Azure VMs
 
 Estimated Time: 90 minutes
 
@@ -216,7 +216,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 1. In the Azure Portal, start a Bash session in Cloud Shell. 
 
-   > **Note**: If this is the first time you are launching Cloud Shell in the current Azure subscription, you will be asked to create an Azure file share to persist Cloud Shell files. If so, accept the defaults, which will result in creation of a storage account in an automatically generated resource group.
+   > **Note**: When prompted, select **Show advanced settings** and then select **Use existing** and choose existing resource group. Then select **Create new** against Storage account as well as File Share and provide a unique value in both of the fields and then click on **Create storage**, and wait for the Azure Cloud Shell to initialize.
 
 1. In the Cloud Shell pane, run the following command to set the value of the variable `RESOURCE_GROUP_NAME` to the name of the resource group containing the resources you provisioned in the previous task:
 
