@@ -123,7 +123,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
    - Boot diagnostics: **Enable with managed storage account (recommended)**
 
-   - OS guest diagnostics: **Off**
+   - Enable OS guest diagnostics: **Off**
 
    - System assigned managed identity: **Off**
 
@@ -137,7 +137,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
    > **Note**: Wait for the provisioning to complete. This should take less about 3 minutes.
 
-1. In the Azure portal, use the **Search resources, services, and docs** text box at the top of the Azure portal page to search for and navigate to the **Virtual machines** blade, then, on the **Virtual machines** blade, select **+ Create** and, in the drop-down menu, select **Virtual machine**.
+1. In the Azure portal, use the **Search resources, services, and docs** text box at the top of the Azure portal page to search for and navigate to the **Virtual machines** blade, then, on the **Virtual machines** blade, select **+ Create** and, in the drop-down menu, select **Azure virtual machine.**.
 
 1. On the **Basics** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Disks >** (leave all other settings with their default value):
 
@@ -197,7 +197,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
    - Boot diagnostics: **Enable with managed storage account (recommended)**
 
-   - OS guest diagnostics: **Off**
+   - Enable OS guest diagnostics: **Off**
 
    - System assigned managed identity: **Off**
 
@@ -802,7 +802,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
    > **Note**: Since two clustered Azure VMs are no longer directly accessible from Internet, you will deploy an Azure VM running Windows Server 2019 Datacenter that will serve as a jump host. 
 
-1. From the lab computer, in the Azure portal, use the **Search resources, services, and docs** text box at the top of the Azure portal page to search for and navigate to the **Virtual machines** blade, then, on the **Virtual machines** blade, select **+ Create** and, in the drop-down menu, select **Virtual machine**.
+1. From the lab computer, in the Azure portal, use the **Search resources, services, and docs** text box at the top of the Azure portal page to search for and navigate to the **Virtual machines** blade, then, on the **Virtual machines** blade, select **+ Create** and, in the drop-down menu, select **Azure virtual machine**.
 
 1. On the **Basics** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Disks >** (leave all other settings with their default value):
 
@@ -864,7 +864,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
    - Boot diagnostics: **Enable with managed storage account (recommended)**
 
-   - OS guest diagnostics: **Off**
+   - Enable OS guest diagnostics: **Off**
 
    - System assigned managed identity: **Off**
 
