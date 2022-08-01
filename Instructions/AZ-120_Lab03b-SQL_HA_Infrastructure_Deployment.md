@@ -1,5 +1,5 @@
 # AZ 120 Module 4: Deploy SAP on Azure
-# Lab 3b: Implement SAP architecture on Azure VMs running Windows
+# Lab 4b: Implement SAP architecture on Azure VMs running Windows
 
 Estimated Time: 150 minutes
 
