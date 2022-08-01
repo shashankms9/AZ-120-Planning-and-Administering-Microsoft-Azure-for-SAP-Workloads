@@ -212,7 +212,7 @@ In this task, you will deploy the scale-out file server (SOFS) cluster that will
 
     -   Name Prefix: **i20**
 
-    -   Vm Size: **Standard_D4_v3**
+    -   Vm Size: **Standard_D4_v2**
 
     -   Enable Accelerated Networking: **true**
 
@@ -622,7 +622,7 @@ In this exercise, you will configure operating system of Azure VMs running Windo
 
 ### Task 6: Set permissions on the \\\\GLOBALHOST\\sapmnt share
 
-In this task, you will set share-level permissions on the **\\\\GLOBALHOST\\sapmnt** share.
+In this task, you will set share-level permissions on the **\\\\GLOBALHOST\\sapmnt** share.Standard_D4_v3
 
 > **Note**: By default, the Full Control permissions are granted only to the ADATUM\Student account. 
 
