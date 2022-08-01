@@ -165,7 +165,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     -   Availability options: **No infrastructure redundancy required**
 
-    -   Image: **Windows Server 2019 Datacenter - Gen2**
+    -   Image: **Windows Server 2019 Datacenter - Gen1**
 
     -   Size: **Standard D2s_v3** or similar
 

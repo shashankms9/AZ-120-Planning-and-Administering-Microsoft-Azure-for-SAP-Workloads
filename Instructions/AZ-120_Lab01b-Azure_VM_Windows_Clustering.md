@@ -105,7 +105,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     -   Availability set: *a new availability set named* **az12001b-cl-avset** *with 2 fault domains and 5 update domains*
 
-    -   Image: **Windows Server 2019 Datacenter - Gen2**
+    -   Image: **Windows Server 2019 Datacenter - Gen1**
 
     -   Size: **Standard D4s v3**
 

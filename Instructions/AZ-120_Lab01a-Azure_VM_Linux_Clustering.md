@@ -428,7 +428,10 @@ In this exercise, you will configure operating system and storage on Azure VMs r
    /dev/disk/by-uuid/<UUID of /dev/vg_hana_shared-hana_shared (/dev/sdi)> /hana/shared xfs  defaults,nofail  0  2
    /dev/disk/by-uuid/<UUID of /dev/vg_usr_sap-usr_sap (/dev/sdj)> /usr/sap xfs  defaults,nofail  0  2
    ```
+   >**Note!**: If the window is not responsive please use the onscreen keyboard to edit/save the changes.
+   Select **'i'** to edit the content. To save the changes select **'esc'** followed by **:wp** and press **enter**.
 
+Step 16 note for save press esc then :wq then enter
 1. Save the changes and close the editor.
 
 1. In the Cloud Shell pane, in the SSH session to az12001a-vm0, mount the new volumes by running:
@@ -681,6 +684,10 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
    - Type: **Internal**
 
    - SKU: **Standard**
+
+1. Click on **Frontend IP configuration** at the bottom and select **+ Add a frontend IP to get started**.
+
+   - Name: **az12001a-lb0-IP**
 
    - Virtual network: **az12001a-RG-vnet**
 
