@@ -123,7 +123,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
    - Boot diagnostics: **Enable with managed storage account (recommended)**
 
-   - OS guest diagnostics: **Off**
+   - Enable OS guest diagnostics: **Off**
 
    - System assigned managed identity: **Off**
 
@@ -137,7 +137,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
    > **Note**: Wait for the provisioning to complete. This should take less about 3 minutes.
 
-1. In the Azure portal, use the **Search resources, services, and docs** text box at the top of the Azure portal page to search for and navigate to the **Virtual machines** blade, then, on the **Virtual machines** blade, select **+ Create** and, in the drop-down menu, select **Virtual machine**.
+1. In the Azure portal, use the **Search resources, services, and docs** text box at the top of the Azure portal page to search for and navigate to the **Virtual machines** blade, then, on the **Virtual machines** blade, select **+ Create** and, in the drop-down menu, select **Azure virtual machine.**.
 
 1. On the **Basics** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Disks >** (leave all other settings with their default value):
 
@@ -197,7 +197,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
    - Boot diagnostics: **Enable with managed storage account (recommended)**
 
-   - OS guest diagnostics: **Off**
+   - Enable OS guest diagnostics: **Off**
 
    - System assigned managed identity: **Off**
 
@@ -216,7 +216,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 1. In the Azure Portal, start a Bash session in Cloud Shell. 
 
-   > **Note**: If this is the first time you are launching Cloud Shell in the current Azure subscription, you will be asked to create an Azure file share to persist Cloud Shell files. If so, accept the defaults, which will result in creation of a storage account in an automatically generated resource group.
+   > **Note**: When prompted, select **Show advanced settings** and then select **Use existing** and choose existing resource group. Then select **Create new** against Storage account as well as File Share and provide a unique value in both of the fields and then click on **Create storage**, and wait for the Azure Cloud Shell to initialize.
 
 1. In the Cloud Shell pane, run the following command to set the value of the variable `RESOURCE_GROUP_NAME` to the name of the resource group containing the resources you provisioned in the previous task:
 
@@ -294,7 +294,7 @@ In this exercise, you will configure operating system and storage on Azure VMs r
    > **Note**: **Deployment ID** is provided under Environment tab.
 
    ```cli
-   RESOURCE_GROUP_NAME='az12001a-RG-Deployment Id'
+   RESOURCE_GROUP_NAME='az12001a-RG'
    ```
 
 1. In the Cloud Shell pane, run the following command to identify the public IP address of the first Azure VM you deployed in the previous exercise:
@@ -635,13 +635,13 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
 1. From the **az12001a-vm0** blade, navigate to the **az12001a-vm0 \| Networking** blade and, on the **az12001a-vm0 \| Networking** blade, select the entry representing the public IP address **az12001a-vm0-ip** associated with its network adapter.
 
-1. On the **az12001a-vm0-ip** blade, select **Dissociate** to disconnect the public IP address from the network interface and then select **Delete** to delete it.
+1. On the az12001a-vm0-ip blade, select Dissociate, and then select Yes to disconnect the public IP address from the network interface and then select Delete and then Yes to delete it.
 
 1. In the Azure portal, navigate to the blade of the **az12001a-vm1** Azure VM.
 
 1. From the **az12001a-vm1** blade, navigate to the **az12001a-vm1 \| Networking** blade and, on the **az12001a-vm1 \| Networking** blade, select the entry representing the public IP address **az12001a-vm1-ip** associated with its network adapter.
 
-1. On the **az12001a-vm1-ip** blade, select **Dissociate** to disconnect the public IP address from the network interface and then select **Delete** to delete it.
+1. On the az12001a-vm1-ip blade, select Dissociate, and then select Yes to disconnect the public IP address from the network interface and then select Delete and then Yes to delete it.
 
 1. In the Azure portal, navigate to the blade of the **az12001a-vm0** Azure VM.
 
@@ -802,7 +802,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
    > **Note**: Since two clustered Azure VMs are no longer directly accessible from Internet, you will deploy an Azure VM running Windows Server 2019 Datacenter that will serve as a jump host. 
 
-1. From the lab computer, in the Azure portal, use the **Search resources, services, and docs** text box at the top of the Azure portal page to search for and navigate to the **Virtual machines** blade, then, on the **Virtual machines** blade, select **+ Create** and, in the drop-down menu, select **Virtual machine**.
+1. From the lab computer, in the Azure portal, use the **Search resources, services, and docs** text box at the top of the Azure portal page to search for and navigate to the **Virtual machines** blade, then, on the **Virtual machines** blade, select **+ Create** and, in the drop-down menu, select **Azure virtual machine**.
 
 1. On the **Basics** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Disks >** (leave all other settings with their default value):
 
@@ -864,7 +864,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
    - Boot diagnostics: **Enable with managed storage account (recommended)**
 
-   - OS guest diagnostics: **Off**
+   - Enable OS guest diagnostics: **Off**
 
    - System assigned managed identity: **Off**
 

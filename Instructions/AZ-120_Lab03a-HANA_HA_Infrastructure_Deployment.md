@@ -44,7 +44,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 1.  In the Azure Portal, start a Bash session in Cloud Shell. 
 
-   **Note**: If this is the first time you are launching Cloud Shell in the current Azure subscription, you will be asked to create an Azure file share to persist Cloud Shell files. If so, accept the defaults, which will result in creation of a storage account in an automatically generated resource group.
+   **Note**: When prompted, select Show advanced settings and then select Use existing and choose existing resource group. Then select Create new against Storage account as well as File Share and provide a unique value in both of the fields and then click on Create storage, and wait for the Azure Cloud Shell to initialize.
 
 1.  In the Cloud Shell pane, run the following command to specify the Azure region that supports availability zones and where you want to create resources for this lab (replace `<region>` with the name of the Azure region which supports availablity zones):
 
@@ -88,7 +88,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 ### Task 2: Deploy Azure Resource Manager template provisioning Azure VMs running Linux SUSE that will host a highly available SAP NetWeaver deployment
 
-1.  On the lab computer, in the Azure portal, search for and select **Template deployment (deploy using custom template)** or use link to open directly https://github.com/Azure/azure-quickstart-templates/tree/master/application-workloads/sap/sap-3-tier-marketplace-image-md scroll down and select **Deploy to Azure**.
+1.  On the lab computer, start a browser and browse to https://github.com/Azure/azure-quickstart-templates/tree/master/application-workloads/sap/sap-3-tier-marketplace-image-md
 
     > **Note**: Make sure to use Microsoft Edge or a third party browser. Do not use Internet Explorer.
 
@@ -97,10 +97,6 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 1.  On the **Edit template** blade, apply the following changes and select **Save**:
 
     -   in the line **197**, replace `"dbVMSize": "Standard_E8s_v3",` with `"dbVMSize": "Standard_D4s_v3",`
-
-    -   in the line **198**, replace `"ascsVMSize": "Standard_D2s_v3",` with `"ascsVMSize": "Standard_DS1_v2",`
-
-    -   in the line **199**, replace `"diVMSize": "Standard_D2s_v3",` with `"diVMSize": "Standard_DS1_v2",`
 
 1.  On the **SAP NetWeaver 3-tier (managed disk)** blade, initiate deployment with the following settings:
 
@@ -169,9 +165,9 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     -   Availability options: **No infrastructure redundancy required**
 
-    -   Image: **Windows Server 2019 Datacenter - Gen 1**
+    -   Image: **Windows Server 2019 Datacenter - Gen2**
 
-    -   Size: **Standard DS1 v2** or similar
+    -   Size: **Standard D2s_v3** or similar
 
     -   Username: **Student**
 
@@ -185,7 +181,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     -   OS disk type: **Standard HDD**
 
-    -   Virtual network: **az12003a-sap-vnet**
+    -   Virtual network: **az12003a-sap-vnet**(Used the existing one).
 
     -   Subnet: a new subnet named **bastionSubnet (10.3.255.0/24)**
 
