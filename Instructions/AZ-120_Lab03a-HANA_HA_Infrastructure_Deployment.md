@@ -165,7 +165,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     -   Availability options: **No infrastructure redundancy required**
 
-    -   Image: **Windows Server 2019 Datacenter - Gen1**
+    -   Image: **Windows Server 2019 Datacenter - Gen1**. Click on **Configure VM Generation** and select **Generation 1**.
 
     -   Size: **Standard D2s_v3** or similar
 
@@ -552,7 +552,7 @@ In this exercise, you will configure clustering on Azure VMs running Linux to su
 
 1.  On the **Register an application** blade, specify the following settings, and click **Register**:
 
-    -   Name: **Stonith app**
+    -   Name: **Stonith app<inject key="DeploymentID" enableCopy="false" />**
 
     -   Supported account type: **Accounts in this organizational directory only**
 
