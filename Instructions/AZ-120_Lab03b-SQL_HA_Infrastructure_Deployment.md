@@ -46,9 +46,9 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 1.  From the **New** blade, initiate creation of a new **Template deployment (deploy using custom templates)**
 
-1.  From the **Custom deployment** blade, in the **Quickstart template (disclaimer)** drop-down list, select the entry **application-workloads/active-directory/active-directory-new-domain-ha-2-dc-zone**, and click **Select template**.
+1.  From the **Custom deployment** blade, in the **Quickstart template (disclaimer)** drop-down list, select the entry **application-workloads/active-directory/active-directory-new-domain-ha-2-dc-zones**, and click **Select template**.
 
-    > **Note**: Alternatively, you can launch the deployment by navigating to Azure Quickstart Templates page at <https://github.com/Azure/azure-quickstart-templates/tree/master/application-workloads/active-directory/active-directory-new-domain-ha-2-dc-zones>, locating the template named **Create 2 new Windows VMs, a new AD Forest, Domain and 2 DCs in separate availability zones**, and initiating its deployment by clicking **Deploy to Azure** button.
+    > **Note**: Alternatively, you can launch the deployment by navigating to Azure Quickstart Templates page at <https://github.com/Azure/azure-quickstart-templates>, locating the template named **Create 2 new Windows VMs, a new AD Forest, Domain and 2 DCs in separate availability zones**, and initiating its deployment by clicking **Deploy to Azure** button.
 
 1.  On the blade **Create a new AD Domain with 2 DCs using Availability Zones**, specify the following settings and click **Review+create** to initiate the deployment:
 
@@ -222,9 +222,9 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 ### Task 4: Deploy the Scale-Out File Server (SOFS) cluster
 
-In this task, you will deploy the scale-out file server (SOFS) cluster that will be hosting a file share for the SAP ASCS servers by using an Azure Resource Manager QuickStart template from GitHub available at [**https://github.com/robotechredmond/301-storage-spaces-direct-md**](https://github.com/robotechredmond/301-storage-spaces-direct-md). 
+In this task, you will deploy the scale-out file server (SOFS) cluster that will be hosting a file share for the SAP ASCS servers by using an Azure Resource Manager QuickStart template from GitHub available at [**https://github.com/polichtm/301-storage-spaces-direct-md**](https://github.com/polichtm/301-storage-spaces-direct-md). 
 
-1.  On the lab computer, start a browser and browse to [**https://github.com/robotechredmond/301-storage-spaces-direct-md**](https://github.com/robotechredmond/301-storage-spaces-direct-md). 
+1.  On the lab computer, start a browser and browse to [**https://github.com/polichtm/301-storage-spaces-direct-md**](https://github.com/polichtm/301-storage-spaces-direct-md). 
 
     > **Note**: Make sure to use Microsoft Edge or a third party browser. Do not use Internet Explorer.
 
@@ -278,13 +278,35 @@ In this task, you will deploy the scale-out file server (SOFS) cluster that will
 
     -   Scheduled Antimalware Time: **120**
 
-    -   \_artifacts Location: **Accept the default value**
+    -   \_artifacts Location: **https://raw.githubusercontent.com/polichtm/301-storage-spaces-direct-md/master**
 
     -   \_artifacts Location Sas Token: **Leave the default value**
 
-    -   I agree to the terms and conditions stated above: *enabled*
-
 1.  The deployment might take about 20 minutes. Do not wait for the deployment to complete but instead proceed to the next task.
+
+    > **Note**: If the deployment fails with the **Conflict** error message during deployment of the i20-s2d-1/s2dPrep or i20-s2d-0/s2dPrep component, use the following steps  to remediate this issue:
+
+       - In the Azure portal, navigate to the **i20-s2d-0** virtual machine, in the vertical navigation menu, in the **Operations** section, select **Run command**, on the **Run Command Script** pane, in the **PowerShell Script** text box, enter the following script and select the **Run** button:
+
+       ```
+       $domain = 'adatum.com'
+       $password = 'Pa55w.rd1234' | ConvertTo-SecureString -asPlainText -Force
+       $username = "Student@$domain" 
+       $credential = New-Object System.Management.Automation.PSCredential($username,$password)
+       Add-Computer -DomainName $domain -Credential $credential -Restart -Force
+       ```
+
+       - Navigate to the blade of the **i20-s2d-1** virtual machine, in the vertical navigation menu, in the **Operations** section, select **Run command**, on the **Run Command Script** pane, in the **PowerShell Script** text box, enter the following script and select the **Run** button:
+
+       ```
+       $domain = 'adatum.com'
+       $password = 'Pa55w.rd1234' | ConvertTo-SecureString -asPlainText -Force
+       $username = "Student@$domain" 
+       $credential = New-Object System.Management.Automation.PSCredential($username,$password)
+       Add-Computer -DomainName $domain -Credential $credential -Restart -Force
+       ```
+       
+       - Rerun the steps of the current task from the beginninig
 
 ### Task 5: Deploy a jump host
 
