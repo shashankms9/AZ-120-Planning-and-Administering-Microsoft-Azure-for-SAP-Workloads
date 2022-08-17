@@ -429,7 +429,7 @@ In this exercise, you will configure operating system and storage on Azure VMs r
    /dev/disk/by-uuid/<UUID of /dev/vg_usr_sap-usr_sap (/dev/sdj)> /usr/sap xfs  defaults,nofail  0  2
    ```
    >**Note!**: If the window is not responsive please use the onscreen keyboard to edit/save the changes.
-   Select **'i'** to edit the content. To save the changes select **'esc'** followed by **:wp** and press **enter**.
+   Select **'i'** to edit the content. To save the changes select **'esc'** followed by **:wq** and press **enter**.
 
 Step 16 note for save press esc then :wq then enter
 1. Save the changes and close the editor.
