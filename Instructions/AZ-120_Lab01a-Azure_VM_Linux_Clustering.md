@@ -687,7 +687,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
 1. Click on **Frontend IP configuration** at the bottom and select **+ Add a frontend IP to get started**.
 
-   - Name: **az12001a-lb0-IP**
+   - Name: **frontend1**
 
    - Virtual network: **az12001a-RG-vnet**
 
