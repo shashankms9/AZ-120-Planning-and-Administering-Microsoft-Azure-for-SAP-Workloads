@@ -576,7 +576,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
 ### Task 2: Create and configure Azure Load Balancers handling inbound traffic
 
-1.  In the Azure portal, click **+ Create a resource**.
+1.  In the Azure portal, on the Search resources,services, and docs (G+/),search for Load Balancer.
 
 1.  From the **New** blade, initiate creation of a new Azure Load Balancer with the following settings:
 
@@ -594,7 +594,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
     -   Virtual network: **adVNET**
        
-1.  From the **az12001b-cl-lb0** blade, add a Frontend pool with the following settings:
+1.  Click on **Next:Frontend IP configuration**, add a Frontend pool with the following settings:
       
     -  Name: **az12001b-cl-lb0-fe**
 
@@ -609,7 +609,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
 1.  Wait until the load balancer is provisioned and then navigate to its blade in the Azure portal.
 
-1.  From the **az12001b-cl-lb0** blade, add a backend pool with the following settings:
+1.  From the **az12001b-cl-lb0** blade, add a backend pool with the following settings and click **Save**:
 
     -   Name: **az12001b-cl-lb0-bepool**
 
@@ -771,7 +771,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
     -   Availability options: **No infrastructure redundancy required**
 
-    -   Image: **Windows Server 2019 Datacenter**
+    -   Image: **Windows Server 2019 Datacenter - Gen1**
 
     -   Size: **Standard DS1 v2*** or similar*
 
@@ -811,7 +811,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
     -   System assigned managed identity: **Off**
 
-    -   Login with AAD credentials (Preview): **Off**
+    -   Login with Azure AD: **Off**
 
     -   Enable auto-shutdown: **Off**
 
