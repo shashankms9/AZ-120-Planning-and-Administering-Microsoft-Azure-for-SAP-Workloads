@@ -826,29 +826,3 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 6. Ensure that you can establish SSH session to both az12001a-vm0 and az12001a-vm1 via their private IP addresses (192.168.0.4 and 192.168.0.5, respectively). 
 
 > **Result**: After you completed this exercise, you have provisioned Azure network resources necessary to support highly available SAP HANA deployments
-
-
-## Exercise 4: Remove lab resources
-
-Duration: 10 minutes
-
-In this exercise, you will remove resources provisioned in this lab.
-
-#### Task 1: Open Cloud Shell
-
-1. At the top of the portal, click the **Cloud Shell** icon to open Cloud Shell pane and choose Bash as the shell.
-
-1. In the Cloud Shell pane, run the following command to set the value of the variable `RESOURCE_GROUP_PREFIX` to the prefix of the name of the resource group containing the resources you provisioned in this lab:
-
-   ```cli
-   RESOURCE_GROUP_PREFIX='az12001a-'
-   ```
-
-1. In the Cloud Shell pane, run the following command to list all resource groups you created in this lab:
-
-   ```cli
-   az group list --query "[?starts_with(name,'$RESOURCE_GROUP_PREFIX')]".name --output tsv
-   ```
-
-1. Verify that the output contains only the resource group you created in this lab. This resource group with all of their resources will be deleted in the next task.
-
