@@ -47,7 +47,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
    - Subscription: **Select your Azure subscription**
 
-   - Resource group: Resource group: select the existed resource group name* **az12001a-RG**
+   - Resource group: Resource group: select the existed resource group name **az12001a-RG**
 
    > **Note**: Consider using the Resource group region, i.e **East US** or **East US2** for the deployment of your resources. 
 
@@ -93,7 +93,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
    - OS disk type: **Premium SSD**
 
-   - Encryption type: **(Default) Encryption at rest with a platform-managed key**
+   - Key management: **Platform-managed key**
 
 1. On the **Networking** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Management >** (leave all other settings with their default value):
 
@@ -171,7 +171,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
    - OS disk type: **Premium SSD**
 
-   - Encryption type: **(Default) Encryption at rest with a platform-managed key**
+   - Key management: **Platform-managed key**
 
 1. On the **Networking** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Management >** (leave all other settings with their default value):
 
@@ -843,7 +843,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
    - OS disk type: **Standard HDD**
 
-   - Encryption type: **(Default) Encryption at rest with a platform-managed key**
+   - Key management: **Platform-managed key**
 
 1. On the **Networking** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Management >** (leave all other settings with their default value):
 
@@ -869,11 +869,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
    > **Note**: This setting is not available if you have already selected the Azure Security Center plan.
 
-   - Boot diagnostics: **Enable with managed storage account (recommended)**
-
-   - Enable OS guest diagnostics: **Off**
-
-   - System assigned managed identity: **Off**
+   -  Enable System assigned managed identity: **Off**
 
    - Enable auto-shutdown: **Off**
 
