@@ -121,11 +121,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
    > **Note**: This setting is not available if you have already selected the Azure Security Center plan.
 
-   - Boot diagnostics: **Enable with managed storage account (recommended)**
-
-   - Enable OS guest diagnostics: **Off**
-
-   - System assigned managed identity: **Off**
+   - Enable System assigned managed identity: **Off**
 
    - Enable auto-shutdown: **Off**
 
