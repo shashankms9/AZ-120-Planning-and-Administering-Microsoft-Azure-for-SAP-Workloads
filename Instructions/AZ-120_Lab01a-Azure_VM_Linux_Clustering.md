@@ -48,7 +48,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
     | Setting | Value |
     |   --    |  --   |
     | **Subscription** | *the name of your Azure subscription*  |
-    | **Resource group** section | Select **Create new**, enter **az12001a-RG**, and then select **OK** |
+    | **Resource group** section | Select **existing**, resource group **az12001a-RG**, and then select **OK** |
     | **Region** | *an Azure region where you can deploy Azure VMs* |
     | **Proximity placement group name** | Select **az12001a-ppg** |
 
