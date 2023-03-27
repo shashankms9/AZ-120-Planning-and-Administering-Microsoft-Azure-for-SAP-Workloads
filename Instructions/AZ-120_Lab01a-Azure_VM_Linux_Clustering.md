@@ -37,7 +37,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 ### Task 1: Deploy Azure VMs running Linux SUSE
 
-1. From the lab computer, start a Web browser, and navigate to the Azure portal at https://portal.azure.com
+1. From the lab computer, start a Web browser, and navigate to the Azure portal at 'https://portal.azure.com'
 
 1. If prompted, sign in with the work or school or personal Microsoft account with the owner or contributor role to the Azure subscription you will be using for this lab.
 
@@ -65,7 +65,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
    - Subscription: **Select your Azure subscription**
 
-   - Resource group: **the name of the resource group you used earlier in this task**
+   - Resource group: **az12001a-RG**
 
    - Virtual machine name: **az12001a-vm0**
 
@@ -111,7 +111,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
    > **Note**: This image has preconfigured NSG rules
 
-   - Accelerated networking: **On**
+   - Enable accelerated networking: **On**
 
    - Place this virtual machine behind an existing load balancing solutions: **No**
 
@@ -143,7 +143,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
    - Subscription: **Select your Azure subscription**
 
-   - Resource group: **the name of the resource group you used earlier in this task**
+   - Resource group: **az12001a-RG**
 
    - Virtual machine name: **az12001a-vm1**
 
@@ -185,7 +185,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
    > **Note**: This image has preconfigured NSG rules
 
-   - Accelerated networking: **On**
+   - Enable accelerated networking: **On**
 
    - Place this virtual machine behind an existing load balancing solutions: **No**
 
@@ -250,7 +250,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
    - Disk name: **az12001a-vm0-DataDisk0**
 
-   - Resource group: *the name of the resource group you used earlier in this task*
+   - Resource group: **az12001a-RG**
 
    - HOST CACHING: **Read-only**
 
@@ -410,7 +410,7 @@ In this exercise, you will configure operating system and storage on Azure VMs r
    blkid
    ```
 
-   > **Note**: Identify the **UUID** values associated with the newly created volume groups and partitions, including **/dev/sdi** (to be used for **/hana/shared**) and **dev/sdj** (to be used for **/usr/sap**).
+   > **Note**: Identify the **UUID** values associated with the newly created volume groups and partitions, including **/dev/sdi** (to be used for **/hana/shared**) and **dev/sdj** (to be used for **/usr/sap**) and copy these UUID values in notepad.
 
 
 1. In the Cloud Shell pane, in the SSH session to az12001a-vm0, open **/etc/fstab** in the vi editor (you are free to use any other editor) by running:
@@ -429,7 +429,7 @@ In this exercise, you will configure operating system and storage on Azure VMs r
    /dev/disk/by-uuid/<UUID of /dev/vg_usr_sap-usr_sap (/dev/sdj)> /usr/sap xfs  defaults,nofail  0  2
    ```
    >**Note!**: If the window is not responsive please use the onscreen keyboard to edit/save the changes.
-   Select **'i'** to edit the content. To save the changes select **'esc'** followed by **:wq** and press **enter**.
+   Select **'i'** to edit the content. To save the changes select **'Ctrl+['** and **Shift+:** followed by **:wq** and press **enter**.
 
 Step 16 note for save press esc then :wq then enter
 1. Save the changes and close the editor.
@@ -675,7 +675,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
    - Subscription: **Select your Azure subscription**
 
-   - Resource group: **the name of the resource group you used earlier in this lab**
+   - Resource group: **az12001a-RG**
 
    - Name: **az12001a-lb0**
 
@@ -815,7 +815,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
    - Subscription: **Select your Azure subscription**
 
-   - Resource group: **the name of the resource group you used earlier in this lab**
+   - Resource group: **az12001a-RG**
 
    - Virtual machine name: **az12001a-vm2**
 
@@ -825,9 +825,9 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
    - Image: **Windows Server 2019 Datacenter - Gen1**
 
-   - Size: **Standard DS1 v2*** or similar*
+   - Size: **Standard DS1 v2** or similar*
 
-   - Azure Spot Instance: **No**
+   - Run with Azure Spot Discount: **No**
 
    - Username: **Student**
 
@@ -859,9 +859,9 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
    - Select inbound ports: **RDP (3389)**
 
-   - Accelerated networking: **Off**
+   - Enable accelerated networking: **Off**
 
-   - Place this virtual machine behind an existing load balancing solutions: **No**
+   - Load balancing Options: **None***
 
 1. On the **Management** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Advanced >** (leave all other settings with their default value):
 
