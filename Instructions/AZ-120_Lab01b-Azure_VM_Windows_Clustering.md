@@ -129,7 +129,14 @@ In this exercise, you will deploy Azure infrastructure compute components necess
     | **Public inbound ports** | **Allow selected ports** |
     | **Selected inbound ports** | **RDP (3389)** |
     | **Would you like to use an existing Windows Server license?** | **No** |
+    
+ 1. click on disk
+     | Setting | Value |
+    |   --    |  --   |
     | **OS disk type** | **Premium SSD** |
+ 1. click on networking
+     | Setting | Value |
+    |   --    |  --   |
     | **Virtual network** | **adVNET** |
     | **Subnet name** | *a new subnet named* **clSubnet** |
     | **Subnet address range** | **10.0.1.0/24** |
@@ -137,10 +144,16 @@ In this exercise, you will deploy Azure infrastructure compute components necess
     | **NIC network security group** | **Basic**  |
     | **Enable accelerated networking** | **On** |
     | **Load balancing Options** | **None** |
+ 1. click on Management
+     | Setting | Value |
+    |   --    |  --   |
     | **Enable system assigned managed identity** | **Off** |
     | **Login with Azure AD** | **Off** |
     | **Enable auto-shutdown** | **Off** |
     | **Patch orchestration option** | **Manual Updates** |
+  1. click on Monitoring
+    | Setting | Value |
+    |   --    |  --   |
     | **Boot diagnostics** | **Disable** |
     | **Extensions** | *None* |
     | **Tags** | *None* |
