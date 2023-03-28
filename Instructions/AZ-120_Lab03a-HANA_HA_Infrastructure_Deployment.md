@@ -97,44 +97,30 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 1.  On the **Edit template** blade, apply the following changes and select **Save**:
 
     -   in the line **197**, replace `"dbVMSize": "Standard_E8s_v3",` with `"dbVMSize": "Standard_D4s_v3",`
+    
+1. On the **SAP NetWeaver 3-tier (managed disk)** blade, initiate deployment with the following settings:
 
-1.  On the **SAP NetWeaver 3-tier (managed disk)** blade, initiate deployment with the following settings:
+    | Setting | Value |
+    |   --    |  --   |
+    | **Subscription** | *the name of your Azure subscription*  |
+    | **Resource group** | *the name of the resource group you used in the previous task* |
+    | **Location** | *the same Azure region that you specified in the first task of this exercise* |
+    | **SAP System Id** | **I20** |
+    | **Stack Type** | **ABAP** |
+    | **Os Type** | **SLES 12** |
+    | **Dbtype** | **HANA** |
+    | **Sap System Size** | **Demo** |
+    | **System Availability** | **HA** |
+    | **Admin Username** | **student** |
+    | **Authentication Type** | **password** |
+    | **Admin Password Or Key** | **Pa55w.rd1234** |
+    | **Subnet Id** | *the value you copied into Clipboard in the previous task* |
+    | **Availability Zones** | **1,2** |
+    | **Location** | **[resourceGroup().location]** |
+    | **_artifacts Location** | **https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/application-workloads/sap/sap-3-tier-marketplace-image-md/** |
+    | **_artifacts Location Sas Token** | *leave blank* |
 
-    -   Subscription: *the name of your Azure subscription*
-
-    -   Resource group: *the name of the resource group you used in the previous task*
-
-    -   Location: *the same Azure region that you specified in the first task of this exercise*
-
-    -   SAP System Id: **I20**
-
-    -   Stack Type: **ABAP**
-
-    -   Os Type: **SLES 12**
-
-    -   Dbtype: **HANA**
-
-    -   Sap System Size: **Demo**
-
-    -   System Availability: **HA**
-
-    -   Admin Username: **student**
-
-    -   Authentication Type: **password**
-
-    -   Admin Password Or Key: **Pa55w.rd1234**
-
-    -   Subnet Id: *the value you copied into Clipboard in the previous task*
-
-    -   Availability Zones: **1,2**
-
-    -   Location: **[resourceGroup().location]**
-
-    -   _artifacts Location: **https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/application-workloads/sap/sap-3-tier-marketplace-image-md/**
-
-    -   _artifacts Location Sas Token: *leave blank*
-
-1.  Do not wait for the deployment to complete but instead proceed to the next task. 
+1. Do not wait for the deployment to complete but instead proceed to the next task. 
 
     > **Note**: If the deployment fails with the **Conflict** error message during deployment of the CustomScriptExtension component, use the following steps  to remediate this issue:
 
@@ -149,74 +135,46 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
    > **Note**: Since Azure VMs you deployed in the previous task are not accessible from Internet, you will deploy an Azure VM running Windows Server 2019 Datacenter that will serve as a jump host. 
 
-1.  From the lab computer, in the Azure portal, click **+ Create a resource**.
+1. From the lab computer, in the Azure portal, click **+ Create a resource**.
 
-1.  From the **New** blade, initiate creation of a new Azure VM based on the **Windows Server 2019 Datacenter** image.
+1. From the **New** blade, initiate creation of a new Azure VM based on the **Windows Server 2019 Datacenter** image.
 
-1.  Provision a Azure VM with the following settings (leave all others with their default values):
+1. Provision a Azure VM with the following settings (leave all others with their default values):
 
-    -   Subscription: *the name of your Azure subscription*
+    | Setting | Value |
+    |   --    |  --   |
+    | **Subscription** | *the name of your Azure subscription*  |
+    | **Resource group** | *the name of a new resource group* **az12003a-dmz-RG** |
+    | **Virtual machine name** | **az12003a-vm0** |
+    | **Region** | *the same Azure region where you deployed Azure VMs in the previous tasks of this exercise* |
+    | **Availability options** | **No infrastructure redundancy required** |
+    | **Image** | *select* **Windows Server 2019 Datacenter - Gen2** |
+    | **Size** | **Standard D2s_v3** or similar |
+    | **Username** | **Student** |
+    | **Password** | **Pa55w.rd1234** |
+    | **Public inbound ports** | **Allow selected ports** |
+    | **Selected inbound ports** | **RDP (3389)** |
+    | **Would you like to use an existing Windows Server license?** | **No** |
+    | **OS disk type** | **Standard HDD** |
+    | **Virtual network** | **az12003a-sap-vnet** |
+    | **Subnet name** | *a new subnet named* **bastionSubnet** |
+    | **Subnet address range** | **10.3.255.0/24** |
+    | **Public IP address** | *a new IP address named* **az12003a-vm0-ip** |
+    | **NIC network security group** | **Basic**  |
+    | **Public inbound ports** | **Allow selected ports** |
+    | **Selected inbound ports** | **RDP (3389)** |
+    | **Enable accelerated networking** | **On** |
+    | **Load balancing Options** | **None** |
+    | **Enable system assigned managed identity** | **Off** |
+    | **Login with Azure AD** | **Off** |
+    | **Enable auto-shutdown** | **Off** |
+    | **Patch orchestration options** | **Manual Updates** |
+    | **Boot diagnostics** | **Disable** |
+    | **Enable OS guest diagnostics** | **Off** |
+    | **Extensions** | *None* |
+    | **Tags** | *None* |
 
-    -   Resource group: *the name of a new resource group* **az12003a-dmz-RG**
-
-    -   Virtual machine name: **az12003a-vm0**
-
-    -   Region: *the same Azure region where you deployed Azure VMs in the previous tasks of this exercise*
-
-    -   Availability options: **No infrastructure redundancy required**
-
-    -   Image: **Windows Server 2019 Datacenter - Gen1**. Click on **Configure VM Generation** and select **Generation 1**.
-
-    -   Size: **Standard D2s_v3** or similar
-
-    -   Username: **Student**
-
-    -   Password: **Pa55w.rd1234**
-
-    -   Public inbound ports: **Allow selected ports**
-
-    -   Select inbound ports: **RDP (3389)**
-
-    -   Already have a Windows license?: **No**
-
-    -   OS disk type: **Standard HDD**
-
-    -   Virtual network: **az12003a-sap-vnet**(Used the existing one).
-
-    -   Subnet: a new subnet named **bastionSubnet (10.3.255.0/24)**
-
-    -   Public IP: *a new IP address named* **az12003a-vm0-ip**
-
-    -   NIC network security group: **Basic**
-
-    -   Public inbound ports: **Allow selected ports**
-
-    -   Select inbound ports: **RDP (3389)**
-
-    -   Accelerated networking: **Off**
-
-    -   Place this virtual machine behind an existing load balancing solutions: **No**
-
-    -   Boot diagnostics: **Disable**
-
-    -   OS guest diagnostics: **Off**
-
-    -   System assigned managed identity: **Off**
-
-    -   Login with AAD credentials (Preview): **Off**
-
-    -   Enable auto-shutdown: **Off**
-
-    -   Enable backup: **Off**
-
-    -   Patch orchestration options **Manual updates**
-
-    -   Extensions: **None**
-
-    -   Tags: **None**
-
-1.  Wait for the provisioning to complete. This should take a few minutes.
-
+1. Wait for the provisioning to complete. This should take a few minutes.
 > **Result**: After you completed this exercise, you have provisioned Azure resources necessary to support highly available SAP NetWeaver deployments
 
 
