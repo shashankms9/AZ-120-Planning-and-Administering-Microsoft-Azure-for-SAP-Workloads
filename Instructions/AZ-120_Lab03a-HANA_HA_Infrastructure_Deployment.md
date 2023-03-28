@@ -259,7 +259,7 @@ In this exercise, you will configure Azure VMs running SUSE Linux Enterprise Ser
 
 1.  From the lab computer, in the Azure portal, navigate to the **az12003a-vm0** blade.
 
-1.  From the **az12003a-vm0** blade, connect to the Azure VM az12003a-vm0 via Remote Desktop. 
+1.  From the **az12003a-vm0** blade, connect to the Azure VM az12003a-vm0 via Remote Desktop, select **Download RDP file** and open the downloaded RDP file, click on **Connect**. 
 
     -   Login as: **.\student**
 
@@ -321,7 +321,7 @@ In this exercise, you will configure Azure VMs running SUSE Linux Enterprise Ser
 
 1.  In the vi editor, paste the key you generated on i20-db-0.
 
-1.  Save the changes and close the editor.
+1.  Press **esc key** and enter **:wq** to save the changes and close the editor.
 
 1.  In the SSH session to i20-db-1, generate passphrase-less SSH key by running:
 
@@ -345,7 +345,7 @@ In this exercise, you will configure Azure VMs running SUSE Linux Enterprise Ser
 
 1.  In the vi editor, paste the key you generated on i20-db-1 starting from a new line.
 
-1.  Save the changes and close the editor.
+1.  Press **esc key** and enter **:wq** to save the changes and close the editor.
 
 1.  To verify that the configuration on was successful, in the SSH session to i20-db-0, establish an SSH session as **root** from i20-db-0 to i20-db-1 by running: 
 
