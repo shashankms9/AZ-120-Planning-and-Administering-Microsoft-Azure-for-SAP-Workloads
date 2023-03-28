@@ -50,30 +50,22 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     > **Note**: Alternatively, you can launch the deployment by navigating to Azure Quickstart Templates page at <https://github.com/Azure/azure-quickstart-templates>, locating the template named **Create 2 new Windows VMs, a new AD Forest, Domain and 2 DCs in separate availability zones**, and initiating its deployment by clicking **Deploy to Azure** button.
 
-1.  On the blade **Create a new AD Domain with 2 DCs using Availability Zones**, specify the following settings and click **Review+create** to initiate the deployment:
+1. On the blade **Create a new AD Domain with 2 DCs using Availability Zones**, specify the following settings, click **Review + create**, and then click **Create** to initiate the deployment:
 
-    -   Subscription: *the name of your Azure subscription*
-
-    -   Resource group: *the name of a existing resource group* **az12003b-ad-RG**
-
-    -   Location: *an Azure region where you can deploy Azure VMs*
-
-    -   Admin Username: **Student**
-
-    -   Location: *the same Azure region you specified above*
-
-    -   Password: **Pa55w.rd1234**
-
-    -   Domain Name: **adatum.com**
-
-    -   DnsPrefix: *any unique valid DNS prefix*
-
-    -   Vm Size: **Standard D4S_v3**
-
-    -   _artifacts Location: *https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/application-workloads/active-directory/active-directory-new-domain-ha-2-dc-zones/*
-
-    -   _artifacts Location Sas Token: *leave blank*
-
+    | Setting | Value |
+    |   --    |  --   |
+    | **Subscription** | *the name of your Azure subscription*  |
+    | **Resource group** | *the name of a existing resource group* **az12003b-ad-RG** |
+    | **Location** | *an Azure region where you can deploy Azure VMs* |
+    | **Admin Username** | **Student** |
+    | **Location** | *the same Azure region you specified above* |
+    | **Password** | **Pa55w.rd1234** |
+    | **Domain Name** | **adatum.com** |
+    | **DnsPrefix** | *Use any unique valid DNS prefix* |
+    | **Vm Size** | **Standard D2s_v3** |
+    | **_artifacts Location** | **https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/application-workloads/active-directory/active-directory-new-domain-ha-2-dc-zones/** |
+    | **_artifacts Location Sas Token** | *leave blank* |
+    
     > **Note**: The deployment should take about 35 minutes. Wait for the deployment to complete before you proceed to the next task.
 
     > **Note**: If the deployment fails with the **Conflict** error message during deployment of the CustomScriptExtension component, use the following steps  to remediate this issue:
@@ -178,45 +170,29 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     -   in the line **199**, replace `"diVMSize": "Standard_D2s_v3",` with `"diVMSize": "Standard_DS1_v2",`
 
-1.  Back on the **SAP NetWeaver 3-tier (managed disk)** blade, initiate deployment with the following settings:
+1. Back on the **SAP NetWeaver 3-tier (managed disk)** blade, specify the following settings, click **Review + create**, and then click **Create** to initiate the deployment:
 
-    -   Subscription: *the name of your Azure subscription*
+    | Setting | Value |
+    |   --    |  --   |
+    | **Subscription** | *the name of your Azure subscription*  |
+    | **Resource group** | *the name of a new resource group* **az12003b-sap-RG** |
+    | **Location** | *the same Azure region that you specified in the first task of this exercise* |
+    | **SAP System Id** | **I20** |
+    | **Stack Type** | **ABAP** |
+    | **Os Type** | **Windows Server 2016 Datacenter** |
+    | **Dbtype** | **SQL** |
+    | **Sap System Size** | **Demo** |
+    | **System Availability** | **HA** |
+    | **Admin Username** | **Student** |
+    | **Authentication Type** | **password** |
+    | **Admin Password Or Key** | **Pa55w.rd1234** |
+    | **Subnet Id** | *the value you copied into Clipboard in the previous task* |
+    | **Availability Zones** | **1,2** |
+    | **Location** | **[resourceGroup().location]** |
+    | **_artifacts Location** | **https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/application-workloads/sap/sap-3-tier-marketplace-image-md/** |
+    | **_artifacts Location Sas Token** | *leave blank* |
 
-    -   Resource group: *the name of a existing resource group* **az12003b-sap-RG**
-
-    -   Location: *the same Azure region that you specified in the first task of this exercise*
-
-    -   SAP System Id: **I20**
-
-    -   Stack Type: **ABAP**
-
-    -   Os Type: **Windows Server 2016 Datacenter**
-
-    -   Dbtype: **SQL**
-
-    -   Sap System Size: **Demo**
-
-    -   System Availability: **HA**
-
-    -   Admin Username: **Student**
-
-    -   Authentication Type: **password**
-
-    -   Admin Password Or Key: **Pa55w.rd1234**
-
-    -   Subnet Id: *the value you copied into Clipboard in the previous task*
-
-    -   Availability Zones: **1,2**
-
-    -   Location: **[resourceGroup().location]**
-
-    -   _artifacts Location: **https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/application-workloads/sap/sap-3-tier-marketplace-image-md/**
-
-    -   _artifacts Location Sas Token: *leave blank*
-
-    -   I agree to the terms and conditions stated above: *enabled*
-
-1.  Do not wait for the deployment to complete but instead proceed to the next task. 
+1. Do not wait for the deployment to complete but instead proceed to the next task. 
 
 ### Task 4: Deploy the Scale-Out File Server (SOFS) cluster
 
@@ -228,59 +204,37 @@ In this task, you will deploy the scale-out file server (SOFS) cluster that will
 
 1.  On the page titled **Use Managed Disks to Create a Storage Spaces Direct (S2D) Scale-Out File Server (SOFS) Cluster with Windows Server 2016**, click **Deploy to Azure**. This will automatically redirect your browser to the Azure portal and display the **Custom deployment** blade.
 
-1.  From the **Custom deployment** blade, initiate a deployment with the following settings:
+1. From the **Custom deployment** blade, specify the following settings, click **Review + create**, and then click **Create** to initiate the deployment:
 
-    -   Subscription: **Your Azure subscription name**.
+    | Setting | Value |
+    |   --    |  --   |
+    | **Subscription** | *the name of your Azure subscription*  |
+    | **Resource group** | *the name of a existing resource group* **az12003b-s2d-RG** |
+    | **Region** | *the same Azure region where you deployed Azure VMs in the previous tasks of this exercise* |
+    | **Name Prefix** | **i20** |
+    | **Vm Size** | **Standard D4s\_v3** |
+    | **Enable Accelerated Networking** | **true** |
+    | **Image Sku** | **2016-Datacenter-Server-Core** |
+    | **VM Count** | **2** |
+    | **VM Disk Size** | **128** |
+    | **VM Disk Count** | **3** |
+    | **Existing Domain Name** | **adatum.com** |
+    | **Admin Username** | **Student** |
+    | **Admin Password** | **Pa55w.rd1234** |
+    | **Existing Virtual Network RG Name** | **az12003b-ad-RG** |
+    | **Existing Virtual Network Name** | **adVNet** |
+    | **Existing Subnet Name** | **s2dSubnet** |
+    | **Sofs Name** | **sapglobalhost** |
+    | **Share Name** | **sapmnt** |
+    | **Scheduled Update Day** | **Sunday** |
+    | **Scheduled Update Time** | **3:00 AM** |
+    | **Realtime Antimalware Enabled** | **false** |
+    | **Scheduled Antimalware Enabled** | **false** |
+    | **Scheduled Antimalware Time** | **120** |
+    | **_artifacts Location** | **https://raw.githubusercontent.com/polichtm/301-storage-spaces-direct-md/master** |
+    | **_artifacts Location Sas Token** | **Leave the default value** |
 
-    -   Resource group: *the name of a existing resource group* **az12003b-s2d-RG**
-
-    -   Region: *the same Azure region where you deployed Azure VMs in the previous tasks of this exercise*
-
-    -   Name Prefix: **i20**
-
-    -   Vm Size: **Standard_DS4_v2**
-
-    -   Enable Accelerated Networking: **true**
-
-    -   Image Sku: **2016-Datacenter-Server-Core**
-
-    -   VM Count: **2**
-
-    -   VM Disk Size: **128**
-
-    -   VM Disk Count: **3**
-
-    -   Existing Domain Name: **adatum.com**
-
-    -   Admin Username: **Student**
-
-    -   Admin Password: **Pa55w.rd1234**
-
-    -   Existing Virtual Network RG Name: **az12003b-ad-RG**
-
-    -   Existing Virtual Network Name: **adVNet**
-
-    -   Existing Subnet Name: **s2dSubnet**
-
-    -   Sofs Name: **sapglobalhost**
-
-    -   Share Name: **sapmnt**
-
-    -   Scheduled Update Day: **Sunday**
-
-    -   Scheduled Update Time: **3:00 AM**
-
-    -   Realtime Antimalware Enabled: **false**
-
-    -   Scheduled Antimalware Enabled: **false**
-
-    -   Scheduled Antimalware Time: **120**
-
-    -   \_artifacts Location: **https://raw.githubusercontent.com/polichtm/301-storage-spaces-direct-md/master**
-
-    -   \_artifacts Location Sas Token: **Leave the default value**
-
-1.  The deployment might take about 20 minutes. Do not wait for the deployment to complete but instead proceed to the next task.
+1. The deployment might take about 20 minutes. Do not wait for the deployment to complete but instead proceed to the next task.
 
     > **Note**: If the deployment fails with the **Conflict** error message during deployment of the i20-s2d-1/s2dPrep or i20-s2d-0/s2dPrep component, use the following steps  to remediate this issue:
 
@@ -316,64 +270,39 @@ In this task, you will deploy the scale-out file server (SOFS) cluster that will
 
 1.  Provision a Azure VM with the following settings:
 
-    -   Subscription: *the name of your Azure subscription*
-
-    -   Resource group: *the name of a existing resource group* **az12003b-dmz-RG**
-
-    -   Virtual machine name: **az12003b-vm0**
-
-    -   Region: *the same Azure region where you deployed Azure VMs in the previous tasks of this exercise*
-
-    -   Availability options: **No infrastructure redundancy required**
-
-    -   Image: **Windows Server 2019 Datacenter Gen 1**
-
-    -   Size: **Standard DS1 v2**
-
-    -   Username: **Student**
-
-    -   Password: **Pa55w.rd1234**
-
-    -   Public inbound ports: **Allow selected ports**
-
-    -   Select inbound ports: **RDP (3389)**
-
-    -   Already have a Windows license?: **No**
-
-    -   OS disk type: **Standard HDD**
-
-    -   Virtual network: **adVNET**
-
-    -   Subnet: *a new subnet named* **dmzSubnet (10.0.255.0/24)**
-
-    -   Public IP: *a new IP address named* **az12003b-vm0-ip**
-
-    -   NIC network security group: **Basic**
-
-    -   Public inbound ports: **Allow selected ports**
-
-    -   Select inbound ports: **RDP (3389)**
-
-    -   Accelerated networking: **Off**
-
-    -   Place this virtual machine behind an existing load balancing solutions: **No**
-
-    -   Boot diagnostics: **Off**
-
-    -   OS guest diagnostics: **Off**
-
-    -   System assigned managed identity: **Off**
-
-    -   Login with AAD credentials (Preview): **Off**
-
-    -   Enable auto-shutdown: **Off**
-
-    -   Enable backup: **Off**
-
-    -   Extensions: *None*
-
-    -   Tags: **None**
-
+    | Setting | Value |
+    |   --    |  --   |
+    | **Subscription** | *the name of your Azure subscription*  |
+    | **Resource group** | *the name of a existing resource group* **az12003b-dmz-RG**
+    | **Virtual machine name** | **az12003b-vm0** |
+    | **Region** | *the same Azure region where you deployed Azure VMs in the previous tasks of this exercise* |
+    | **Availability options** | **No infrastructure redundancy required** |
+    | **Image** | *select* **Windows Server 2019 Datacenter - Gen2** |
+    | **Size** | **Standard D2s_v3** |
+    | **Username** | **Student** |
+    | **Password** | **Pa55w.rd1234** |
+    | **Public inbound ports** | **Allow selected ports** |
+    | **Selected inbound ports** | **RDP (3389)** |
+    | **Would you like to use an existing Windows Server license?** | **No** |
+    | **OS disk type** | **Standard HDD** |
+    | **Virtual network** | **adVNET** |
+    | **Subnet name** | *a new subnet named* **dmzSubnet** |
+    | **Subnet address range** | **10.0.255.0/24** |
+    | **Public IP address** | *a new IP address named* **az12003b-vm0-ip** |
+    | **NIC network security group** | **Basic**  |
+    | **Public inbound ports** | **Allow selected ports** |
+    | **Selected inbound ports** | **RDP (3389)** |
+    | **Enable accelerated networking** | **Off** |
+    | **Load balancing Options** | **None** |
+    | **Enable system assigned managed identity** | **Off** |
+    | **Login with Azure AD** | **Off** |
+    | **Enable auto-shutdown** | **Off** |
+    | **Patch orchestration options** | **Manual Updates** |
+    | **Boot diagnostics** | **Disable** |
+    | **Enable OS guest diagnostics** | **Off** |
+    | **Extensions** | *None* |
+    | **Tags** | *None* |
+    
 1.  Wait for the provisioning to complete. This should take a few minutes.
 
 > **Result**: After you completed this exercise, you have provisioned Azure resources necessary to support highly available SAP NetWeaver deployments
@@ -456,35 +385,37 @@ In this exercise, you will configure operating system of Azure VMs running Windo
 
 1.  From the **New** blade, initiate creation of a new **Storage account** with the following settings:
 
-    -   Subscription: *the name of your Azure subscription*
+    From the **New** blade, initiate creation of a new **Storage account** with the following settings:
 
-    -   Resource group: *the name of the resource group into which you deployed the Azure VMs which will host highly available SAP NetWeaver deployment*
-
-    -   Storage account name: *any unique name consisting of between 3 and 24 letters and digits*
-
-    -   Location: *the same Azure region where you deployed the Azure VMs in the previous exercise*
-
-    -   Performance: **Standard**
-
-    -   Account kind: **Storage (general purpose v1)**
+    | Setting | Value |
+    |   --    |  --   |
+    | **Subscription** | *the name of your Azure subscription* |
+    | **Resource group** | *the name of the resource group into which you deployed the Azure VMs which will host highly available SAP NetWeaver deployment* |
+    | **Storage account name** | *any unique name consisting of between 3 and 24 letters and digits* |
+    | **Location** | *the same Azure region where you deployed the Azure VMs in the previous exercise* |
+    | **Performance** | **Standard** |
+    | **Redundancy** | **Locally-redundant storage (LRS)** |
+    | **Require secure transfer for REST API operations** | **Enabled** |
     
-    -   Replication: **Locally-redundant storage (LRS)**
 
 1. Click on **advanced**
 
-    -   Hierarchical namespace: **Disabled**
-    
-    -   Large file shares: **Disabled**
-
-    -   Secure transfer required: **Enabled**
+	| Setting | Value |
+        |   --    |  --   |
+    	| **Large file shares** | **Disabled** |
+       | **Hierarchical namespace** | **Disabled** |
+    -   | **Secure transfer required | **Enabled** |
 
 1. Next Click on **Networking**
-    
-    -   Connectivity method: **Public endpoint (all networks)**
+	| Setting | Value |
+        |   --    |  --   |
+    	| **Connectivity method** | **Public endpoint (all networks)** |
 
  1. Click on **Data Protection**   
-
-    -   Blob soft delete: **Disabled**
+	| Setting | Value |
+        |   --    |  --   |
+	| **Soft delete for blobs, containers, and files** | **Disabled** |
+    	
 
 1. Click on **Tags**. On this page click on **Review+create**
 
