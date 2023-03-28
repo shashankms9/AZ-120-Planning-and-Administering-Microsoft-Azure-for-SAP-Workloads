@@ -417,9 +417,9 @@ In this exercise, you will configure Azure VMs running SUSE Linux Enterprise Ser
 
 1.  In the vi editor, replace `#DefaultTasksMax=512` with `DefaultTasksMax=4096`. 
 
-   **Note**: In some cases, Pacemaker might create many processes, reaching the default limit imposed on their number and triggering a failover. This change increases the maximum number of allowed processes.
+     > **Note**: In some cases, Pacemaker might create many processes, reaching the default limit imposed on their number and triggering a failover. This change increases the maximum number of allowed processes.
 
-1.  Save the changes and close the editor.
+1.  Press **esc key** and enter **:wq** to save the changes and close the editor.
 
 1.  In the SSH session to i20-db-0, run the following to activate the configuration change:
 
