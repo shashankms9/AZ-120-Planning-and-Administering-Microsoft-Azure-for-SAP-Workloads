@@ -528,7 +528,7 @@ In this exercise, you will configure clustering on Azure VMs running Linux to su
 
     > **Note**: This change allows for memory preserving maintenance. For more information, refer to [Microsoft documentation regarding maintenance of virtual machines in Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/maintenance-and-updates#maintenance-that-doesnt-require-a-reboot)
 
-1.  Save the changes and close the editor.
+1.  Press **esc key** and enter **:wq** to save the changes and close the editor.
 
 1.  Repeat the previous steps on i20-db-1.
 
@@ -582,11 +582,11 @@ In this exercise, you will configure clustering on Azure VMs running Linux to su
 
     -   Role: **Virtual Machine Contributor**
 
-    -   Assign access to: **Azure AD user, group, or service principal**
+    -   Assign access to: **user, group, or service principal**
 
-    -   Click on **ADD Member** and Select: **Stonith app**.
+    -   Click on **+Select Member** and select: **Stonith app**.
 
-1. once done, then click on **Review + Create** to create the role assignment.
+1. once done, then click on **Review + assign** to create the role assignment.
 
 1.  Repeat the previous steps to assign the Stonith app the Virtual Machine Contributor role to the **i20-db-1** Azure VM
 
