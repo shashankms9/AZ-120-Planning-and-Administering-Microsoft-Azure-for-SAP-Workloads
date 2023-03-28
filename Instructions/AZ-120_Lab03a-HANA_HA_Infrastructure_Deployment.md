@@ -142,7 +142,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 1. From the **New** blade, initiate creation of a new Azure VM based on the **Windows Server 2019 Datacenter** image.
 
-1. Provision a Azure VM with the following settings (leave all others with their default values):
+1. Provision a Azure VM with the following settings under **Basics** tab (leave all others with their default values) and click on **Next:Disks**:
 
     | Setting | Value |
     |   --    |  --   |
@@ -151,34 +151,77 @@ In this exercise, you will deploy Azure infrastructure compute components necess
     | **Virtual machine name** | **az12003a-vm0** |
     | **Region** | *the same Azure region where you deployed Azure VMs in the previous tasks of this exercise* |
     | **Availability options** | **No infrastructure redundancy required** |
-    | **Image** | *select* **Windows Server 2019 Datacenter - Gen2** |
+    | **Image** | *select* **Windows Server 2019 Datacenter - Gen1** |
     | **Size** | **Standard D2s_v3** or similar |
     | **Username** | **Student** |
     | **Password** | **Pa55w.rd1234** |
     | **Public inbound ports** | **Allow selected ports** |
     | **Selected inbound ports** | **RDP (3389)** |
     | **Would you like to use an existing Windows Server license?** | **No** |
+    
+1.  Under **Disks** tab, fill the following details (leave all others with their default values) and click on **Next:Networking**:
+
+    | Setting | Value |
+    |   --    |  --   |
     | **OS disk type** | **Standard HDD** |
+    
+1.  Under **Networking** tab, fill the following details:
+    
+    | Setting | Value |
+    |   --    |  --   |
     | **Virtual network** | **az12003a-sap-vnet** |
-    | **Subnet name** | *a new subnet named* **bastionSubnet** |
-    | **Subnet address range** | **10.3.255.0/24** |
+    
+    - For **Subnet name**- click on **Manage Subnet Configuration**, then select **+Subnet**. On the Add Subnet page, provide the following values and click on **Save**:
+    
+    -  **Subnet name** - **bastionSubnet** 
+    -  **Subnet address range** - **10.3.255.0/24** 
+    
+1. After creating the new subnet, move back to the **Networking** tab of Create a virtual machine, and fill the other remaining details (leave all others with their default values) and click on **Next:Management**:
+
+    | Setting | Value |
+    |   --    |  --   |
+    | **Subnet name** | **bastionSubnet** *select the one that you have created in the previous step* |
     | **Public IP address** | *a new IP address named* **az12003a-vm0-ip** |
     | **NIC network security group** | **Basic**  |
     | **Public inbound ports** | **Allow selected ports** |
     | **Selected inbound ports** | **RDP (3389)** |
     | **Enable accelerated networking** | **On** |
     | **Load balancing Options** | **None** |
+    
+1. On the **Management** tab, fill the following details (leave all others with their default values) and click on **Next:Monitoring**:
+   
+    | Setting | Value |
+    |   --    |  --   |
     | **Enable system assigned managed identity** | **Off** |
     | **Login with Azure AD** | **Off** |
     | **Enable auto-shutdown** | **Off** |
     | **Patch orchestration options** | **Manual Updates** |
+    
+1. On the **Monitoring** tab, fill the following details (leave all others with their default values) and click on **Next:Advanced**:    
+
+    | Setting | Value |
+    |   --    |  --   |
     | **Boot diagnostics** | **Disable** |
     | **Enable OS guest diagnostics** | **Off** |
+    
+    
+1. On the **Advanced** tab, fill the following details (leave all others with their default values) and click on **Next:Tags**:        
+   
+    | Setting | Value |
+    |   --    |  --   |  
     | **Extensions** | *None* |
+    
+
+1. On the **Tags** tab, fill the following details (leave all others with their default values) and click on **Next:Review+create**:      
+
+    | Setting | Value |
+    |   --    |  --   |
     | **Tags** | *None* |
 
+1. Click on **Create**.
+
 1. Wait for the provisioning to complete. This should take a few minutes.
-> **Result**: After you completed this exercise, you have provisioned Azure resources necessary to support highly available SAP NetWeaver deployments
+> **Result**: After you completed this exercise, you have provisioned Azure resources necessary to support highly available SAP NetWeaver deployments.
 
 
 ## Exercise 2: Configure Azure VMs running Linux to support a highly available SAP NetWeaver deployment
