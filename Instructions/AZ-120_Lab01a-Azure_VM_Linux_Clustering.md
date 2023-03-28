@@ -48,8 +48,8 @@ In this exercise, you will deploy Azure infrastructure compute components necess
     | Setting | Value |
     |   --    |  --   |
     | **Subscription** | *the name of your Azure subscription*  |
-    | **Resource group** section | Select **existing**, resource group **az12001a-RG**, and then select **OK** |
-    | **Region** | *an Azure region where you can deploy Azure VMs* |
+    | **Resource group** | **az12001a-RG** |
+    | **Region** | **East US** |
     | **Proximity placement group name** | Select **az12001a-ppg** |
 
    > **Note**: Consider using **East US** or **East US2** regions for deployment of your resources. 
@@ -62,12 +62,12 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 1. On the **Basics** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Disks >** (leave all other settings with their default value):
 
-       | Setting | Value |
+    | Setting | Value |
     |   --    |  --   |
     | **Subscription** | *the name of your Azure subscription*  |
-    | **Resource group** | *the name of the resource group you used earlier in this task* |
+    | **Resource group** | **az12001a-RG** |
     | **Virtual machine name** | *select* **az12001a-vm0** |
-    | **Region** | *the same Azure region you chose when creating the proximity placement group* |
+    | **Region** | **East US** |
     | **Availability options** | *select* **Availability set** |
     | **Availability set** | *a new availability set named* **az12001a-avset** *with 2 fault domains and 5 update domains* |
     | **Image** | *select* **SUSE Enterprise Linux for SAP 12 SP5 - BYOS - Gen 1** |
@@ -87,7 +87,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
     | **Key management** | **Platform-managed key** |
 
 1. On the **Networking** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Management >** (leave all other settings with their default value):
-       | Setting | Value |
+    | Setting | Value |
     |   --    |  --   |
     | **Virtual network** | *select* **Create new** *and create a new virtual network named* **az12001a-RG-vnet**  |
     | **Address space** | *set the address space of the new virtual network to* **192.168.0.0/20** |
@@ -130,9 +130,9 @@ In this exercise, you will deploy Azure infrastructure compute components necess
     | Setting | Value |
     |   --    |  --   |
     | **Subscription** | *the name of your Azure subscription*  |
-    | **Resource group** | *the name of the resource group you used earlier in this task* |
+    | **Resource group** | **az12001a-RG** |
     | **Virtual machine name** | *select* **az12001a-vm1** |
-    | **Region** | *the same Azure region you chose when creating the proximity placement group* |
+    | **Region** | **East US** |
     | **Availability options** | *select* **Availability set** |
     | **Availability set** | **az12001a-avset** |
     | **Image** | *select* **SUSE Enterprise Linux for SAP 12 SP5 - BYOS - Gen 1** |
@@ -156,9 +156,9 @@ In this exercise, you will deploy Azure infrastructure compute components necess
     | Setting | Value |
     |   --    |  --   |
     | **Subscription** | *the name of your Azure subscription*  |
-    | **Resource group** | *the name of the resource group you used earlier in this task* |
+    | **Resource group** | **az12001a-RG** |
     | **Virtual machine name** | *select* **az12001a-vm1** |
-    | **Region** | *the same Azure region you chose when creating the proximity placement group* |
+    | **Region** |**East US** |
     | **Availability options** | *select* **Availability set** |
     | **Availability set** | **az12001a-avset** |
     | **Image** | *select* **SUSE Enterprise Linux for SAP 12 SP5 - BYOS - Gen 1** |
@@ -207,7 +207,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
    |   --    |  --   |
    | **LUN** | **0** |
    | **Disk name** | **az12001a-vm0-DataDisk0** |
-   | **Resource group** | *the name of the resource group you used earlier in this task* |
+   | **Resource group** | **az12001a-RG**|
    | **HOST CACHING** | **Read-only** |
    
    2. Repeat the previous step to attach the remaining 7 disks with the prefix **az12001a-vm0-DataDisk** (for the total of 8). Assign the LUN number matching the last character of the disk name. Set HOST CACHING of the disk with LUN **1** to **Read-only** and, for all the remaining ones, set HOST CACHING to **None**.
@@ -224,7 +224,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
    |   --    |  --   |
    | **LUN** | **0** |
    | **Disk name** | **az12001a-vm1-DataDisk0** |
-   | **Resource group** | *the name of the resource group you used earlier in this task* |
+   | **Resource group** | **az12001a-RG** |
    | **HOST CACHING** | **Read-only** |
 
 7. Repeat the previous step to attach the remaining 7 disks with the prefix **az12001a-vm1-DataDisk** (for the total of 8). Assign the LUN number matching the last character of the disk name. Set HOST CACHING of the disk with LUN **1** to **Read-only** and, for all the remaining ones, set HOST CACHING to **None**.
@@ -620,9 +620,9 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
    | Setting | Value |
    |   --    |  --   |
    | **Subscription** | *the name of your Azure subscription* |
-   | **Resource group** | *the name of the resource group you used earlier in this lab* |
+   | **Resource group** | **az12001a-RG**|
    | **Name** | **az12001a-lb0** |
-   | **Region** | *the same Azure region where you deployed Azure VMs in the first exercise of this lab* |
+   | **Region** | **East US**|
    | **SKU** | **Standard** |
    | **Type** | **Internal** |
 1. Click **Next: Frontend IP Configuration**. On the **Frontend IP configuration** screen, click **Add a frontend IP configuration** and then click **Add**.
@@ -743,11 +743,11 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
     | Setting | Value |
     |   --    |  --   |
     | **Subscription** | *the name of your Azure subscription*  |
-    | **Resource group** | *the name of the resource group you used earlier in this tlab* |
+    | **Resource group** | **az12001a-RG** |
     | **Virtual machine name** | **az12001a-vm2** |
-    | **Region** | *the same Azure region where you deployed Azure VMs in the first exercise of this lab* |
+    | **Region** | **East US** |
     | **Availability options** | **No infrastructure redundancy required** |
-    | **Image** | *select* **Windows Server 2019 Datacenter - Gen 2** |
+    | **Image** | *select* **Windows Server 2019 Datacenter - Gen 1** |
     | **Run with Azure Spot Discount** | **No** |
     | **Size** | **Standard DS1 v2** or similar |
     | **Authentication type** | **Password** |
