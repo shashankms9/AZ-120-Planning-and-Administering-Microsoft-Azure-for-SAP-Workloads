@@ -44,14 +44,15 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 1.  In the Azure Portal, start a Bash session in Cloud Shell. 
 
-   **Note**: When prompted, select Show advanced settings and then select Use existing and choose existing resource group. Then select Create new against Storage account as well as File Share and provide a unique value in both of the fields and then click on Create storage, and wait for the Azure Cloud Shell to initialize.
+     > **Note**: When prompted, select Show advanced settings and then select Use existing and choose existing resource group. Then select Create new against Storage account as well as File Share and provide a unique value in both of the fields and then click on Create storage, and wait for the Azure Cloud Shell to initialize.
 
 1.  In the Cloud Shell pane, run the following command to specify the Azure region that supports availability zones and where you want to create resources for this lab (replace `<region>` with the name of the Azure region which supports availablity zones):
 
     ```cli
     LOCATION='<region>'
     ```
-
+    > **Note**: Make sure to use the region same as the one where the resource group 'az12003a-sap-RG' is deployed.
+    
     > **Note**: Consider using **East US** or **East US2** regions for deployment of your resources. 
 
     > **Note**: Ensure to use the proper notation for the Azure region (short name which does not include a space, e.g. **eastus** rather than **US East**)
@@ -92,13 +93,15 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     > **Note**: Make sure to use Microsoft Edge or a third party browser. Do not use Internet Explorer.
 
+1.  Under the **SAP NetWeaver 3-tier (managed disk)** blade, select **Deploy to Azure**.
+
 1.  On the **SAP NetWeaver 3-tier (managed disk)** blade, select **Edit template**.
 
 1.  On the **Edit template** blade, apply the following changes and select **Save**:
 
     -   in the line **197**, replace `"dbVMSize": "Standard_E8s_v3",` with `"dbVMSize": "Standard_D4s_v3",`
     
-1. On the **SAP NetWeaver 3-tier (managed disk)** blade, initiate deployment with the following settings:
+1. On the **SAP NetWeaver 3-tier (managed disk)** blade, initiate deployment with the following settings and click on **Review+create** and then select **Create**:
 
     | Setting | Value |
     |   --    |  --   |
