@@ -688,7 +688,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
    | **Session persistence** | **None** |
    | **Idle timeout (minutes)** | **4** |
    | **TCP reset** | **Disabled** |
-   | **Floating IP (direct server return)** | **Enabled** |
+   | **Enable Floating IP (direct server return)** | **Enabled** |
 
 ### Task 3: Create and configure Azure Load Balancers handling outbound traffic
 
