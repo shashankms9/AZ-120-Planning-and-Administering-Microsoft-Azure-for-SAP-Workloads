@@ -614,7 +614,7 @@ In this exercise, you will configure clustering on Azure VMs running Linux to su
 
 1.  Within the RDP session to az12003a-vm0, start Internet Explorer and navigate to **https://i20-db-0:7630**. This should display the SUSE Hawk sign-in page.
 
-   > **Note**: Ignore **This site is not secure** message.
+     > **Note**: Ignore **This site is not secure** message.
 
 1.  On the SUSE Hawk sign in page, login by using the following credentials:
 
