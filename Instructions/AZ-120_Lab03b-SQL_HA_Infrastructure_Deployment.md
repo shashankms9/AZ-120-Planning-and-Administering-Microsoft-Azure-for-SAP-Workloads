@@ -212,7 +212,7 @@ In this task, you will deploy the scale-out file server (SOFS) cluster that will
     | **Resource group** | *the name of a existing resource group* **az12003b-s2d-RG** |
     | **Region** | *the same Azure region where you deployed Azure VMs in the previous tasks of this exercise* |
     | **Name Prefix** | **i20** |
-    | **Vm Size** | **Standard D4s\_v3** |
+    | **Vm Size** | **Standard D4s_v3** |
     | **Enable Accelerated Networking** | **true** |
     | **Image Sku** | **2016-Datacenter-Server-Core** |
     | **VM Count** | **2** |
