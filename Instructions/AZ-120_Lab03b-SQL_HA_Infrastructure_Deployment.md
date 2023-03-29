@@ -240,23 +240,23 @@ In this task, you will deploy the scale-out file server (SOFS) cluster that will
 
       - In the Azure portal, navigate to the **i20-s2d-0** virtual machine, in the vertical navigation menu, in the **Operations** section, select **Run command**, on the **Run Command Script** pane, in the **PowerShell Script** text box, enter the following script and select the **Run** button:
 
-       ```
-       $domain = 'adatum.com'
-       $password = 'Pa55w.rd1234' | ConvertTo-SecureString -asPlainText -Force
-       $username = "Student@$domain" 
-       $credential = New-Object System.Management.Automation.PSCredential($username,$password)
-       Add-Computer -DomainName $domain -Credential $credential -Restart -Force
-       ```
+	       ```
+	       $domain = 'adatum.com'
+	       $password = 'Pa55w.rd1234' | ConvertTo-SecureString -asPlainText -Force
+	       $username = "Student@$domain" 
+	       $credential = New-Object System.Management.Automation.PSCredential($username,$password)
+	       Add-Computer -DomainName $domain -Credential $credential -Restart -Force
+	       ```
 
       - Navigate to the blade of the **i20-s2d-1** virtual machine, in the vertical navigation menu, in the **Operations** section, select **Run command**, on the **Run Command Script** pane, in the **PowerShell Script** text box, enter the following script and select the **Run** button:
 
-       ```
-       $domain = 'adatum.com'
-       $password = 'Pa55w.rd1234' | ConvertTo-SecureString -asPlainText -Force
-       $username = "Student@$domain" 
-       $credential = New-Object System.Management.Automation.PSCredential($username,$password)
-       Add-Computer -DomainName $domain -Credential $credential -Restart -Force
-       ```
+	       ```
+	       $domain = 'adatum.com'
+	       $password = 'Pa55w.rd1234' | ConvertTo-SecureString -asPlainText -Force
+	       $username = "Student@$domain" 
+	       $credential = New-Object System.Management.Automation.PSCredential($username,$password)
+	       Add-Computer -DomainName $domain -Credential $credential -Restart -Force
+	       ```
        
       - Rerun the steps of the current task from the beginninig
 
