@@ -50,7 +50,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
     | **Subscription** | *the name of your Azure subscription*  |
     | **Resource group** | *select* **az12001a-RG** |
     | **Region** | **East US** |
-    | **Proximity placement group name** | *enter* **az12001a-ppg** |
+    | **Proximity placement group name** | **az12001a-ppg** |
 
    > **Note**: Consider using **East US** or **East US2** regions for deployment of your resources. 
 
@@ -66,11 +66,11 @@ In this exercise, you will deploy Azure infrastructure compute components necess
     |   --    |  --   |
     | **Subscription** | *the name of your Azure subscription*  |
     | **Resource group** | *select* **az12001a-RG** |
-    | **Virtual machine name** | *enter* **az12001a-vm0** |
+    | **Virtual machine name** | **az12001a-vm0** |
     | **Region** | **East US** |
     | **Availability options** | *select* **Availability set** |
     | **Availability set** | *Create a new availability set named* **az12001a-avset** *with 2 fault domains and 5 update domains* |
-     | **Security type** | **Standard** |
+    | **Security type** | **Standard** |
     | **Image** | *select* **SUSE Enterprise Linux for SAP 12 SP5 - BYOS - Gen 1** |
     | **Run with Azure Spot Discount** | **No** |
     | **Size** | **Standard D4s v3** |
@@ -107,9 +107,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
    | **Enable system assigned managed identity** | **Off** |
    | **Enable auto-shutdown** | **Off** |
    | **Enable basic plan for free** | **No**  |
-   > **Note**: The **basic plan for free** setting is not available if you have already selected the Azure Security Center plan.
-
-
+   
    > **Note**: The **basic plan for free** setting is not available if you have already selected the Azure Security Center plan.
 
 1. On the **Monitoring** tab of the **Create a virtual machine** blade, select **Next: Advanced >** (leave all settings with their default value)
@@ -132,10 +130,11 @@ In this exercise, you will deploy Azure infrastructure compute components necess
     |   --    |  --   |
     | **Subscription** | *the name of your Azure subscription*  |
     | **Resource group** | *select* **az12001a-RG** |
-    | **Virtual machine name** | *enter* **az12001a-vm1** |
+    | **Virtual machine name** | **az12001a-vm1** |
     | **Region** | **East US** |
     | **Availability options** | *select* **Availability set** |
     | **Availability set** | *select* **az12001a-avset** |
+    | **Security type** | **Standard** |
     | **Image** | *select* **SUSE Enterprise Linux for SAP 12 SP5 - BYOS - Gen 1** |
     | **Run with Azure Spot Discount** | **No** |
     | **Size** | **Standard D4s v3** |
@@ -171,7 +170,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
     | **Enable auto-shutdown** | **Off** |
     | **Enable basic plan for free** | **No**  |
 
-   > **Note**: The **basic plan for free** setting is not available if you have already selected the Azure Security Center plan.
+    > **Note**: The **basic plan for free** setting is not available if you have already selected the Azure Security Center plan.
 
 1. On the **Monitoring** tab of the **Create a virtual machine** blade, select **Next: Advanced >** (leave all settings with their default value)
 
@@ -226,7 +225,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
    | **Resource group** | **az12001a-RG**|
    | **HOST CACHING** | **Read-only** |
    
-   2. Repeat the previous step to attach the remaining 7 disks with the prefix **az12001a-vm0-DataDisk** (for the total of 8). Assign the LUN number matching the last character of the disk name. Set HOST CACHING of the disk with LUN **1** to **Read-only** and, for all the remaining ones, set HOST CACHING to **None**.
+2. Repeat the previous step to attach the remaining 7 disks with the prefix **az12001a-vm0-DataDisk** (for the total of 8). Assign the LUN number matching the last character of the disk name. Set HOST CACHING of the disk with LUN **1** to **Read-only** and, for all the remaining ones, set HOST CACHING to **None**.
 
 3. Save your changes. 
 
@@ -398,7 +397,7 @@ In this exercise, you will configure operating system and storage on Azure VMs r
    /dev/disk/by-uuid/<UUID of /dev/vg_usr_sap-usr_sap (/dev/sdj)> /usr/sap xfs  defaults,nofail  0  2
    ```
 
-1. Save the changes and close the editor.
+1. Press CTRL + [ button and press Shift :wq! to save the changes and close the editor.
 
 1. In the Cloud Shell pane, in the SSH session to az12001a-vm0, mount the new volumes by running:
 
@@ -439,7 +438,7 @@ In this exercise, you will configure operating system and storage on Azure VMs r
 
 1. In the editor window, paste the key you generated on az12001a-vm0.
 
-1. Save the changes and close the editor.
+1. Press CTRL + [ button and press Shift :wq! to save the changes and to close the editor.
 
 1. In the Cloud Shell pane, in the SSH session to az12001a-vm1, generate passphrase-less SSH key by running:
 
@@ -463,7 +462,7 @@ In this exercise, you will configure operating system and storage on Azure VMs r
 
 1. In the editor window, paste the key you generated on az12001a-vm1.
 
-1. Save the changes and close the editor.
+1.  Press CTRL + [ button and press Shift :wq! to save the changes and to close the editor.
 
 1. In the Cloud Shell pane, in the SSH session to az12001a-vm0, generate passphrase-less SSH key by running:
 
@@ -487,7 +486,7 @@ In this exercise, you will configure operating system and storage on Azure VMs r
 
 1. In the editor window, starting from a new line, paste the key you generated on az12001a-vm0.
 
-1. Save the changes and close the editor.
+1. Press CTRL + [ button and press Shift :wq! to save the changes and to close the editor.
 
 1. In the Cloud Shell pane, in the SSH session to az12001a-vm1, generate passphrase-less SSH key by running:
 
@@ -511,7 +510,7 @@ In this exercise, you will configure operating system and storage on Azure VMs r
 
 1. In the editor window, starting from a new line, paste the key you generated on az12001a-vm1.
 
-1. Save the changes and close the editor.
+1. Press CTRL + [ button and press Shift :wq! to save the changes and to close the editor.
 
 1. In the Cloud Shell pane, in the SSH session to az12001a-vm0, open the file **/etc/ssh/sshd\_config** in the vi editor (you are free to use any other editor) by running:
 
@@ -526,7 +525,7 @@ In this exercise, you will configure operating system and storage on Azure VMs r
    AuthorizedKeysFile  /root/.ssh/authorized_keys
    ```
 
-1. Save the changes and close the editor.
+1. Press CTRL + [ button and press Shift :wq! to save the changes and to close the editor.
 
 1. In the Cloud Shell pane, in the SSH session to az12001a-vm0, restart sshd daemon by running:
 
@@ -651,10 +650,10 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
    | **IP address assignment** | **Static** |
    | **IP address** | **192.168.0.240** |
    | **Availability zone** | **Zone redundant** |
+   
 1. Select **Review + create**, and then select **Create**.
    > **Note**: Wait until the load balancer is provisioned. This should take less than a minute.
   
-
 1. In the Azure portal, navigate to the blade displaying the properties of the newly provisioned **az12001a-lb0** load balancer. 
 
 1. On the **az12001a-lb0** blade, select **Backend pools**, select **+ Add**, and, on the **Add backend pool** specify the following settings (leave others with their default values):
@@ -675,8 +674,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
    | **Protocol** | **TCP** |
    | **Port** | **62500** |
    | **Interval** | **5** *seconds* |
-   | **Unhealthy threshold** | **2** *consecutive failures* |
-
+   
 1. On the **az12001a-lb0** blade, select **Load balancing rules**, select **+ Add**, and, on the **Add load balancing rule** blade, specify the following settings (leave others with their defaults):
     
    | Setting | Value |
@@ -691,6 +689,8 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
    | **Idle timeout (minutes)** | **4** |
    | **TCP reset** | **Disabled** |
    | **Enable Floating IP (direct server return)** | **Enabled** |
+   
+   > **Note**:If you dont't find **az12001a-lb0-hprobe (TCP:62500)** from Health probe drop down, please sign out and sign in, reperform the task.
 
 ### Task 3: Create and configure Azure Load Balancers handling outbound traffic
 
