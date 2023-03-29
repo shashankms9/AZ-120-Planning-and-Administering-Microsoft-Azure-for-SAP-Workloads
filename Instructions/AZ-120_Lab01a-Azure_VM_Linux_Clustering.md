@@ -48,9 +48,9 @@ In this exercise, you will deploy Azure infrastructure compute components necess
     | Setting | Value |
     |   --    |  --   |
     | **Subscription** | *the name of your Azure subscription*  |
-    | **Resource group** | **az12001a-RG** |
+    | **Resource group** | *select* **az12001a-RG** |
     | **Region** | **East US** |
-    | **Proximity placement group name** | Select **az12001a-ppg** |
+    | **Proximity placement group name** | *enter* **az12001a-ppg** |
 
    > **Note**: Consider using **East US** or **East US2** regions for deployment of your resources. 
 
@@ -65,11 +65,12 @@ In this exercise, you will deploy Azure infrastructure compute components necess
     | Setting | Value |
     |   --    |  --   |
     | **Subscription** | *the name of your Azure subscription*  |
-    | **Resource group** | **az12001a-RG** |
-    | **Virtual machine name** | *select* **az12001a-vm0** |
+    | **Resource group** | *select* **az12001a-RG** |
+    | **Virtual machine name** | *enter* **az12001a-vm0** |
     | **Region** | **East US** |
     | **Availability options** | *select* **Availability set** |
-    | **Availability set** | *a new availability set named* **az12001a-avset** *with 2 fault domains and 5 update domains* |
+    | **Availability set** | *Create a new availability set named* **az12001a-avset** *with 2 fault domains and 5 update domains* |
+     | **Security type** | **Standard** |
     | **Image** | *select* **SUSE Enterprise Linux for SAP 12 SP5 - BYOS - Gen 1** |
     | **Run with Azure Spot Discount** | **No** |
     | **Size** | **Standard D4s v3** |
@@ -130,11 +131,11 @@ In this exercise, you will deploy Azure infrastructure compute components necess
     | Setting | Value |
     |   --    |  --   |
     | **Subscription** | *the name of your Azure subscription*  |
-    | **Resource group** | **az12001a-RG** |
-    | **Virtual machine name** | *select* **az12001a-vm1** |
+    | **Resource group** | *select* **az12001a-RG** |
+    | **Virtual machine name** | *enter* **az12001a-vm1** |
     | **Region** | **East US** |
     | **Availability options** | *select* **Availability set** |
-    | **Availability set** | **az12001a-avset** |
+    | **Availability set** | *select* **az12001a-avset** |
     | **Image** | *select* **SUSE Enterprise Linux for SAP 12 SP5 - BYOS - Gen 1** |
     | **Run with Azure Spot Discount** | **No** |
     | **Size** | **Standard D4s v3** |
@@ -155,21 +156,34 @@ In this exercise, you will deploy Azure infrastructure compute components necess
      
     | Setting | Value |
     |   --    |  --   |
-    | **Subscription** | *the name of your Azure subscription*  |
-    | **Resource group** | **az12001a-RG** |
-    | **Virtual machine name** | *select* **az12001a-vm1** |
-    | **Region** |**East US** |
-    | **Availability options** | *select* **Availability set** |
-    | **Availability set** | **az12001a-avset** |
-    | **Image** | *select* **SUSE Enterprise Linux for SAP 12 SP5 - BYOS - Gen 1** |
-    | **Run with Azure Spot Discount** | **No** |
-    | **Size** | **Standard D4s v3** |
-    | **Authentication type** | **Password** |
-    | **Username** | **student** |
-    | **Password** | **Pa55w.rd1234** |
+    | **Virtual network** | *select* **az12001a-RG-vnet** |
+    | **Subnet** | *select* **subnet-0 (192.168.0.0/24)** |
+    | **Public IP address** | *a new IP address named* **az12001a-vm1-ip** |
+    | **NIC network security group** | **Advanced**  |
+    | **Enable accelerated networking** | **On** |
+    | **Load balancing Options** | **None** |
     
-   > **Note**: Wait for the provisioning to complete. This should take less about 3 minutes.
+1. On the **Management** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Monitoring >** (leave all other settings with their default value):
 
+    | Setting | Value |
+    |   --    |  --   |
+    | **Enable system assigned managed identity** | **Off** |
+    | **Enable auto-shutdown** | **Off** |
+    | **Enable basic plan for free** | **No**  |
+
+   > **Note**: The **basic plan for free** setting is not available if you have already selected the Azure Security Center plan.
+
+1. On the **Monitoring** tab of the **Create a virtual machine** blade, select **Next: Advanced >** (leave all settings with their default value)
+
+1. On the **Advanced** tab of the **Create a virtual machine** blade, specify the following settings and select **Review + create** (leave all other settings with their default value):
+
+    | Setting | Value |
+    |   --    |  --   |
+    | **Proximity placement group** | **az12001a-ppg** |
+
+1. On the **Review + create** tab of the **Create a virtual machine** blade, select **Create**.
+
+    > **Note**: Wait for the provisioning to complete. This should take less about 3 minutes.
 
 ### Task 2: Create and configure Azure VMs disks
 
