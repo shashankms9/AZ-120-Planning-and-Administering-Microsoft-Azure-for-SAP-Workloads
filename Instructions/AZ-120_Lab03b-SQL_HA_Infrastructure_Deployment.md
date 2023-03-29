@@ -204,7 +204,7 @@ In this task, you will deploy the scale-out file server (SOFS) cluster that will
 
 1.  On the page titled **Use Managed Disks to Create a Storage Spaces Direct (S2D) Scale-Out File Server (SOFS) Cluster with Windows Server 2016**, click **Deploy to Azure**. This will automatically redirect your browser to the Azure portal and display the **Custom deployment** blade.
 
-1. From the **Custom deployment** blade, specify the following settings, click **Review + create**, and then click **Create** to initiate the deployment:
+1. From the **Custom deployment** blade,  go to  specify the following settings, click **Review + create**, and then click **Create** to initiate the deployment:
 
     | Setting | Value |
     |   --    |  --   |
@@ -277,7 +277,7 @@ In this task, you will deploy the scale-out file server (SOFS) cluster that will
     | **Virtual machine name** | **az12003b-vm0** |
     | **Region** | *the same Azure region where you deployed Azure VMs in the previous tasks of this exercise* |
     | **Availability options** | **No infrastructure redundancy required** |
-    | **Image** | *select* **Windows Server 2019 Datacenter - Gen2** |
+    | **Image** | *select* **Windows Server 2019 Datacenter - Gen1** |
     | **Size** | **Standard D2s_v3** |
     | **Username** | **Student** |
     | **Password** | **Pa55w.rd1234** |
