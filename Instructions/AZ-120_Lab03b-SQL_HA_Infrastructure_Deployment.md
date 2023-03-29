@@ -238,7 +238,7 @@ In this task, you will deploy the scale-out file server (SOFS) cluster that will
 
     > **Note**: If the deployment fails with the **Conflict** error message during deployment of the i20-s2d-1/s2dPrep or i20-s2d-0/s2dPrep component, use the following steps  to remediate this issue:
 
-       - In the Azure portal, navigate to the **i20-s2d-0** virtual machine, in the vertical navigation menu, in the **Operations** section, select **Run command**, on the **Run Command Script** pane, in the **PowerShell Script** text box, enter the following script and select the **Run** button:
+      - In the Azure portal, navigate to the **i20-s2d-0** virtual machine, in the vertical navigation menu, in the **Operations** section, select **Run command**, on the **Run Command Script** pane, in the **PowerShell Script** text box, enter the following script and select the **Run** button:
 
        ```
        $domain = 'adatum.com'
@@ -248,7 +248,7 @@ In this task, you will deploy the scale-out file server (SOFS) cluster that will
        Add-Computer -DomainName $domain -Credential $credential -Restart -Force
        ```
 
-       - Navigate to the blade of the **i20-s2d-1** virtual machine, in the vertical navigation menu, in the **Operations** section, select **Run command**, on the **Run Command Script** pane, in the **PowerShell Script** text box, enter the following script and select the **Run** button:
+      - Navigate to the blade of the **i20-s2d-1** virtual machine, in the vertical navigation menu, in the **Operations** section, select **Run command**, on the **Run Command Script** pane, in the **PowerShell Script** text box, enter the following script and select the **Run** button:
 
        ```
        $domain = 'adatum.com'
@@ -258,7 +258,7 @@ In this task, you will deploy the scale-out file server (SOFS) cluster that will
        Add-Computer -DomainName $domain -Credential $credential -Restart -Force
        ```
        
-       - Rerun the steps of the current task from the beginninig
+      - Rerun the steps of the current task from the beginninig
 
 ### Task 5: Deploy a jump host
 
