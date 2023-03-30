@@ -397,7 +397,7 @@ In this exercise, you will configure operating system and storage on Azure VMs r
    /dev/disk/by-uuid/<UUID of /dev/vg_usr_sap-usr_sap (/dev/sdj)> /usr/sap xfs  defaults,nofail  0  2
    ```
 
-1. Press CTRL + [ button and press Shift :wq! to save the changes and close the editor.
+1. Press CTRL + [ button and press Shift :wq! to save the changes and to close the editor.
 
 1. In the Cloud Shell pane, in the SSH session to az12001a-vm0, mount the new volumes by running:
 
@@ -745,6 +745,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
    | Setting | Value |
    |   --    |  --   |
    | **Virtual network** | **az12001a-rg-vnet (2 VM)** |
+   | **Backend Pool Configuration** | **IP address** |
    | **Virtual machine** | **az12001a-vm0**  IP Configuration: **ipconfig1 (192.168.0.4)** |
    | **Virtual machine** | **az12001a-vm1**  IP Configuration: **ipconfig1 (192.168.0.5)** |
 
