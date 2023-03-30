@@ -812,9 +812,18 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
    > **Note**: Wait for the provisioning to complete. This should take less about 3 minutes.
 
-4. Connect to the newly provisioned Azure VM via RDP. 
+4. Connect to the newly provisioned Azure VM via RDP.
+5. On the Azure Portal home page, select Virtual Machines.
+6. Select **az12001a-vm2** .
+7. In **az12001a-vm2**, select Connect > RDP.
+8. In **az12001a-vm2** | Connect, select Download RDP file.
+9. Save the RDP file to your desktop.
+10.Connect to **az12001a-vm2**  using the RDP file, and the username and password you specified when you created the VM.
+11. On VM, in Networks, select Yes. 
 
 5. Within the RDP session to az12001a-vm2, download PuTTY from [**https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html**](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
+
+6. After downloading open **putty** from search.
 
 6. Ensure that you can establish SSH session to both az12001a-vm0 and az12001a-vm1 via their private IP addresses (192.168.0.4 and 192.168.0.5, respectively). 
 
