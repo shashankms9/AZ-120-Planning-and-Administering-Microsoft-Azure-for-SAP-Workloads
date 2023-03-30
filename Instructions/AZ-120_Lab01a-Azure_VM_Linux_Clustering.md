@@ -818,7 +818,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 1. On the Overview page for the virtual machine, select the Connect button and choose RDP.
 1. On the RDP tab, select the Download RDP File button.
 1. Open the RDP file that was just downloaded. When a dialog appears asking if you want to connect, select Connect.
-1. 10. Enter the username and password you specified when you created the VM.
+1. Enter the username and password you specified when you created the VM.
 1. When the Remote Desktop Connection dialog appears asking if you want to connect, select Yes.
 1. On VM, in Networks, select Yes. 
 
