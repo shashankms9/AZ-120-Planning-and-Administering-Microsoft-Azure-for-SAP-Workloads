@@ -823,7 +823,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
 5. Within the RDP session to az12001a-vm2, download PuTTY from [**https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html**](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
 
-6. After downloading open **putty** from search.
+6. After downloading, inside the Virtual Machine select the Windows start button search and open **putty**.
 
 6. Ensure that you can establish SSH session to both az12001a-vm0 and az12001a-vm1 via their private IP addresses (192.168.0.4 and 192.168.0.5, respectively). 
 
