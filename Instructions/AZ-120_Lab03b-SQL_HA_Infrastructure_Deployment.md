@@ -44,11 +44,11 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 1.  In the Azure portal interface, click **+ Create a resource**.
 
-1.  From the **New** blade, initiate creation of a new **Template deployment (deploy using custom templates)**
+1.  From the **New** blade, initiate creation of a new **Template deployment (deploy using custom templates)** and click on **create**.
 
 1.  From the **Custom deployment** blade, in the **Quickstart template (disclaimer)** drop-down list, select the entry **application-workloads/active-directory/active-directory-new-domain-ha-2-dc-zones**, and click **Select template**.
 
-    > **Note**: Alternatively, you can launch the deployment by navigating to Azure Quickstart Templates page at <https://github.com/Azure/azure-quickstart-templates>, locating the template named **Create 2 new Windows VMs, a new AD Forest, Domain and 2 DCs in separate availability zones**, and initiating its deployment by clicking **Deploy to Azure** button.
+    > **Note**: Alternatively, you can launch the deployment by navigating to Azure Quickstart Templates page at <https://github.com/Azure/azure-quickstart-templates>,and select azure.com in Azure Resource Manager QuickStart Templates and locating the template named **Create 2 new Windows VMs, a new AD Forest, Domain and 2 DCs in separate availability zones**, and initiating its deployment by clicking **Deploy to Azure** button.
 
 1. On the blade **Create a new AD Domain with 2 DCs using Availability Zones**, specify the following settings, click **Review + create**, and then click **Create** to initiate the deployment:
 
@@ -112,13 +112,13 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 1.  From the **adVNET** blade, navigate to its **adVNET - Subnets** blade. 
 
-1.  From the **adVNET - Subnets** blade, create a new subnet with the following settings:
+1.  From the **adVNET - Subnets** blade, create a new subnet with the following settings and click on save:
 
     -   Name: **sapSubnet**
 
     -   Address ranges (CIDR block): **10.0.1.0/24**
 
-1.  From the **adVNET - Subnets** blade, create a new subnet with the following settings:
+1.  From the **adVNET - Subnets** blade, create a new subnet with the following settings and click on save:
 
     -   Name: **s2dSubnet**
 
@@ -165,10 +165,6 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 1.  On the **Edit template** blade, apply the following changes and select **Save**:
 
     -   in the line **197**, replace `"dbVMSize": "Standard_E8s_v3",` with `"dbVMSize": "Standard_D4s_v3",`
-
-    -   in the line **198**, replace `"ascsVMSize": "Standard_D2s_v3",` with `"ascsVMSize": "Standard_DS1_v2",`
-
-    -   in the line **199**, replace `"diVMSize": "Standard_D2s_v3",` with `"diVMSize": "Standard_DS1_v2",`
 
 1. Back on the **SAP NetWeaver 3-tier (managed disk)** blade, specify the following settings, click **Review + create**, and then click **Create** to initiate the deployment:
 
@@ -432,7 +428,7 @@ In this exercise, you will configure operating system of Azure VMs running Windo
 
 ### Task 4: Configure Failover Clustering on Azure VMs running Windows Server 2016 to support a highly available database tier of the SAP NetWeaver installation.
 
-1.  If needed, from the RDP session to az12003b-vm0, use Remote Desktop to re-connect to **i20-db-0.adatum.com** Azure VM. When prompted, provide the following credentials:
+1.  If needed, from the RDP session to **az12003b-vm0**, use Remote Desktop to re-connect to **i20-db-0.adatum.com** Azure VM. When prompted, provide the following credentials:
 
     -   Login as: **ADATUM\\Student**
 
@@ -451,12 +447,12 @@ In this exercise, you will configure operating system of Azure VMs running Windo
 1.  Within the RDP session to i20-db-0, start a Windows PowerShell ISE session and create a new cluster by running the following:
 
     ```
-    $nodes = @('i20-db-0','i20-db-1')
+    $nodes = @('i20-ascs-0','i20-ascs-1')
 
-    New-Cluster -Name az12003b-db-cl0 -Node $nodes -NoStorage -StaticAddress 10.0.1.15
+    New-Cluster -Name az12003b-ascs-cl0 -Node $nodes -NoStorage -StaticAddress 10.0.1.16
     ```
 
-1.  Within the RDP session to i20-db-0.adatum.com, switch to the **Active Directory Administrative Center** console.
+1.  Within the RDP session to **i20-db-0.adatum.com**, switch to the **Active Directory Administrative Center** console.
 
 1.  In Active Directory Administrative Center, navigate to the **Clusters** organizational unit and display its **Properties** window. 
 
