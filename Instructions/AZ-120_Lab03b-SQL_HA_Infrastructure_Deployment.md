@@ -258,7 +258,15 @@ In this task, you will deploy the scale-out file server (SOFS) cluster that will
 	       Add-Computer -DomainName $domain -Credential $credential -Restart -Force
 	       ```
        
-      - Rerun the steps of the current task from the beginninig
+      - Rerun the steps of the current task from the beginninig.
+	- If you get any error made the changed in artifactsLocationSasToken 
+	
+	      ```
+	         "_artifactsLocationSasToken": {
+            "defaultValue": "",
+            "type": "String"
+        }
+	       ```
 
 ### Task 5: Deploy a jump host
 
@@ -385,7 +393,6 @@ In this exercise, you will configure operating system of Azure VMs running Windo
 
 1.  From the **New** blade, initiate creation of a new **Storage account** with the following settings:
 
-    From the **New** blade, initiate creation of a new **Storage account** with the following settings:
 
     | Setting | Value |
     |   --    |  --   |
@@ -400,21 +407,23 @@ In this exercise, you will configure operating system of Azure VMs running Windo
 
 1. Click on **advanced**
 
-	| Setting | Value |
-        |   --    |  --   |
-    	| **Large file shares** | **Disabled** |
-       | **Hierarchical namespace** | **Disabled** |
-    -   | **Secure transfer required | **Enabled** |
+    | Setting | Value |
+    |   --    |  --   |
+    | **Large file shares** | **Disabled** |
+    | **Hierarchical namespace** | **Disabled** |
+    | **Secure transfer required | **Enabled** |
 
 1. Next Click on **Networking**
-	| Setting | Value |
-        |   --    |  --   |
-    	| **Connectivity method** | **Public endpoint (all networks)** |
+
+    | Setting | Value |
+    |   --    |  --   |
+    | **Connectivity method** | **Public endpoint (all networks)** |
 
  1. Click on **Data Protection**   
-	| Setting | Value |
-        |   --    |  --   |
-	| **Soft delete for blobs, containers, and files** | **Disabled** |
+
+    | Setting | Value |
+    |   --    |  --   |
+    | **Soft delete for blobs, containers, and files** | **Disabled** |
     	
 
 1. Click on **Tags**. On this page click on **Review+create**
