@@ -70,11 +70,11 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     > **Note**: If the deployment fails with the **Conflict** error message during deployment of the CustomScriptExtension component, use the following steps  to remediate this issue:
 
-       - in the Azure portal, on the **Deployment** blade, review the deployment details and identify the VM(s) where the installation of the CustomScriptExtension failed
+      - in the Azure portal, on the **Deployment** blade, review the deployment details and identify the VM(s) where the installation of the CustomScriptExtension failed
 
-       - in the Azure portal, navigate to the blade of the VM(s) you identified in the previous step, select **Extensions**, and from the **Extensions** blade, remove the CustomScript extension
+      - in the Azure portal, navigate to the blade of the VM(s) you identified in the previous step, select **Extensions**, and from the **Extensions** blade, remove the CustomScript extension
 
-       - in the Azure portal, navigate to the **az12003b-ad-RG** resource group blade, select **Deployments**, select the link to the failed deployment, and select **Redeploy**, select the target resource group (**az12003b-ad-RG**) and provide the password for the root account (**Pa55w.rd1234**).
+      - in the Azure portal, navigate to the **az12003b-ad-RG** resource group blade, select **Deployments**, select the link to the failed deployment, and select **Redeploy**, select the target resource group (**az12003b-ad-RG**) and provide the password for the root account (**Pa55w.rd1234**).
 
 1. After the deployment completes, in the Azure portal, navigate to the blade of the **adPDC** virtual machine, in the vertical navigation menu, in the **Operations** section, select **Run command**, on the **Run Command Script** pane, in the **PowerShell Script** text box, enter the following script and select the **Run** button:
 
@@ -200,7 +200,7 @@ In this task, you will deploy the scale-out file server (SOFS) cluster that will
 
 1.  On the page titled **Use Managed Disks to Create a Storage Spaces Direct (S2D) Scale-Out File Server (SOFS) Cluster with Windows Server 2016**, click **Deploy to Azure**. This will automatically redirect your browser to the Azure portal and display the **Custom deployment** blade.
 
-1. From the **Custom deployment** blade, specify the following settings, click **Review + create**, and then click **Create** to initiate the deployment:
+1. From the **Custom deployment** blade,  go to  specify the following settings, click **Review + create**, and then click **Create** to initiate the deployment:
 
     | Setting | Value |
     |   --    |  --   |
@@ -208,7 +208,7 @@ In this task, you will deploy the scale-out file server (SOFS) cluster that will
     | **Resource group** | *the name of a existing resource group* **az12003b-s2d-RG** |
     | **Region** | *the same Azure region where you deployed Azure VMs in the previous tasks of this exercise* |
     | **Name Prefix** | **i20** |
-    | **Vm Size** | **Standard D4s\_v3** |
+    | **Vm Size** | **Standard_D4s_v3** |
     | **Enable Accelerated Networking** | **true** |
     | **Image Sku** | **2016-Datacenter-Server-Core** |
     | **VM Count** | **2** |
@@ -234,27 +234,35 @@ In this task, you will deploy the scale-out file server (SOFS) cluster that will
 
     > **Note**: If the deployment fails with the **Conflict** error message during deployment of the i20-s2d-1/s2dPrep or i20-s2d-0/s2dPrep component, use the following steps  to remediate this issue:
 
-       - In the Azure portal, navigate to the **i20-s2d-0** virtual machine, in the vertical navigation menu, in the **Operations** section, select **Run command**, on the **Run Command Script** pane, in the **PowerShell Script** text box, enter the following script and select the **Run** button:
+      - In the Azure portal, navigate to the **i20-s2d-0** virtual machine, in the vertical navigation menu, in the **Operations** section, select **Run command**, on the **Run Command Script** pane, in the **PowerShell Script** text box, enter the following script and select the **Run** button:
 
-       ```
-       $domain = 'adatum.com'
-       $password = 'Pa55w.rd1234' | ConvertTo-SecureString -asPlainText -Force
-       $username = "Student@$domain" 
-       $credential = New-Object System.Management.Automation.PSCredential($username,$password)
-       Add-Computer -DomainName $domain -Credential $credential -Restart -Force
-       ```
+	       ```
+	       $domain = 'adatum.com'
+	       $password = 'Pa55w.rd1234' | ConvertTo-SecureString -asPlainText -Force
+	       $username = "Student@$domain" 
+	       $credential = New-Object System.Management.Automation.PSCredential($username,$password)
+	       Add-Computer -DomainName $domain -Credential $credential -Restart -Force
+	       ```
 
-       - Navigate to the blade of the **i20-s2d-1** virtual machine, in the vertical navigation menu, in the **Operations** section, select **Run command**, on the **Run Command Script** pane, in the **PowerShell Script** text box, enter the following script and select the **Run** button:
+      - Navigate to the blade of the **i20-s2d-1** virtual machine, in the vertical navigation menu, in the **Operations** section, select **Run command**, on the **Run Command Script** pane, in the **PowerShell Script** text box, enter the following script and select the **Run** button:
 
-       ```
-       $domain = 'adatum.com'
-       $password = 'Pa55w.rd1234' | ConvertTo-SecureString -asPlainText -Force
-       $username = "Student@$domain" 
-       $credential = New-Object System.Management.Automation.PSCredential($username,$password)
-       Add-Computer -DomainName $domain -Credential $credential -Restart -Force
-       ```
+	       ```
+	       $domain = 'adatum.com'
+	       $password = 'Pa55w.rd1234' | ConvertTo-SecureString -asPlainText -Force
+	       $username = "Student@$domain" 
+	       $credential = New-Object System.Management.Automation.PSCredential($username,$password)
+	       Add-Computer -DomainName $domain -Credential $credential -Restart -Force
+	       ```
        
-       - Rerun the steps of the current task from the beginninig
+      - Rerun the steps of the current task from the beginninig.
+	- If you get any error made the changed in artifactsLocationSasToken 
+	
+	    ```
+	     "_artifactsLocationSasToken": {
+               "defaultValue": "",
+               "type": "String"
+          }
+	    ```
 
 ### Task 5: Deploy a jump host
 
@@ -273,7 +281,7 @@ In this task, you will deploy the scale-out file server (SOFS) cluster that will
     | **Virtual machine name** | **az12003b-vm0** |
     | **Region** | *the same Azure region where you deployed Azure VMs in the previous tasks of this exercise* |
     | **Availability options** | **No infrastructure redundancy required** |
-    | **Image** | *select* **Windows Server 2019 Datacenter - Gen2** |
+    | **Image** | *select* **Windows Server 2019 Datacenter - Gen1** |
     | **Size** | **Standard D2s_v3** |
     | **Username** | **Student** |
     | **Password** | **Pa55w.rd1234** |
@@ -381,7 +389,6 @@ In this exercise, you will configure operating system of Azure VMs running Windo
 
 1.  From the **New** blade, initiate creation of a new **Storage account** with the following settings:
 
-    From the **New** blade, initiate creation of a new **Storage account** with the following settings:
 
     | Setting | Value |
     |   --    |  --   |
@@ -403,11 +410,13 @@ In this exercise, you will configure operating system of Azure VMs running Windo
     | **Secure transfer required | **Enabled** |
 
 1. Next Click on **Networking**
+
     | Setting | Value |
     |   --    |  --   |
     | **Connectivity method** | **Public endpoint (all networks)** |
 
  1. Click on **Data Protection**   
+
     | Setting | Value |
     |   --    |  --   |
     | **Soft delete for blobs, containers, and files** | **Disabled** |
