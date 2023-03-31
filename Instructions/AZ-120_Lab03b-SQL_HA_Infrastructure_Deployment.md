@@ -44,7 +44,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 1.  In the Azure portal interface, click **+ Create a resource**.
 
-1.  From the **New** blade, initiate creation of a new **Template deployment (deploy using custom templates)**
+1.  From the **New** blade, initiate creation of a new **Template deployment (deploy using custom templates)** and click on **create**.
 
 1.  From the **Custom deployment** blade, in the **Quickstart template (disclaimer)** drop-down list, select the entry **application-workloads/active-directory/active-directory-new-domain-ha-2-dc-zones**, and click **Select template**.
 
