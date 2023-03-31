@@ -397,7 +397,7 @@ In this exercise, you will configure operating system and storage on Azure VMs r
    /dev/disk/by-uuid/<UUID of /dev/vg_usr_sap-usr_sap (/dev/sdj)> /usr/sap xfs  defaults,nofail  0  2
    ```
 
-1. Press CTRL + [ button and press Shift :wq! to save the changes and close the editor.
+1. Press CTRL + [ button and press Shift :wq! to save the changes and to close the editor.
 
 1. In the Cloud Shell pane, in the SSH session to az12001a-vm0, mount the new volumes by running:
 
@@ -745,6 +745,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
    | Setting | Value |
    |   --    |  --   |
    | **Virtual network** | **az12001a-rg-vnet (2 VM)** |
+   | **Backend Pool Configuration** | **IP address** |
    | **Virtual machine** | **az12001a-vm0**  IP Configuration: **ipconfig1 (192.168.0.4)** |
    | **Virtual machine** | **az12001a-vm1**  IP Configuration: **ipconfig1 (192.168.0.5)** |
 
@@ -772,14 +773,14 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
     | **Public inbound ports** | **Allow selected ports** |
     | **Selected inbound ports** | **RDP (3389)** |
     | **Would you like to use an existing Windows Server license?** | **No** |
-2. On the **Disks** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Networking >** (leave all other settings with their default value):
+1. On the **Disks** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Networking >** (leave all other settings with their default value):
     
     | Setting | Value |
     |   --    |  --   |
     | **OS disk type** | **Standard HDD**  |
     | **Key management** | **Platform-managed key** |
  
-3. On the **Networking** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Management >** (leave all other settings with their default value):
+1. On the **Networking** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Management >** (leave all other settings with their default value):
     
     | Setting | Value |
     |   --    |  --   |
@@ -806,15 +807,25 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
    |   --    |  --   |
    | **Boot diagnostics** | **Enable with managed storage account (recommended)** |
    | **Enable OS guest diagnostics** | **Off** |
-2. On the **Advanced** tab of the **Create a virtual machine** blade, select **Review + create** (leave all other settings with their default value):
-3. On the **Review + create** tab of the **Create a virtual machine** blade, select **Create**.
+1. On the **Advanced** tab of the **Create a virtual machine** blade, select **Review + create** (leave all other settings with their default value):
+1. On the **Review + create** tab of the **Create a virtual machine** blade, select **Create**.
 
    > **Note**: Wait for the provisioning to complete. This should take less about 3 minutes.
 
-4. Connect to the newly provisioned Azure VM via RDP. 
+1. Connect to the newly provisioned Azure VM via RDP.
+1. On the Azure Portal home page, select Virtual Machines.
+1. Select **az12001a-vm2** .
+1. On the Overview page for the virtual machine, select the Connect button and choose RDP.
+1. On the RDP tab, select the Download RDP File button.
+1. Open the RDP file that was just downloaded. When a dialog appears asking if you want to connect, select Connect.
+1. Enter the username and password you specified when you created the VM.
+1. When the Remote Desktop Connection dialog appears asking if you want to connect, select Yes.
+1. On VM, in Networks, select Yes. 
 
-5. Within the RDP session to az12001a-vm2, download PuTTY from [**https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html**](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
+1. Within the RDP session to az12001a-vm2, download PuTTY from [**https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html**](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
 
-6. Ensure that you can establish SSH session to both az12001a-vm0 and az12001a-vm1 via their private IP addresses (192.168.0.4 and 192.168.0.5, respectively). 
+1. After downloading, inside the Virtual Machine select the Windows start button search and open **putty**.
+
+1. Ensure that you can establish SSH session to both az12001a-vm0 and az12001a-vm1 via their private IP addresses (192.168.0.4 and 192.168.0.5, respectively). 
 
 > **Result**: After you completed this exercise, you have provisioned Azure network resources necessary to support highly available SAP HANA deployments
