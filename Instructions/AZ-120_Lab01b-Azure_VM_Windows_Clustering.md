@@ -61,6 +61,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
     ```
     $rgName = 'az12001b-ad-RG'
     ```
+  > **Note**: Regions of Resource groups **az12001b-cl-RG** and **az12001b-ad-RG** must be the same 
 
 1. In the Cloud Shell pane, run the following command to set the value of the variable `$location` to the name of the Azure regions which supports availability zones and where you intend to deploy the lab VMs (replace the `<Azure_region>` placeholder with the name of that region):
 
@@ -117,15 +118,15 @@ In this exercise, you will deploy Azure infrastructure compute components necess
     | Setting | Value |
     |   --    |  --   |
     | **Subscription** | *the name of your Azure subscription*  |
-    | **Resource group** | *the name of a new resource group* **az12001b-cl-RG** |
+    | **Resource group** | **az12001b-cl-RG** |
     | **Virtual machine name** | **az12001b-cl-vm0** |
     | **Region** | *the same Azure region where you deployed the Azure VMs in the previous task* |
     | **Availability options** | **Availability zone** |
     | **Availability zone** | **Zone 1** |
     | **Image** | *select* **Windows Server 2022 Datacenter: Azure Edition - Gen2** |
     | **Size** | **Standard D4s v3** |
-    | **Username** | *the same username you specified when deploying the Bicep template earlier in this exercise* |
-    | **Password** | *the same password you specified when deploying the Bicep template earlier in this exercise* |
+    | **Username** | **Student** |
+    | **Password** | **Pa55w.rd1234** |
     | **Public inbound ports** | **Allow selected ports** |
     | **Selected inbound ports** | **RDP (3389)** |
     | **Would you like to use an existing Windows Server license?** | **No** |
@@ -165,15 +166,15 @@ In this exercise, you will deploy Azure infrastructure compute components necess
     | Setting | Value |
     |   --    |  --   |
     | **Subscription** | *the name of your Azure subscription*  |
-    | **Resource group** | *the name of the resource group you used when deploying the first **Windows Server 2022 Datacenter: Azure Edition - Gen2** Azure VM in this task* |
+    | **Resource group** | **az12001b-cl-RG** |
     | **Virtual machine name** | **az12001b-cl-vm1** |
     | **Region** | *the same Azure region where you deployed the first **Windows Server 2022 Datacenter: Azure Edition - Gen2** Azure VM in this task* |
     | **Availability options** | **Availability zone** |
     | **Availability zone** | **Zone 2** |
     | **Image** | *select* **Windows Server 2022 Datacenter: Azure Edition - Gen2** |
     | **Size** | **Standard D4s v3** |
-    | **Username** | *the same username you specified when deploying the Bicep template earlier in this exercise* |
-    | **Password** | *the same password you specified when deploying the Bicep template earlier in this exercise* |
+    | **Username** | **Student** |
+    | **Password** | **Pa55w.rd1234** |
     | **Public inbound ports** | **Allow selected ports** |
     | **Selected inbound ports** | **RDP (3389)** |
     | **Would you like to use an existing Windows Server license?** | **No** |
@@ -567,7 +568,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
     |   --    |  --   |
     | **Name** | **az12001b-cl-lb0-lbruletcp1433** |
     | **IP Version** | **IPv4** |
-    | **Frontend IP address** | **192.168.0.240 (LoadBalancerFrontEnd)** |
+    | **Frontend IP address** | **10.0.1.240(LoadBalancerFrontEnd)** |
     | **HA Ports** | **Disabled** |
     | **Protocol** | **TCP** |
     | **Port** | **1433** |
@@ -630,8 +631,8 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
     | Setting | Value |
     |   --    |  --   |
     | **Virtual network** | **adVNET (4 VM)** |
-    | **Virtual machine** | **az12001b-cl-vm0**  IP ADDRESS: **ipconfig1** |
-    | **Virtual machine** | **az12001b-cl-vm1**  IP ADDRESS: **ipconfig1** |
+    | **Virtual machine** | Click on **+Add**in Ipconfigurations select Virtual Machine **az12001b-cl-vm0**  IP ADDRESS: **ipconfig1** |
+    | **Virtual machine** | Click on **+Add**in Ipconfigurations select Virtual Machine **az12001b-cl-vm1**  IP ADDRESS: **ipconfig1**|
 
 1. On the **az12001b-cl-lb1** blade, click **Health probes**.
 
