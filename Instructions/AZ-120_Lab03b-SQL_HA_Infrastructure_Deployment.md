@@ -48,7 +48,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 1.  From the **Custom deployment** blade, in the **Quickstart template (disclaimer)** drop-down list, select the entry **application-workloads/active-directory/active-directory-new-domain-ha-2-dc-zones**, and click **Select template**.
 
-    > **Note**: Alternatively, you can launch the deployment by navigating to Azure Quickstart Templates page at <https://github.com/Azure/azure-quickstart-templates>, locating the template named **Create 2 new Windows VMs, a new AD Forest, Domain and 2 DCs in separate availability zones**, and initiating its deployment by clicking **Deploy to Azure** button.
+    > **Note**: Alternatively, you can launch the deployment by navigating to Azure Quickstart Templates page at <https://github.com/Azure/azure-quickstart-templates>,and select azure.com in Azure Resource Manager QuickStart Templates and locating the template named **Create 2 new Windows VMs, a new AD Forest, Domain and 2 DCs in separate availability zones**, and initiating its deployment by clicking **Deploy to Azure** button.
 
 1. On the blade **Create a new AD Domain with 2 DCs using Availability Zones**, specify the following settings, click **Review + create**, and then click **Create** to initiate the deployment:
 
