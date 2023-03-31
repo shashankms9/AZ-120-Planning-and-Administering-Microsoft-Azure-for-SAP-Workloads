@@ -166,10 +166,6 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     -   in the line **197**, replace `"dbVMSize": "Standard_E8s_v3",` with `"dbVMSize": "Standard_D4s_v3",`
 
-    -   in the line **198**, replace `"ascsVMSize": "Standard_D2s_v3",` with `"ascsVMSize": "Standard_DS1_v2",`
-
-    -   in the line **199**, replace `"diVMSize": "Standard_D2s_v3",` with `"diVMSize": "Standard_DS1_v2",`
-
 1. Back on the **SAP NetWeaver 3-tier (managed disk)** blade, specify the following settings, click **Review + create**, and then click **Create** to initiate the deployment:
 
     | Setting | Value |
@@ -400,21 +396,21 @@ In this exercise, you will configure operating system of Azure VMs running Windo
 
 1. Click on **advanced**
 
-	| Setting | Value |
-        |   --    |  --   |
-    	| **Large file shares** | **Disabled** |
-       | **Hierarchical namespace** | **Disabled** |
-    -   | **Secure transfer required | **Enabled** |
+    | Setting | Value |
+    |   --    |  --   |
+    | **Large file shares** | **Disabled** |
+    | **Hierarchical namespace** | **Disabled** |
+    | **Secure transfer required | **Enabled** |
 
 1. Next Click on **Networking**
-	| Setting | Value |
-        |   --    |  --   |
-    	| **Connectivity method** | **Public endpoint (all networks)** |
+    | Setting | Value |
+    |   --    |  --   |
+    | **Connectivity method** | **Public endpoint (all networks)** |
 
  1. Click on **Data Protection**   
-	| Setting | Value |
-        |   --    |  --   |
-	| **Soft delete for blobs, containers, and files** | **Disabled** |
+    | Setting | Value |
+    |   --    |  --   |
+    | **Soft delete for blobs, containers, and files** | **Disabled** |
     	
 
 1. Click on **Tags**. On this page click on **Review+create**
@@ -423,7 +419,7 @@ In this exercise, you will configure operating system of Azure VMs running Windo
 
 ### Task 4: Configure Failover Clustering on Azure VMs running Windows Server 2016 to support a highly available database tier of the SAP NetWeaver installation.
 
-1.  If needed, from the RDP session to az12003b-vm0, use Remote Desktop to re-connect to **i20-db-0.adatum.com** Azure VM. When prompted, provide the following credentials:
+1.  If needed, from the RDP session to **az12003b-vm0**, use Remote Desktop to re-connect to **i20-db-0.adatum.com** Azure VM. When prompted, provide the following credentials:
 
     -   Login as: **ADATUM\\Student**
 
@@ -442,12 +438,12 @@ In this exercise, you will configure operating system of Azure VMs running Windo
 1.  Within the RDP session to i20-db-0, start a Windows PowerShell ISE session and create a new cluster by running the following:
 
     ```
-    $nodes = @('i20-db-0','i20-db-1')
+    $nodes = @('i20-ascs-0','i20-ascs-1')
 
-    New-Cluster -Name az12003b-db-cl0 -Node $nodes -NoStorage -StaticAddress 10.0.1.15
+    New-Cluster -Name az12003b-ascs-cl0 -Node $nodes -NoStorage -StaticAddress 10.0.1.16
     ```
 
-1.  Within the RDP session to i20-db-0.adatum.com, switch to the **Active Directory Administrative Center** console.
+1.  Within the RDP session to **i20-db-0.adatum.com**, switch to the **Active Directory Administrative Center** console.
 
 1.  In Active Directory Administrative Center, navigate to the **Clusters** organizational unit and display its **Properties** window. 
 
