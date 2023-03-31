@@ -261,12 +261,12 @@ In this task, you will deploy the scale-out file server (SOFS) cluster that will
       - Rerun the steps of the current task from the beginninig.
 	- If you get any error made the changed in artifactsLocationSasToken 
 	
-	      ```
-	         "_artifactsLocationSasToken": {
-            "defaultValue": "",
-            "type": "String"
-        }
-	       ```
+	    ```
+	     "_artifactsLocationSasToken": {
+               "defaultValue": "",
+               "type": "String"
+          }
+	    ```
 
 ### Task 5: Deploy a jump host
 
