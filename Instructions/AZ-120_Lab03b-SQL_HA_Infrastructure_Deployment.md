@@ -112,7 +112,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 1.  From the **adVNET** blade, navigate to its **adVNET - Subnets** blade. 
 
-1.  From the **adVNET - Subnets** blade, create a new subnet with the following settings ans click on save:
+1.  From the **adVNET - Subnets** blade, create a new subnet with the following settings and click on save:
 
     -   Name: **sapSubnet**
 
