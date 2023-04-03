@@ -30,4 +30,4 @@
 
 1. Use **Next** button from lower right corner to move on to the next page.
 
-   ![Screenshot of the next page.](images/next.png)
+   ![Screenshot of the next page.](Instructions/images//next.png)
