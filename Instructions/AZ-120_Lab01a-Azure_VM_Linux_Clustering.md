@@ -812,7 +812,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
    - Image: **Windows Server 2019 Datacenter - Gen 2**
 
-   - Size: **Standard DS1 v2*** or similar*
+   - Size: **Standard DS1 v2** or similar
 
    - Azure Spot Instance: **No**
 
