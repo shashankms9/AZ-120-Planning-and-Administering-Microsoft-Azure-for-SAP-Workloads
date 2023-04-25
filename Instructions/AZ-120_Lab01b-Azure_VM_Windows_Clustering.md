@@ -639,7 +639,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
     -   IP version: **IPv4**
 
-    -   Frontend IP address: **192.168.0.240 (LoadBalancerFrontEnd)**
+    -   Frontend IP address: **10.0.1.240 (LoadBalancerFrontEnd)**
 
     -   HA Ports: **Disabled**
 
