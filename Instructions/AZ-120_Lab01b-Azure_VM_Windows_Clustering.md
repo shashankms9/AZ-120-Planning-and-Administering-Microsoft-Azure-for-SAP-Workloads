@@ -256,8 +256,8 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     ```
     $location = (Get-AzResourceGroup -Name $resourceGroupName).Location
-
-    $diskConfig = New-AzDiskConfig -Location $location -DiskSizeGB 128 -AccountType Premium_LRS -OsType Windows -CreateOption Empty
+    $zone = (Get-AzVM -ResourceGroupName $resourceGroupName -Name 'az12001b-cl-vm0').Zones
+    $diskConfig = New-AzDiskConfig -Location $location -DiskSizeGB 128 -AccountType Premium_LRS -OsType Windows -CreateOption Empty -Zone $zone
 
     for ($i=0;$i -lt 4;$i++) {New-AzDisk -ResourceGroupName $resourceGroupName -DiskName az12001b-cl-vm0-DataDisk$i -Disk $diskConfig}
     ```
@@ -265,6 +265,10 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 1.  In the Cloud Shell pane, run the following command to create the second set of 4 managed disks that you will attach to the second Azure VM you deployed in the previous task:
 
     ```
+    $zone = (Get-AzVM -ResourceGroupName $resourceGroupName -Name 'az12001b-cl-vm1').Zones
+    
+    $diskConfig = New-AzDiskConfig -Location $location -DiskSizeGB 128 -AccountType Premium_LRS -OsType Windows -CreateOption Empty -Zone $zone
+    
     for ($i=0;$i -lt 4;$i++) {New-AzDisk -ResourceGroupName $resourceGroupName -DiskName az12001b-cl-vm1-DataDisk$i -Disk $diskConfig}
     ```
 
@@ -488,7 +492,7 @@ Duration: 40 minutes
 
 1.  On the **Security** tab, click the **Advanced** button to open the **Advanced Security Settings for Clusters** window. 
 
-1.  On the **Permissions** tab of the **Advanced Security Settings for Computers** window, click **Add**.
+1.  On the **Permissions** tab of the **Advanced Security Settings for Clusters** window, click **Add**.
 
 1.  In the **Permission Entry for Clusters** window, click **Select Principal**
 
@@ -737,6 +741,8 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
     -   Frontend IP address: *accept the default value*
 
+    -   HA Ports :  Click on **Disabled**
+
     -   Protocol: **TCP**
 
     -   Port: **80**
@@ -751,6 +757,8 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
     -   Idle timeout (minutes): **4**
 
+    -   TCP reset: Click on **Disabled** 
+    
     -   Floating IP (direct server return): **Disabled**
 
 ### Task 4: Deploy a jump host
