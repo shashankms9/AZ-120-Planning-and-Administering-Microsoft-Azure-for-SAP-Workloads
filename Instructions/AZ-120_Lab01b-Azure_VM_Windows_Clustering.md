@@ -45,7 +45,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 ### Task 1: Deploy a pair of Azure VMs running highly available Active Directory domain controllers by using a Bicep template
 
-1.  From the lab computer, start a Web browser, and navigate to the Azure portal at https://portal.azure.com
+1.  From the lab computer, start a Web browser, and navigate to the Azure portal at **https://portal.azure.com**
 
 1.  If prompted, sign in with the work or school or personal Microsoft account with the owner or contributor role to the Azure subscription you will be using for this lab.
 
@@ -68,7 +68,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
     $rgName = 'az12001b-ad-RG'
     ```
 
-1.  In the Cloud Shell pane, run the following command to set the value of the variable `$location` to the name of the Azure regions where you intend to deploy the lab VMs (replace the `<Azure_region>` placeholder with the name of that region):
+1.  In the Cloud Shell pane, run the following command to set the value of the variable `$location` to the name of the Azure regions which supports availability zones and where you intend to deploy the lab VMs (replace the `<Azure_region>` placeholder with the name of that region):
 
     ```
     $location = '<Azure_region>'
@@ -92,6 +92,8 @@ In this exercise, you will deploy Azure infrastructure compute components necess
     $adminUsername = '<username>'
     $adminPassword = ConvertTo-SecureString '<password>' -AsPlainText -Force
     ```
+	
+    > **Note**: Make sure that the password satisfies the complexity requirements applicable to deployment of Azure VMs running Windows (the lenght of at least 12 characters containing lower and upper case letters, digits, and special characters).
 
 1.  In the Cloud Shell pane, run the following command to run the deployment:
 
