@@ -44,7 +44,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 ### Task 1: Deploy a pair of Azure VMs running highly available Active Directory domain controllers by using an Azure Resource Manager template
 
-1.  From the lab computer, start a Web browser, and navigate to the Azure portal at https://portal.azure.com
+1.  From the lab computer, start a Web browser, and navigate to the Azure portal at **https://portal.azure.com**
 
 1.  If prompted, sign in with the work or school or personal Microsoft account with the owner or contributor role to the Azure subscription you will be using for this lab.
 
