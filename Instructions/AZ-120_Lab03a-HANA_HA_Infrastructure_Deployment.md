@@ -44,7 +44,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 ### Task 1: Create a virtual network that will host a highly available SAP NetWeaver deployment.
 
-1.  From the lab computer, start a Web browser, and navigate to the Azure portal at https://portal.azure.com
+1.  From the lab computer, start a Web browser, and navigate to the Azure portal at **https://portal.azure.com**
 
 1.  If prompted, sign in with the work or school or personal Microsoft account with the owner or contributor role to the Azure subscription you will be using for this lab and the the Global Administrator role in the Azure AD tenant associated with your subscription.
 
