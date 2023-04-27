@@ -1,3 +1,9 @@
+---
+lab:
+    title: '04a - Implement SAP architecture on Azure VMs running Linux'
+    module: 'Module 04 - Deploy SAP on Azure'
+---
+
 # AZ 120 Module 4: Deploy SAP on Azure
 # Lab 4a: Implement SAP architecture on Azure VMs running Linux
 
@@ -25,7 +31,7 @@ After completing this lab, you will be able to:
 
 ## Requirements
 
--   A Microsoft Azure subscription with the sufficient number of available DSv2 and Dsv3 vCPUs (four Standard_DS1_v2 VMs with 1 vCPU each and two Standard_D4s_v3 VMs with 4 vCPUs each) in an Azure region that supports availability zones
+-   A Microsoft Azure subscription with the sufficient number of available Dsv3 vCPUs (four Standard_D2s_v3 VMs with 2 vCPUs each and two Standard_D4s_v3 VMs with 4 vCPUs each) in an Azure region that supports availability zones
 
 -   A lab computer with an Azure Cloud Shell-compatible web browser and access to Azure
 
@@ -38,21 +44,20 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 ### Task 1: Create a virtual network that will host a highly available SAP NetWeaver deployment.
 
-1.  From the lab computer, start a Web browser, and navigate to the Azure portal at https://portal.azure.com
+1.  From the lab computer, start a Web browser, and navigate to the Azure portal at **https://portal.azure.com**
 
 1.  If prompted, sign in with the work or school or personal Microsoft account with the owner or contributor role to the Azure subscription you will be using for this lab and the the Global Administrator role in the Azure AD tenant associated with your subscription.
 
 1.  In the Azure Portal, start a Bash session in Cloud Shell. 
 
-     > **Note**: When prompted, select Show advanced settings and then select Use existing and choose existing resource group. Then select Create new against Storage account as well as File Share and provide a unique value in both of the fields and then click on Create storage, and wait for the Azure Cloud Shell to initialize.
+    > **Note**: If this is the first time you are launching Cloud Shell in the current Azure subscription, you will be asked to create an Azure file share to persist Cloud Shell files. If so, accept the defaults, which will result in creation of a storage account in an automatically generated resource group.
 
 1.  In the Cloud Shell pane, run the following command to specify the Azure region that supports availability zones and where you want to create resources for this lab (replace `<region>` with the name of the Azure region which supports availablity zones):
 
     ```cli
     LOCATION='<region>'
     ```
-    > **Note**: Make sure to use the region same as the one where the resource group 'az12003a-sap-RG' is deployed.
-    
+
     > **Note**: Consider using **East US** or **East US2** regions for deployment of your resources. 
 
     > **Note**: Ensure to use the proper notation for the Azure region (short name which does not include a space, e.g. **eastus** rather than **US East**)
@@ -63,6 +68,12 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     ```cli
     RESOURCE_GROUP_NAME='az12003a-sap-RG'
+    ```
+
+1.  In the Cloud Shell pane, run the following command to create a resource group in the region you specified:
+
+    ```cli
+    az group create --resource-group $RESOURCE_GROUP_NAME --location $LOCATION
     ```
 
 1.  In the Cloud Shell pane, run the following command to create a virtual network with a single subnet in the resource group you created:
@@ -89,41 +100,55 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 ### Task 2: Deploy Azure Resource Manager template provisioning Azure VMs running Linux SUSE that will host a highly available SAP NetWeaver deployment
 
-1.  On the lab computer, start a browser and browse to https://github.com/Azure/azure-quickstart-templates/tree/master/application-workloads/sap/sap-3-tier-marketplace-image-md
+1.  On the lab computer, start a browser and browse to [**https://github.com/Azure/azure-quickstart-templates/tree/master/application-workloads/sap/sap-3-tier-marketplace-image-md**](https://github.com/Azure/azure-quickstart-templates/tree/master/application-workloads/sap/sap-3-tier-marketplace-image-md)
 
     > **Note**: Make sure to use Microsoft Edge or a third party browser. Do not use Internet Explorer.
 
-1.  Under the **SAP NetWeaver 3-tier (managed disk)** blade, select **Deploy to Azure**.
+1.  On the page titled **SAP NetWeaver 3-tier compatible template using a Marketplace image - MD**, click **Deploy to Azure**. This will automatically redirect your browser to the Azure portal and display the **SAP NetWeaver 3-tier (managed disk)** blade.
 
 1.  On the **SAP NetWeaver 3-tier (managed disk)** blade, select **Edit template**.
 
 1.  On the **Edit template** blade, apply the following changes and select **Save**:
 
     -   in the line **197**, replace `"dbVMSize": "Standard_E8s_v3",` with `"dbVMSize": "Standard_D4s_v3",`
-    
-1. On the **SAP NetWeaver 3-tier (managed disk)** blade, initiate deployment with the following settings and click on **Review+create** and then select **Create**:
 
-    | Setting | Value |
-    |   --    |  --   |
-    | **Subscription** | *the name of your Azure subscription*  |
-    | **Resource group** | *the name of the resource group you used in the previous task* |
-    | **Location** | *the same Azure region that you specified in the first task of this exercise* |
-    | **SAP System Id** | **I20** |
-    | **Stack Type** | **ABAP** |
-    | **Os Type** | **SLES 12** |
-    | **Dbtype** | **HANA** |
-    | **Sap System Size** | **Demo** |
-    | **System Availability** | **HA** |
-    | **Admin Username** | **student** |
-    | **Authentication Type** | **password** |
-    | **Admin Password Or Key** | **Pa55w.rd1234** |
-    | **Subnet Id** | *the value you copied into Clipboard in the previous task* |
-    | **Availability Zones** | **1,2** |
-    | **Location** | **[resourceGroup().location]** |
-    | **_artifacts Location** | **https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/application-workloads/sap/sap-3-tier-marketplace-image-md/** |
-    | **_artifacts Location Sas Token** | *leave blank* |
+1.  On the **SAP NetWeaver 3-tier (managed disk)** blade, initiate deployment with the following settings:
 
-1. Do not wait for the deployment to complete but instead proceed to the next task. 
+    -   Subscription: *the name of your Azure subscription*
+
+    -   Resource group: *the name of the resource group you used in the previous task*
+
+    -   Location: *the same Azure region that you specified in the first task of this exercise*
+
+    -   SAP System Id: **I20**
+
+    -   Stack Type: **ABAP**
+
+    -   Os Type: **SLES 12**
+
+    -   Dbtype: **HANA**
+
+    -   Sap System Size: **Demo**
+
+    -   System Availability: **HA**
+
+    -   Admin Username: **student**
+
+    -   Authentication Type: **password**
+
+    -   Admin Password Or Key: **Pa55w.rd1234**
+
+    -   Subnet Id: *the value you copied into Clipboard in the previous task*
+
+    -   Availability Zones: **1,2**
+
+    -   Location: **[resourceGroup().location]**
+
+    -   _artifacts Location: **https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/application-workloads/sap/sap-3-tier-marketplace-image-md/**
+
+    -   _artifacts Location Sas Token: *leave blank*
+
+1.  Do not wait for the deployment to complete but instead proceed to the next task. 
 
     > **Note**: If the deployment fails with the **Conflict** error message during deployment of the CustomScriptExtension component, use the following steps  to remediate this issue:
 
@@ -138,90 +163,75 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
    > **Note**: Since Azure VMs you deployed in the previous task are not accessible from Internet, you will deploy an Azure VM running Windows Server 2019 Datacenter that will serve as a jump host. 
 
-1. From the lab computer, in the Azure portal, click **+ Create a resource**.
+1.  From the lab computer, in the Azure portal, click **+ Create a resource**.
 
-1. From the **New** blade, initiate creation of a new Azure VM based on the **Windows Server 2019 Datacenter** image.
+1.  From the **New** blade, initiate creation of a new Azure VM based on the **Windows Server 2019 Datacenter** image.
 
-1. Provision a Azure VM with the following settings under **Basics** tab (leave all others with their default values) and click on **Next:Disks**:
+1.  Provision a Azure VM with the following settings (leave all others with their default values):
 
-    | Setting | Value |
-    |   --    |  --   |
-    | **Subscription** | *the name of your Azure subscription*  |
-    | **Resource group** | *the name of a new resource group* **az12003a-dmz-RG** |
-    | **Virtual machine name** | **az12003a-vm0** |
-    | **Region** | *the same Azure region where you deployed Azure VMs in the previous tasks of this exercise* |
-    | **Availability options** | **No infrastructure redundancy required** |
-    | **Image** | *select* **Windows Server 2019 Datacenter - Gen1** |
-    | **Size** | **Standard D2s_v3** or similar |
-    | **Username** | **Student** |
-    | **Password** | **Pa55w.rd1234** |
-    | **Public inbound ports** | **Allow selected ports** |
-    | **Selected inbound ports** | **RDP (3389)** |
-    | **Would you like to use an existing Windows Server license?** | **No** |
-    
-1.  Under **Disks** tab, fill the following details (leave all others with their default values) and click on **Next:Networking**:
+    -   Subscription: *the name of your Azure subscription*
 
-    | Setting | Value |
-    |   --    |  --   |
-    | **OS disk type** | **Standard HDD** |
-    
-1.  Under **Networking** tab, fill the following details:
-    
-    | Setting | Value |
-    |   --    |  --   |
-    | **Virtual network** | **az12003a-sap-vnet** |
-    
-    - For **Subnet name**- click on **Manage Subnet Configuration**, then select **+Subnet**. On the Add Subnet page, provide the following values and click on **Save**:
-    
-    -  **Subnet name** - **bastionSubnet** 
-    -  **Subnet address range** - **10.3.255.0/24** 
-    
-1. After creating the new subnet, move back to the **Networking** tab of Create a virtual machine, and fill the other remaining details (leave all others with their default values) and click on **Next:Management**:
+    -   Resource group: *the name of a new resource group* **az12003a-dmz-RG**
 
-    | Setting | Value |
-    |   --    |  --   |
-    | **Subnet name** | **bastionSubnet** *select the one that you have created in the previous step* |
-    | **Public IP address** | *a new IP address named* **az12003a-vm0-ip** |
-    | **NIC network security group** | **Basic**  |
-    | **Public inbound ports** | **Allow selected ports** |
-    | **Selected inbound ports** | **RDP (3389)** |
-    | **Enable accelerated networking** | **On** |
-    | **Load balancing Options** | **None** |
-    
-1. On the **Management** tab, fill the following details (leave all others with their default values) and click on **Next:Monitoring**:
-   
-    | Setting | Value |
-    |   --    |  --   |
-    | **Enable system assigned managed identity** | **Off** |
-    | **Login with Azure AD** | **Off** |
-    | **Enable auto-shutdown** | **Off** |
-    | **Patch orchestration options** | **Manual Updates** |
-    
-1. On the **Monitoring** tab, fill the following details (leave all others with their default values) and click on **Next:Advanced**:    
+    -   Virtual machine name: **az12003a-vm0**
 
-    | Setting | Value |
-    |   --    |  --   |
-    | **Boot diagnostics** | **Disable** |
-    | **Enable OS guest diagnostics** | **Off** |
-    
-    
-1. On the **Advanced** tab, fill the following details (leave all others with their default values) and click on **Next:Tags**:        
-   
-    | Setting | Value |
-    |   --    |  --   |  
-    | **Extensions** | *None* |
-    
+    -   Region: *the same Azure region where you deployed Azure VMs in the previous tasks of this exercise*
 
-1. On the **Tags** tab, fill the following details (leave all others with their default values) and click on **Next:Review+create**:      
+    -   Availability options: **No infrastructure redundancy required**
 
-    | Setting | Value |
-    |   --    |  --   |
-    | **Tags** | *None* |
+    -   Image: **Windows Server 2019 Datacenter - Gen2**
 
-1. Click on **Create**.
+    -   Size: **Standard D2s_v3** or similar
 
-1. Wait for the provisioning to complete. This should take a few minutes.
-> **Result**: After you completed this exercise, you have provisioned Azure resources necessary to support highly available SAP NetWeaver deployments.
+    -   Username: **Student**
+
+    -   Password: **Pa55w.rd1234**
+
+    -   Public inbound ports: **Allow selected ports**
+
+    -   Select inbound ports: **RDP (3389)**
+
+    -   Already have a Windows license?: **No**
+
+    -   OS disk type: **Standard HDD**
+
+    -   Virtual network: **az12003a-sap-vnet**
+
+    -   Subnet: a new subnet named **bastionSubnet (10.3.255.0/24)**
+
+    -   Public IP: *a new IP address named* **az12003a-vm0-ip**
+
+    -   NIC network security group: **Basic**
+
+    -   Public inbound ports: **Allow selected ports**
+
+    -   Select inbound ports: **RDP (3389)**
+
+    -   Accelerated networking: **Off**
+
+    -   Place this virtual machine behind an existing load balancing solutions: **No**
+
+    -   Boot diagnostics: **Disable**
+
+    -   OS guest diagnostics: **Off**
+
+    -   System assigned managed identity: **Off**
+
+    -   Login with AAD credentials (Preview): **Off**
+
+    -   Enable auto-shutdown: **Off**
+
+    -   Enable backup: **Off**
+
+    -   Patch orchestration options **Manual updates**
+
+    -   Extensions: **None**
+
+    -   Tags: **None**
+
+1.  Wait for the provisioning to complete. This should take a few minutes.
+
+> **Result**: After you completed this exercise, you have provisioned Azure resources necessary to support highly available SAP NetWeaver deployments
 
 
 ## Exercise 2: Configure Azure VMs running Linux to support a highly available SAP NetWeaver deployment
@@ -259,17 +269,13 @@ In this exercise, you will configure Azure VMs running SUSE Linux Enterprise Ser
 
 1.  From the lab computer, in the Azure portal, navigate to the **az12003a-vm0** blade.
 
-1.  From the **az12003a-vm0** blade, connect to the Azure VM az12003a-vm0 via Remote Desktop, select **Download RDP file** and open the downloaded RDP file, click on **Connect**. 
-
-    -   Login as: **.\student**
-
-    -   Password: **Pa55w.rd1234**
+1.  From the **az12003a-vm0** blade, connect to the Azure VM az12003a-vm0 via Remote Desktop. 
 
 1.  Within the RDP session to az12003a-vm0, in Server Manager, navigate to the **Local Server** view and turn off **IE Enhanced Security Configuration**.
 
 1.  Within the RDP session to az12003a-vm0, download and install PuTTY from [**https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html**](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
 
-1.  Use PuTTY to connect via SSH to **i20-db-0** Azure VM using private ip that you configured in previous task. Acknowledge the security alert and, when prompted, provide the following credentials:
+1.  Use PuTTY to connect via SSH to **i20-db-0** Azure VM. Acknowledge the security alert and, when prompted, provide the following credentials:
 
     -   Login as: **student**
 
@@ -293,7 +299,7 @@ In this exercise, you will configure Azure VMs running SUSE Linux Enterprise Ser
     ```
     df -h
     ```
-    >Note: Do not close the tab(open new putty and login for i20-db-1)
+
 1.  Repeat the previous steps on the i20-db-1 Azure VM.
 
 
@@ -321,7 +327,7 @@ In this exercise, you will configure Azure VMs running SUSE Linux Enterprise Ser
 
 1.  In the vi editor, paste the key you generated on i20-db-0.
 
-1.  Press **esc key** and enter **:wq** to save the changes and close the editor.
+1.  Save the changes and close the editor.
 
 1.  In the SSH session to i20-db-1, generate passphrase-less SSH key by running:
 
@@ -345,7 +351,7 @@ In this exercise, you will configure Azure VMs running SUSE Linux Enterprise Ser
 
 1.  In the vi editor, paste the key you generated on i20-db-1 starting from a new line.
 
-1.  Press **esc key** and enter **:wq** to save the changes and close the editor.
+1.  Save the changes and close the editor.
 
 1.  To verify that the configuration on was successful, in the SSH session to i20-db-0, establish an SSH session as **root** from i20-db-0 to i20-db-1 by running: 
 
@@ -417,9 +423,9 @@ In this exercise, you will configure Azure VMs running SUSE Linux Enterprise Ser
 
 1.  In the vi editor, replace `#DefaultTasksMax=512` with `DefaultTasksMax=4096`. 
 
-     > **Note**: In some cases, Pacemaker might create many processes, reaching the default limit imposed on their number and triggering a failover. This change increases the maximum number of allowed processes.
+    > **Note**: In some cases, Pacemaker might create many processes, reaching the default limit imposed on their number and triggering a failover. This change increases the maximum number of allowed processes.
 
-1.  Press **esc key** and enter **:wq** to save the changes and close the editor.
+1.  Save the changes and close the editor.
 
 1.  In the SSH session to i20-db-0, run the following to activate the configuration change:
 
@@ -502,7 +508,7 @@ In this exercise, you will configure clustering on Azure VMs running Linux to su
     vi /etc/corosync/corosync.conf
     ```
 
-1.  In the vi editor, note the `transport: udpu` entry and the `nodelist` section:
+1.  In the vi editor, notice the `transport: udpu` entry and the `nodelist` section:
     ```
     [...]
        interface { 
@@ -528,7 +534,7 @@ In this exercise, you will configure clustering on Azure VMs running Linux to su
 
     > **Note**: This change allows for memory preserving maintenance. For more information, refer to [Microsoft documentation regarding maintenance of virtual machines in Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/maintenance-and-updates#maintenance-that-doesnt-require-a-reboot)
 
-1.  Press **esc key** and enter **:wq** to save the changes and close the editor.
+1.  Save the changes and close the editor.
 
 1.  Repeat the previous steps on i20-db-1.
 
@@ -556,7 +562,7 @@ In this exercise, you will configure clustering on Azure VMs running Linux to su
 
 1.  On the **Register an application** blade, specify the following settings, and click **Register**:
 
-    -   Name: **Stonith app<inject key="DeploymentID" enableCopy="false" />**
+    -   Name: **Stonith app**
 
     -   Supported account type: **Accounts in this organizational directory only**
 
@@ -570,7 +576,6 @@ In this exercise, you will configure clustering on Azure VMs running Linux to su
 
 1.  Copy the resulting **Value** to Notepad (this entry is displayed only once, after you click **Add**). This will be referred to as **password** later in this exercise:
 
-1. copy the **Subscription ID** to Notepad.
 
 ### Task 5: Grant permissions to Azure VMs to the service principal of the STONITH app 
 
@@ -582,11 +587,9 @@ In this exercise, you will configure clustering on Azure VMs running Linux to su
 
     -   Role: **Virtual Machine Contributor**
 
-    -   Assign access to: **user, group, or service principal**
+    -   Assign access to: **Azure AD user, group, or service principal**
 
-    -   Click on **+Select Member** and select: **Stonith app**.
-
-1. once done, then click on **Review + assign** to create the role assignment.
+    -   Select: **Stonith app**
 
 1.  Repeat the previous steps to assign the Stonith app the Virtual Machine Contributor role to the **i20-db-1** Azure VM
 
@@ -614,7 +617,7 @@ In this exercise, you will configure clustering on Azure VMs running Linux to su
 
 1.  Within the RDP session to az12003a-vm0, start Internet Explorer and navigate to **https://i20-db-0:7630**. This should display the SUSE Hawk sign-in page.
 
-     > **Note**: Ignore **This site is not secure** message.
+   > **Note**: Ignore **This site is not secure** message.
 
 1.  On the SUSE Hawk sign in page, login by using the following credentials:
 
@@ -624,4 +627,41 @@ In this exercise, you will configure clustering on Azure VMs running Linux to su
 
 1.  Verify that the cluster status is healthy. If you are seeing a message indicating that one of two cluster nodes is unclean, restart that node from the Azure portal.
 
-> **Result**: After you completed this exercise, you have configured clustering on Azure VMs running Linux to support a highly available SAP NetWeaver deployment.
+> **Result**: After you completed this exercise, you have configured clustering on Azure VMs running Linux to support a highly available SAP NetWeaver deployment
+
+
+## Exercise 4: Remove lab resources
+
+Duration: 10 minutes
+
+In this exercise, you will remove resources provisioned in this lab.
+
+#### Task 1: Open Cloud Shell
+
+1. At the top of the portal, click the **Cloud Shell** icon to open Cloud Shell pane and choose Bash as the shell.
+
+1. In the Cloud Shell pane, run the following command to set the value of the variable `RESOURCE_GROUP_PREFIX` to the prefix of the name of the resource group containing the resources you provisioned in this lab:
+
+    ```cli
+    RESOURCE_GROUP_PREFIX='az12003a-'
+    ```
+
+1. In the Cloud Shell pane, run the following command to list all resource groups you created in this lab:
+
+    ```cli
+    az group list --query "[?starts_with(name,'$RESOURCE_GROUP_PREFIX')]".name --output tsv
+    ```
+
+1. Verify that the output contains only the resource group you created in this lab. This resource group with all of their resources will be deleted in the next task.
+
+#### Task 2: Delete resource groups
+
+1. In the Cloud Shell pane, run the following command to delete the resource group and their resources.
+
+    ```cli
+    az group list --query "[?starts_with(name,'$RESOURCE_GROUP_PREFIX')]".name --output tsv | xargs -L1 bash -c 'az group delete --name $0 --no-wait --yes'
+    ```
+
+1. Close the Cloud Shell pane.
+
+> **Result**: After you completed this exercise, you have removed the resources used in this lab.
