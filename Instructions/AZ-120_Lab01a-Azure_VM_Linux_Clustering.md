@@ -1,8 +1,3 @@
----
-lab:
-    title: '02a - Implement Linux clustering on Azure VMs'
-    module: 'Module 02 - Explore the foundations of IaaS for SAP on Azure'
----
 
 # AZ 120 Module 2: Explore the foundations of IaaS for SAP on Azure
 # Lab 2a: Implement Linux clustering on Azure VMs
