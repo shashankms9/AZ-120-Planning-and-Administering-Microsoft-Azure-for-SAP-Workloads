@@ -38,24 +38,29 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 ### Task 1: Deploy Azure VMs running Linux SUSE
 
-1. From the lab computer, start a Web browser, and navigate to the Azure portal at https://portal.azure.com
+1. If you are not already signed into the Azure portal, sign in to the Azure portal at https://portal.azure.com, with the Azure credentials.
 
-1. If prompted, sign in with the work or school or personal Microsoft account with the owner or contributor role to the Azure subscription you will be using for this lab.
+1. On **Sign in to Microsoft Azure** blade, you will see a login screen, in that enter the following email/username and then click on **Next**. 
+         
+      * Email/Username: <inject key="AzureAdUserEmail"></inject>
+
+
+1. Now enter the following password and click on **Sign in**.
+    * Password: <inject key="AzureAdUserPassword"></inject>
 
 1. In the Azure portal, use the **Search resources, services, and docs** text box at the top of the Azure portal page to search for and navigate to the **Proximity placement groups** blade and, on the **Proximity placement groups** blade, select **+ create**.
 
 1. On the **Basics** tab of the **Create Proximity Placement Groups** blade, specify the following settings and select **Review + create**:
 
-   - Subscription: *the name of your Azure subscription*
-
-   - Resource group: Resource group: *the name of a new resource group* **az12001a-RG**
+   | Setting | Value |
+    |   --    |  --   |
+    | **Subscription** | *the name of your Azure subscription*  |
+    | **Resource group** section | Select **Create new**, enter **az12001a-RG**, and then select **OK** |
+    | **Region** | *an Azure region where you can deploy Azure VMs* |
+    | **Proximity placement group name** | Select **az12001a-ppg** |
+    | **VM sizes** | 0 selected |
 
    > **Note**: Consider using **East US** or **East US2** regions for deployment of your resources. 
-
-   - Region: *an Azure region where you can deploy Azure VMs*
-
-   - Proximity placement group name: **az12001a-ppg**
-
 1. On the **Review + create** tab of the **Create Proximity Placement Groups** blade, select **Create**.
 
    > **Note**: Wait for the provisioning to complete. This should take less than a minute.
