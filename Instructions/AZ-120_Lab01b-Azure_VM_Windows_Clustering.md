@@ -306,7 +306,9 @@ with the following settings:
 
 1.  Repeat the previous step to attach the remaining 3 disks with the prefix **az12001b-cl-vm0-DataDisk** (for the total of 4). Assign the LUN number matching the last character of the disk name. For the last disk (LUN **3**), set HOST CACHING to **None**.
 
-1.  Save your changes. 
+1.  Save your changes.
+
+     ![](../images/disk1.png)
 
 1.  In the Azure portal, navigate to the blade of the second Azure VM you provisioned in the previous task (**az12001b-cl-vm1**).
 
