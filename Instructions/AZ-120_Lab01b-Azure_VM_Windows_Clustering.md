@@ -108,9 +108,9 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     > **Note**: If the deployment fails with the **Conflict** error message during deployment of the CustomScriptExtension component, use the following steps to remediate this issue:
 
-    - In the Azure portal, on the **Deployment** blade, review the deployment details and identify the VM(s) where the installation of the CustomScriptExtension failed.
+    - In the Azure portal, select resource group **az12001b-ad-RG** and from left nagivation pane select  **Deployment**, on **Deployment**blade, review the deployment details and identify the VM(s) where the installation of the CustomScriptExtension failed.
 
-    - In the Azure portal, navigate to the blade of the VM(s) you identified in the previous step, select **Extensions**, and from the **Extensions** blade, remove the CustomScript extension.
+    - In the Azure portal, navigate to the blade of the VM(s) you identified in the previous step, select **Extensions + applications**, and from the **Extensions + application** blade, remove(uninstall) the CustomScript extension.
 
     - Rerun the previous step of this task.
 
