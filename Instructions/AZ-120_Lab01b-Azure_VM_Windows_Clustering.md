@@ -119,7 +119,8 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 1.  From the lab computer, in the Azure portal, navigate to the **Virtual machines** blade, click **+ Create**, and, from the drop-down menu, select **Azure virtual machine**.
 
-1.  From the **Create a virtual machine** blade, initiate provisioning of a **Windows Server 2022 Datacenter: Azure Edition - Gen2** Azure VM with the following settings (leave all others with their default values):
+1.  From the **Create a virtual machine** blade, initiate provisioning of a **Windows Server 2022 Datacenter: Azure Edition - Gen2** Azure VM on **Basics** tab
+with the following settings:
 
     -   Subscription: *the name of your Azure subscription*
 
@@ -145,9 +146,13 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     -   Select inbound ports: **RDP (3389)**
 
-    -   Would you like to use an existing Windows Server license?: **No**
-
+    -   Would you like to use an existing Windows Server license?: **No** 
+    
+ 1. On **Disks** tab of **Create a virtual machine** blade specify the following:
+    
     -   OS disk type: **Premium SSD**
+
+ 1. On **Networking** tab of **Create a virtual machine** blade specify the following and select **Next:Managemet>**.
 
     -   Virtual network: **adVNET**
 
@@ -167,7 +172,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     -   Place this virtual machine behind an existing load balancing solutions: **No**
 
-    -   Boot diagnostics: **Disable**
+ 1. On **Management** tab of **Create a virtual machine** blade specify the following and select **Next:Monitoring>**
 
     -   Login with Azure AD: **Off**
 
@@ -178,6 +183,12 @@ In this exercise, you will deploy Azure infrastructure compute components necess
     -   Extensions: *None*
 
     -   Tags: *None*
+
+ 1. On **Monitoring** tab of **Create a virtual machine** blade specify the following:
+
+    -   Boot diagnostics: **Disable**
+
+ 1. Select **Review + Create** and **create**
 
 1.  Do not wait for the provisioning to complete but continue to the next step.
 
