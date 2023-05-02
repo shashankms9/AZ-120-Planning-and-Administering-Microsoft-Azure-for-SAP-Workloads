@@ -117,7 +117,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
    > **Note**: This image has preconfigured NSG rules
 
-   - Accelerated networking: **On**
+   - Enable accelerated networking: **On**
 
    - Place this virtual machine behind an existing load balancing solutions: **No**
 
