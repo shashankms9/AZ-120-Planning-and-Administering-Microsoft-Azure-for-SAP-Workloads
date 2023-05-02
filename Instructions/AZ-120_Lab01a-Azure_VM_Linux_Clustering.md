@@ -124,6 +124,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 1. On the **Management** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Advanced >** (leave all other settings with their default value):
 
    - Enable basic plan for free: **No**
+   
 
    > **Note**: This setting is not available if you have already selected the Azure Security Center plan.
 
@@ -246,13 +247,14 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
    - Disk name: **az12001a-vm0-DataDisk0**
 
-   - Resource group: *the name of the resource group you used earlier in this task*
-
    - HOST CACHING: **Read-only**
 
 1. Repeat the previous step to attach the remaining 7 disks with the prefix **az12001a-vm0-DataDisk** (for the total of 8). Assign the LUN number matching the last character of the disk name. Set HOST CACHING of the disk with LUN **1** to **Read-only** and, for all the remaining ones, set HOST CACHING to **None**.
 
 1. Save your changes. 
+
+    ![Picture 1](../images/addingdisk.png)
+ 
 
 1. In the Azure portal, navigate to the blade of the second Azure VM you provisioned in the previous task (**az12001a-vm1**).
 
@@ -454,7 +456,16 @@ In this exercise, you will configure operating system and storage on Azure VMs r
    cat /root/.ssh/id_dsa.pub
    ```
 
-1. Copy the value of the key into Clipboard.
+1. You will find the ssh key  which is saved in "/ root/.ssh/" path. run the following commands to get the key and copy the key value into Clipboard.
+    
+      ```cli
+      cd /root/.ssh/
+
+      cat id_rsa.pub
+      ```
+   
+    ![Picture 1](../images/key-az120.png)
+
 
 1. In the Cloud Shell pane, in the SSH session to az12001a-vm1, create a file **/root/.ssh/authorized\_keys** in the vi editor (you are free to use any other editor) by running:
 
@@ -478,8 +489,13 @@ In this exercise, you will configure operating system and storage on Azure VMs r
    cat /root/.ssh/id_dsa.pub
    ```
 
-1. Copy the value of the key into Clipboard.
+1.  You will find the ssh key  which is saved in "/ root/.ssh/" path. run the following commands to get the key and copy the key value into Clipboard.
+    
+      ```cli
+      cd /root/.ssh/
 
+      cat id_rsa.pub
+      ```
 1. Switch to the Cloud Shell pane containing the SSH session to az12001a-vm0 and create a file **/root/.ssh/authorized\_keys** in the vi editor (you are free to use any other editor) by running:
 
    ```cli
@@ -502,7 +518,13 @@ In this exercise, you will configure operating system and storage on Azure VMs r
    cat /root/.ssh/id_rsa.pub
    ```
 
-1. Copy the value of the key into Clipboard.
+1.  You will find the ssh key  which is saved in "/ root/.ssh/" path. run the following commands to get the key and copy the key value into Clipboard.
+    
+      ```cli
+      cd /root/.ssh/
+
+      cat id_rsa.pub
+      ```
 
 1. Switch to the Cloud Shell pane containing the SSH session to **az12001a-vm1** and open the file **/root/.ssh/authorized\_keys** in the vi editor (you are free to use any other editor) by running:
 
@@ -526,7 +548,13 @@ In this exercise, you will configure operating system and storage on Azure VMs r
    cat /root/.ssh/id_rsa.pub
    ```
 
-1. Copy the value of the key into Clipboard.
+1.  You will find the ssh key  which is saved in "/ root/.ssh/" path. run the following commands to get the key and copy the key value into Clipboard.
+
+      ```cli
+      cd /root/.ssh/
+
+      cat id_rsa.pub
+      ```
 
 1. Switch to the Cloud Shell pane containing the SSH session to az12001a-vm0 and open the file **/root/.ssh/authorized\_keys** in the vi editor (you are free to use any other editor) by running:
 
@@ -690,7 +718,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
 1. In the Azure portal, navigate to the blade displaying the properties of the newly provisioned **az12001a-lb0** load balancer. 
 
-1. On the **az12001a-lb0** blade, select **Backend pools**, select **+ Add**, and, on the **Add backend pool** specify the following settings (leave others with their default values):
+1. On the **az12001a-lb0** blade, select **Backend pools**, select **+ Add**, and, on the **Add backend pool** specify the following settings (leave others with their default values) and click save:
 
    - Name: **az12001a-lb0-bepool**
 
@@ -702,7 +730,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
    - IP address: **192.168.0.5** Resource name: **az12001a-vm1**
 
-1. On the **az12001a-lb0** blade, select **Health probes** select **+ Add**, and, on the **Add health probe** blade, specify the following settings (leave others with their defaults):
+1. On the **az12001a-lb0** blade, select **Health probes** select **+ Add**, and, on the **Add health probe** blade, specify the following settings (leave others with their defaults) and click on Add:
 
    - Name: **az12001a-lb0-hprobe**
 
@@ -712,9 +740,8 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
    - Interval: **5** *seconds*
 
-   - Unhealthy threshold: **2** *consecutive failures*
 
-1. On the **az12001a-lb0** blade, select **Load balancing rules**, select **+ Add**, and, on the **Add load balancing rule** blade, specify the following settings (leave others with their defaults):
+1. On the **az12001a-lb0** blade, select **Load balancing rules**, select **+ Add**, and, on the **Add load balancing rule** blade, specify the following settings (leave others with their defaults) and click on save:
 
    - Name: **az12001a-lb0-lbruleAll**
 
@@ -722,11 +749,11 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
    - Frontend IP address: **192.168.0.240 (LoadBalancerFrontEnd)**
 
-   - HA Ports: **Enabled**
-
    - Backend pool: **az12001a-lb0-bepool (2 virtual machines)**
+   
+   - High availability ports : **Enabled**
 
-   - Health probe:**az12001a-lb0-hprobe (TCP:62500)**
+   - Health probe: **az12001a-lb0-hprobe (TCP:62500)**
 
    - Session persistence: **None**
 
@@ -786,7 +813,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
 1. On the **az12001a-lb1-bepool** blade, specify the following settings and click **Save**:
 
-   - Virtual network: **az12001a-rg-vnet (2 VM)**
+   - Virtual network: **az12001a-RG-vnet**
 
    - Virtual machine: **az12001a-vm0**  IP Configuration: **ipconfig1 (192.168.0.4)**
 
@@ -819,12 +846,14 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
    - Username: **Student**
 
    - Password: **Pa55w.rd1234**
+   
+   - Confirm Password : **Pa55w.rd1234**
 
    - Public inbound ports: **Allow selected ports**
 
    - Selected inbound ports: **RDP (3389)**
 
-   - Would you like to use an existing Windows Server license?: **No**
+   - Would you like to use an existing Windows Server license?: **Do not select**
 
 1. On the **Disks** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Networking >** (leave all other settings with their default value):
 
@@ -846,27 +875,29 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
    - Select inbound ports: **RDP (3389)**
 
-   - Accelerated networking: **Off**
+   - Enable accelerated networking: **Do not select**
 
-   - Place this virtual machine behind an existing load balancing solutions: **No**
+   - Place this virtual machine behind an existing load balancing solutions: **Do not select**
 
 1. On the **Management** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Advanced >** (leave all other settings with their default value):
 
-   - Enable basic plan for free: **No**
+     - Enable auto-shutdown: **Off**
+     
+     - Enable System assigned managed identity: **Off**
+     
+     - Enable backup: **Off**
+     
+     - Guest OS updates (patch orchestration options): **Manual updates**
 
-   > **Note**: This setting is not available if you have already selected the Azure Security Center plan.
+   
+1. On the **Monitoring** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Advanced >** (leave all other settings with their default value):
 
    - Boot diagnostics: **Enable with managed storage account (recommended)**
 
-   - OS guest diagnostics: **Off**
-
-   - System assigned managed identity: **Off**
-
-   - Enable auto-shutdown: **Off**
-
-   - Enable backup: **Off**
-
-   - Guest OS updates: **Manual updates**
+   - Enable OS guest diagnostics: **Do not select**
+   
+   
+   > **Note**: This setting is not available if you have already selected the Azure Security Center plan.
 
 1. On the **Advanced** tab of the **Create a virtual machine** blade, select **Review + create** (leave all other settings with their default value):
 
