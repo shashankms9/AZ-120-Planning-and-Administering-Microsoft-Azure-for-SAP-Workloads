@@ -402,7 +402,7 @@ Duration: 40 minutes
          
         - Review and click on **Create**
 
-    - On **Result** Wizard wait untill its complete and click on **Close**
+    - On **Result** Wizard, wait untill Storage pool successfully complete and click on **Close**
 
       ![](../images/task2(8).png)
 
@@ -439,53 +439,108 @@ Duration: 40 minutes
 
     -   On **Confirmation selections** Wizard click on create 
 
-    -   On **Result** Wizard wait untill new virtual disk successfully complete and click on close.
+    -   On **Result** Wizard, wait untill new virtual disk successfully complete and click on close.
 
 	 ![](../images/task-07-5.png)
 
 1.  Use the **New Volume Wizard** to create a new volume with the following settings:
 
+    -   On **Before you begin** Wizard - select **Next>**
+    
     -   Server and Disk: *accept the default values*
 
     -   Size: *accept the default values*
+    
+    -   On **Drive letter and folder** Wizard
+    
+         -  Drive letter: **M**
+        
+    -   On **File system** Wizard
+    
+         - File system: **ReFS**
 
-    -   Drive letter: **M**
+         - Allocation unit size: **Default**
 
-    -   File system: **ReFS**
+         - Volume label: **Data**
 
-    -   Allocation unit size: **Default**
+    -   On **Confirmation selections** Wizard click on create 
 
-    -   Volume label: **Data**
+    -   On **Result** Wizard wait untill new volume successfully complete and click on close.
 
-1.  Back in the **Storage Pools** view, use the **New Storage Pools Wizard** to create a new storage pool with the following settings:
+	 ![](../images/task-07-6.png)
 
-    -   Name: **Log Storage Pool**
+1.  Back in the **Storage Pools**, from the top right corner select **TASKS** in dropdown click on **New storage pool**.
 
-    -   Physical Disks: *select the last of 4 disks and set its allocation to* **Automatic**
+1.  Use the **New Storage Pools Wizard** to create a new storage pool with the following settings:
+
+    - On **Before you begin** Wizard - select **Next>**
+
+    - On **Storage Pool Name** Wizard
+      
+        - Name : enter **Log Storage Pool**
+
+    - On **Physical Disks** Wizard
+ 
+        - *select the last of 4th  disks and set its allocation to* **Automatic**  
+
+    -  On **Confirmation** Wizard
+         
+        - Review and click on **Create**
+
+    - On **Result** Wizard wait, untill Storage pool successfully complete and click on **Close**
+
+1.  Back on **Storage pools**, under **Virtual Disks** from **TASKS** dropdown select **New Virtual Disks**
 
 1.  Use the **New Virtual Disk Wizard** to create a new virtual disk with the following settings:
+ 
+    -  On **Before you begin** Wizard - select **Next>**
+  
+    -  On **Virtual Disk Name** Wizard
 
-    -   Virtual Disk Name: **Log Virtual Disk**
+        - Virtual Disk Name: **Log Virtual Disk**
 
-    -   Storage Layout: **Simple**
+    -  On **Enclosure Awareness** Wizard - select **Next>**
 
-    -   Provisioning: **Fixed**
+    -  On **Storage Layout** Wizard
+    
+        - Storage Layout: **Simple**
 
-    -   Size: **Maximum size**
+    -  On **Provisioning** Wizard
+      
+         - Select Provisioning type : **Fixed**
+
+    -   On **Size** Wizard
+       
+         - Size: **Maximum size**
+
+    -   On **Confirmation selections** Wizard click on create 
+
+    -   On **Result** Wizard wait untill new virtual disk successfully complete and click on close.
+
 
 1.  Use the **New Volume Wizard** to create a new volume with the following settings:
 
+    -  On **Before you begin** Wizard - select **Next>**
+    
     -   Server and Disk: *accept the default values*
 
     -   Size: *accept the default values*
+    
+    -   On **Drive letter and folder** Wizard
 
-    -   Drive letter: **L**
+         - Drive letter: **L**
 
-    -   File system: **ReFS**
+    -   On **File system** Wizard
 
-    -   Allocation unit size: **Default**
+         -  File system: **ReFS**
 
-    -   Volume label: **Log**
+         -  Allocation unit size: **Default**
+
+         -  Volume label: **Log**
+
+    -   On **Confirmation selections** Wizard click on create 
+
+    -   On **Result** Wizard wait untill new volume successfully complete and click on close.
 
 1.  Repeat the previous step in this task to configure storage on az12001b-cl-vm1.
 
