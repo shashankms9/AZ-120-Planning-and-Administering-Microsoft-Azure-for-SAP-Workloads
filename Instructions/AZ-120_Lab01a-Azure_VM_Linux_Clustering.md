@@ -249,12 +249,13 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
    - HOST CACHING: **Read-only**
 
+     ![Picture 1](../images/addingdisk.png)
+       
 1. Repeat the previous step to attach the remaining 7 disks with the prefix **az12001a-vm0-DataDisk** (for the total of 8). Assign the LUN number matching the last character of the disk name. Set HOST CACHING of the disk with LUN **1** to **Read-only** and, for all the remaining ones, set HOST CACHING to **None**.
 
 1. Save your changes. 
-
-    ![Picture 1](../images/addingdisk.png)
- 
+    
+    ![Picture 1](../images/vm0-disks.png)
 
 1. In the Azure portal, navigate to the blade of the second Azure VM you provisioned in the previous task (**az12001a-vm1**).
 
@@ -273,6 +274,8 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 1. Repeat the previous step to attach the remaining 7 disks with the prefix **az12001a-vm1-DataDisk** (for the total of 8). Assign the LUN number matching the last character of the disk name. Set HOST CACHING of the disk with LUN **1** to **Read-only** and, for all the remaining ones, set HOST CACHING to **None**.
 
 1. Save your changes. 
+
+   ![Picture 1](../images/vm1-disks.png)
 
 > **Result**: After you completed this exercise, you have provisioned Azure compute resources necessary to support highly available SAP HANA deployments.
 
