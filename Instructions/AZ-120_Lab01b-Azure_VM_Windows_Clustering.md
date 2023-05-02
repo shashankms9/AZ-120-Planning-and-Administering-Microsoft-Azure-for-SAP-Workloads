@@ -386,11 +386,26 @@ Duration: 40 minutes
 
 1.  Use the **New Storage Pools Wizard** to create a new storage pool with the following settings:
 
-    -   Name: **Data Storage Pool**
+    - On **Before you begin** Wizard - select **Next>**
 
-    -   Physical Disks: *select the 3 disks with disk numbers corresponding to the first three LUN numbers (0-2) and set their allocation to* **Automatic**
+    - On **Storage Pool Name** Wizard
+      
+        - Name : enter **Data Storage Pool**
+
+    - On **Physical Disks** Wizard
+ 
+        - Select the 3 disks with disk numbers corresponding to the first three LUN numbers (0-2) and set their allocation to **Automatic**
 
     > **Note**: Use the entry in the **Chassis** column to identify the **LUN** number.
+
+    - On **Confirmation** Wizard
+         
+        - Review and click on **Create**
+
+    - On **Result** Wizard wait untill its complete and click on **Close**
+
+      ![](../images/task2(8).png)
+
 
 1.  Use the **New Virtual Disk Wizard** to create a new virtual disk with the following settings:
 
