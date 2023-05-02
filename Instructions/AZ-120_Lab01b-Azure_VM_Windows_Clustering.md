@@ -148,7 +148,7 @@ with the following settings:
 
     -   Would you like to use an existing Windows Server license?: **No** 
     
- 1. On **Disks** tab of **Create a virtual machine** blade specify the following and select **Next:>Networking**.
+ 1. On **Disks** tab of **Create a virtual machine** blade specify the following and select **Next:Networking>**.
     
     -   OS disk type: **Premium SSD**
 
