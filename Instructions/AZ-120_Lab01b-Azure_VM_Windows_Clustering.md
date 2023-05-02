@@ -398,7 +398,7 @@ Duration: 40 minutes
 
     > **Note**: Use the entry in the **Chassis** column to identify the **LUN** number.
 
-    - On **Confirmation** Wizard
+    -  On **Confirmation** Wizard
          
         - Review and click on **Create**
 
@@ -409,13 +409,39 @@ Duration: 40 minutes
 
 1.  Use the **New Virtual Disk Wizard** to create a new virtual disk with the following settings:
 
-    -   Virtual Disk Name: **Data Virtual Disk**
+1.  Click on **Storage pools** from left pane then select newly created storage pool and under **Virtual Disks** from **TASKS** dropdown select **New Virtual Disks**
 
-    -   Storage Layout: **Simple**
+    ![](../images/task-07-1.png)
+    
+1. Select the newly created **Storage pool** as shown in below image and click on **Next**.
+    
+    ![](../images/task-07-2.png)
+    
+    -  On **Before you begin** Wizard - select **Next>**
 
-    -   Provisioning: **Fixed**
+    -  On **Virtual Disk Name** Wizard
 
-    -   Size: **Maximum size**
+         -  Name: **Data Virtual Disk**
+
+    -  On **Enclosure Awareness** Wizard - select **Next>**
+
+    -  On **Storage Layout** Wizard
+    
+         - Select Layout: **Simple**
+
+    -   On **Provisioning** Wizard
+      
+         - Select Provisioning type : **Fixed**
+
+    -   On **Size** Wizard
+       
+         - Size: **Maximum size**
+
+    -   On **Confirmation selections** Wizard click on create 
+
+    -   On **Result** Wizard wait untill new virtual disk successfully complete and click on close.
+
+	 ![](../images/task-07-5.png)
 
 1.  Use the **New Volume Wizard** to create a new volume with the following settings:
 
