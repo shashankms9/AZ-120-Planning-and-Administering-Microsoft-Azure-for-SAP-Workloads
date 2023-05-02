@@ -806,6 +806,8 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 1. Close the Cloud Shell pane.
 
 1. In the Azure portal, navigate to the blade displaying the properties of the newly created Azure Load Balancer **az12001a-lb1**.
+   
+   ![Picture 1](../images/lb120.png)
 
 1. On the **az12001a-lb1** blade, click **Backend pools**.
 
