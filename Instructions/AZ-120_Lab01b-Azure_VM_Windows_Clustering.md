@@ -122,9 +122,9 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 1.  From the **Create a virtual machine** blade, initiate provisioning of a **Windows Server 2022 Datacenter: Azure Edition - Gen2** Azure VM on **Basics** tab
 with the following settings:
 
-    -   Subscription: *the name of your Azure subscription*
+    -   Subscription: the name of your Azure subscription
 
-    -   Resource group: *the name of a new resource group* **az12001b-cl-RG**
+    -   Resource group: the name of a new resource group **az12001b-cl-RG**
 
     -   Virtual machine name: **az12001b-cl-vm0**
 
@@ -148,7 +148,7 @@ with the following settings:
 
     -   Would you like to use an existing Windows Server license?: **No** 
     
- 1. On **Disks** tab of **Create a virtual machine** blade specify the following:
+ 1. On **Disks** tab of **Create a virtual machine** blade specify the following and select **Next:>Networking**.
     
     -   OS disk type: **Premium SSD**
 
@@ -196,7 +196,7 @@ with the following settings:
 
     -   Subscription: *the name of your Azure subscription*
 
-    -   Resource group: *the name of the resource group you used when deploying the first **Windows Server 2022 Datacenter: Azure Edition - Gen2** Azure VM in this task*
+    -   Resource group: *the name of a new resource group*  **az12001b-cl-RG**
 
     -   Virtual machine name: **az12001b-cl-vm1**
 
@@ -220,7 +220,11 @@ with the following settings:
 
     -   Would you like to use an existing Windows Server license?: **No**
 
+ 1. On **Disks** tab of **Create a virtual machine** blade specify the following and select **Next:Networking>**
+
     -   OS disk type: **Premium SSD**
+
+ 1. On **Networking** tab of **Create a virtual machine** blade specify the following and select **Next:Managemet>**.
 
     -   Virtual network: **adVNET**
 
@@ -238,7 +242,7 @@ with the following settings:
 
     -   Place this virtual machine behind an existing load balancing solutions: **No**
 
-    -   Boot diagnostics: **Disable**
+1. On **Management** tab of **Create a virtual machine** blade specify the following and select **Next:Monitoring>**
 
     -   Login with Azure AD: **Off**
 
@@ -248,9 +252,11 @@ with the following settings:
 
     -   Enable backup: **Off**
 
-    -   Extensions: *None*
+1. On **Monitoring** tab of **Create a virtual machine** blade specify the following:
 
-    -   Tags: *None*
+    -   Boot diagnostics: **Disable**
+
+1. Select **Review + Create** and **create**
 
 1.  Wait for the provisioning to complete. This should take a few minutes.
 
