@@ -380,6 +380,10 @@ Duration: 40 minutes
 
 1.  Navigate to the **Storage Pools** view and verify that you see all the disks you attached to the Azure VM in the previous exercise.
 
+1.  From the top right corner select **TASKS** in dropdown click on **New storage pool**.
+
+    ![](../images/task2-(7).png)
+
 1.  Use the **New Storage Pools Wizard** to create a new storage pool with the following settings:
 
     -   Name: **Data Storage Pool**
