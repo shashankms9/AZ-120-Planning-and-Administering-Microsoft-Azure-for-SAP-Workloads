@@ -49,31 +49,35 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     > **Note**: Alternatively, you can launch the deployment by navigating to Azure Quickstart Templates page at <https://github.com/Azure/azure-quickstart-templates>, locating the template named **Create 2 new Windows VMs, a new AD Forest, Domain and 2 DCs in separate availability zones**, and initiating its deployment by clicking **Deploy to Azure** button.
 
-1.  On the blade **Create a new AD Domain with 2 DCs using Availability Zones**, specify the following settings, click **Review + create**, and then click **Create** to initiate the deployment:
+1.  On the blade **Create a new AD Domain with 2 DCs using Availability Zones**, specify the following settings :
 
-    -   Subscription: Select your **Azure subscription**
+    -   Subscription: Select your **Azure subscription (1)**
 
-    -   Resource group: Choose the resource group **az12003b-ad-RG** form the drop-down list
+    -   Resource group: Choose the resource group **az12003b-ad-RG (2)** form the drop-down list
 
-    -   Location: Choose **<inject key="Region" enableCopy="false"/>**
+    -   Location: Choose **<inject key="Region" enableCopy="false"/> (3)**
 
-    -   Admin Username: Enter    **Student**
+    -   Admin Username: Enter **Student (4)**
 
-    -   Location:  Choose **<inject key="Region" enableCopy="false"/>**
+    -   Location:  Choose **<inject key="Region" enableCopy="false"/> (5)**
 
-    -   Password: Enter **Pa55w.rd1234**
+    -   Password: Enter **Pa55w.rd1234 (6)**
 
-    -   Domain Name: Enter **adatum.com**
+    -   Domain Name: Enter **adatum.com (7)**
 
-    -   DnsPrefix: *Use any unique valid DNS prefix*
+    -   DnsPrefix: Enter **dns<inject key="Deployment ID" enableCopy="false"/> (8)**
 
-    -   Vm Size: **Standard D2s\_v3**
+    -   Vm Size: **Standard D2s_v3 (9)**
 
-    -   _artifacts Location: *https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/application-workloads/active-directory/active-directory-new-domain-ha-2-dc-zones/*
+    -   _artifacts Location: Enter **https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/application-workloads/active-directory/active-directory-new-domain-ha-2-dc-zones/** **(10)**
 
-    -   _artifacts Location Sas Token: *leave blank*
+    -   _artifacts Location Sas Token: Leave it as default **(11)**
+    
+    - Click on **Review + Create (12)**.
+    
+    ![](../images/3.md/customdeployment.png)
 
-
+1. Review the configuration and click on **Create**
     > **Note**: The deployment should take about 35 minutes. Wait for the deployment to complete before you proceed to the next task.
 
     > **Note**: If the deployment fails with the **Conflict** error message during deployment of the CustomScriptExtension component, use the following steps  to remediate this issue:
