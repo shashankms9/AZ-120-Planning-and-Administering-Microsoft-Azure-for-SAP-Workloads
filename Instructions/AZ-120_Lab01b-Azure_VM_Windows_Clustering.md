@@ -609,7 +609,12 @@ Duration: 40 minutes
 
 1.  Within the RDP session to az12001b-cl-vm0, from the **Tools** menu in Server Manager, start **Active Directory Administrative Center**.
 
-1.  In Active Directory Administrative Center, create a new organizational unit named **Clusters** in the root of the adatum.com domain.
+1.  In Active Directory Administrative Center, create a new organizational unit named **Clusters** in the root of the adatum.com domain and click on **OK**.
+
+1.  Click on **adatum(local)**, select **New** and **Organizational unit**.
+
+    ![](../images/task4-1.png)
+    ![](../images/task4-2.png)
 
 1.  In Active Directory Administrative Center, move the computer accounts of **az12001b-cl-vm0** and **az12001b-cl-vm1** from the **Computers** container to the **Clusters** organizational unit.
 
