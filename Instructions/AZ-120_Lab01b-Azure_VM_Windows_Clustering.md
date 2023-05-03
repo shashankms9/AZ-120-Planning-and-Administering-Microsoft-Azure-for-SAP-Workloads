@@ -120,7 +120,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 1.  From the lab computer, in the Azure portal, navigate to the **Virtual machines** blade, click **+ Create**, and, from the drop-down menu, select **Azure virtual machine**.
 
 1.  From the **Create a virtual machine** blade, initiate provisioning of a **Windows Server 2022 Datacenter: Azure Edition - Gen2** Azure VM on **Basics** tab
-with the following settings:
+specify the following settings:
 
     -   Subscription: the name of your Azure subscription
 
@@ -565,9 +565,9 @@ Duration: 40 minutes
 
     > **Note**: This will result in restart of the guest operating system of both Azure VMs.
 
-1.  On the lab computer, in the Azure Portal, click **+ Create a resource**.
+1.  In the Azure portal, in the Search resources, services, and docs text box at the top of the Azure portal page, type **Storage account** then press the Enter key and select **+ Create**.
 
-1.  From the **New** blade, initiate creation of a new **Storage account** with the following settings:
+1.  From the **Create a storage account** blade, initiate creation of a new **Storage account** on **Basics** tab with the following settings and click on **Next:Adavanced>**
 
     -   Subscription: *the name of your Azure subscription*
 
@@ -581,15 +581,25 @@ Duration: 40 minutes
 
     -   Redundancy: **Locally-redundant storage (LRS)**
 
-    -   Connectivity method: **Public endpoint (all networks)**
+1.  From the **Create a storage account** blade, on **Adavanced** tab with the following settings and click on **Next:Networking>**
 
     -   Require secure transfer for REST API operations: **Enabled**
 
+    -   Hierarchical namespace: **Disabled**
+
     -   Large file shares: **Disabled**
+
+1.  From the **Create a storage account** blade, on **Networking** tab with the following settings and click on **Next:Data protection>**
+
+    -   Connectivity method: **Enable Public access from all network**
 
     -   Soft delete for blobs, containers, and files: **Disabled**
 
-    -   Hierarchical namespace: **Disabled**
+1.  From the **Create a storage account** blade, on **Data protection** tab with the following settings and click on **Next:Review** 
+
+     -  Soft delete for blobs, containers, and files: **Disabled**
+
+1.  Click on **Create**.
 
 ### Task 4: Configure Failover Clustering on Azure VMs running Windows Server 2022 to support a highly available SAP NetWeaver installation.
 
