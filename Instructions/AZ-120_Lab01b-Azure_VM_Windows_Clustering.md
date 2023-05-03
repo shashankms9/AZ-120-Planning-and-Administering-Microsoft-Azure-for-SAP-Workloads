@@ -745,7 +745,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
 ### Task 2: Create and configure Azure Load Balancers handling inbound traffic
 
-1.  In the Azure portal, click **+ Create a resource**.
+1.  In the Azure portal, in the Search resources, services, and docs text box at the top of the Azure portal page, type **Load balancer** then press the Enter key and select **+ Create**.
 
 1.  From the **New** blade, initiate creation of a new Azure Load Balancer with the following settings:
 
