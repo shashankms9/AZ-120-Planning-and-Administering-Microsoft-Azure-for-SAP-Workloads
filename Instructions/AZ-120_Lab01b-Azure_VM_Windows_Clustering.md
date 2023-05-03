@@ -640,6 +640,7 @@ Duration: 40 minutes
 
     New-Cluster -Name az12001b-cl-cl0 -Node $nodes -NoStorage -StaticAddress 10.0.1.6
     ```
+    ![](../images/task4-7.png)
 
 1.  Within the RDP session to az12001b-cl-vm0, switch to the **Active Directory Administrative Center** console.
 
@@ -689,7 +690,11 @@ Duration: 40 minutes
 
 1.  To verify the resulting configuration, within the RDP session to az12001b-cl-vm0, from the **Tools** menu in Server Manager, start **Failover Cluster Manager**.
 
+    ![](../images/task4-10.png)
+
 1.  In the **Failover Cluster Manager** console, review the **az12001b-cl-cl0** cluster configuration, including its nodes, as well as is witness and network settings. Notice that the cluster does not have any shared storage.
+
+    ![](../images/task4-11.png)
 
 1.  Terminate the RDP session to az12001b-cl-vm0.
 
