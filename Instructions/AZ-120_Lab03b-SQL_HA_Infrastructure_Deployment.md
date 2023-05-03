@@ -39,35 +39,31 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 ### Task 1: Deploy a pair of Azure VMs running highly available Active Directory domain controllers by using an Azure Resource Manager template
 
-1.  From the lab computer, start a Web browser, and navigate to the Azure portal at **https://portal.azure.com**
+1.  Type **Deploy a custom template (1)** in the search box of the Azure portal menu, and select it **(2)**.
 
-1.  If prompted, sign in with the work or school or personal Microsoft account with the owner or contributor role to the Azure subscription you will be using for this lab.
+     ![](../images/3.md/deploytemplate.png)
 
-1.  In the Azure portal interface, click **+ Create a resource**.
+1.  From the **Custom deployment** blade, scroll down to **Quickstart template (disclaimer) (1)** and select the **application-workloads/active-directory/active-directory-new-domain-ha-2-dc-zones (2)**, from the drop-down list then click **Select template (3)**.
 
-1.  From the **New** blade, initiate creation of a new **Template deployment (deploy using custom templates)**
-
-1.  From the **Custom deployment** blade, in the **Quickstart template (disclaimer)** drop-down list, select the entry **application-workloads/active-directory/active-directory-new-domain-ha-2-dc-zones**, and click **Select template**.
+    ![](../images/3.md/selectemplate.png)
 
     > **Note**: Alternatively, you can launch the deployment by navigating to Azure Quickstart Templates page at <https://github.com/Azure/azure-quickstart-templates>, locating the template named **Create 2 new Windows VMs, a new AD Forest, Domain and 2 DCs in separate availability zones**, and initiating its deployment by clicking **Deploy to Azure** button.
 
 1.  On the blade **Create a new AD Domain with 2 DCs using Availability Zones**, specify the following settings, click **Review + create**, and then click **Create** to initiate the deployment:
 
-    -   Subscription: *the name of your Azure subscription*
+    -   Subscription: Select your **Azure subscription**
 
-    -   Resource group: *the name of a new resource group* **az12003b-ad-RG**
+    -   Resource group: Choose the resource group **az12003b-ad-RG** form the drop-down list
 
-    -   Location: *an Azure region where you can deploy Azure VMs*
+    -   Location: Choose **<inject key="Region" enableCopy="false"/>**
 
-    > **Note**: Consider using **East US** or **East US2** regions for deployment of your resources. 
+    -   Admin Username: Enter    **Student**
 
-    -   Admin Username: **Student**
+    -   Location:  Choose **<inject key="Region" enableCopy="false"/>**
 
-    -   Location: *the same Azure region you specified above*
+    -   Password: Enter **Pa55w.rd1234**
 
-    -   Password: **Pa55w.rd1234**
-
-    -   Domain Name: **adatum.com**
+    -   Domain Name: Enter **adatum.com**
 
     -   DnsPrefix: *Use any unique valid DNS prefix*
 
