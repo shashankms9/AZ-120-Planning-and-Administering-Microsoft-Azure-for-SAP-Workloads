@@ -110,7 +110,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     - In the Azure portal, select resource group **az12001b-ad-RG** and from left nagivation pane select  **Deployment**, on **Deployment** blade review the deployment details and identify the VM(s) where the installation of the CustomScriptExtension failed.
 
-    - In the Azure portal, navigate to the blade of the VM(s) you identified in the previous step, select **Extensions + applications**, and from the **Extensions + application** blade, remove(uninstall) the CustomScript extension.
+    - In the Azure portal, navigate to the blade of the VM's you identified in the previous step, select **Extensions + applications**, and from the **Extensions + application** blade, remove(uninstall) the CustomScript extension.
 
     - Rerun the previous step of this task.
 
@@ -272,8 +272,10 @@ with the following settings:
 
 1.  In the Cloud Shell pane, run the following command to create the first set of 4 managed disks that you will attach to the first Azure VM you deployed in the previous task:
 
+    >**Note**: Replace <Azure_region> with region where you deployment **az12001b-cl-vm0** Vm.
+    
     ```
-    $location = (Get-AzResourceGroup -Name $resourceGroupName).Location
+    $location = '<Azure_region>'
     $zone = (Get-AzVM -ResourceGroupName $resourceGroupName -Name 'az12001b-cl-vm0').Zones
     $diskConfig = New-AzDiskConfig -Location $location -DiskSizeGB 128 -AccountType Premium_LRS -OsType Windows -CreateOption Empty -Zone $zone
 
@@ -282,7 +284,10 @@ with the following settings:
 
 1.  In the Cloud Shell pane, run the following command to create the second set of 4 managed disks that you will attach to the second Azure VM you deployed in the previous task:
 
+    >**Note**: Replace <Azure_region> with region where you deployment **az12001b-cl-vm1** Vm.
+    
     ```
+    $location = '<Azure_region>'
     $zone = (Get-AzVM -ResourceGroupName $resourceGroupName -Name 'az12001b-cl-vm1').Zones
     
     $diskConfig = New-AzDiskConfig -Location $location -DiskSizeGB 128 -AccountType Premium_LRS -OsType Windows -CreateOption Empty -Zone $zone
@@ -353,8 +358,10 @@ Duration: 40 minutes
 
 1.  In the Cloud Shell pane, run the following command to join the Windows Server 2022 Azure VMs you deployed in the second task of the previous exercise to the **adatum.com** Active Directory domain (replace the `<username>` and `<password>` placeholders with the name and password of the administrative user account you specified when deploying the Bicep template in the first exercise of this lab):
 
+    >**Note**: Replace <Azure_region> with the region where you deployed both the VM's in previous task.
+
     ```
-    $location = (Get-AzureRmResourceGroup -Name $resourceGroupName).Location
+    $location = '<Azure_region>'
 
     $settingString = '{"Name": "adatum.com", "User": "adatum.com\\<username>", "Restart": "true", "Options": "3"}'
 
