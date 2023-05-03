@@ -786,6 +786,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
     -   IP address: **10.0.1.4** Resource Name **az1201b-cl-vm0**
 
     -   IP address: **10.0.1.5** Resource Name **az1201b-cl-vm1**
+    -   Click on **Save**
 
 1.  From the **az12001b-cl-lb0** blade, add a health probe with the following settings:
 
@@ -838,7 +839,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 1.  In the Cloud Shell pane, run the following command to create the public IP address to be used by the second load balancer:
 
     ```
-    $location = (Get-AzResourceGroup -Name $resourceGroupName).Location
+    $location = 'eastus'
 
     $pipName = 'az12001b-cl-lb0-pip'
 
@@ -848,6 +849,8 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 1.  In the Cloud Shell pane, run the following command to create the second load balancer:
 
     ```
+    $location = 'eastus'
+    
     $lbName = 'az12001b-cl-lb1'
 
     $lbFeName = 'az12001b-cl-lb1-fe'
@@ -860,7 +863,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
     $bePoolConfiguration = New-AzLoadBalancerBackendAddressPoolConfig -Name $lbBePoolName
 
-    New-AzLoadBalancer -ResourceGroupName $resourceGroupName -Location $location -Name $lbName -Sku Standard -BackendAddressPool $bePoolConfiguration -FrontendIpConfiguration $feIpconfiguration
+    New-AzLoadBalancer -ResourceGroupName $resourceGroupName -location $location -Name $lbName -Sku Standard -BackendAddressPool $bePoolConfiguration -FrontendIpConfiguration $feIpconfiguration
     ```
 
 1.  Close the Cloud Shell pane.
@@ -913,7 +916,9 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
     -   Backend pool: **az12001b-cl-lb1-bepool (2 virtual machines)**
 
-    -   Health probe:**az12001b-cl-lb1-hprobe (TCP:80)**
+    -   Health probe:**az12001b-cl-lb1-hprobe 
+    -   
+    -   Protcol: **(TCP:80)**
 
     -   Session persistence: **None**
 
