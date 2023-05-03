@@ -52,6 +52,6 @@
 
 1. Now you can see Azure Portal Dashboard, click on **Resource groups** from the Navigate panel to see the resource groups.
 
-   ![](../media/resourcegrou%5B.png)
+   ![](../images/3.md/rgs.png)
 
 1. Now, click on **Next** from the lower right corner to move to the next page.
