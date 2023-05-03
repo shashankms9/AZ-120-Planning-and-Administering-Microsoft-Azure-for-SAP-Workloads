@@ -838,8 +838,10 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
 1.  In the Cloud Shell pane, run the following command to create the public IP address to be used by the second load balancer:
 
+    >**Note**: Replace <Azure_region> with the region where you deployed both the VM's in previous task.
+
     ```
-    $location = 'eastus'
+    $location = '<Azureregion>'
 
     $pipName = 'az12001b-cl-lb0-pip'
 
@@ -848,8 +850,10 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
 1.  In the Cloud Shell pane, run the following command to create the second load balancer:
 
+    >**Note**: Replace <Azure_region> with the region where you deployed both the VM's in previous task.
+
     ```
-    $location = 'eastus'
+    $location = '<Azureregion>'
     
     $lbName = 'az12001b-cl-lb1'
 
@@ -894,8 +898,6 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
     -   Interval: **5** *seconds*
 
-    -   Unhealthy threshold: **2** *consecutive failures*
-
 1.  On the **az12001b-cl-lb1** blade, click **Load balancing rules**.
 
 1.  From the **az12001b-cl-lb1 - Load balancing rules** blade, add a network load balancing rule with the following settings:
@@ -905,8 +907,6 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
     -   IP version: **IPv4**
 
     -   Frontend IP address: *accept the default value*
-
-    -   HA Ports :  Click on **Disabled**
 
     -   Protocol: **TCP**
 
@@ -959,8 +959,25 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
     -   Select inbound ports: **RDP (3389)**
 
     -   You already have a Windows license?: **No**
+disk
 
-    -   OS disk type: **Standard HDD**
+-   OS disk type: **Standard HDD**
+
+networkin
+ -   Virtual network: **adVNET**
+
+    -   Subnet: *a new subnet named* **bastionSubnet**
+     -   Address range: **10.0.255.0/24**
+     
+    and click on save
+
+back
+Subnet: a new subnet named bastionSubnet 
+
+
+    -   System assigned managed identity: **Off**
+
+    --   Login with AAD credentials (Preview): **Off**
 
     -   Virtual network: **adVNET**
 
@@ -977,9 +994,19 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
     -   Select inbound ports: **RDP (3389)**
 
     -   Accelerated networking: **Off**
-
+    
+    management
+-   System assigned managed identity: **Off**
     -   Place this virtual machine behind an existing load balancing solutions: **No**
 
+   Login with AAD credentials (Preview): **Off**
+
+    -   Enable auto-shutdown: **Off**
+
+    -   Enable backup: **Off**
+
+Monitoring
+    -   OS guest diagnostics: **Off**
     -   Boot diagnostics: **Off**
 
     -   OS guest diagnostics: **Off**
