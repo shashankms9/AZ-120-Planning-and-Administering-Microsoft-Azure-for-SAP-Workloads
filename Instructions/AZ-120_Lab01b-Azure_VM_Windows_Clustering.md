@@ -40,13 +40,19 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 ### Task 1: Deploy a pair of Azure VMs running highly available Active Directory domain controllers by using a Bicep template
 
-1.  From the lab computer, start a Web browser, and navigate to the Azure portal at **https://portal.azure.com**
+1. If you are not already signed into the Azure portal, sign in to the Azure portal at https://portal.azure.com with the Azure credentials.
 
-1.  If prompted, sign in with the work or school or personal Microsoft account with the owner or contributor role to the Azure subscription you will be using for this lab.
+1. On **Sign in to Microsoft Azure** blade, you will see a login screen, in that enter the following email/username and then click on **Next**. 
+   * Email/Username: <inject key="AzureAdUserEmail"></inject>
 
-1.  In the Azure Portal, start a PowerShell session in Cloud Shell. 
+1. Now enter the following password and click on **Sign in**.
+   * Password: <inject key="AzureAdUserPassword"></inject>
 
-    > **Note**: If this is the first time you are launching Cloud Shell in the current Azure subscription, you will be asked to create an Azure file share to persist Cloud Shell files. If so, accept the defaults, which will result in creation of a storage account in an automatically generated resource group.
+1. In the Azure portal, select the **[>_]** (*Cloud Shell*) button at the top of the page to the right of the search box. This opens a Cloud Shell pane at the bottom of the portal.
+
+1. The first time you open the Cloud Shell, you may be prompted to choose the type of shell you want to use (*Bash* or *PowerShell*). Select **PowerShell**. If you do not see this option, skip the step.  
+
+1. If you are prompted to create storage for your Cloud Shell, ensure your subscription is selected and click on **Show advanced settings**. Leave default selected resource group and  enter **blob<inject key="DeploymentID" enableCopy="true"/>** for the **Storage account Name** and enter **blobfileshare<inject key="DeploymentID" enableCopy="true"/>** for the **File share Name** , then click on **Create Storage**.
 
 1. In the Cloud Shell pane, run the following commands to create a shallow clone of the repository hosting the Bicep template you will use for deployment of a pair of Azure VMs running highly available Active Directory domain controllers and set the current directory to the location of that template and its parameter file:
 
@@ -102,22 +108,23 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     > **Note**: If the deployment fails with the **Conflict** error message during deployment of the CustomScriptExtension component, use the following steps to remediate this issue:
 
-       - In the Azure portal, on the **Deployment** blade, review the deployment details and identify the VM(s) where the installation of the CustomScriptExtension failed.
+    - In the Azure portal, select resource group **az12001b-ad-RG** and from left nagivation pane select  **Deployment**, on **Deployment** blade review the deployment details and identify the VM(s) where the installation of the CustomScriptExtension failed.
 
-       - In the Azure portal, navigate to the blade of the VM(s) you identified in the previous step, select **Extensions**, and from the **Extensions** blade, remove the CustomScript extension.
+    - In the Azure portal, navigate to the blade of the VM's you identified in the previous step, select **Extensions + applications**, and from the **Extensions + application** blade, remove(uninstall) the CustomScript extension.
 
-       - Rerun the previous step of this task.
+    - Rerun the previous step of this task.
 
 
 ### Task 2: Deploy a pair of Azure VMs running Windows Server 2022 in a new availability set.
 
 1.  From the lab computer, in the Azure portal, navigate to the **Virtual machines** blade, click **+ Create**, and, from the drop-down menu, select **Azure virtual machine**.
 
-1.  From the **Create a virtual machine** blade, initiate provisioning of a **Windows Server 2022 Datacenter: Azure Edition - Gen2** Azure VM with the following settings (leave all others with their default values):
+1.  From the **Create a virtual machine** blade, initiate provisioning of a **Windows Server 2022 Datacenter: Azure Edition - Gen2** Azure VM on **Basics** tab
+specify the following settings:
 
-    -   Subscription: *the name of your Azure subscription*
+    -   Subscription: the name of your Azure subscription
 
-    -   Resource group: *the name of a new resource group* **az12001b-cl-RG**
+    -   Resource group: the name of a new resource group **az12001b-cl-RG**
 
     -   Virtual machine name: **az12001b-cl-vm0**
 
@@ -139,9 +146,13 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     -   Select inbound ports: **RDP (3389)**
 
-    -   Would you like to use an existing Windows Server license?: **No**
-
+    -   Would you like to use an existing Windows Server license?: **No** 
+    
+ 1. On **Disks** tab of **Create a virtual machine** blade specify the following and select **Next:Networking>**.
+    
     -   OS disk type: **Premium SSD**
+
+ 1. On **Networking** tab of **Create a virtual machine** blade specify the following and select **Next:Managemet>**.
 
     -   Virtual network: **adVNET**
 
@@ -161,7 +172,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     -   Place this virtual machine behind an existing load balancing solutions: **No**
 
-    -   Boot diagnostics: **Disable**
+ 1. On **Management** tab of **Create a virtual machine** blade specify the following and select **Next:Monitoring>**
 
     -   Login with Azure AD: **Off**
 
@@ -173,13 +184,19 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     -   Tags: *None*
 
+ 1. On **Monitoring** tab of **Create a virtual machine** blade specify the following:
+
+    -   Boot diagnostics: **Disable**
+
+ 1. Select **Review + Create** and **create**
+
 1.  Do not wait for the provisioning to complete but continue to the next step.
 
 1.  Provision another **Windows Server 2022 Datacenter: Azure Edition - Gen2** Azure VM with the following settings:
 
     -   Subscription: *the name of your Azure subscription*
 
-    -   Resource group: *the name of the resource group you used when deploying the first **Windows Server 2022 Datacenter: Azure Edition - Gen2** Azure VM in this task*
+    -   Resource group: *the name of a new resource group*  **az12001b-cl-RG**
 
     -   Virtual machine name: **az12001b-cl-vm1**
 
@@ -203,7 +220,11 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     -   Would you like to use an existing Windows Server license?: **No**
 
+ 1. On **Disks** tab of **Create a virtual machine** blade specify the following and select **Next:Networking>**
+
     -   OS disk type: **Premium SSD**
+
+ 1. On **Networking** tab of **Create a virtual machine** blade specify the following and select **Next:Managemet>**.
 
     -   Virtual network: **adVNET**
 
@@ -221,7 +242,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     -   Place this virtual machine behind an existing load balancing solutions: **No**
 
-    -   Boot diagnostics: **Disable**
+1. On **Management** tab of **Create a virtual machine** blade specify the following and select **Next:Monitoring>**
 
     -   Login with Azure AD: **Off**
 
@@ -231,9 +252,11 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     -   Enable backup: **Off**
 
-    -   Extensions: *None*
+1. On **Monitoring** tab of **Create a virtual machine** blade specify the following:
 
-    -   Tags: *None*
+    -   Boot diagnostics: **Disable**
+
+1. Select **Review + Create** and **create**
 
 1.  Wait for the provisioning to complete. This should take a few minutes.
 
@@ -249,8 +272,10 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 1.  In the Cloud Shell pane, run the following command to create the first set of 4 managed disks that you will attach to the first Azure VM you deployed in the previous task:
 
+    >**Note**: Replace <Azure_region> with region where you deployment **az12001b-cl-vm0** Vm.
+    
     ```
-    $location = (Get-AzResourceGroup -Name $resourceGroupName).Location
+    $location = '<Azure_region>'
     $zone = (Get-AzVM -ResourceGroupName $resourceGroupName -Name 'az12001b-cl-vm0').Zones
     $diskConfig = New-AzDiskConfig -Location $location -DiskSizeGB 128 -AccountType Premium_LRS -OsType Windows -CreateOption Empty -Zone $zone
 
@@ -259,7 +284,10 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 1.  In the Cloud Shell pane, run the following command to create the second set of 4 managed disks that you will attach to the second Azure VM you deployed in the previous task:
 
+    >**Note**: Replace <Azure_region> with region where you deployment **az12001b-cl-vm1** Vm.
+    
     ```
+    $location = '<Azure_region>'
     $zone = (Get-AzVM -ResourceGroupName $resourceGroupName -Name 'az12001b-cl-vm1').Zones
     
     $diskConfig = New-AzDiskConfig -Location $location -DiskSizeGB 128 -AccountType Premium_LRS -OsType Windows -CreateOption Empty -Zone $zone
@@ -283,7 +311,9 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 1.  Repeat the previous step to attach the remaining 3 disks with the prefix **az12001b-cl-vm0-DataDisk** (for the total of 4). Assign the LUN number matching the last character of the disk name. For the last disk (LUN **3**), set HOST CACHING to **None**.
 
-1.  Save your changes. 
+1.  Save your changes.
+
+     ![](../images/disk1.png)
 
 1.  In the Azure portal, navigate to the blade of the second Azure VM you provisioned in the previous task (**az12001b-cl-vm1**).
 
@@ -328,8 +358,10 @@ Duration: 40 minutes
 
 1.  In the Cloud Shell pane, run the following command to join the Windows Server 2022 Azure VMs you deployed in the second task of the previous exercise to the **adatum.com** Active Directory domain (replace the `<username>` and `<password>` placeholders with the name and password of the administrative user account you specified when deploying the Bicep template in the first exercise of this lab):
 
+    >**Note**: Replace <Azure_region> with the region where you deployed both the VM's in previous task.
+
     ```
-    $location = (Get-AzureRmResourceGroup -Name $resourceGroupName).Location
+    $location = '<Azure_region>'
 
     $settingString = '{"Name": "adatum.com", "User": "adatum.com\\<username>", "Restart": "true", "Options": "3"}'
 
@@ -355,67 +387,167 @@ Duration: 40 minutes
 
 1.  Navigate to the **Storage Pools** view and verify that you see all the disks you attached to the Azure VM in the previous exercise.
 
+1.  From the top right corner select **TASKS** in dropdown click on **New storage pool**.
+
+    ![](../images/task2-(7).png)
+
 1.  Use the **New Storage Pools Wizard** to create a new storage pool with the following settings:
 
-    -   Name: **Data Storage Pool**
+    - On **Before you begin** Wizard - select **Next>**
 
-    -   Physical Disks: *select the 3 disks with disk numbers corresponding to the first three LUN numbers (0-2) and set their allocation to* **Automatic**
+    - On **Storage Pool Name** Wizard
+      
+        - Name : enter **Data Storage Pool**
+
+    - On **Physical Disks** Wizard
+ 
+        - Select the 3 disks with disk numbers corresponding to the first three LUN numbers (0-2) and set their allocation to **Automatic**
 
     > **Note**: Use the entry in the **Chassis** column to identify the **LUN** number.
 
-1.  Use the **New Virtual Disk Wizard** to create a new virtual disk with the following settings:
+    -  On **Confirmation** Wizard
+         
+        - Review and click on **Create**
 
-    -   Virtual Disk Name: **Data Virtual Disk**
+    - On **Result** Wizard, wait untill Storage pool successfully complete and click on **Close**
 
-    -   Storage Layout: **Simple**
+      ![](../images/task2(8).png)
 
-    -   Provisioning: **Fixed**
-
-    -   Size: **Maximum size**
-
-1.  Use the **New Volume Wizard** to create a new volume with the following settings:
-
-    -   Server and Disk: *accept the default values*
-
-    -   Size: *accept the default values*
-
-    -   Drive letter: **M**
-
-    -   File system: **ReFS**
-
-    -   Allocation unit size: **Default**
-
-    -   Volume label: **Data**
-
-1.  Back in the **Storage Pools** view, use the **New Storage Pools Wizard** to create a new storage pool with the following settings:
-
-    -   Name: **Log Storage Pool**
-
-    -   Physical Disks: *select the last of 4 disks and set its allocation to* **Automatic**
 
 1.  Use the **New Virtual Disk Wizard** to create a new virtual disk with the following settings:
 
-    -   Virtual Disk Name: **Log Virtual Disk**
+1.  Click on **Storage pools** from left pane then select newly created storage pool and under **Virtual Disks** from **TASKS** dropdown select **New Virtual Disks**
 
-    -   Storage Layout: **Simple**
+    ![](../images/task-07-1.png)
+    
+1. Select the newly created **Storage pool** as shown in below image and click on **Next**.
+    
+    ![](../images/task-07-2.png)
+    
+    -  On **Before you begin** Wizard - select **Next>**
 
-    -   Provisioning: **Fixed**
+    -  On **Virtual Disk Name** Wizard
 
-    -   Size: **Maximum size**
+         -  Name: **Data Virtual Disk**
+
+    -  On **Enclosure Awareness** Wizard - select **Next>**
+
+    -  On **Storage Layout** Wizard
+    
+         - Select Layout: **Simple**
+
+    -   On **Provisioning** Wizard
+      
+         - Select Provisioning type : **Fixed**
+
+    -   On **Size** Wizard
+       
+         - Size: **Maximum size**
+
+    -   On **Confirmation selections** Wizard click on create 
+
+    -   On **Result** Wizard, wait untill new virtual disk successfully complete and click on close.
+
+	 ![](../images/task-07-5.png)
 
 1.  Use the **New Volume Wizard** to create a new volume with the following settings:
 
+    -   On **Before you begin** Wizard - select **Next>**
+    
     -   Server and Disk: *accept the default values*
 
     -   Size: *accept the default values*
+    
+    -   On **Drive letter and folder** Wizard
+    
+         -  Drive letter: **M**
+        
+    -   On **File system** Wizard
+    
+         - File system: **ReFS**
 
-    -   Drive letter: **L**
+         - Allocation unit size: **Default**
 
-    -   File system: **ReFS**
+         - Volume label: **Data**
 
-    -   Allocation unit size: **Default**
+    -   On **Confirmation selections** Wizard click on create 
 
-    -   Volume label: **Log**
+    -   On **Result** Wizard wait untill new volume successfully complete and click on close.
+
+	 ![](../images/task-07-6.png)
+
+1.  Back in the **Storage Pools**, from the top right corner select **TASKS** in dropdown click on **New storage pool**.
+
+1.  Use the **New Storage Pools Wizard** to create a new storage pool with the following settings:
+
+    - On **Before you begin** Wizard - select **Next>**
+
+    - On **Storage Pool Name** Wizard
+      
+        - Name : enter **Log Storage Pool**
+
+    - On **Physical Disks** Wizard
+ 
+        - *select the last of 4th  disks and set its allocation to* **Automatic**  
+
+    -  On **Confirmation** Wizard
+         
+        - Review and click on **Create**
+
+    - On **Result** Wizard wait, untill Storage pool successfully complete and click on **Close**
+
+1.  Back on **Storage pools**, under **Virtual Disks** from **TASKS** dropdown select **New Virtual Disks**
+
+1.  Use the **New Virtual Disk Wizard** to create a new virtual disk with the following settings:
+ 
+    -  On **Before you begin** Wizard - select **Next>**
+  
+    -  On **Virtual Disk Name** Wizard
+
+        - Virtual Disk Name: **Log Virtual Disk**
+
+    -  On **Enclosure Awareness** Wizard - select **Next>**
+
+    -  On **Storage Layout** Wizard
+    
+        - Storage Layout: **Simple**
+
+    -  On **Provisioning** Wizard
+      
+         - Select Provisioning type : **Fixed**
+
+    -   On **Size** Wizard
+       
+         - Size: **Maximum size**
+
+    -   On **Confirmation selections** Wizard click on create 
+
+    -   On **Result** Wizard wait untill new virtual disk successfully complete and click on close.
+
+
+1.  Use the **New Volume Wizard** to create a new volume with the following settings:
+
+    -  On **Before you begin** Wizard - select **Next>**
+    
+    -   Server and Disk: *accept the default values*
+
+    -   Size: *accept the default values*
+    
+    -   On **Drive letter and folder** Wizard
+
+         - Drive letter: **L**
+
+    -   On **File system** Wizard
+
+         -  File system: **ReFS**
+
+         -  Allocation unit size: **Default**
+
+         -  Volume label: **Log**
+
+    -   On **Confirmation selections** Wizard click on create 
+
+    -   On **Result** Wizard wait untill new volume successfully complete and click on close.
 
 1.  Repeat the previous step in this task to configure storage on az12001b-cl-vm1.
 
@@ -433,9 +565,9 @@ Duration: 40 minutes
 
     > **Note**: This will result in restart of the guest operating system of both Azure VMs.
 
-1.  On the lab computer, in the Azure Portal, click **+ Create a resource**.
+1.  In the Azure portal, in the Search resources, services, and docs text box at the top of the Azure portal page, type **Storage account** then press the Enter key and select **+ Create**.
 
-1.  From the **New** blade, initiate creation of a new **Storage account** with the following settings:
+1.  From the **Create a storage account** blade, initiate creation of a new **Storage account** on **Basics** tab with the following settings and click on **Next:Adavanced>**
 
     -   Subscription: *the name of your Azure subscription*
 
@@ -449,15 +581,25 @@ Duration: 40 minutes
 
     -   Redundancy: **Locally-redundant storage (LRS)**
 
-    -   Connectivity method: **Public endpoint (all networks)**
+1.  From the **Create a storage account** blade, on **Adavanced** tab with the following settings and click on **Next:Networking>**
 
     -   Require secure transfer for REST API operations: **Enabled**
 
+    -   Hierarchical namespace: **Disabled**
+
     -   Large file shares: **Disabled**
+
+1.  From the **Create a storage account** blade, on **Networking** tab with the following settings and click on **Next:Data protection>**
+
+    -   Connectivity method: **Enable Public access from all network**
 
     -   Soft delete for blobs, containers, and files: **Disabled**
 
-    -   Hierarchical namespace: **Disabled**
+1.  From the **Create a storage account** blade, on **Data protection** tab with the following settings and click on **Next:Review** 
+
+     -  Soft delete for blobs, containers, and files: **Disabled**
+
+1.  Click on **Create**.
 
 ### Task 4: Configure Failover Clustering on Azure VMs running Windows Server 2022 to support a highly available SAP NetWeaver installation.
 
@@ -467,9 +609,29 @@ Duration: 40 minutes
 
 1.  Within the RDP session to az12001b-cl-vm0, from the **Tools** menu in Server Manager, start **Active Directory Administrative Center**.
 
-1.  In Active Directory Administrative Center, create a new organizational unit named **Clusters** in the root of the adatum.com domain.
+1.  In Active Directory Administrative Center, create a new organizational unit named **Clusters** in the root of the adatum.com domain and click on **OK**.
+
+1.  Click on **adatum(local)**, select **New** and **Organizational unit**.
+
+    ![](../images/task4-1.png)
+    ![](../images/task4-2.png)
 
 1.  In Active Directory Administrative Center, move the computer accounts of **az12001b-cl-vm0** and **az12001b-cl-vm1** from the **Computers** container to the **Clusters** organizational unit.
+
+1.  Select **adatum(local)** and doubt click on **Computer**
+     ![](../images/task4-3.png)
+  
+ 1. On computer blade select **az12001b-cl-vm0** and from right side pane click on **Move** and on **Move** select **adatum(local)** and **az12001b-cl-vm0**, click on **OK**.
+ 
+     ![](../images/task4-4.png)
+     
+     ![](../images/task4-6.png)
+     
+ 1. Repeat same for **az12001b-cl-vm1**.
+     
+     ![](../images/task4-5.png)
+     
+     ![](../images/task4-6.png)
 
 1.  Within the RDP session to az12001b-cl-vm0, start a Windows PowerShell ISE session and create a new cluster by running the following:
 
@@ -478,6 +640,7 @@ Duration: 40 minutes
 
     New-Cluster -Name az12001b-cl-cl0 -Node $nodes -NoStorage -StaticAddress 10.0.1.6
     ```
+    ![](../images/task4-7.png)
 
 1.  Within the RDP session to az12001b-cl-vm0, switch to the **Active Directory Administrative Center** console.
 
@@ -527,7 +690,11 @@ Duration: 40 minutes
 
 1.  To verify the resulting configuration, within the RDP session to az12001b-cl-vm0, from the **Tools** menu in Server Manager, start **Failover Cluster Manager**.
 
+    ![](../images/task4-10.png)
+
 1.  In the **Failover Cluster Manager** console, review the **az12001b-cl-cl0** cluster configuration, including its nodes, as well as is witness and network settings. Notice that the cluster does not have any shared storage.
+
+    ![](../images/task4-11.png)
 
 1.  Terminate the RDP session to az12001b-cl-vm0.
 
@@ -548,7 +715,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
 1.  From the **az12001b-cl-vm0** blade, navigate to the blade of the public IP address **az12001b-cl-vm0-ip** associated with its network adapter.
 
-1.  From the **az12001b-cl-vm0-ip** blade, first disassociate the public IP address from the network interface and then delete it.
+1.  From the **az12001b-cl-vm0-ip** blade, from left pane click on **Networking** first disassociate the public IP address from the network interface and then delete it.
 
 1.  In the Azure portal, navigate to the blade of the Azure VM **az12001b-cl-vm1**. 
 
@@ -578,7 +745,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
 ### Task 2: Create and configure Azure Load Balancers handling inbound traffic
 
-1.  In the Azure portal, click **+ Create a resource**.
+1.  In the Azure portal, in the Search resources, services, and docs text box at the top of the Azure portal page, type **Load balancer** then press the Enter key and select **+ Create**.
 
 1.  From the **New** blade, initiate creation of a new Azure Load Balancer with the following settings:
 
@@ -619,6 +786,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
     -   IP address: **10.0.1.4** Resource Name **az1201b-cl-vm0**
 
     -   IP address: **10.0.1.5** Resource Name **az1201b-cl-vm1**
+    -   Click on **Save**
 
 1.  From the **az12001b-cl-lb0** blade, add a health probe with the following settings:
 
@@ -670,8 +838,10 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
 1.  In the Cloud Shell pane, run the following command to create the public IP address to be used by the second load balancer:
 
+    >**Note**: Replace <Azure_region> with the region where you deployed both the VM's in previous task.
+
     ```
-    $location = (Get-AzResourceGroup -Name $resourceGroupName).Location
+    $location = '<Azureregion>'
 
     $pipName = 'az12001b-cl-lb0-pip'
 
@@ -680,7 +850,11 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
 1.  In the Cloud Shell pane, run the following command to create the second load balancer:
 
+    >**Note**: Replace <Azure_region> with the region where you deployed both the VM's in previous task.
+
     ```
+    $location = '<Azureregion>'
+    
     $lbName = 'az12001b-cl-lb1'
 
     $lbFeName = 'az12001b-cl-lb1-fe'
@@ -693,7 +867,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
     $bePoolConfiguration = New-AzLoadBalancerBackendAddressPoolConfig -Name $lbBePoolName
 
-    New-AzLoadBalancer -ResourceGroupName $resourceGroupName -Location $location -Name $lbName -Sku Standard -BackendAddressPool $bePoolConfiguration -FrontendIpConfiguration $feIpconfiguration
+    New-AzLoadBalancer -ResourceGroupName $resourceGroupName -location $location -Name $lbName -Sku Standard -BackendAddressPool $bePoolConfiguration -FrontendIpConfiguration $feIpconfiguration
     ```
 
 1.  Close the Cloud Shell pane.
@@ -724,8 +898,6 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
     -   Interval: **5** *seconds*
 
-    -   Unhealthy threshold: **2** *consecutive failures*
-
 1.  On the **az12001b-cl-lb1** blade, click **Load balancing rules**.
 
 1.  From the **az12001b-cl-lb1 - Load balancing rules** blade, add a network load balancing rule with the following settings:
@@ -736,8 +908,6 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
     -   Frontend IP address: *accept the default value*
 
-    -   HA Ports :  Click on **Disabled**
-
     -   Protocol: **TCP**
 
     -   Port: **80**
@@ -746,7 +916,9 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
     -   Backend pool: **az12001b-cl-lb1-bepool (2 virtual machines)**
 
-    -   Health probe:**az12001b-cl-lb1-hprobe (TCP:80)**
+    -   Health probe:**az12001b-cl-lb1-hprobe 
+    -   
+    -   Protcol: **(TCP:80)**
 
     -   Session persistence: **None**
 
@@ -762,7 +934,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
 1.  From the lab computer, in the Azure portal, navigate to the **Virtual machines** blade, click **+ Create**, and, from the drop-down menu, select **Azure virtual machine**.
 
-1.  From the **Create a virtual machine** blade, initiate provisioning of a **Windows Server 2022 Datacenter: Azure Edition - Gen2** Azure VM with the following settings:
+1.  From the **Create a virtual machine** blade, initiate provisioning of a **Windows Server 2022 Datacenter: Azure Edition - Gen2** 1.  In the Azure portal, in the Search resources, services, and docs text box at the top of the Azure portal page, type **Storage account** then press the Enter key and select **+ Create**.
 
     -   Subscription: *the name of your Azure subscription*
 
@@ -788,7 +960,27 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
     -   You already have a Windows license?: **No**
 
-    -   OS disk type: **Standard HDD**
+
+ 1. On **Disks** tab of **Create a virtual machine** blade specify the following and select **Next:Networking>**.
+
+      -  OS disk type: **Standard HDD**
+
+ 1. On **Networking** tab of **Create a virtual machine** blade specify the following and select **Next:Managemet>**.
+      -   Virtual network: **adVNET**
+      -   Subnet: *a new subnet named* **bastionSubnet**
+      -   Address range: **10.0.255.0/24**
+
+     ![](../images/ex3-task1.png)
+     
+        - and click on save
+
+1. Back on **Create a virtual machine** blade specify the following
+
+    -   Subnet: a new subnet named bastionSubnet 
+
+    -   System assigned managed identity: **Off**
+
+    -  Login with AAD credentials (Preview): **Off**
 
     -   Virtual network: **adVNET**
 
@@ -805,9 +997,20 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
     -   Select inbound ports: **RDP (3389)**
 
     -   Accelerated networking: **Off**
-
+    
+    management
+-   System assigned managed identity: **Off**
     -   Place this virtual machine behind an existing load balancing solutions: **No**
 
+   Login with AAD credentials (Preview): **Off**
+
+    -   Enable auto-shutdown: **Off**
+
+    -   Enable backup: **Off**
+
+1. On **Management** tab of **Create a virtual machine** blade specify the following and select **Next:Monitoring>**
+
+    -   OS guest diagnostics: **Off**
     -   Boot diagnostics: **Off**
 
     -   OS guest diagnostics: **Off**
@@ -823,6 +1026,8 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
     -   Extensions: *None*
 
     -   Tags: *None*
+
+1. Select **Review + Create**
 
 1.  Wait for the provisioning to complete. This should take a few minutes.
 
