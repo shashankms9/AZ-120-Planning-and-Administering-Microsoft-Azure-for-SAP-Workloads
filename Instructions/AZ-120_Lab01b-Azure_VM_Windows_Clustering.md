@@ -618,6 +618,21 @@ Duration: 40 minutes
 
 1.  In Active Directory Administrative Center, move the computer accounts of **az12001b-cl-vm0** and **az12001b-cl-vm1** from the **Computers** container to the **Clusters** organizational unit.
 
+1.  Select **adatum(local)** and doubt click on **Computer**
+     ![](../images/task4-3.png)
+  
+ 1. On computer blade select **az12001b-cl-vm0** and from right side pane click on **Move** and on **Move** select **adatum(local)** and **az12001b-cl-vm0**, click on **OK**.
+ 
+     ![](../images/task4-4.png)
+     
+     ![](../images/task4-6.png)
+     
+ 1. Repeat same for **az12001b-cl-vm1**.
+     
+     ![](../images/task4-5.png)
+     
+     ![](../images/task4-6.png)
+
 1.  Within the RDP session to az12001b-cl-vm0, start a Windows PowerShell ISE session and create a new cluster by running the following:
 
     ```
