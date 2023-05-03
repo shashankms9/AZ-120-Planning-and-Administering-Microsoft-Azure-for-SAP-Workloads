@@ -970,17 +970,17 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
       -   Subnet: *a new subnet named* **bastionSubnet**
       -   Address range: **10.0.255.0/24**
 
-      ![](../images/ex3-task1.png)
+     ![](../images/ex3-task1.png)
      
-    and click on save
+        - and click on save
 
-back
-Subnet: a new subnet named bastionSubnet 
+1. Back on **Create a virtual machine** blade specify the following
 
+    -   Subnet: a new subnet named bastionSubnet 
 
     -   System assigned managed identity: **Off**
 
-    --   Login with AAD credentials (Preview): **Off**
+    -  Login with AAD credentials (Preview): **Off**
 
     -   Virtual network: **adVNET**
 
@@ -1008,7 +1008,8 @@ Subnet: a new subnet named bastionSubnet
 
     -   Enable backup: **Off**
 
-Monitoring
+1. On **Management** tab of **Create a virtual machine** blade specify the following and select **Next:Monitoring>**
+
     -   OS guest diagnostics: **Off**
     -   Boot diagnostics: **Off**
 
@@ -1025,6 +1026,8 @@ Monitoring
     -   Extensions: *None*
 
     -   Tags: *None*
+
+1. Select **Review + Create**
 
 1.  Wait for the provisioning to complete. This should take a few minutes.
 
