@@ -934,7 +934,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
 1.  From the lab computer, in the Azure portal, navigate to the **Virtual machines** blade, click **+ Create**, and, from the drop-down menu, select **Azure virtual machine**.
 
-1.  From the **Create a virtual machine** blade, initiate provisioning of a **Windows Server 2022 Datacenter: Azure Edition - Gen2** Azure VM with the following settings:
+1.  From the **Create a virtual machine** blade, initiate provisioning of a **Windows Server 2022 Datacenter: Azure Edition - Gen2** 1.  In the Azure portal, in the Search resources, services, and docs text box at the top of the Azure portal page, type **Storage account** then press the Enter key and select **+ Create**.
 
     -   Subscription: *the name of your Azure subscription*
 
@@ -959,15 +959,18 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
     -   Select inbound ports: **RDP (3389)**
 
     -   You already have a Windows license?: **No**
-disk
 
--   OS disk type: **Standard HDD**
 
-networkin
- -   Virtual network: **adVNET**
+ 1. On **Disks** tab of **Create a virtual machine** blade specify the following and select **Next:Networking>**.
 
-    -   Subnet: *a new subnet named* **bastionSubnet**
-     -   Address range: **10.0.255.0/24**
+      -  OS disk type: **Standard HDD**
+
+ 1. On **Networking** tab of **Create a virtual machine** blade specify the following and select **Next:Managemet>**.
+      -   Virtual network: **adVNET**
+      -   Subnet: *a new subnet named* **bastionSubnet**
+      -   Address range: **10.0.255.0/24**
+
+      ![](../images/ex3-task1.png)
      
     and click on save
 
