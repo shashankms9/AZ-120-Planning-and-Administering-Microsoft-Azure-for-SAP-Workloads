@@ -4,7 +4,11 @@
 
 1. Once the environment is provisioned, a virtual machine (JumpVM) on the left and lab guide on the right will get loaded in your browser. Use this virtual machine throughout the workshop to perform the lab.
 
-1. To get the lab environment details, you can select the **Lab Environment** tab, you can locate the **Lab Environment** tab on the upper right corner. Additionally, the credentials will also be emailed to your email address provided during registration.
+    ![](3.md/gettingstarted.png)
+    
+1. To get the lab environment details, you can select the **Environment Details** tab. Additionally, the credentials will also be emailed to your email address provided at registration.
+
+    ![](3.md/envdetails.png)
 
 ### Task 1: Log in to Azure Portal
 
