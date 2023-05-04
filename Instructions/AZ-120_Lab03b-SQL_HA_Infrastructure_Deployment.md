@@ -92,19 +92,32 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     ![](../images/3.md/adpcvm.png)
     
-1. from in the vertical navigation menu, in the **Operations** section, select **Run command**, on the **Run Command Script** pane, in the **PowerShell Script** text box, enter the following script and select the **Run** button:
+1. From in the vertical navigation menu, select **Run command (1)** under **Operations** and click on **RunPowerShell Script (2)**.
+
+    ![](../images/3.md/runcommand.png)
+
+1. Enter the following script and select the **Run** button:
 
     ```
     New-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip6\Parameters\' -Name 'DisabledComponents' -Value 0xffffffff -PropertyType 'DWord'
     Restart-Computer -Force
     ```
 
-1. Wait until the **adPDC** virtual machine is running again, navigate to the blade of the **adBDC** virtual machine, in the vertical navigation menu, in the **Operations** section, select **Run command**, on the **Run Command Script** pane, in the **PowerShell Script** text box, enter the following script and select the **Run** button:
+   ![](../images/3.md/runscript.png)
+   
+   > **Note :** Wait until the **adPDC** virtual machine is running again
+   
+1. Navigate to the blade of the **adBDC** virtual machine, select **Run command** from **Operations** section and click on **RunPowerShell Script**.
+
+    ![](../images/3.md/runcommand1.png)
+
+1. On the **Run Command Script** pane, in the **PowerShell Script** text box, enter the following script and select the **Run** button:
 
     ```
     New-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip6\Parameters\' -Name 'DisabledComponents' -Value 0xffffffff -PropertyType 'DWord'
     Restart-Computer -Force
     ```
+    ![](../images/3.md/runscript.png)
     
 1. Wait until the **adBDC** virtual machine is running again, navigate to the blade of the **adPDC** virtual machine, in the vertical navigation menu, in the **Operations** section, select **Run command**, on the **Run Command Script** pane, in the **PowerShell Script** text box, enter the following script and select the **Run** button:
 
