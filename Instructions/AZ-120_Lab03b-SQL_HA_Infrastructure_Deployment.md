@@ -139,8 +139,6 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 1.  In the Azure Portal, navigate to the blade of the **az12003b-ad-RG** resource group and click on **adVNET** virtual network
 
-1.  On the **az12003b-ad-RG** resource group blade, in the list of resources, locate the **adVNET** virtual network and click its entry to display the **adVNET** blade.
-
      ![](../images/3.md/advnet.png)
      
 1.  From the **adVNET** blade, navigate to its **Subnets (1)** blade and click on **+ Subnet (2)**.
