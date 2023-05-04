@@ -39,10 +39,6 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 ### Task 1: Create a virtual network that will host a highly available SAP NetWeaver deployment.
 
-1.  From the lab computer, start a Web browser, and navigate to the Azure portal at **https://portal.azure.com**
-
-1.  If prompted, sign in with the work or school or personal Microsoft account with the owner or contributor role to the Azure subscription you will be using for this lab and the the Global Administrator role in the Azure AD tenant associated with your subscription.
-
 1.  In the Azure Portal, start a Bash session in Cloud Shell. 
 
     > **Note**: If this is the first time you are launching Cloud Shell in the current Azure subscription, you will be asked to create an Azure file share to persist Cloud Shell files. If so, accept the defaults, which will result in creation of a storage account in an automatically generated resource group.
