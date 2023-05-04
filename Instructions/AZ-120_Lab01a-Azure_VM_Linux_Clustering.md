@@ -810,7 +810,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
 1. From the lab computer, in the Azure portal, use the **Search resources, services, and docs** text box at the top of the Azure portal page to search for and navigate to the **Virtual machines** blade, then, on the **Virtual machines** blade, select **+ Create** and, in the drop-down menu, select **Azure virtual machine**.
 
-    ![Picture 1](../images/selectvm.png)
+     ![Picture 1](../images/selectvm.png)
 
 1. On the **Basics** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Disks >** (leave all other settings with their default value):
 
@@ -850,7 +850,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
    - Encryption type: **(Default) Encryption at rest with a platform-managed key**
    
-       ![Picture 1](../images/diskvm2.png)
+        ![Picture 1](../images/diskvm2.png)
 
 1. On the **Networking** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Management >** (leave all other settings with their default value):
 
@@ -880,7 +880,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
      
      - Guest OS updates (patch orchestration options): **Manual updates**
      
-         ![Picture 1](../images/manualupdates.png)
+        ![Picture 1](../images/manualupdates.png)
 
    
 1. On the **Monitoring** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Advanced >** (leave all other settings with their default value):
