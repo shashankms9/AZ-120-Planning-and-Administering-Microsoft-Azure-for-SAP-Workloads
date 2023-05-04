@@ -105,7 +105,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
    - Key management: **Platform-managed key**
    
-       ![Picture 1](../images/diskvm0.png)
+      ![Picture 1](../images/diskvm0.png)
 
 1. On the **Networking** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Management >** (leave all other settings with their default value):
 
@@ -117,7 +117,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
    - Subnet address range: **192.168.0.0/24**
     
-      ![Picture 1](../images/vm0net.png)
+       ![Picture 1](../images/vm0net.png)
      
    - Public IP address: New IP address will be created with named **az12001a-vm0-ip**
 
@@ -621,7 +621,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
 1. On the **az12001a-vm0-ip** blade, select **Dissociate**, and then select **Yes** to disconnect the public IP address from the network interface and then select **Delete** and then **Yes** to delete it.
 
-     ![Picture 1](../images/vm0ip.png)    
+     ![Picture 1](../images/vm0.png)    
 
 1. In the Azure portal, navigate to the blade of the **az12001a-vm1** Azure VM.
 
@@ -787,7 +787,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
 1. In the Azure portal, navigate to the blade displaying the properties of the newly created Azure Load Balancer **az12001a-lb1**.
    
-     ![Picture 1](../images/lb120.png)
+      ![Picture 1](../images/lb120.png)
 
 1. On the **az12001a-lb1** blade, click **Backend pools**.
 
@@ -801,7 +801,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
    - Virtual machine: **az12001a-vm1**  IP Configuration: **ipconfig1 (192.168.0.5)**
    
-       ![Picture 1](../images/lb1bpool.png)
+        ![Picture 1](../images/azbp.png)
    
 
 ### Task 4: Deploy a jump host
@@ -809,6 +809,8 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
    > **Note**: Since two clustered Azure VMs are no longer directly accessible from Internet, you will deploy an Azure VM running Windows Server 2019 Datacenter that will serve as a jump host. 
 
 1. From the lab computer, in the Azure portal, use the **Search resources, services, and docs** text box at the top of the Azure portal page to search for and navigate to the **Virtual machines** blade, then, on the **Virtual machines** blade, select **+ Create** and, in the drop-down menu, select **Azure virtual machine**.
+
+    ![Picture 1](../images/selectvm.png)
 
 1. On the **Basics** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Disks >** (leave all other settings with their default value):
 
@@ -824,7 +826,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
    - Image: **Windows Server 2019 Datacenter - Gen 2**
    
-       ![Picture 1](../images/vm2.png)
+       ![Picture 1](../images/vm2create.png)
 
    - Size: **Standard DS1 v2** or similar
 
