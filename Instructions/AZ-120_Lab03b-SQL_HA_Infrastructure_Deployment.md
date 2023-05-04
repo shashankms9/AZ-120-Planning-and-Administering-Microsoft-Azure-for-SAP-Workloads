@@ -88,7 +88,11 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     - in the Azure portal, navigate to the **az12003b-sap-RG** resource group blade, select **Deployments**, select the link to the failed deployment, and select **Redeploy**, select the target resource group (**az12003b-sap-RG**) and provide the password for the root account (**Pa55w.rd1234**).
 
-1. After the deployment completes, in the Azure portal, navigate to the blade of the **adPDC** virtual machine, in the vertical navigation menu, in the **Operations** section, select **Run command**, on the **Run Command Script** pane, in the **PowerShell Script** text box, enter the following script and select the **Run** button:
+1. After the deployment completes, in the Azure portal, navigate to the resource group **az12003b-ad-RG** and from **Overview (1)** page click on **adPDC (2)** virtual machine.
+
+    ![](../images/3.md/adpcvm.png)
+    
+1. from in the vertical navigation menu, in the **Operations** section, select **Run command**, on the **Run Command Script** pane, in the **PowerShell Script** text box, enter the following script and select the **Run** button:
 
     ```
     New-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip6\Parameters\' -Name 'DisabledComponents' -Value 0xffffffff -PropertyType 'DWord'
