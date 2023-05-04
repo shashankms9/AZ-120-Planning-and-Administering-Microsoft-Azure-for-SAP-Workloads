@@ -137,23 +137,35 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 ### Task 2: Provision subnets that will host Azure VMs running highly available SAP NetWeaver deployment and the S2D cluster.
 
-1.  In the Azure Portal, navigate to the blade of the **az12003b-ad-RG** resource group.
+1.  In the Azure Portal, navigate to the blade of the **az12003b-ad-RG** resource group and click on **adVNET** virtual network
 
 1.  On the **az12003b-ad-RG** resource group blade, in the list of resources, locate the **adVNET** virtual network and click its entry to display the **adVNET** blade.
 
-1.  From the **adVNET** blade, navigate to its **adVNET - Subnets** blade. 
+     ![](../images/3.md/advnet.png)
+     
+1.  From the **adVNET** blade, navigate to its **Subnets (1)** blade and click on **+ Subnet (2)**.
 
-1.  From the **adVNET - Subnets** blade, create a new subnet with the following settings:
+     ![](../images/3.md/subnet.png)
 
-    -   Name: **sapSubnet**
+1.  On **Add Subnet** page,  the follow the below instructions:
 
-    -   Address ranges (CIDR block): **10.0.1.0/24**
+    - Name: Enter **sapSubnet (1)**
 
-1.  From the **adVNET - Subnets** blade, create a new subnet with the following settings:
+    - Subnet address range: Enter **10.0.1.0/24 (2)**
 
-    -   Name: **s2dSubnet**
+    - Click on **Save (3)**
 
-    -   Address ranges (CIDR block): **10.0.2.0/24**
+    ![](../images/3.md/addsubnet1.png)
+
+1.  Again click on **+ Subnet** and follow the below instructions:
+
+    - Name: **s2dSubnet**
+
+    - Subnet address range: Enter **10.0.1.0/24 (2)**
+
+    - Click on **Save (3)**
+
+    ![](../images/3.md/addsubnet2.png)
 
 1.  In the Azure Portal, start a PowerShell session in Cloud Shell. 
 
