@@ -119,7 +119,9 @@ In this exercise, you will deploy Azure infrastructure compute components necess
     ```
     ![](../images/3.md/runscript.png)
     
-1. Wait until the **adBDC** virtual machine is running again, navigate to the blade of the **adPDC** virtual machine, in the vertical navigation menu, in the **Operations** section, select **Run command**, on the **Run Command Script** pane, in the **PowerShell Script** text box, enter the following script and select the **Run** button:
+    > **Note :** Wait until the **adBDC** virtual machine is running again
+    
+1. Navigate to the blade of the **adPDC** virtual machine, in the vertical navigation menu, in the **Operations** section, select **Run command**, on the **Run Command Script** pane, in the **PowerShell Script** text box, enter the following script and select the **Run** button:
 
     ```
     repadmin /syncall /APeD
