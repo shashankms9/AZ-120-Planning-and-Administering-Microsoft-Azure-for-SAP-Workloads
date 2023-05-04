@@ -44,7 +44,7 @@
 
 1. First-time users are often prompted to **Stay Signed In**, if you see any such pop-up, click on **No**
 
-   ![](../images/click%20no.png)
+   ![](../images/M2-Ex1-portalsignin-3.png)
 
 1. If you see the pop-up **You have free Azure Advisor recommendations!**, close the window to continue the lab.
 
