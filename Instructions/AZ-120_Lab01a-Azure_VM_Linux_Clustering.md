@@ -44,7 +44,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 1. On the **Basics** tab of the **Create Proximity Placement Groups** blade, specify the following settings and select **Review + create**:
 
-  - Subscription: Select your **Azure subscription (1)**
+   - Subscription: Select your **Azure subscription (1)**
 
    - Resource group: Select **az12001a-RG(2)** ftom the drop-down list.
 
@@ -67,15 +67,15 @@ In this exercise, you will deploy Azure infrastructure compute components necess
   
 1. On the **Basics** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Disks >** (leave all other settings with their default value):
 
-   - Subscription: Select your **Azure subscription (1)**
+   - Subscription: Select your **Azure subscription**
 
-   - Resource group: Select **az12001a-RG(2)** ftom the drop-down list.
+   - Resource group: Select **az12001a-RG** ftom the drop-down list.
    
-   - Virtual machine name: Enter **az12001a-vm0 (3)** 
+   - Virtual machine name: Enter **az12001a-vm0** 
 
-   - Region: Choose **<inject key="Region" enableCopy="false"/> (4)**
+   - Region: Choose **<inject key="Region" enableCopy="false"/>**
 
-   - Availability options: **Availability set (5)**
+   - Availability options: **Availability set**
 
    - Availability set: Create a new availability set named* **az12001a-avset (6)** with 2 fault domains and 5 update domains.
      
@@ -83,7 +83,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
      
    -  Securuty type - Use default
    
-   - Image: **SUSE Enterprise Linux for SAP 12 SP5 - BYOS - Gen 1 (7)**
+   - Image: **SUSE Enterprise Linux for SAP 12 SP5 - BYOS - Gen 1**
    
      > **Note**: To locate the image, click the **See all images** link, on the **Select an image** blade, in the search text box, type **SUSE Enterprise Linux for SAP 12 BYOS** and, in the list of results, click **SUSE Enterprise Linux for SAP 12 SP5 - BYOS**.
 
@@ -123,7 +123,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
    - NIC network security group: **Advanced**
 
-   > **Note**: This image has preconfigured NSG rules
+     > **Note**: This image has preconfigured NSG rules
 
    - Enable accelerated networking: **Selected**
 
@@ -133,7 +133,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
    - Enable basic plan for free: **Do not select**
    
-   > **Note**: This setting is not available if you have already selected the Azure Security Center plan.
+     > **Note**: This setting is not available if you have already selected the Azure Security Center plan.
 
    - Enable system assigned managed identity: **Do not select**
 
@@ -141,33 +141,33 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 1. On the **Advanced** tab of the **Create a virtual machine** blade, specify the following settings and select **Review + create** (leave all other settings with their default value):
 
-   - Proximity placement group: **az12001a-ppg**
+   - Proximity placement group: From the drop-down select **az12001a-ppg**
 
 1. On the **Review + create** tab of the **Create a virtual machine** blade, select **Create**.
 
-   > **Note**: Wait for the provisioning to complete. This should take less about 3 minutes.
+    > **Note**: Wait for the provisioning to complete. This should take less about 3 minutes.
 
 1. In the Azure portal, use the **Search resources, services, and docs** text box at the top of the Azure portal page to search for and navigate to the **Virtual machines** blade, then, on the **Virtual machines** blade, select **+ Create** and, in the drop-down menu, select **Azure virtual machine**.
 
 1. On the **Basics** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Disks >** (leave all other settings with their default value):
 
-   - Subscription: Select your **Azure subscription (1)**
+   - Subscription: Select your **Azure subscription.**
 
-   - Resource group: Select **az12001a-RG(2)** ftom the drop-down list.
+   - Resource group: Select **az12001a-RG** ftom the drop-down list.
 
-   - Virtual machine name: **az12001a-vm1**
+   - Virtual machine name: Enter **az12001a-vm1**
 
    - Region:Choose **<inject key="Region" enableCopy="false"/> (3)**
 
    - Availability options: **Availability set**
 
-   - Availability set: **az12001a-avset**
+   - Availability set: From the drop-down Select previously created availability set **az12001a-avset**
 
    - Image: **SUSE Enterprise Linux for SAP 12 SP5 - BYOS - Gen 1**
    
-   > **Note**: To locate the image, click the **See all images** link, on the **Select an image** blade, in the search text box, type **SUSE Enterprise Linux for SAP 12 BYOS** and, in the list of results, click **SUSE Enterprise Linux for SAP 12 SP5 - BYOS**.
+     > **Note**: To locate the image, click the **See all images** link, on the **Select an image** blade, in the search text box, type **SUSE Enterprise Linux for SAP 12 BYOS** and, in the list of results, click **SUSE Enterprise Linux for SAP 12 SP5 - BYOS**.
 
-   - Azure Spot Instance: **No**
+   - Azure Spot Instance: **Do not Select**
 
    - Size: **Standard D4s v3**
 
@@ -193,17 +193,17 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
    - NIC network security group: **Advanced**
 
-   > **Note**: This image has preconfigured NSG rules
+     > **Note**: This image has preconfigured NSG rules
 
-   - Accelerated networking: **On**
+   - Enable accelerated networking: **Selected**
 
-   - Place this virtual machine behind an existing load balancing solutions: **No**
+   - Place this virtual machine behind an existing load balancing solutions: **Do not Select**
 
 1. On the **Management** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Advanced >** (leave all other settings with their default value):
 
    - Enable basic plan for free: **Do not Select**
 
-   > **Note**: This setting is not available if you have already selected the Azure Security Center plan.
+     > **Note**: This setting is not available if you have already selected the Azure Security Center plan.
 
    - Enabley system assigned managed identity: **Do not Select**
 
@@ -211,7 +211,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 1. On the **Advanced** tab of the **Create a virtual machine** blade, specify the following settings and select **Review + create** (leave all other settings with their default value):
 
-   - Proximity placement group: **az12001a-ppg**
+   - Proximity placement group: From the drop-down select **az12001a-ppg**
 
 1. On the **Review + create** tab of the **Create a virtual machine** blade, select **Create**.
 
@@ -294,7 +294,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     ![Picture 1](../images/vm1-disks.png)
 
-> **Result**: After you completed this exercise, you have provisioned Azure compute resources necessary to support highly available SAP HANA deployments.
+  > **Result**: After you completed this exercise, you have provisioned Azure compute resources necessary to support highly available SAP HANA deployments.
 
 
 ## Exercise 2: Configure operating system of Azure VMs running Linux to support a highly available SAP HANA installation
@@ -664,13 +664,13 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
 1. From the **Basics** tab of the **Create load balancer** blade, specify the following settings and select **Review + create** (leave others with their default values):
 
-   - Subscription: Select your **Azure subscription (1)**
+   - Subscription: Select your **Azure subscription**
 
-   - Resource group: Select **az12001a-RG(2)** ftom the drop-down list.
+   - Resource group: Select **az12001a-RG** ftom the drop-down list.
 
    - Name: **az12001a-lb0**
 
-   - Region: Select **az12001a-RG(2)** ftom the drop-down list.
+   - Region: Choose **<inject key="Region" enableCopy="false"/>**
 
    - SKU: **Standard**
    
@@ -814,13 +814,13 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
 1. On the **Basics** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Disks >** (leave all other settings with their default value):
 
-   - Subscription: Select your **Azure subscription (1)**
+   - Subscription: Select your **Azure subscription **
 
-   - Resource group: Select **az12001a-RG(2)** ftom the drop-down list.
+   - Resource group: Select **az12001a-RG** ftom the drop-down list.
 
    - Virtual machine name: **az12001a-vm2**
 
-   - Region: Choose **<inject key="Region" enableCopy="false"/> (3)**
+   - Region: Choose **<inject key="Region" enableCopy="false"/> **
 
    - Availability options: **No infrastructure redundancy required**
 
@@ -872,13 +872,13 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
 1. On the **Management** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Advanced >** (leave all other settings with their default value):
 
-     - Enable auto-shutdown: **Off**
+    - Enable auto-shutdown: **Off**
      
-     - Enable System assigned managed identity: **Off**
+    - Enable System assigned managed identity: **Off**
      
-     - Enable backup: **Off**
+    - Enable backup: **Off**
      
-     - Guest OS updates (patch orchestration options): **Manual updates**
+    - Guest OS updates (patch orchestration options): **Manual updates**
      
         ![Picture 1](../images/manualupdates.png)
 
@@ -888,7 +888,6 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
    - Boot diagnostics: **Enable with managed storage account (recommended)**
 
    - Enable OS guest diagnostics: **Do not select**
-   
    
    > **Note**: This setting is not available if you have already selected the Azure Security Center plan.
 
