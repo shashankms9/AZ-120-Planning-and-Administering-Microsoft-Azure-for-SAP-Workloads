@@ -39,64 +39,91 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 ### Task 1: Deploy a pair of Azure VMs running highly available Active Directory domain controllers by using an Azure Resource Manager template
 
-1. In the Azure portal, in the **Search resources, services, and docs** text box at the top of the Azure portal page, type **Deploy a custom templates** and press the **Enter** key.
 
-1.  From the **Custom deployment** blade, in the **Quickstart template (disclaimer)** drop-down list, select the entry **application-workloads/active-directory/active-directory-new-domain-ha-2-dc-zones**, and click **Select template**.
+1.  Type **Deploy a custom template (1)** in the search box of the Azure portal menu, and select it **(2)**.
+
+     ![](../images/3.md/deploytemplate.png)
+
+1.  From the **Custom deployment** blade, scroll down to **Quickstart template (disclaimer) (1)** and select the **application-workloads/active-directory/active-directory-new-domain-ha-2-dc-zones (2)**, from the drop-down list then click **Select template (3)**.
+
+    ![](../images/3.md/selectemplate.png)
+    
 
     > **Note**: Alternatively, you can launch the deployment by navigating to Azure Quickstart Templates page at <https://github.com/Azure/azure-quickstart-templates>, locating the template named **Create 2 new Windows VMs, a new AD Forest, Domain and 2 DCs in separate availability zones**, and initiating its deployment by clicking **Deploy to Azure** button.
 
-1.  On the blade **Create a new AD Domain with 2 DCs using Availability Zones**, specify the following settings, click **Review + create**, and then click **Create** to initiate the deployment:
+1.  On the blade **Create a new AD Domain with 2 DCs using Availability Zones**, specify the following settings :
 
-    -   Subscription: *the name of your Azure subscription*
+    -   Subscription: Select your **Azure subscription (1)**
 
-    -   Resource group: *the name of a new resource group* **az12003b-ad-RG**
+    -   Resource group: Choose the resource group **az12003b-ad-RG (2)** form the drop-down list
 
-    -   Location: *an Azure region where you can deploy Azure VMs*
+    -   Location: Choose **<inject key="Region" enableCopy="false"/> (3)**
 
-    > **Note**: Consider using **East US** or **East US2** regions for deployment of your resources. 
+    -   Admin Username: Enter **Student (4)**
 
-    -   Admin Username: **Student**
+    -   Location:  Choose **<inject key="Region" enableCopy="false"/> (5)**
 
-    -   Location: *the same Azure region you specified above*
+    -   Password: Enter **Pa55w.rd1234 (6)**
 
-    -   Password: **Pa55w.rd1234**
+    -   Domain Name: Enter **adatum.com (7)**
 
-    -   Domain Name: **adatum.com**
+    -   DnsPrefix: Enter **dns<inject key="Deployment ID" enableCopy="false"/> (8)**
 
-    -   DnsPrefix: *Use any unique valid DNS prefix*
+    -   Vm Size: **Standard D2s_v3 (9)**
 
-    -   Vm Size: **Standard D2s\_v3**
+    -   _artifacts Location: Enter **https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/application-workloads/active-directory/active-directory-new-domain-ha-2-dc-zones/** **(10)**
 
-    -   _artifacts Location: *https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/application-workloads/active-directory/active-directory-new-domain-ha-2-dc-zones/*
+    -   _artifacts Location Sas Token: Leave it as default **(11)**
+    
+    - Click on **Review + Create (12)**.
+    
+    ![](../images/3.md/customdeployment.png)
 
-    -   _artifacts Location Sas Token: *leave blank*
-
-
+1. Review the configuration and click on **Create**
     > **Note**: The deployment should take about 35 minutes. Wait for the deployment to complete before you proceed to the next task.
 
     > **Note**: If the deployment fails with the **Conflict** error message during deployment of the CustomScriptExtension component, use the following steps  to remediate this issue:
 
-       - in the Azure portal, on the **Deployment** blade, review the deployment details and identify the VM(s) where the installation of the CustomScriptExtension failed
+    - in the Azure portal, on the **Deployment** blade, review the deployment details and identify the VM(s) where the installation of the CustomScriptExtension failed
 
-       - in the Azure portal, navigate to the blade of the VM(s) you identified in the previous step, select **Extensions**, and from the **Extensions** blade, remove the CustomScript extension
+    - in the Azure portal, navigate to the blade of the VM(s) you identified in the previous step, select **Extensions**, and from the **Extensions** blade, remove the CustomScript extension
 
-       - in the Azure portal, navigate to the **az12003b-sap-RG** resource group blade, select **Deployments**, select the link to the failed deployment, and select **Redeploy**, select the target resource group (**az12003b-sap-RG**) and provide the password for the root account (**Pa55w.rd1234**).
+    - in the Azure portal, navigate to the **az12003b-sap-RG** resource group blade, select **Deployments**, select the link to the failed deployment, and select **Redeploy**, select the target resource group (**az12003b-sap-RG**) and provide the password for the root account (**Pa55w.rd1234**).
 
-1. After the deployment completes, in the Azure portal, navigate to the blade of the **adPDC** virtual machine, in the vertical navigation menu, in the **Operations** section, select **Run command**, on the **Run Command Script** pane, in the **PowerShell Script** text box, enter the following script and select the **Run** button:
+1. After the deployment completes, in the Azure portal, navigate to the resource group **az12003b-ad-RG** and from **Overview (1)** page click on **adPDC (2)** virtual machine.
 
-    ```
-    New-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip6\Parameters\' -Name 'DisabledComponents' -Value 0xffffffff -PropertyType 'DWord'
-    Restart-Computer -Force
-    ```
-
-1. Wait until the **adPDC** virtual machine is running again, navigate to the blade of the **adBDC** virtual machine, in the vertical navigation menu, in the **Operations** section, select **Run command**, on the **Run Command Script** pane, in the **PowerShell Script** text box, enter the following script and select the **Run** button:
-
-    ```
-    New-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip6\Parameters\' -Name 'DisabledComponents' -Value 0xffffffff -PropertyType 'DWord'
-    Restart-Computer -Force
-    ```
+    ![](../images/3.md/adpcvm.png)
     
-1. Wait until the **adBDC** virtual machine is running again, navigate to the blade of the **adPDC** virtual machine, in the vertical navigation menu, in the **Operations** section, select **Run command**, on the **Run Command Script** pane, in the **PowerShell Script** text box, enter the following script and select the **Run** button:
+1. From in the vertical navigation menu, select **Run command (1)** under **Operations** and click on **RunPowerShell Script (2)**.
+
+    ![](../images/3.md/runcommand.png)
+
+1. Enter the following script and select the **Run** button:
+
+    ```
+    New-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip6\Parameters\' -Name 'DisabledComponents' -Value 0xffffffff -PropertyType 'DWord'
+    Restart-Computer -Force
+    ```
+
+   ![](../images/3.md/runscript.png)
+   
+   > **Note :** Wait until the **adPDC** virtual machine is running again
+   
+1. Navigate to the blade of the **adBDC** virtual machine, select **Run command** from **Operations** section and click on **RunPowerShell Script**.
+
+    ![](../images/3.md/runcommand1.png)
+
+1. On the **Run Command Script** pane, in the **PowerShell Script** text box, enter the following script and select the **Run** button:
+
+    ```
+    New-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip6\Parameters\' -Name 'DisabledComponents' -Value 0xffffffff -PropertyType 'DWord'
+    Restart-Computer -Force
+    ```
+    ![](../images/3.md/runscript.png)
+    
+    > **Note :** Wait until the **adBDC** virtual machine is running again
+    
+1. Navigate to the blade of the **adPDC** virtual machine, in the vertical navigation menu, in the **Operations** section, select **Run command**, on the **Run Command Script** pane, in the **PowerShell Script** text box, enter the following script and select the **Run** button:
 
     ```
     repadmin /syncall /APeD
@@ -112,23 +139,33 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 ### Task 2: Provision subnets that will host Azure VMs running highly available SAP NetWeaver deployment and the S2D cluster.
 
-1.  In the Azure Portal, navigate to the blade of the **az12003b-ad-RG** resource group.
+1.  In the Azure Portal, navigate to the blade of the **az12003b-ad-RG** resource group and click on **adVNET** virtual network
 
-1.  On the **az12003b-ad-RG** resource group blade, in the list of resources, locate the **adVNET** virtual network and click its entry to display the **adVNET** blade.
+     ![](../images/3.md/advnet.png)
+     
+1.  From the **adVNET** blade, navigate to its **Subnets (1)** blade and click on **+ Subnet (2)**.
 
-1.  From the **adVNET** blade, navigate to its **adVNET - Subnets** blade. 
+     ![](../images/3.md/subnet.png)
 
-1.  From the **adVNET - Subnets** blade, create a new subnet with the following settings:
+1.  On **Add Subnet** page,  the follow the below instructions:
 
-    -   Name: **sapSubnet**
+    - Name: Enter **sapSubnet (1)**
 
-    -   Address ranges (CIDR block): **10.0.1.0/24**
+    - Subnet address range: Enter **10.0.1.0/24 (2)**
 
-1.  From the **adVNET - Subnets** blade, create a new subnet with the following settings:
+    - Click on **Save (3)**
 
-    -   Name: **s2dSubnet**
+    ![](../images/3.md/addsubnet1.png)
 
-    -   Address ranges (CIDR block): **10.0.2.0/24**
+1.  Again click on **+ Subnet** and follow the below instructions:
+
+    - Name: **s2dSubnet**
+
+    - Subnet address range: Enter **10.0.1.0/24 (2)**
+
+    - Click on **Save (3)**
+
+    ![](../images/3.md/addsubnet2.png)
 
 1.  In the Azure Portal, start a PowerShell session in Cloud Shell. 
 
