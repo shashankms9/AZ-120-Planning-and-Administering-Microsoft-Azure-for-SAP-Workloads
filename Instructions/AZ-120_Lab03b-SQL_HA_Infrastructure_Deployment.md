@@ -267,7 +267,7 @@ In this task, you will deploy the scale-out file server (SOFS) cluster that will
 
 1.  On the page titled **Use Managed Disks to Create a Storage Spaces Direct (S2D) Scale-Out File Server (SOFS) Cluster with Windows Server 2016**, click **Deploy to Azure**. This will automatically redirect your browser to the Azure portal and display the **Custom deployment** blade.
 
-       ![](../images/3.md/Az-1203b4a.png)
+       ![](../images/3.md/Az-1203b4a1.png)
 
 1.  From the **Custom deployment** blade, specify the following settings, click **Review + create**, and then click **Create** to initiate the deployment:
 
@@ -320,6 +320,11 @@ In this task, you will deploy the scale-out file server (SOFS) cluster that will
     -   \_artifacts Location: **https://raw.githubusercontent.com/polichtm/301-storage-spaces-direct-md/master**
 
     -   \_artifacts Location Sas Token: **Leave the default value**
+  
+           ![](../images/3.md/az-1203b4a2.png)
+    
+           ![](../images/3.md/az-1203b4a3.png)
+
 
 1.  The deployment might take about 20 minutes. Do not wait for the deployment to complete but instead proceed to the next task.
 
