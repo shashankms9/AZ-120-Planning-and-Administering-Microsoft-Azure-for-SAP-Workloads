@@ -279,7 +279,7 @@ In this task, you will deploy the scale-out file server (SOFS) cluster that will
 
     -   Name Prefix: **i20**
 
-    -   Vm Size: **Standard D4s\_v3**
+    -   Vm Size: **Standard_D4s_v3**
 
     -   Enable Accelerated Networking: **true**
 
