@@ -150,15 +150,13 @@ In this exercise, you will deploy Azure infrastructure compute components necess
    
      ![](../images/1.md/clickonmanagement.png)
      
-1. On the **Management** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Advanced>** (leave all other settings with their default value):
+1. On the **Management** tab of the **Create a virtual machine** blade, leave everything as default and **Next: Monitoring >**.
 
-   - Enable basic plan for free: **Do not select**
-   
-     > **Note**: This setting is not available if you have already selected the Azure Security Center plan.
+    ![](../images/1.md/management.png)
+    
+1. On the **Monitoringt** tab of the **Create a virtual machine** blade, leave everything as default and **Next: Advanced >**.
 
-   - Enable system assigned managed identity: **Do not select**
-
-   - Enable auto-shutdown: **Do not select**
+    ![](../images/1.md/monitoring.png)
 
 1. On the **Advanced** tab of the **Create a virtual machine** blade, specify the following settings and select **Review + create** (leave all other settings with their default value):
 
