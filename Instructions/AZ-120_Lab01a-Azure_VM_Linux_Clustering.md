@@ -382,8 +382,20 @@ In this exercise, you will configure operating system and storage on Azure VMs r
 
 1. Open another Cloud Shell Bash session by clicking the **Open new session** icon in the Cloud Shell toolbar.
 
-1. In the newly opened Cloud Shell Bash session, repeat all of the steps in this tasks to connect to the **az12001a-vm1** Azure VM via its IP address **az12001a-vm0-ip**.
+1. In the newly opened Cloud Shell Bash session, repeat all of the steps in this tasks to connect to the **az12001a-vm1** Azure VM via its IP address **az12001a-vm1-ip**.
 
+   ```cli
+   RESOURCE_GROUP_NAME='az12001a-RG'
+   ```
+   
+   ```cli
+   PIP=$(az network public-ip show --resource-group $RESOURCE_GROUP_NAME --name az12001a-vm0-ip --query ipAddress --output tsv)
+   ```
+   
+   ```cli
+   ssh student@$PIP
+   ```
+   
 
 ### Task 2: Configure storage of Azure VMs running Linux
 
