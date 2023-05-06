@@ -232,7 +232,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 1. On the **Networking** tab of the **Create a virtual machine** blade, specify the following settings: 
 
    - Virtual network: Select **az12001a-RG-vnet (1)** 
-   - Subnet : Select **Subnet-0 (2)
+   - Subnet : Select **Subnet-0 (2)**
    - Click on **Next: Management > (3)**
 
    ![](../images/1.md/clickonmanagement1.png)
