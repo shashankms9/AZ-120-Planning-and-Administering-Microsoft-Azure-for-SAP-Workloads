@@ -306,9 +306,9 @@ In this exercise, you will deploy Azure infrastructure compute components necess
    for I in {0..7}; do az disk create --resource-group $RESOURCE_GROUP_NAME --name az12001a-vm1-DataDisk$I --size-gb 128 --location $LOCATION --sku Premium_LRS; done
    ```
 
-1. In the Azure portal, navigate to the blade of the first Azure VM you provisioned in the previous task (**az12001a-vm0**).
+1. From Azure portal, navigate to the blade of the first Azure VM **az12001a-vm0** you provisioned in the previous task.
 
-1. From the **az12001a-vm0** blade, navigate to the **az12001a-vm0 \| Disks** blade.
+1. From the **az12001a-vm0** blade, navigate to the **az12001a-vm0 | Disks** blade.
 
 1. On the **az12001a-vm0 \| Disks** blade, select **Attach existing disks** and attach data disk with the following settings to az12001a-vm0:
 
