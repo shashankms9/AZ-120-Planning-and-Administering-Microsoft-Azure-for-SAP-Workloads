@@ -269,9 +269,18 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
      ![Picture 1](../images/selectebash.png)
 
-1. If you have not previously used a Cloud Shell, you must configure a storage. Select Subscription and Click on Create storage.
+1. If you have not previously used a Cloud Shell, you must configure a storage. Select **Subscription (1)** and Click on **Show advanced settings (2)**.
 
-    ![Picture 1](../images/createstr.png)
+    ![Picture 1](../images/1.md/showadvanced.png)
+    
+1. Follow the below instructions to create storage account: 
+
+    - Resource group : Choose **labvm-rg (1)** from the drop down
+    - Storage account : Enter **stacc<inject key="Deployment ID" enableCopy="false"/> (2)**
+    - File share : Enter **blob (3)**
+    - Click on **Create storage (4)**
+
+    ![](../images/1.md/createstorage.png)
     
 1. Once complete, you will see a prompt similar to the one below. Verify that the upper left corner of the Cloud Shell screen shows Bash.
 
