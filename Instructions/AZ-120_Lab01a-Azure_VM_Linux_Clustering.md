@@ -187,7 +187,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
    - Resource group: Select **az12001a-RG (2)** ftom the drop-down list.
    
-   - Virtual machine name: Enter **az12001a-vm0 (3)** 
+   - Virtual machine name: Enter **az12001a-vm1 (3)** 
 
    - Region: Choose **<inject key="Region" enableCopy="false"/> (4)**
 
@@ -344,7 +344,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 1. Save your changes. 
 
-    ![Picture 1](../images/vm1-disks.png)
+    ![Picture 1](../images/1.md/diskblade1.png)
 
   > **Result**: After you completed this exercise, you have provisioned Azure compute resources necessary to support highly available SAP HANA deployments.
 
