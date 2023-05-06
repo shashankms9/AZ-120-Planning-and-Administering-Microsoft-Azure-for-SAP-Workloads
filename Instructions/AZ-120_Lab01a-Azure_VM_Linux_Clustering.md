@@ -541,13 +541,13 @@ In this exercise, you will configure operating system and storage on Azure VMs r
 
 1. You will find the ssh key  which is saved in "/ root/.ssh/" path. run the following commands to get the key and copy the key value into Clipboard.
     
-      ```cli
-      cd /root/.ssh/
+    ```cli
+    cd /root/.ssh/
 
-      cat id_rsa.pub
-      ```
+    cat id_rsa.pub
+    ```
    
-     ![Picture 1](../images/key-az120.png)
+    ![Picture 1](../images/key-az120.png)
 
 
 1. In the Cloud Shell pane, in the SSH session to az12001a-vm1, create a file **/root/.ssh/authorized\_keys** in the vi editor (you are free to use any other editor) by running:
