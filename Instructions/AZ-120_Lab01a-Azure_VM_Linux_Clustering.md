@@ -577,7 +577,7 @@ In this exercise, you will configure operating system and storage on Azure VMs r
       ```cli
       cd /root/.ssh/
 
-      cat id_rsa.pub
+      cat id_dsa.pub
       ```
       
       ![Picture 1](../images/key-az120.png)
