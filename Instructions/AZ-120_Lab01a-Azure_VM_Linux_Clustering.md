@@ -158,11 +158,15 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     ![](../images/1.md/monitoring.png)
 
-1. On the **Advanced** tab of the **Create a virtual machine** blade, specify the following settings and select **Review + create** (leave all other settings with their default value):
+1. On the **Advanced** tab of the **Create a virtual machine** blade, specify the following settings and select **Review + create (2)** (leave all other settings with their default value):
 
-   - Proximity placement group: From the drop-down select **az12001a-ppg**
+   - Proximity placement group: From the drop-down select **az12001a-ppg (1)**
+
+   ![](../images/1.md/reviewvm.png)
 
 1. On the **Review + create** tab of the **Create a virtual machine** blade, select **Create**.
+
+    ![](../images/1.md/create.png)
 
     > **Note**: Wait for the provisioning to complete. This should take less about 3 minutes.
 
