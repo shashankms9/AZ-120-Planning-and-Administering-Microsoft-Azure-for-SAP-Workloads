@@ -38,7 +38,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 ### Task 1: Deploy Azure VMs running Linux SUSE
 
-1. Type **Proximity placement (1)** groups in the search box of the Azure portal menu, and select it
+1. Type **Proximity placement (1)** groups in the search box of the Azure portal menu, and select it **(2)**.
 
     ![](../images/1.md/selectppg.png)
 
@@ -46,7 +46,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     ![](../images/1.md/createproximity.png)
     
-3. On the **Basics** tab of the **Create Proximity Placement Groups** blade, specify the following settings and select **Review + create**:
+3. On the **Basics** tab of the **Create Proximity Placement Groups** blade, specify the following settings:
 
    - Subscription: Select your **Azure subscription (1)**
 
@@ -58,7 +58,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
    
    - VM Sizes : Leave it as **Default (5)**
 
-  - Click on **Review + Create (6)**
+   - Click on **Review + Create (6)**
 
       ![Picture 1](../images/1.md/review.png)
       
@@ -69,25 +69,37 @@ In this exercise, you will deploy Azure infrastructure compute components necess
    > **Note**: Wait for the provisioning to complete. This should take less than a minute.
   
 
-1. In the Azure portal, use the **Search resources, services, and docs** text box at the top of the Azure portal page to search for and navigate to the **Virtual machines** blade, then, on the **Virtual machines** blade, select **+ Create** and, in the drop-down menu, select **Azure virtual machine**.
+1. On Azure portal **Home** page, search for **Virtual machines (1)** and select it **(2)**.
 
-    ![Picture 1](../images/selectvm.png)
+    ![](../images/1.md/virtualmachine.png)
+    
+1. On the **Virtual machines** blade, select **+ Create** and, in the drop-down menu, select **Azure virtual machine**.
+
+    ![Picture 1](../images/1.md/createvm.png)
   
 1. On the **Basics** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Disks >** (leave all other settings with their default value):
 
-   - Subscription: Select your **Azure subscription**
+   - Subscription: Select your **Azure subscription (1)**
 
-   - Resource group: Select **az12001a-RG** ftom the drop-down list.
+   - Resource group: Select **az12001a-RG (2)** ftom the drop-down list.
    
-   - Virtual machine name: Enter **az12001a-vm0** 
+   - Virtual machine name: Enter **az12001a-vm0 (2)** 
 
-   - Region: Choose **<inject key="Region" enableCopy="false"/>**
+   - Region: Choose **<inject key="Region" enableCopy="false"/> (4)**
 
-   - Availability options: **Availability set**
+   - Availability options: Select **Availability set (6)**
+   
+       ![](../images/1.md/createvm1.png)
 
-   - Availability set: Create a new availability set named* **az12001a-avset (6)** with 2 fault domains and 5 update domains.
+   - Availability set: To create a new availability set follow the below instructions: 
+   
+        - Click on **Create new (7)**
+        - Name : Enter **az12001a-avset (8)** 
+        - Fault domain : Choose **2 (9)** 
+        - Update domains : Choose ** 5 (10)**
+        - Click on **Ok (11)**
      
-        ![Picture 1](../images/avset.png)
+         ![Picture 1](../images/1.md/createas.png)
      
    -  Securuty type - Use default
    
