@@ -38,11 +38,16 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 ### Task 1: Deploy Azure VMs running Linux SUSE
 
-1. In the Azure portal, use the **Search resources, services, and docs** text box at the top of the Azure portal page to search for and navigate to the **Proximity placement groups** blade and, on the **Proximity placement groups** blade, select **+ create**.
+1. Type **Proximity placement (1)** groups in the search box of the Azure portal menu, and select it
+
 
      ![Picture 1](../images/creatingProx.png)
 
-1. On the **Basics** tab of the **Create Proximity Placement Groups** blade, specify the following settings and select **Review + create**:
+1. Click on **Create Proximity placement group**.
+
+    ![](../images/1.md/createproximity.png)
+    
+3. On the **Basics** tab of the **Create Proximity Placement Groups** blade, specify the following settings and select **Review + create**:
 
    - Subscription: Select your **Azure subscription (1)**
 
@@ -50,13 +55,17 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
    - Region: Choose **<inject key="Region" enableCopy="false"/> (3)**
 
-   - Proximity placement group name: enter **az12001a-ppg (4)**
+   - Proximity placement group name: Enter **az12001a-ppg (4)**
    
-   - VM Sizes : Use default value **( 0 selected (5) )**
+   - VM Sizes : Leave it as **Default (5)**
 
-1. On the **Review + create (6)** tab of the **Create Proximity Placement Groups** blade, select **Create**.
+  - Click on **Review + Create (6)**
 
-      ![Picture 1](../images/Prox.png)
+      ![Picture 1](../images/1.md/review.png)
+      
+1. Review the configuation and click on **Create**.
+
+   ![](../images/1.md/createpgp.png)
 
    > **Note**: Wait for the provisioning to complete. This should take less than a minute.
   
