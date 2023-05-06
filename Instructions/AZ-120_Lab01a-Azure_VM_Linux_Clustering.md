@@ -68,7 +68,6 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
    > **Note**: Wait for the provisioning to complete. This should take less than a minute.
   
-
 1. On Azure portal **Home** page, search for **Virtual machines (1)** and select it **(2)**.
 
     ![](../images/1.md/virtualmachine.png)
@@ -173,76 +172,91 @@ In this exercise, you will deploy Azure infrastructure compute components necess
     ![](../images/1.md/create.png)
 
     > **Note**: Wait for the provisioning to complete. This should take less about 3 minutes.
+    
+1. Navigate back to the Azure portal **Home** page, search for **Virtual machines (1)** and select it **(2)**.
 
-1. In the Azure portal, use the **Search resources, services, and docs** text box at the top of the Azure portal page to search for and navigate to the **Virtual machines** blade, then, on the **Virtual machines** blade, select **+ Create** and, in the drop-down menu, select **Azure virtual machine**.
+    ![](../images/1.md/virtualmachine.png)
+    
+1. On the **Virtual machines** blade, select **+ Create (1)** and, in the drop-down menu, select **Azure virtual machine (2)**.
 
-1. On the **Basics** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Disks >** (leave all other settings with their default value):
+    ![Picture 1](../images/1.md/createvm.png)
+  
+1. On the **Basics** tab of the **Create a virtual machine** blade, specify the following settings :
 
-   - Subscription: Select your **Azure subscription.**
+   - Subscription: Select your **Azure subscription (1)**
 
-   - Resource group: Select **az12001a-RG** ftom the drop-down list.
+   - Resource group: Select **az12001a-RG (2)** ftom the drop-down list.
+   
+   - Virtual machine name: Enter **az12001a-vm0 (3)** 
 
-   - Virtual machine name: Enter **az12001a-vm1**
+   - Region: Choose **<inject key="Region" enableCopy="false"/> (4)**
 
-   - Region:Choose **<inject key="Region" enableCopy="false"/> (3)**
-
-   - Availability options: **Availability set**
-
-   - Availability set: From the drop-down Select previously created availability set **az12001a-avset**
-
-   - Image: **SUSE Enterprise Linux for SAP 12 SP5 - BYOS - Gen 1**
+   - Availability options: Select **Availability set (5)**
+   
+   - Availability set: Choose **az12001a-avset (6)** from drop-down
+   
+   -  Securuty type: Leave it as **Default (7)**
+   
+   - Image: **SUSE Enterprise Linux for SAP 12 SP5 - BYOS - Gen 1 (8)**
    
      > **Note**: To locate the image, click the **See all images** link, on the **Select an image** blade, in the search text box, type **SUSE Enterprise Linux for SAP 12 BYOS** and, in the list of results, click **SUSE Enterprise Linux for SAP 12 SP5 - BYOS**.
 
-   - Azure Spot Instance: **Do not Select**
+     ![](../images/1.md/vm2.png)
+     
+   - Run with Azure Spot discount: Uncheck the box **(9)**
 
-   - Size: **Standard D4s v3**
+   - Size: Select **Standard D4s v3 (10)**
 
-   - Authentication type: **Password**
+   - Authentication type: Choose **Password (11)**
 
-   - Username: **student**
+   - Username: Enter **student (12)**
 
-   - Password: **Pa55w.rd1234**
+   - Password: Enter **Pa55w.rd1234 (13)**
 
-1. On the **Disks** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Networking >** (leave all other settings with their default value):
+   - Confirm Password : Enter **Pa55w.rd1234 (14)**
 
-   - OS disk type: **Premium SSD**
+   -  Click on **Next : Disks > (15)**
 
-   - Key management: **Platform-managed key**
+   ![](../images/1.md/vm2.1.png)
+   
+1. On the **Disks** tab of the **Create a virtual machine** blade, specify the following settings: 
 
-1. On the **Networking** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Management >** (leave all other settings with their default value):
+   - OS disk type: **Premium SSD (1)**
 
-   - Virtual network: **az12001a-RG-vnet**
+   - Key management: **Platform-managed key (2)**
 
-   - Subnet: **subnet-0 (192.168.0.0/24)**
+    - Click on **Next: Networking > (3)**
+   
+      ![Picture 1](../images/1.md/disks.png)
 
-   - Public IP address:New IP address will * **az12001a-vm1-ip**
+1. On the **Networking** tab of the **Create a virtual machine** blade, specify the following settings: 
 
-   - NIC network security group: **Advanced**
+   - Virtual network: Select **az12001a-RG-vnet (1)** 
+   - Subnet : Select **Subnet-0 (2)
+   - Click on **Next: Management > (3)**
 
-     > **Note**: This image has preconfigured NSG rules
+   ![](../images/1.md/clickonmanagement1.png)
+     
+1. On the **Management** tab of the **Create a virtual machine** blade, leave everything as default and **Next: Monitoring >**.
 
-   - Enable accelerated networking: **Selected**
+    ![](../images/1.md/management.png)
+    
+1. On the **Monitoringt** tab of the **Create a virtual machine** blade, leave everything as default and **Next: Advanced >**.
 
-   - Place this virtual machine behind an existing load balancing solutions: **Do not Select**
+    ![](../images/1.md/monitoring.png)
 
-1. On the **Management** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Advanced >** (leave all other settings with their default value):
+1. On the **Advanced** tab of the **Create a virtual machine** blade, specify the following settings and select **Review + create (2)** (leave all other settings with their default value):
 
-   - Enable basic plan for free: **Do not Select**
+   - Proximity placement group: From the drop-down select **az12001a-ppg (1)**
 
-     > **Note**: This setting is not available if you have already selected the Azure Security Center plan.
-
-   - Enabley system assigned managed identity: **Do not Select**
-
-   - Enable auto-shutdown: **Do not Select**
-
-1. On the **Advanced** tab of the **Create a virtual machine** blade, specify the following settings and select **Review + create** (leave all other settings with their default value):
-
-   - Proximity placement group: From the drop-down select **az12001a-ppg**
+   ![](../images/1.md/reviewvm.png)
 
 1. On the **Review + create** tab of the **Create a virtual machine** blade, select **Create**.
 
-   > **Note**: Wait for the provisioning to complete. This should take less about 3 minutes.
+    ![](../images/1.md/create.png)
+
+    > **Note**: Wait for the provisioning to complete. This should take less about 3 minutes.
+
 
 
 ### Task 2: Create and configure Azure VMs disks
