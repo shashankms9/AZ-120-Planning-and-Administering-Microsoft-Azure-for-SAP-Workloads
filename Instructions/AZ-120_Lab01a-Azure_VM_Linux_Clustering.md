@@ -40,8 +40,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 1. Type **Proximity placement (1)** groups in the search box of the Azure portal menu, and select it
 
-
-    ![Picture 1](../images/1.md/selectppg.png)
+    ![](../images/1.md/selectppg.png)
 
 1. Click on **Create Proximity placement group**.
 
