@@ -710,9 +710,9 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
    ![](../images/1.md/ipconfig.png)
 
-1. On the **ipconfig1** blade, set the private IP address assignment to **Static** and save the change.
+1. On the **ipconfig1** blade, set the private IP address assignment to **Static (1)** and clck on **Save (2)**.
 
-    ![Picture 1](../images/static.png)  
+    ![Picture 1](../images/1.md/saveipconfig.png)  
 
 1. In the Azure portal, navigate to the blade of the **az12001a-vm1** Azure VM.
 
