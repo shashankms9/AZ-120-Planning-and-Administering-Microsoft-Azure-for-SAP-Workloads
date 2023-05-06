@@ -389,7 +389,7 @@ In this exercise, you will configure operating system and storage on Azure VMs r
    ```
    
    ```cli
-   PIP=$(az network public-ip show --resource-group $RESOURCE_GROUP_NAME --name az12001a-vm0-ip --query ipAddress --output tsv)
+   PIP=$(az network public-ip show --resource-group $RESOURCE_GROUP_NAME --name az12001a-vm1-ip --query ipAddress --output tsv)
    ```
    
    ```cli
