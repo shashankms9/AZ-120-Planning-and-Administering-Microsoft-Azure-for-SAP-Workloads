@@ -706,7 +706,9 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
      ![Picture 1](../images/selectnic.png)  
 
-1. From the blade of the network interface of the az12001a-vm0, navigate to its IP configurations blade and, from there, display its **ipconfig1** blade.
+1. From the blade of the network interface of the az12001a-vm0, navigate to its **IP configurations (1)** blade and click on **ipconfig1 (2)**.
+
+   ![](../images/1.md/ipconfig.png)
 
 1. On the **ipconfig1** blade, set the private IP address assignment to **Static** and save the change.
 
