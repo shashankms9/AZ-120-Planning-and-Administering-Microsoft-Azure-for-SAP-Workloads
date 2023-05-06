@@ -96,7 +96,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
         - Click on **Create new (7)**
         - Name : Enter **az12001a-avset (8)** 
         - Fault domain : Choose **2 (9)** 
-        - Update domains : Choose ** 5 (10)**
+        - Update domains : Choose **5 (10)**
         - Click on **Ok (11)**
      
         ![Picture 1](../images/1.md/createas.png)
