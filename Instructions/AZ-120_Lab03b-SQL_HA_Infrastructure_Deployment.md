@@ -39,10 +39,6 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 ### Task 1: Deploy a pair of Azure VMs running highly available Active Directory domain controllers by using an Azure Resource Manager template
 
-1. In the Azure portal, in the **Search resources, services, and docs** text box at the top of the Azure portal page, type **Deploy a custom templates** and press the **Enter** key.
-
-1.  From the **Custom deployment** blade, in the **Quickstart template (disclaimer)** drop-down list, select the entry **application-workloads/active-directory/active-directory-new-domain-ha-2-dc-zones**, and click **Select template**.
-
 1.  Type **Deploy a custom template (1)** in the search box of the Azure portal menu, and select it **(2)**.
 
      ![](../images/3.md/deploytemplate.png)
