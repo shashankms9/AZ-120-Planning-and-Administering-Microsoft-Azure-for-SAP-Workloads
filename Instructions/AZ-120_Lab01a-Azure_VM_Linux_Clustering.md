@@ -73,21 +73,21 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     ![](../images/1.md/virtualmachine.png)
     
-1. On the **Virtual machines** blade, select **+ Create** and, in the drop-down menu, select **Azure virtual machine**.
+1. On the **Virtual machines** blade, select **+ Create (1)** and, in the drop-down menu, select **Azure virtual machine (2)**.
 
     ![Picture 1](../images/1.md/createvm.png)
   
-1. On the **Basics** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Disks >** (leave all other settings with their default value):
+1. On the **Basics** tab of the **Create a virtual machine** blade, specify the following settings :
 
    - Subscription: Select your **Azure subscription (1)**
 
    - Resource group: Select **az12001a-RG (2)** ftom the drop-down list.
    
-   - Virtual machine name: Enter **az12001a-vm0 (2)** 
+   - Virtual machine name: Enter **az12001a-vm0 (3)** 
 
    - Region: Choose **<inject key="Region" enableCopy="false"/> (4)**
 
-   - Availability options: Select **Availability set (6)**
+   - Availability options: Select **Availability set (5)**
    
        ![](../images/1.md/createvm1.png)
 
@@ -99,56 +99,57 @@ In this exercise, you will deploy Azure infrastructure compute components necess
         - Update domains : Choose ** 5 (10)**
         - Click on **Ok (11)**
      
-         ![Picture 1](../images/1.md/createas.png)
+        ![Picture 1](../images/1.md/createas.png)
      
-   -  Securuty type - Use default
+   -  Securuty type: Leave it as **Default (12)**
    
-   - Image: **SUSE Enterprise Linux for SAP 12 SP5 - BYOS - Gen 1**
+   - Image: **SUSE Enterprise Linux for SAP 12 SP5 - BYOS - Gen 1 (13)**
    
      > **Note**: To locate the image, click the **See all images** link, on the **Select an image** blade, in the search text box, type **SUSE Enterprise Linux for SAP 12 BYOS** and, in the list of results, click **SUSE Enterprise Linux for SAP 12 SP5 - BYOS**.
 
-        ![Picture 1](../images/linuximage.png)
   
-   - Run with Azure Spot discount: **Do not select**
+   - Run with Azure Spot discount: Uncheck the box **(14)**
 
-   - Size: Select **Standard D4s v3**
+   - Size: Select **Standard D4s v3 (15)**
 
-   - Authentication type: **Password**
+   - Authentication type: Choose **Password (16)**
 
-   - Username: **student**
+   - Username: Enter **student (17)**
 
-   - Password: **Pa55w.rd1234**
+   - Password: Enter **Pa55w.rd1234 (18)**
 
-1. On the **Disks** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Networking >** (leave all other settings with their default value):
+   - Confirm Password : Enter **Pa55w.rd1234 (19)**
 
-   - OS disk type: **Premium SSD**
+   -  Click on **Next : Disks > (20)**
 
-   - Key management: **Platform-managed key**
+   ![](../images/1.md/clickdisk.png)
    
-      ![Picture 1](../images/diskvm0.png)
+1. On the **Disks** tab of the **Create a virtual machine** blade, specify the following settings: 
 
-1. On the **Networking** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Management >** (leave all other settings with their default value):
+   - OS disk type: **Premium SSD (1)**
 
-   - Virtual network: select **Create new** and create a new virtual network named **az12001a-RG-vnet**
+   - Key management: **Platform-managed key (2)**
 
-   - Address space: *set the address space of the new virtual network to* **192.168.0.0/20**
+    - Click on **Next: Networking > (3)**
+   
+      ![Picture 1](../images/1.md/disks.png)
 
-   - Subnet name: **subnet-0**
+1. On the **Networking** tab of the **Create a virtual machine** blade, specify the following settings: 
 
-   - Subnet address range: **192.168.0.0/24**
+   - Virtual network: Select **Create new (1)** and follow the below instructons:
+   
+        - Name: Enter **az12001a-RG-vnet (2)**
+        - Address space: Set the address space of the new virtual network to **192.168.0.0/20 (3)**
+        - Subnet name: Enter **subnet-0 (4)**
+        - Subnet address range: **192.168.0.0/24 (5)**
+        - Click on **Ok (6)**
     
-       ![Picture 1](../images/vm0net.png)
+        ![Picture 1](../images/1.md/vnet.png)
+
+1. Leave all the coloumns as default and select **Next: Management >**
+   
+     ![](../images/1.md/clickonmanagement.png)
      
-   - Public IP address: New IP address will be created with named **az12001a-vm0-ip**
-
-   - NIC network security group: **Advanced**
-
-     > **Note**: This image has preconfigured NSG rules
-
-   - Enable accelerated networking: **Selected**
-
-   - Place this virtual machine behind an existing load balancing solutions: **Do not Select**
-
 1. On the **Management** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Advanced>** (leave all other settings with their default value):
 
    - Enable basic plan for free: **Do not select**
