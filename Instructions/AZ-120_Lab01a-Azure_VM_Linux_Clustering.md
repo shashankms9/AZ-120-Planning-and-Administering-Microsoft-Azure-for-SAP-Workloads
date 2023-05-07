@@ -756,38 +756,58 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
      
    ![](../images/1.md/basiclb.png)
    
-1. On the **Frontend IP configuration** screen, click **Add a frontend IP configuration** and then click **Add**.
+1. On the **Frontend IP configuration** screen, click **Add a frontend IP configuration (1)** and follow the below instructions:
 
-   - Name: frontend1
+   - Name: Enter **frontend1 (1)**
    
-   - Virtual network: **az12001a-RG-vnet**
+   - Virtual network: Select **az12001a-RG-vnet (2)**
 
-   - Subnet: **subnet-0**
+   - Subnet: Select **subnet-0 (3)**
 
-   - IP address assignment: **Static**
+   - IP address assignment: Choose **Static (4)**
 
-   - IP address: **192.168.0.240**
+   - IP address: Enter **192.168.0.240 (5)**
 
-   - Availability zone: **Zone redundant**
+   - Availability zone: Choose **Zone redundant (6)**
 
-1. Select **Review + create**, and then select **Create**.
+   -  Click on **Add (7)**
+
+    ![](../images/1.md/frontendip.png)
+
+1. Select **Review + create**
+
+    ![](../images/1.md/reviewlb.png)
+    
+1. Review the configuration and click on **Create**.
+
+    ![](../images/1.md/createlb1.png)
 
    > **Note**: Wait until the load balancer is provisioned. This should take less than a minute. 
 
-1. In the Azure portal, navigate to the blade displaying the properties of the newly provisioned **az12001a-lb0** load balancer. 
+1. Once the deployment is done, click on **Go to resource**.
 
-1. On the **az12001a-lb0** blade, select **Backend pools**, select **+ Add**, and, on the **Add backend pool** specify the following settings (leave others with their default values) and click **save:**
+    ![](..images/1.md/gotoresource.png)
+   
+1. On the **az12001a-lb0** blade, select **Backend pools (1)**, click on **+ Add (2)**. 
 
-   - Name: **az12001a-lb0-bepool**
+    ![](../images/1.md/backendpool.png)
+    
+1. On the **Add backend pool** specify the following settings:
 
-   - Virtual network: **az12001a-RG-vnet**
+   - Name: **az12001a-lb0-bepool (1)**
 
-   - Backend Pool Configuration: **IP address**
+   - Virtual network: **az12001a-RG-vnet (2)**
 
-   - IP address: **192.168.0.4** Resource name: **az12001a-vm0**
+   - Backend Pool Configuration: Choose **IP address (3)**
 
-   - IP address: **192.168.0.5** Resource name: **az12001a-vm1**
+   - IP address: Select **192.168.0.4 (4)** Resource name: **az12001a-vm0**
 
+   - IP address: Select **192.168.0.5 (5)** Resource name: **az12001a-vm1**
+
+   - Click on **Save (6)**
+
+    ![](../images/1.md/addbackendpool.png)
+    
 1. On the **az12001a-lb0** blade, select **Health probes** select **+ Add**, and, on the **Add health probe** blade, specify the following settings (leave others with their defaults) and click on **Add:**
 
    - Name: **az12001a-lb0-hprobe**
