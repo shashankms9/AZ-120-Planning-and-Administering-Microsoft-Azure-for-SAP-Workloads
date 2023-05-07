@@ -922,93 +922,77 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
    > **Note**: Since two clustered Azure VMs are no longer directly accessible from Internet, you will deploy an Azure VM running Windows Server 2019 Datacenter that will serve as a jump host. 
 
-1. From the lab computer, in the Azure portal, use the **Search resources, services, and docs** text box at the top of the Azure portal page to search for and navigate to the **Virtual machines** blade, then, on the **Virtual machines** blade, select **+ Create** and, in the drop-down menu, select **Azure virtual machine**.
+1. On Azure portal **Home** page, search for **Virtual machines (1)** and select it **(2)**.
 
-     ![Picture 1](../images/selectvm.png)
+    ![](../images/1.md/virtualmachine.png)
+    
+1. On the **Virtual machines** blade, select **+ Create (1)** and, in the drop-down menu, select **Azure virtual machine (2)**.
+
+    ![Picture 1](../images/1.md/createvm.png)
 
 1. On the **Basics** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Disks >** (leave all other settings with their default value):
 
-   - Subscription: Select your **Azure subscription **
+   - Subscription: Select your **Azure subscription (1)**
 
-   - Resource group: Select **az12001a-RG** ftom the drop-down list.
+   - Resource group: Select **az12001a-RG (2)** ftom the drop-down list.
 
-   - Virtual machine name: **az12001a-vm2**
+   - Virtual machine name: Enter **az12001a-vm2 (3)**
 
-   - Region: Choose **<inject key="Region" enableCopy="false"/> **
+   - Region: Choose **<inject key="Region" enableCopy="false"/> (4)**
 
-   - Availability options: **No infrastructure redundancy required**
+   - Availability options: **No infrastructure redundancy required (5)**
 
-   - Image: **Windows Server 2019 Datacenter - Gen 2**
+   - Security type : Choose **Standard (6)**
    
-       ![Picture 1](../images/vm2create.png)
+   - Image: Select **Windows Server 2019 Datacenter - Gen 2 (7)**
+  
+   - Run with Azure Spot Instance: **Uncheck the box (8)**
 
-   - Size: **Standard DS1 v2** or similar
+    ![](../images/1.md/vm2basics.png)
 
-   - Azure Spot Instance: **No**
+    - Size: Choose **Standard DS1 v2 (9)**
 
-   - Username: **Student**
+   - Username: Enter **Student (10)**
 
-   - Password: **Pa55w.rd1234**
+   - Password: Enter **Pa55w.rd1234 (11)**
    
-   - Confirm Password : **Pa55w.rd1234**
+   - Confirm Password : Enter **Pa55w.rd1234 (12)**
 
-   - Public inbound ports: **Allow selected ports**
+   - Public inbound ports: **Allow selected ports (13)**
 
-   - Selected inbound ports: **RDP (3389)**
+   - Selected inbound ports: **RDP (3389) (14)**
 
-   - Would you like to use an existing Windows Server license?: **Do not select**
+   - Click on **Next : Disks > (15)**
 
-1. On the **Disks** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Networking >** (leave all other settings with their default value):
+    ![](../images/1.md/vm2basics1.png)
 
-   - OS disk type: **Standard HDD**
+1. On the **Disks** tab of the **Create a virtual machine** blade, specify the following settings:
 
-   - Encryption type: **(Default) Encryption at rest with a platform-managed key**
+   - OS disk type: Select **Standard HDD (1)**
+
+   - Encryption type: Select **Platform-managed key (2)**
+
+   - Click on  **Next: Networking > (3)** 
    
-        ![Picture 1](../images/diskvm2.png)
+   ![Picture 1](../images/1.md/vm3disk.png)
 
-1. On the **Networking** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Management >** (leave all other settings with their default value):
+1. On the **Networking** tab of the **Create a virtual machine** blade, **Uncheck the box (1)** next to Enable accelerated networking and leave everything as default then click on  **Next: Management > (2)** 
 
-   - Virtual network: **az12001a-RG-vnet**
+    ![](../images/1.md/vm3networking.png)
 
-   - Subnet name: **subnet-0 (192.168.0.0/24)**
+1. On the **Management** tab of the **Create a virtual machine** blade, choose **Manual updates (1)** for Guest OS updates (patch orchestration options) and leave all other settings with their default value, then click on **Next: Advanced > (2)**.
 
-   - Public IP address: *a new IP address named* **az12001a-vm2-ip**
-
-   - NIC network security group: **Basic**
-
-   - Public inbound ports: **Allow selected ports**
-
-   - Select inbound ports: **RDP (3389)**
-
-   - Enable accelerated networking: **Do not select**
-
-   - Place this virtual machine behind an existing load balancing solutions: **Do not select**
-
-1. On the **Management** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Advanced >** (leave all other settings with their default value):
-
-    - Enable auto-shutdown: **Off**
-     
-    - Enable System assigned managed identity: **Off**
-     
-    - Enable backup: **Off**
-     
-    - Guest OS updates (patch orchestration options): **Manual updates**
-     
-        ![Picture 1](../images/manualupdates.png)
+    ![](../images/1.md/vm3management.png)
 
    
-1. On the **Monitoring** tab of the **Create a virtual machine** blade, specify the following settings and select **Next: Advanced >** (leave all other settings with their default value):
+1. On the **Monitoring** tab of the **Create a virtual machine** blade, leave everything as default and click on **Review + Create**.
 
-   - Boot diagnostics: **Enable with managed storage account (recommended)**
-
-   - Enable OS guest diagnostics: **Do not select**
+   ![](..images/1.md/vm3create.png)
    
-   > **Note**: This setting is not available if you have already selected the Azure Security Center plan.
-
-1. On the **Advanced** tab of the **Create a virtual machine** blade, select **Review + create** (leave all other settings with their default value):
-
 1. On the **Review + create** tab of the **Create a virtual machine** blade, select **Create**.
 
+   ![](../images/1.md/vm3create1.png)
+   
    > **Note**: Wait for the provisioning to complete. This should take less about 3 minutes.
 
 1. Connect to the newly provisioned Azure VM via RDP. 
