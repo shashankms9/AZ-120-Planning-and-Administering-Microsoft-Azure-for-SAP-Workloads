@@ -827,27 +827,35 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
    ![](../images/1.md/healthprob1.png)
 
 
-1. On the **az12001a-lb0** blade, select **Load balancing rules**, select **+ Add**, and, on the **Add load balancing rule** blade, specify the following settings (leave others with their defaults) and click on save:
+1. On the **az12001a-lb0** blade, select **Load balancing rules (1)**, select **+ Add (2)**.
 
-   - Name: **az12001a-lb0-lbruleAll**
+    ![](../images/1.md/loadbalancingrule.png)
 
-   - IP Version: **IPv4**
+1. On the **Add load balancing rule** blade, specify the following settings:
 
-   - Frontend IP address: **192.168.0.240 (LoadBalancerFrontEnd)**
+   - Name: Enter **az12001a-lb0-lbruleAll (1)**
 
-   - Backend pool: **az12001a-lb0-bepool (2 virtual machines)**
+   - IP Version: Choose **IPv4 (2)**
+
+   - Frontend IP address: Select **192.168.0.240 (LoadBalancerFrontEnd) (3)** form the drop-down list
+
+   - Backend pool: Select **az12001a-lb0-bepool (2 virtual machines) (4)** from the drop-down list
    
-   - High availability ports : **Enabled**
+   - High availability ports : **Check the box (5)**
 
-   - Health probe: **az12001a-lb0-hprobe (TCP:62500)**
+   - Health probe: Select **az12001a-lb0-hprobe (TCP:62500) (6)** from the drop-down list
 
-   - Session persistence: **None**
+   - Session persistence: **None (7)**
 
-   - Idle timeout (minutes): **4**
+   - Idle timeout (minutes): **4 (8)**
 
-   - TCP reset: **Disabled**
+   - Enable TCP reset: **Uncheck the box (9)**
 
-   - Floating IP (direct server return): **Enabled**
+   - Enable Floating IP : **Check the box (10)**
+
+   -  Click on **Save (11)**.
+
+    ![](../images/1.md/addlbrules.png)
 
 ### Task 3: Create and configure Azure Load Balancers handling outbound traffic
 
