@@ -84,7 +84,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
     $rgName = 'az12001b-ad-RG'
     ```
 
-1.  In the Cloud Shell pane, run the following command to set the value of the variable `$location` to the name of the Azure regions which supports availability zones and where you intend to deploy the lab VMs (replace the `<Azure_region>` placeholder with the name of that region):
+1.  In the Cloud Shell pane, run the following command to set the value of the variable `$location` to the name of the Azure regions which supports availability zones and where you intend to deploy the lab VMs. Replace the `<Azure_region>` with **<inject key="Region" enableCopy="false"/>**
 
     ```
     $location = '<Azure_region>'
