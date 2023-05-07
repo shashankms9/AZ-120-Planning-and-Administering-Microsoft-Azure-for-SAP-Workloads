@@ -808,15 +808,23 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
     ![](../images/1.md/addbackendpool.png)
     
-1. On the **az12001a-lb0** blade, select **Health probes** select **+ Add**, and, on the **Add health probe** blade, specify the following settings (leave others with their defaults) and click on **Add:**
+1. On the **az12001a-lb0** blade, select **Health probes (1)** select **+ Add (2)**.
 
-   - Name: **az12001a-lb0-hprobe**
+    ![](../images/1.md/healthprob.png)
+    
+1. On the **Add health probe** blade, specify the following the below instructions:
 
-   - Protocol: **TCP**
+   - Name: **az12001a-lb0-hprobe (1)**
 
-   - Port: **62500**
+   - Protocol: **TCP (2)**
 
-   - Interval: **5** *seconds*
+   - Port: **62500 (3)**
+
+   - Interval: **5 (4)** *seconds*
+
+   - click on **Add (5)**
+
+   ![](../images/1.md/healthprob1.png)
 
 
 1. On the **az12001a-lb0** blade, select **Load balancing rules**, select **+ Add**, and, on the **Add load balancing rule** blade, specify the following settings (leave others with their defaults) and click on save:
