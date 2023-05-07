@@ -730,25 +730,33 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
     
 ### Task 2: Create and configure Azure Load Balancers handling inbound traffic
 
-1. In the Azure portal, use the **Search resources, services, and docs** text box at the top of the Azure portal page to search for and navigate to the **Load balancers** blade and, on the **Load balancers** blade, select **+ Create**.
+1. From Azure Portal **Home** page, search for **Load balancer** and select it from the list **(2)**.
 
-1. From the **Basics** tab of the **Create load balancer** blade, specify the following settings and select **Review + create** (leave others with their default values):
+    ![](../images/1.md/loadbalncers.png)
+    
+1. On the **Load balancers** blade, click on **Create load balancer**.
 
-   - Subscription: Select your **Azure subscription**
+     ![](../images/1.md/createlb.png)
+     
+1. From the **Basics** tab of the **Create load balancer** blade, specify the following settings:
 
-   - Resource group: Select **az12001a-RG** ftom the drop-down list.
+   - Subscription: Select your **Azure subscription (1)**
 
-   - Name: **az12001a-lb0**
+   - Resource group: Select **az12001a-RG (2)** from the drop-down list.
 
-   - Region: Choose **<inject key="Region" enableCopy="false"/>**
+   - Name: **az12001a-lb0 (3)**
 
-   - SKU: **Standard**
+   - Region: Choose **<inject key="Region" enableCopy="false"/> (4)**
+
+   - SKU: **Standard (5)**
    
-   - Type: **Internal**
+   - Type: **Internal (6)**
    
-        ![Picture 1](../images/lbcreating.png)  
-
-1. Click **Next: Frontend IP Configuration**. On the **Frontend IP configuration** screen, click **Add a frontend IP configuration** and then click **Add**.
+   - Click on **Next: Frontend IP Configuration (7)**
+     
+   ![](../images/1.md/basiclb.png)
+   
+1. On the **Frontend IP configuration** screen, click **Add a frontend IP configuration** and then click **Add**.
 
    - Name: frontend1
    
