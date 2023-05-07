@@ -987,7 +987,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
    
 1. On the **Monitoring** tab of the **Create a virtual machine** blade, leave everything as default and click on **Review + Create**.
 
-   ![](..images/1.md/vm3create.png)
+   ![](../images/1.md/vm3create.png)
    
 1. On the **Review + create** tab of the **Create a virtual machine** blade, select **Create**.
 
