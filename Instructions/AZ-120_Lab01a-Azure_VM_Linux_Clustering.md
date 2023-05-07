@@ -716,15 +716,18 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
 1. In the Azure portal, navigate to the blade of the **az12001a-vm1** Azure VM.
 
-1. From the **az12001a-vm1** blade, navigate to the **az12001a-vm1 \| Networking** blade. 
+1. From the **az12001a-vm1** blade, navigate to the **az12001a-vm1 \| Networking** blade and click on **network interface of the az12001a-vm1**.
 
-1. From the **az12001a-vm1 \| Networking** blade, navigate to the network interface of the az12001a-vm1. 
+    ![](../images/1.md/vm1networking.png)
 
-1. From the blade of the network interface of the az12001a-vm1, navigate to its IP configurations blade and, from there, display its **ipconfig1** blade.
+1. From the blade of the network interface of the az12001a-vm1, navigate to its **IP configurations (1)**blade and, from there, display its **ipconfig1 (2)** blade.
 
-1. On the **ipconfig1** blade, set the private IP address assignment to **Static** and save the change.
+    ![](..images/1.md/ipconfig1.png)
+    
+1. On the **ipconfig1** blade, set the private IP address assignment to **Static (1)** and click on **Save (2)** the change.
 
-
+    ![](../images/1.md/savechanges2.png)
+    
 ### Task 2: Create and configure Azure Load Balancers handling inbound traffic
 
 1. In the Azure portal, use the **Search resources, services, and docs** text box at the top of the Azure portal page to search for and navigate to the **Load balancers** blade and, on the **Load balancers** blade, select **+ Create**.
