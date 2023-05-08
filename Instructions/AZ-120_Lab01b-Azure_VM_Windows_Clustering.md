@@ -104,46 +104,69 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     ![Picture 1](../images/1.md/createvm.png)
 
-1.  From the **Create a virtual machine** blade, initiate provisioning of a **Windows Server 2022 Datacenter: Azure Edition - Gen2** Azure VM on **Basics** tab
-specify the following settings:
+1. On the **Basics** tab of the **Create a virtual machine** blade, specify the following settings :
 
-    -   Subscription: the name of your Azure subscription
+   - Subscription: Select your **Azure subscription (1)**
 
-    -   Resource group: the name of a new resource group **az12001b-cl-RG**
+   - Resource group: Select **az12001b-cl-RG (2)** ftom the drop-down list.
+   
+   - Virtual machine name: Enter **az12001b-cl-vm0 (3)** 
 
-    -   Virtual machine name: **az12001b-cl-vm0**
+   - Region: Choose **<inject key="Region" enableCopy="false"/> (4)**
 
-    -   Region: *the same Azure region where you deployed the Azure VMs in the previous task*
+   - Availability options: Select **Availability zone (5)**
 
-    -   Availability options: **Availability zone**
+   - Availability zone: Choose **Zone 1 (6)**
 
-    -   Availability zone: **Zone 1**
+   - Security type : Choose **Standard (7)**
+   
+   - Image: Select **Windows Server 2022 Datacenter: Azure Edition - Gen2 (8)**
 
-    -   Image: **Windows Server 2022 Datacenter: Azure Edition - Gen2**
+     ![](../images/2.md/vm.png)
+   
+   - Size: Select **Standard D4s v3 (9)** from drop-down list
 
-    -   Size: **Standard D4s v3**
+   - Username: Enter **Student (10)**
 
-    -   Username: *the same username you specified when deploying the Bicep template earlier in this exercise*
+   - Password: Enter **Pa55w.rd1234(11)**
 
-    -   Password: *the same password you specified when deploying the Bicep template earlier in this exercise*
+   - Confirm Password : Enter **Pa55w.rd1234(12)**
+   
+   - Public inbound ports: **Allow selected ports (13)**
 
-    -   Public inbound ports: **Allow selected ports**
+   - Select inbound ports: **RDP (3389) (14)**
 
-    -   Select inbound ports: **RDP (3389)**
-
-    -   Would you like to use an existing Windows Server license?: **No** 
+   - Would you like to use an existing Windows Server license?: **No (15)** 
     
- 1. On **Disks** tab of **Create a virtual machine** blade specify the following and select **Next:Networking>**.
+   - Click on **Next : Disks> (16)**
+
+    ![](../images/2.md/vmdisk1.png)
     
-    -   OS disk type: **Premium SSD**
+ 1. On **Disks** tab of **Create a virtual machine** blade specify the following instructions: 
+    
+    - OS disk type: **Premium SSD (1)**
 
- 1. On **Networking** tab of **Create a virtual machine** blade specify the following and select **Next:Managemet>**.
+    - Select **Next:Networking> (2)**
 
-    -   Virtual network: **adVNET**
+    ![](../images/2.md/disk.png)
 
-    -   Subnet name: *a new subnet named* **clSubnet**
+ 1. On **Networking** tab of **Create a virtual machine** blade specify the following instructions: and select **Next:Managemet>**.
 
-    -   Subnet address range: **10.0.1.0/24**
+    - Virtual network: **adVNET**
+
+    - Subnet name: Click on **Manage subnet configuration (2)**. 
+        
+       ![](../images/2.md/vnet1.png)
+
+    - Click on **+ Subnet (3)**
+
+    - Name : Enter **clSubnet (4)**
+   
+    - Subnet address range: Enter **10.0.1.0/24 (5)**
+
+    - Click on **Save (6)
+
+       ![](../images/2.md/subnet.png)
 
     -   Public IP address: *a new IP address named* **az12001b-cl-vm0-ip**
 
