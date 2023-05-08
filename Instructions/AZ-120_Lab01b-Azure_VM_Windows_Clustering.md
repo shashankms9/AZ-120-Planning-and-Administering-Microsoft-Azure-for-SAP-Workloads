@@ -200,73 +200,98 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     ![](../images/2.md/createvm.png)
 
-1.  Do not wait for the provisioning to complete but continue to the next step.
+    > **Note :** Do not wait for the provisioning to complete but continue to the next step.
 
-1.  Provision another **Windows Server 2022 Datacenter: Azure Edition - Gen2** Azure VM with the following settings:
+1. Navigate back to the Azure portal **Home** page, search for **Virtual machines (1)** and select it **(2)**.
 
-    -   Subscription: *the name of your Azure subscription*
+    ![](../images/1.md/virtualmachine.png)
+    
+1. On the **Virtual machines** blade, select **+ Create (1)** and, in the drop-down menu, select **Azure virtual machine (2)**.
 
-    -   Resource group: *the name of a new resource group*  **az12001b-cl-RG**
+    ![Picture 1](../images/1.md/createvm.png)
 
-    -   Virtual machine name: **az12001b-cl-vm1**
+1. On the **Basics** tab of the **Create a virtual machine** blade, specify the following settings :
 
-    -   Region: *the same Azure region where you deployed the first **Windows Server 2022 Datacenter: Azure Edition - Gen2** Azure VM in this task*
+   - Subscription: Select your **Azure subscription (1)**
 
-    -   Availability options: **Availability zone**
+   - Resource group: Select **az12001b-cl-RG (2)** ftom the drop-down list.
+   
+   - Virtual machine name: Enter **az12001b-cl-vm1 (3)** 
 
-    -   Availability zone: **Zone 2**
+   - Region: Choose **<inject key="Region" enableCopy="false"/> (4)**
 
-    -   Image: **Windows Server 2022 Datacenter: Azure Edition - Gen2**
+   - Availability options: Select **Availability zone (5)**
 
-    -   Size: **Standard D4s v3**
+   - Availability zone: Choose **Zone 1 (6)**
 
-    -   Username: *the same username you specified when deploying the Bicep template earlier in this exercise*
+   - Security type : Choose **Standard (7)**
+   
+   - Image: Select **Windows Server 2022 Datacenter: Azure Edition - Gen2 (8)**
 
-    -   Password: *the same password you specified when deploying the Bicep template earlier in this exercise*
+     ![](../images/2.md/vm2.png)
+   
+   - Size: Select **Standard D4s v3 (9)** from drop-down list
 
-    -   Public inbound ports: **Allow selected ports**
+   - Username: Enter **Student (10)**
 
-    -   Select inbound ports: **RDP (3389)**
+   - Password: Enter **Pa55w.rd1234(11)**
 
-    -   Would you like to use an existing Windows Server license?: **No**
+   - Confirm Password : Enter **Pa55w.rd1234(12)**
+   
+   - Public inbound ports: **Allow selected ports (13)**
 
- 1. On **Disks** tab of **Create a virtual machine** blade specify the following and select **Next:Networking>**
+   - Select inbound ports: **RDP (3389) (14)**
 
-    -   OS disk type: **Premium SSD**
+   - Would you like to use an existing Windows Server license?: **No (15)** 
+    
+   - Click on **Next : Disks> (16)**
 
- 1. On **Networking** tab of **Create a virtual machine** blade specify the following and select **Next:Managemet>**.
+    ![](../images/2.md/vmdisk1.png)
+    
+ 1. On **Disks** tab of **Create a virtual machine** blade specify the following instructions: 
+    
+    - OS disk type: **Premium SSD (1)**
 
-    -   Virtual network: **adVNET**
+    - Select **Next:Networking> (2)**
 
-    -   Subnet name: **clSubnet**
+    ![](../images/2.md/disk.png)
 
-    -   Public IP address: *a new IP address named* **az12001b-cl-vm1-ip**
+ 1. On **Networking** tab of **Create a virtual machine** blade specify the following instructions: and select **Next:Managemet>**.
 
-    -   NIC network security group: **Basic**
+    - Virtual network: Select **adVNET (1)**
 
-    -   Public inbound ports: **Allow selected ports**
+    - Subnet name: Select **clSubnet (2)**
+     
+    - Public IP address: **az12001b-cl-vm1-ip (3)**
 
-    -   Select inbound ports: **RDP (3389)**
+    - NIC network security group: **Basic (4)**
 
-    -   Accelerated networking: **On**
+    - Public inbound ports: Select **Allow selected ports (5)**
 
-    -   Place this virtual machine behind an existing load balancing solutions: **No**
+    - Select inbound ports: Select **RDP (3389) (6)**
 
-1. On **Management** tab of **Create a virtual machine** blade specify the following and select **Next:Monitoring>**
+    - Enable Accelerated networking: **Check the box (7)**
 
-    -   Login with Azure AD: **Off**
+    - Click on **Next : Management > (8)**
 
-    -   Enable auto-shutdown: **Off**
+       ![](../images/2.md/vnetvm2.png)
 
-    -   Patch orchestration options: **Manual**
+ 1. On **Management** tab of **Create a virtual machine** blade, choose Patch orchestration options as **Manual Updates (1)** and click on **Next : Monitoring > (2)**
 
-    -   Enable backup: **Off**
+     ![](..images/2.md/vnetmanual.png)
 
-1. On **Monitoring** tab of **Create a virtual machine** blade specify the following:
+ 1. On **Monitoring** tab of **Create a virtual machine** blade specify the following:
 
-    -   Boot diagnostics: **Disable**
+    -   Boot diagnostics: **Disable (1)**
+    
+    -   Click on **Review + Create (2)**
 
-1. Select **Review + Create** and **create**
+    ![](../images/2.md/vnetmonitoring.png)
+    
+ 1. Review the configuration and click on **Create**.
+
+    ![](../images/2.md/createvm.png)
+
 
 1.  Wait for the provisioning to complete. This should take a few minutes.
 
