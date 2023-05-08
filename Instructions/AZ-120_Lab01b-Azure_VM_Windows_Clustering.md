@@ -300,6 +300,23 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 1.  In the Azure Portal, start a PowerShell session in Cloud Shell. 
 
     ![](../images/selectcloudshell.png)
+
+1. The first time you open the Cloud Shell, you may be prompted to choose the type of shell you want to use (*Bash* or *PowerShell*). Select **PowerShell**. If you do not see this option, skip the step.  
+
+    ![](../images/2.md/powershell.png)
+    
+1. If you have not previously used a Cloud Shell, you must configure a storage. Select **Subscription (1)** and Click on **Show advanced settings (2)**.
+
+    ![Picture 1](../images/1.md/showadvanced.png)
+    
+1. Follow the below instructions to create storage account: 
+
+    - Resource group : Choose **az12001b-cl-RG (1)** from the drop down
+    - Storage account : Enter **stacc<inject key="Deployment ID" enableCopy="false"/> (2)**
+    - File share : Enter **blob (3)**
+    - Click on **Create storage (4)**
+
+    ![](../images/2.md/createstac.png)
     
 1. In the Cloud Shell pane, run the following command to set the value of the variable `$resourceGroupName` to the name of the resource group containing the resources you provisioned in the previous task:
 
