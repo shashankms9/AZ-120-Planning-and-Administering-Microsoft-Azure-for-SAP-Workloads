@@ -349,10 +349,12 @@ In this exercise, you will deploy Azure infrastructure compute components necess
     for ($i=0;$i -lt 4;$i++) {New-AzDisk -ResourceGroupName $resourceGroupName -DiskName az12001b-cl-vm1-DataDisk$i -Disk $diskConfig}
     ```
 
-1.  In the Azure portal, navigate to the blade of the first Azure VM you provisioned in the previous task (**az12001b-cl-vm0**).
+1.  In the Azure portal, navigate to the blade of the first Azure VM **az12001b-cl-vm0** you provisioned in the previous task.
 
-1.  From the **az12001b-cl-vm0** blade, navigate to the **az12001b-cl-vm0 - Disks** blade.
+1.  From the **az12001b-cl-vm0** blade, navigate to the **az12001b-cl-vm0 | Disks** blade.
 
+      ![](../images/2.md/vm0disk.png)
+      
 1.  From the **az12001b-cl-vm0 - Disks** blade, attach data disks with the following settings to az12001b-cl-vm0:
 
     -   LUN: **0**
