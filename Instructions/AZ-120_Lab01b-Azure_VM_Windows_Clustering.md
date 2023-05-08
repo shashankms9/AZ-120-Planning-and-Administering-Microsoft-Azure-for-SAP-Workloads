@@ -299,6 +299,8 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 1.  In the Azure Portal, start a PowerShell session in Cloud Shell. 
 
+    ![](../images/selectcloudshell.png)
+    
 1. In the Cloud Shell pane, run the following command to set the value of the variable `$resourceGroupName` to the name of the resource group containing the resources you provisioned in the previous task:
 
     ```
@@ -307,7 +309,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 1.  In the Cloud Shell pane, run the following command to create the first set of 4 managed disks that you will attach to the first Azure VM you deployed in the previous task:
 
-    >**Note**: Replace <Azure_region> with region where you deployment **az12001b-cl-vm0** Vm.
+    >**Note**: Replace `<Azure_region>` with **<inject key="Region" enableCopy="true"/>**.
     
     ```
     $location = '<Azure_region>'
@@ -319,7 +321,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 1.  In the Cloud Shell pane, run the following command to create the second set of 4 managed disks that you will attach to the second Azure VM you deployed in the previous task:
 
-    >**Note**: Replace <Azure_region> with region where you deployment **az12001b-cl-vm1** Vm.
+    >**Note**: Replace `<Azure_region>` with **<inject key="Region" enableCopy="true"/>**.
     
     ```
     $location = '<Azure_region>'
