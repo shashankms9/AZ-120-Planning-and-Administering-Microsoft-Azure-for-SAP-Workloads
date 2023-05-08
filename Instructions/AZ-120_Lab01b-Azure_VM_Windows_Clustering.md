@@ -186,7 +186,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
  1. On **Management** tab of **Create a virtual machine** blade, choose Patch orchestration options as **Manual Updates (1)** and click on **Next : Monitoring > (2)**
 
-     ![](..images/2.md/vnetmanual.png)
+     ![](../images/2.md/vnetmanual.png)
 
  1. On **Monitoring** tab of **Create a virtual machine** blade specify the following:
 
@@ -278,7 +278,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
  1. On **Management** tab of **Create a virtual machine** blade, choose Patch orchestration options as **Manual Updates (1)** and click on **Next : Monitoring > (2)**
 
-     ![](..images/2.md/vnetmanual.png)
+     ![](../images/2.md/vnetmanual.png)
 
  1. On **Monitoring** tab of **Create a virtual machine** blade specify the following:
 
