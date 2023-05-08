@@ -77,9 +77,11 @@ In this exercise, you will deploy Azure infrastructure compute components necess
     
     - Click on **Review + Create (12)**.
     
-    ![](../images/3.md/customdeployment.png)
+    ![](../images/2.md/deploytemplate.png)
 
-1. Review the configuration and click on **Create**
+1. Review the configuration and click on **Create**.
+
+    ![](../images/2.md/createtempla.png)
 
     > **Note**: The deployment should take about 35 minutes. Wait for the deployment to complete before you proceed to the next task.
 
@@ -94,7 +96,13 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 ### Task 2: Deploy a pair of Azure VMs running Windows Server 2022 in a new availability set.
 
-1.  From the lab computer, in the Azure portal, navigate to the **Virtual machines** blade, click **+ Create**, and, from the drop-down menu, select **Azure virtual machine**.
+1. On Azure portal **Home** page, search for **Virtual machines (1)** and select it **(2)**.
+
+    ![](../images/1.md/virtualmachine.png)
+    
+1. On the **Virtual machines** blade, select **+ Create (1)** and, in the drop-down menu, select **Azure virtual machine (2)**.
+
+    ![Picture 1](../images/1.md/createvm.png)
 
 1.  From the **Create a virtual machine** blade, initiate provisioning of a **Windows Server 2022 Datacenter: Azure Edition - Gen2** Azure VM on **Basics** tab
 specify the following settings:
