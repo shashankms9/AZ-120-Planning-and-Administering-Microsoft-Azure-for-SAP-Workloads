@@ -40,86 +40,56 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 ### Task 1: Deploy a pair of Azure VMs running highly available Active Directory domain controllers by using a Bicep template
 
-1. In the Azure portal, select the **[>_]** (*Cloud Shell*) button at the top of the page to the right of the search box. This opens a Cloud Shell pane at the bottom of the portal.
+1.  Type **Deploy a custom template (1)** in the search box of the Azure portal menu, and select it **(2)**.
 
-    ![](../images/selectcloudshell.png)
+     ![](../images/3.md/deploytemplate.png)
+
+1.  From the **Custom deployment** blade, scroll down to **Quickstart template (disclaimer) (1)** and select the **application-workloads/active-directory/active-directory-new-domain-ha-2-dc-zones (2)**, from the drop-down list then click **Select template (3)**.
+
+    ![](../images/3.md/selectemplate.png)
     
-1. The first time you open the Cloud Shell, you may be prompted to choose the type of shell you want to use (*Bash* or *PowerShell*). Select **PowerShell**. If you do not see this option, skip the step.  
 
-    ![](../images/2.md/powershell.png)
+    > **Note**: Alternatively, you can launch the deployment by navigating to Azure Quickstart Templates page at <https://github.com/Azure/azure-quickstart-templates>, locating the template named **Create 2 new Windows VMs, a new AD Forest, Domain and 2 DCs in separate availability zones**, and initiating its deployment by clicking **Deploy to Azure** button.
+
+1.  On the blade **Create a new AD Domain with 2 DCs using Availability Zones**, specify the following settings :
+
+    -   Subscription: Select your **Azure subscription (1)**
+
+    -   Resource group: Choose the resource group **az12001b-ad-RG (2)** form the drop-down list
+
+    -   Location: Choose **<inject key="Region" enableCopy="false"/> (3)**
+
+    -   Admin Username: Enter **Student (4)**
+
+    -   Location:  Choose **<inject key="Region" enableCopy="false"/> (5)**
+
+    -   Password: Enter **Pa55w.rd1234 (6)**
+
+    -   Domain Name: Enter **adatum.com (7)**
+
+    -   DnsPrefix: Enter **dns<inject key="Deployment ID" enableCopy="false"/> (8)**
+
+    -   Vm Size: **Standard D2s_v3 (9)**
+
+    -   _artifacts Location: Enter **https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/application-workloads/active-directory/active-directory-new-domain-ha-2-dc-zones/** **(10)**
+
+    -   _artifacts Location Sas Token: Leave it as default **(11)**
     
-1. If you have not previously used a Cloud Shell, you must configure a storage. Select **Subscription (1)** and Click on **Show advanced settings (2)**.
-
-    ![Picture 1](../images/1.md/showadvanced.png)
+    - Click on **Review + Create (12)**.
     
-1. Follow the below instructions to create storage account: 
+    ![](../images/3.md/customdeployment.png)
 
-    - Resource group : Choose **az12001b-cl-RG (1)** from the drop down
-    - Storage account : Enter **stacc<inject key="Deployment ID" enableCopy="false"/> (2)**
-    - File share : Enter **blob (3)**
-    - Click on **Create storage (4)**
-
-    ![](../images/2.md/createstac.png)
-    
-1. In the Cloud Shell pane, run the following commands to create a shallow clone of the repository hosting the Bicep template you will use for deployment of a pair of Azure VMs running highly available Active Directory domain controllers and set the current directory to the location of that template and its parameter file:
-
-    ```
-    cd $HOME
-    rm ./azure-quickstart-templates -rf
-    git clone --depth 1 https://github.com/polichtm/azure-quickstart-templates
-    cd ./azure-quickstart-templates/application-workloads/active-directory/active-directory-new-domain-ha-2-dc-zones/
-    ```
-
-1. In the Cloud Shell pane, run the following command to set the value of the variable `$rgName` to `az12001b-ad-RG`:
-
-    ```
-    $rgName = 'az12001b-ad-RG'
-    ```
-
-1.  In the Cloud Shell pane, run the following command to set the value of the variable `$location` to the name of the Azure regions which supports availability zones and where you intend to deploy the lab VMs. Replace the `<Azure_region>` with **<inject key="Region" enableCopy="false"/>**
-
-    ```
-    $location = '<Azure_region>'
-    ```
-
-1.  In the Cloud Shell pane, run the following command to create a resource group named **az12001b-ad-RG** in the Azure region you chose:
-
-    ```
-    New-AzResourceGroup -Name $rgName -Location $location
-    ```
-
-1.  In the Cloud Shell pane, run the following command to set the value of the variable `$deploymentName`:
-
-    ```
-    $deploymentName = 'az1201b-' + $(Get-Date -Format 'yyyy-MM-dd-hh-mm')
-    ```
-
-1.  In the Cloud Shell pane, run the following commands to set the name of the administrative user account and its password (replace the `<username>` and `<password>` placeholders with the name of the administrative user account and the value of its password, respectively):
-
-    ```
-    $adminUsername = '<username>'
-    $adminPassword = ConvertTo-SecureString '<password>' -AsPlainText -Force
-    ```
-	
-    > **Note**: Make sure that the password satisfies the complexity requirements applicable to deployment of Azure VMs running Windows (the lenght of at least 12 characters containing lower and upper case letters, digits, and special characters).
-
-1.  In the Cloud Shell pane, run the following command to run the deployment:
-
-    ```
-    New-AzResourceGroupDeployment -Name $deploymentName -ResourceGroupName $rgName -TemplateFile .\main.bicep -TemplateParameterFile .\azuredeploy.parameters.json -adminUsername $adminUsername -adminPassword $adminPassword -c
-    ```
-
-1.  Review the output of the command and verify that it does not include any errors and warnings. When prompted, press the **Enter** key to proceed with the deployment.
+1. Review the configuration and click on **Create**
 
     > **Note**: The deployment should take about 35 minutes. Wait for the deployment to complete before you proceed to the next task.
 
-    > **Note**: If the deployment fails with the **Conflict** error message during deployment of the CustomScriptExtension component, use the following steps to remediate this issue:
+    > **Note**: If the deployment fails with the **Conflict** error message during deployment of the CustomScriptExtension component, use the following steps  to remediate this issue:
 
-    - In the Azure portal, select resource group **az12001b-ad-RG** and from left nagivation pane select  **Deployment**, on **Deployment** blade review the deployment details and identify the VM(s) where the installation of the CustomScriptExtension failed.
+    - in the Azure portal, on the **Deployment** blade, review the deployment details and identify the VM(s) where the installation of the CustomScriptExtension failed
 
-    - In the Azure portal, navigate to the blade of the VM's you identified in the previous step, select **Extensions + applications**, and from the **Extensions + application** blade, remove(uninstall) the CustomScript extension.
+    - in the Azure portal, navigate to the blade of the VM(s) you identified in the previous step, select **Extensions**, and from the **Extensions** blade, remove the CustomScript extension
 
-    - Rerun the previous step of this task.
+    - in the Azure portal, navigate to the **az12001b-ad-RG** resource group blade, select **Deployments**, select the link to the failed deployment, and select **Redeploy**, select the target resource group (**az12001b-ad-RG**) and provide the password for the root account (**Pa55w.rd1234**).
 
 
 ### Task 2: Deploy a pair of Azure VMs running Windows Server 2022 in a new availability set.
