@@ -164,10 +164,12 @@ In this exercise, you will deploy Azure infrastructure compute components necess
    
     - Subnet address range: Enter **10.0.1.0/24 (5)**
 
-    - Click on **Save (6)
+    - Click on **Save (6)**
 
        ![](../images/2.md/subnet.png)
-
+    
+    - Navigate back to Virtual machine tab and follow the below instructions: 
+    
     -   Public IP address: *a new IP address named* **az12001b-cl-vm0-ip**
 
     -   NIC network security group: **Basic**
