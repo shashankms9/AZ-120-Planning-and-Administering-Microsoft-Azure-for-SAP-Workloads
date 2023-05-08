@@ -369,12 +369,14 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 1.  Save your changes.
 
-     ![](../images/disk1.png)
+     ![](../images/2.md/diskvm0.png)
 
 1.  In the Azure portal, navigate to the blade of the second Azure VM you provisioned in the previous task (**az12001b-cl-vm1**).
 
-1.  From the **az12001b-cl-vm1** blade, navigate to the **az12001b-cl-vm1 - Disks** blade.
+1.  From the **az12001b-cl-vm1** blade, navigate to the **az12001b-cl-vm1 | Disks** blade.
 
+     ![](../images/2.md/vm1disk.png)
+     
 1.  From the **az12001b-cl-vm1 - Disks** blade, attach data disks with the following settings to az12001b-cl-vm1:
 
     -   LUN: **0**
@@ -389,6 +391,8 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 1.  Save your changes. 
 
+    ![](../images/2.md/diskvm1.png)
+    
 > **Result**: After you completed this exercise, you have provisioned Azure compute resources necessary to support highly available SAP NetWeaver deployments.
 
 
