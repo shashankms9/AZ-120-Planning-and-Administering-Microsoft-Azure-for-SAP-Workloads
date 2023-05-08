@@ -170,35 +170,35 @@ In this exercise, you will deploy Azure infrastructure compute components necess
     
     - Navigate back to Virtual machine tab and follow the below instructions: 
     
-    -   Public IP address: *a new IP address named* **az12001b-cl-vm0-ip**
+       -   Public IP address: **az12001b-cl-vm0-ip (7)**
 
-    -   NIC network security group: **Basic**
+       -   NIC network security group: **Basic (8)**
 
-    -   Public inbound ports: **Allow selected ports**
+       -   Public inbound ports: Select **Allow selected ports (9)**
 
-    -   Select inbound ports: **RDP (3389)**
+       -   Select inbound ports: Select **RDP (3389) (10)**
 
-    -   Accelerated networking: **On**
+       -   Enable Accelerated networking: **Check the box (11)**
 
-    -   Place this virtual machine behind an existing load balancing solutions: **No**
+       -   Click on **Next : Management > (12)**
 
- 1. On **Management** tab of **Create a virtual machine** blade specify the following and select **Next:Monitoring>**
+       ![](../images/2.md/vnetmanagement.png)
 
-    -   Login with Azure AD: **Off**
+ 1. On **Management** tab of **Create a virtual machine** blade, choose Patch orchestration options as **Manual Updates (1)** and click on **Next : Monitoring > (2)**
 
-    -   Enable auto-shutdown: **Off**
-
-    -   Patch orchestration options: **Manual**
-
-    -   Extensions: *None*
-
-    -   Tags: *None*
+     ![](..images/2.md/vnetmanual.png)
 
  1. On **Monitoring** tab of **Create a virtual machine** blade specify the following:
 
-    -   Boot diagnostics: **Disable**
+    -   Boot diagnostics: **Disable (1)**
+    
+    -   Click on **Review + Create (2)**
 
- 1. Select **Review + Create** and **create**
+    ![](../images/2.md/vnetmonitoring.png)
+    
+ 1. Review the configuration and click on **Create**.
+
+    ![](../images/2.md/createvm.png)
 
 1.  Do not wait for the provisioning to complete but continue to the next step.
 
