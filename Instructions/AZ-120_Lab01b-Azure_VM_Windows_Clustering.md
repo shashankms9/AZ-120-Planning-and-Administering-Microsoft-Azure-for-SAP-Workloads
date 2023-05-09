@@ -553,8 +553,10 @@ Duration: 40 minutes
 
 	 ![](../images/task-07-6.png)
 
-1.  Back in the **Storage Pools**, from the top right corner select **TASKS** in dropdown click on **New storage pool**.
+1.  Back in the **Storage Pools (1)**, from the top right corner select **TASKS (2)** in dropdown click on **New storage pool**.
 
+     ![](../images/2.md/newstoragepool.png)
+     
 1.  Use the **New Storage Pools Wizard** to create a new storage pool with the following settings:
 
     - On **Before you begin** Wizard - select **Next>**
