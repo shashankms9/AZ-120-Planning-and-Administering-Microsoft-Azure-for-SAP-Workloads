@@ -493,7 +493,7 @@ Duration: 40 minutes
 
        ![](../images/task-07-1.png)
     
-    - Select the newly created **Storage pool** as shown in below image and click on **Next**.
+    - Select the newly created **Storage pool** as shown in below image and click on **Ok**.
     
         ![](../images/task-07-2.png)
     
@@ -502,20 +502,24 @@ Duration: 40 minutes
       -  On **Virtual Disk Name** Wizard
 
         -  Name: **Data Virtual Disk**
+        -  Click on **Next >**
 
       -  On **Enclosure Awareness** Wizard - select **Next>**
 
       -  On **Storage Layout** Wizard
     
         - Select Layout: **Simple**
+        - Click on **Next >**
 
       -   On **Provisioning** Wizard
       
          - Select Provisioning type : **Fixed**
+         - Click on **Next >**
 
       -   On **Size** Wizard
        
          - Size: **Maximum size**
+         - Click on **Next >**
 
       -   On **Confirmation selections** Wizard click on create 
 
