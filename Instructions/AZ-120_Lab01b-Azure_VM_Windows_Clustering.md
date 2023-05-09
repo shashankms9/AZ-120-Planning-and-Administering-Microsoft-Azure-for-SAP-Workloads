@@ -839,35 +839,64 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
 ### Task 2: Create and configure Azure Load Balancers handling inbound traffic
 
-1.  In the Azure portal, in the Search resources, services, and docs text box at the top of the Azure portal page, type **Load balancer** then press the Enter key and select **+ Create**.
+1. From Azure Portal **Home** page, search for **Load balancer** and select it from the list **(2)**.
 
-1.  From the **New** blade, initiate creation of a new Azure Load Balancer with the following settings:
-
-    -   Subscription: *the name of your Azure subscription*
-
-    -   Resource group: *the name of the resource group containing the pair of **Windows Server 2022 Datacenter** Azure VMs you provisioned in the first exercise of this lab*
-
-    -   Name: **az12001b-cl-lb0**
-
-    -   Region: *the same Azure region where you deployed Azure VMs in the first exercise of this lab*
-
-    -   SKU: **Standard**
-
-    -   Type: **Internal**
-
-    -   Frontend IP name: **frontend-ip1**
+    ![](../images/1.md/loadbalncers.png)
     
-    -   Virtual network: **adVNET**
+1. On the **Load balancers** blade, click on **Create load balancer**.
 
-    -   Subnet: **clSubnet**
+     ![](../images/1.md/createlb.png)
+     
 
-    -   IP address assignment: **Static**
+1.  From the **Basics** tab of the **Create load balancer** blade, specify the following settings:
 
-    -   IP address: **10.0.1.240**
+    -   Subscription: Select your **Azure subscription (1)**
 
-    -   Availability zone: **Zone-redundant**
+    -   Resource group: Choose **az12001b-cl-RG (2)**
 
-1.  Wait until the load balancer is provisioned and then navigate to its blade in the Azure portal.
+    -   Name: Enter **az12001b-cl-lb0 (3)**
+
+    -   Region: Choose **<inject key="Region" enableCopy="true"/> (4)**
+
+    -   SKU: Choose **Standard (5)**
+
+    -   Type: Choose **Internal (6)**
+ 
+    -   Tier : Choose **Regional (7)**
+    
+    -   Click on **Next : Frontend IP configuration> (8)**
+    
+       ![](../images/2.md/lbbasic.png)
+   
+1.  On **Frontend IP Configuration** tab, follow the below instructions:
+
+    -   Click on **+ Add a Frontend IP Configuation (1)**
+    
+    -   Frontend IP name: Enter **frontend-ip1 (2)**
+    
+    -   Virtual network: Choose **adVNET (3)**
+
+    -   Subnet: Select **clSubnet (4)**
+
+    -   IP address assignment: Choose **Static (5)**
+
+    -   IP address: Enter **10.0.1.240 (6)**
+
+    -   Availability zone: Select **Zone-redundant (7)**
+
+    -  Click on **Add (8)**.
+
+     ![](../images/2.md/lbfrontendip.png)
+
+1. Click on **Review + Create**
+
+     ![](../images/2.md/lbreview.png)
+     
+1. Review the configuration and click on **Create**.
+
+    ![](../images/2.md/lbcreate.png)
+    
+3.  Wait until the load balancer is provisioned and then navigate to its blade in the Azure portal.
 
 1.  From the **az12001b-cl-lb0** blade, add a backend pool with the following settings:
 
