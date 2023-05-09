@@ -469,10 +469,12 @@ Duration: 40 minutes
     - On **Storage Pool Name** Wizard
       
         - Name : enter **Data Storage Pool**
+        - Click on **Next>**
 
     - On **Physical Disks** Wizard
  
         - Select the 3 disks with disk numbers corresponding to the first three LUN numbers (0-2) and set their allocation to **Automatic**
+        - Click on **Next>**
 
     > **Note**: Use the entry in the **Chassis** column to identify the **LUN** number.
 
