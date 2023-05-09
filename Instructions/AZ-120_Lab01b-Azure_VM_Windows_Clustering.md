@@ -404,12 +404,23 @@ Duration: 40 minutes
 
    > **Note**: Before you start this task, ensure that the template deployment you initiated in the last task of the previous exercise has successfully completed. 
 
-1.  In the Azure Portal, navigate to the blade of the virtual network **adVNET**, which was provisioned automatically in the first exercise of this lab.
+1.  Navigate to the Azure Portal **Home** page, search for **Virtual networks (1)** and select it **(2)**.
 
-1.  Display the **adVNET - DNS servers** blade and notice that the virtual network is configured with the private IP addresses assigned to the domain controllers deployed in the first exercise of this lab as its DNS servers.
+     ![](../images/2.md/searchvnet.png)
 
+1. Click on **adVnet**. 
+
+    ![](../images/2.md/advnet.png)
+    
+    
+3.  Display the **adVNET - DNS servers** blade and notice that the virtual network is configured with the private IP addresses assigned to the domain controllers deployed in the first exercise of this lab as its DNS servers.
+
+    ![](../images/2.md/dnsserver.png)
+    
 1.  In the Azure Portal, start a PowerShell session in Cloud Shell. 
 
+      ![](../images/selectcloudshell.png)
+      
 1. In the Cloud Shell pane, run the following command to set the value of the variable `$resourceGroupName` to the name of the resource group containing the pair of **Windows Server 2022 Datacenter: Azure Edition - Gen2** Azure VMs you provisioned in the previous exercise:
 
     ```
