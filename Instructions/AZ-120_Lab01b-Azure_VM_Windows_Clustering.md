@@ -898,7 +898,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
 1. Once the deployent is succeded, click on **Go to resource**.
 
-    ![](..images/2.md/lbgotoresource.png)
+    ![](../images/2.md/lbgotoresource.png)
     
 
 1.  From the **az12001b-cl-lb0** blade, add a backend pool with the following settings:
