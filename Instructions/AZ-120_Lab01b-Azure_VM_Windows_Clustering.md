@@ -427,16 +427,16 @@ Duration: 40 minutes
     $resourceGroupName = 'az12001b-cl-RG'
     ```
 
-1.  In the Cloud Shell pane, run the following command to join the Windows Server 2022 Azure VMs you deployed in the second task of the previous exercise to the **adatum.com** Active Directory domain (replace the `<username>` and `<password>` placeholders with the name and password of the administrative user account you specified when deploying the Bicep template in the first exercise of this lab):
+1.  In the Cloud Shell pane, run the following command to join the Windows Server 2022 Azure VMs you deployed in the second task of the previous exercise to the **adatum.com** Active Directory domain :
 
-    >**Note**: Replace <Azure_region> with the region where you deployed both the VM's in previous task.
+    >**Note**: Replace `<Azure_region>` with **<inject key="Region" enableCopy="true"/>**.
 
     ```
     $location = '<Azure_region>'
 
-    $settingString = '{"Name": "adatum.com", "User": "adatum.com\\<username>", "Restart": "true", "Options": "3"}'
+    $settingString = '{"Name": "adatum.com", "User": "adatum.com\\Student", "Restart": "true", "Options": "3"}'
 
-    $protectedSettingString = '{"Password": "<password>"}'
+    $protectedSettingString = '{"Password": "Pa55w.rd1234"}'
 
     $vmNames = @('az12001b-cl-vm0','az12001b-cl-vm1')
 
