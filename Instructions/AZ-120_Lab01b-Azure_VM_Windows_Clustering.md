@@ -790,37 +790,52 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
    > **Note**: Since you will be setting up a pair of Azure Load Balancer of the Stardard SKU, you need to first remove the public IP addresses associated with network adapters of two Azure VMs that will be serving as the load-balanced backend pool.
 
-1.  On the lab computer, in the Azure portal, navigate to the blade of the Azure VM **az12001b-cl-vm0**. 
+1.  On the Azure portal, navigate to the blade of the Azure VM **az12001b-cl-vm0**, click on **Networking (1)** and click on **NIC Publi IP (2)**.
 
-1.  From the **az12001b-cl-vm0** blade, navigate to the blade of the public IP address **az12001b-cl-vm0-ip** associated with its network adapter.
+     ![](../images/2.md/vmopip.png)
+     
+1.  On the public IP address **az12001b-cl-vm0-ip** blade, click on **Diassociate** .
 
-1.  From the **az12001b-cl-vm0-ip** blade, from left pane click on **Networking** first disassociate the public IP address from the network interface and then delete it.
+     ![](../images/2.md/vm0disaccoiate.png)
+     
+     > **Note :** Click on **Yes** on **Disassociate Confirmation** tab.
 
-1.  In the Azure portal, navigate to the blade of the Azure VM **az12001b-cl-vm1**. 
+1. On the Azure portal, navigate to the blade of the Azure VM **az12001b-cl-vm1**, click on **Networking (1)** and click on **NIC Publi IP (2)**
 
-1.  From the **az12001b-cl-vm1** blade, navigate to the blade of the public IP address **az12001b-cl-vm1-ip** associated with its network adapter.
+     ![](../images/2.md/vm1nic.png)
 
-1.  From the **az12001b-cl-vm1-ip** blade, first disassociate the public IP address from the network interface and then delete it.
+1.  On the public IP address **az12001b-cl-vm0-ip** blade, click on **Diassociate** .
 
-1.  In the Azure portal, navigate to the blade of the **az12001a-vm0** Azure VM.
+     ![](../images/2.md/vm1disassociate.png)
+     
+     > **Note :** Click on **Yes** on **Disassociate Confirmation** tab.
+     
+1.  In the Azure portal, navigate to the blade of the **az12001a-vm0** Azure VM, clck on **Networking (1)** blade then click on **Network Interface (2)**
 
-1.  From the **az12001a-vm0** blade, navigate to its **Networking** blade. 
+      ![](../images/2.md/vm0nic.png)
 
-1.  From the **az12001a-vm0 - Networking** blade, navigate to the network interface of the az12001a-vm0. 
 
-1.  From the blade of the network interface of the az12001a-vm0, navigate to its IP configurations blade and, from there, display its **ipconfig1** blade.
+1.  From the blade of the network interface of the az12001a-vm0, navigate to its **IP configurations (1)** blade and, and click on **ipconfig1 (2)** .
+    
+      ![](../images/2.md/vm0ipconfig.png)
+      
+1.  On the **ipconfig1** blade, set the private IP address assignment to **Static (1)** and **Save (2)** the change.
+      
+      ![](../images/2.md/vm0static.png)
+      
+1.  In the Azure portal, navigate to the blade of the **az12001a-vm1** Azure VM, clck on **Networking (1)** blade then click on **Network Interface (2)**
+  
+      ![](../images/2.md/vm1network.png)
+      
+1.  From the blade of the network interface of the az12001a-vm1, navigate to its **IP configurations (1)** blade and, and click on **ipconfig1 (2)** .
+    
+      ![](../images/2.md/vm1ipconfig.png)
+      
+1.  On the **ipconfig1** blade, set the private IP address assignment to **Static (1)** and **Save (2)** the change.
+      
+      ![](../images/2.md/vm1static.png)   
+      
 
-1.  On the **ipconfig1** blade, set the private IP address assignment to **Static** and save the change.
-
-1.  In the Azure portal, navigate to the blade of the **az12001a-vm1** Azure VM.
-
-1.  From the **az12001a-vm1** blade, navigate to its **Networking** blade. 
-
-1.  From the **az12001a-vm1 - Networking** blade, navigate to the network interface of the az12001a-vm1. 
-
-1.  From the blade of the network interface of the az12001a-vm1, navigate to its IP configurations blade and, from there, display its **ipconfig1** blade.
-
-1.  On the **ipconfig1** blade, set the private IP address assignment to **Static** and save the change.
 
 ### Task 2: Create and configure Azure Load Balancers handling inbound traffic
 
