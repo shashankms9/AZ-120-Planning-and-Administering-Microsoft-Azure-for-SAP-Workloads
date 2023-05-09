@@ -895,8 +895,11 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 1. Review the configuration and click on **Create**.
 
     ![](../images/2.md/lbcreate.png)
+
+1. Once the deployent is succeded, click on **Go to resource**.
+
+    ![](..images/2.md/lbgotoresource.png)
     
-3.  Wait until the load balancer is provisioned and then navigate to its blade in the Azure portal.
 
 1.  From the **az12001b-cl-lb0** blade, add a backend pool with the following settings:
 
