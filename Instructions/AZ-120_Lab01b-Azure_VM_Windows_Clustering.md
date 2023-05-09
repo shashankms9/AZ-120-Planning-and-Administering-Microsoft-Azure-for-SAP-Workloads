@@ -489,37 +489,37 @@ Duration: 40 minutes
 
 1.  Use the **New Virtual Disk Wizard** to create a new virtual disk with the following settings:
 
-1.  Click on **Storage pools** from left pane then select newly created storage pool and under **Virtual Disks** from **TASKS** dropdown select **New Virtual Disks**
+    - Click on **Storage pools** from left pane then select newly created storage pool and under **Virtual Disks** from **TASKS** dropdown select **New Virtual Disks**
 
-    ![](../images/task-07-1.png)
+       ![](../images/task-07-1.png)
     
-1. Select the newly created **Storage pool** as shown in below image and click on **Next**.
+    - Select the newly created **Storage pool** as shown in below image and click on **Next**.
     
-    ![](../images/task-07-2.png)
+        ![](../images/task-07-2.png)
     
-    -  On **Before you begin** Wizard - select **Next>**
+      -  On **Before you begin** Wizard - select **Next>**
 
-    -  On **Virtual Disk Name** Wizard
+      -  On **Virtual Disk Name** Wizard
 
-         -  Name: **Data Virtual Disk**
+        -  Name: **Data Virtual Disk**
 
-    -  On **Enclosure Awareness** Wizard - select **Next>**
+      -  On **Enclosure Awareness** Wizard - select **Next>**
 
-    -  On **Storage Layout** Wizard
+      -  On **Storage Layout** Wizard
     
-         - Select Layout: **Simple**
+        - Select Layout: **Simple**
 
-    -   On **Provisioning** Wizard
+      -   On **Provisioning** Wizard
       
          - Select Provisioning type : **Fixed**
 
-    -   On **Size** Wizard
+      -   On **Size** Wizard
        
          - Size: **Maximum size**
 
-    -   On **Confirmation selections** Wizard click on create 
+      -   On **Confirmation selections** Wizard click on create 
 
-    -   On **Result** Wizard, wait untill new virtual disk successfully complete and click on close.
+      -   On **Result** Wizard, wait untill new virtual disk successfully complete and click on close.
 
 	 ![](../images/task-07-5.png)
 
