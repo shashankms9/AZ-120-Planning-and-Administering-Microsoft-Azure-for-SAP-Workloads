@@ -398,7 +398,7 @@ In this task, you will deploy the scale-out file server (SOFS) cluster that will
     -   OS disk type: **Standard HDD (1)**
     -   Click on **Next : Networking > (2)**
 
-        ![](../images/3.md/vmdisk.png)
+        ![](../images/3.md/vmdisk1.png)
 
 1. On **Networking** tab, follow the below instructions:
 
