@@ -266,59 +266,59 @@ In this task, you will deploy the scale-out file server (SOFS) cluster that will
 
 1.  From the **Custom deployment** blade, specify the following settings, click **Review + create**, and then click **Create** to initiate the deployment:
 
-    -   Subscription: **Your Azure subscription name**.
+    -   Subscription: **Your Azure subscription name (1)**.
 
-    -   Resource group: *the name of a new resource group* **az12003b-s2d-RG**
+    -   Resource group: *the name of a new resource group* **az12003b-s2d-RG (2)**
 
-    -   Region: *the same Azure region where you deployed Azure VMs in the previous tasks of this exercise*
+    -   Region: Choose **<inject key="Region" enableCopy="false"/> (3)**
 
-    -   Name Prefix: **i20**
+    -   Name Prefix: **i20 (4)**
 
-    -   Vm Size: **Standard_D4s_v3**
+    -   Vm Size: **Standard_D4s_v3 (5)**
 
-    -   Enable Accelerated Networking: **true**
+    -   Enable Accelerated Networking: **true (6)**
 
-    -   Image Sku: **2016-Datacenter-Server-Core**
+    -   Image Sku: **2016-Datacenter-Server-Core (7)**
 
-    -   VM Count: **2**
+    -   VM Count: **2 (8)**
 
-    -   VM Disk Size: **128**
+    -   VM Disk Size: **128 (9)**
 
-    -   VM Disk Count: **3**
+    -   VM Disk Count: **3 (10)**
 
-    -   Existing Domain Name: **adatum.com**
+    -   Existing Domain Name: **adatum.com (11)**
 
-    -   Admin Username: **Student**
+    -   Admin Username: **Student (12)**
 
-    -   Admin Password: **Pa55w.rd1234**
+    -   Admin Password: **Pa55w.rd1234 (13)**
 
-    -   Existing Virtual Network RG Name: **az12003b-ad-RG**
+    -   Existing Virtual Network RG Name: **az12003b-ad-RG (14)**
 
-    -   Existing Virtual Network Name: **adVNet**
+    -   Existing Virtual Network Name: **adVNet (15)**
 
-    -   Existing Subnet Name: **s2dSubnet**
+    -   Existing Subnet Name: **s2dSubnet (16)**
 
-    -   Sofs Name: **sapglobalhost**
+    -   Sofs Name: **sapglobalhost (17)**
 
-    -   Share Name: **sapmnt**
+    -   Share Name: **sapmnt (18)**
 
-    -   Scheduled Update Day: **Sunday**
+    -   Scheduled Update Day: **Sunday (19)**
 
-    -   Scheduled Update Time: **3:00 AM**
+    -   Scheduled Update Time: **3:00 AM (20)**
 
-    -   Realtime Antimalware Enabled: **false**
+    -   Realtime Antimalware Enabled: **false (21)**
 
-    -   Scheduled Antimalware Enabled: **false**
+    -   Scheduled Antimalware Enabled: **false (22)**
 
-    -   Scheduled Antimalware Time: **120**
+    -   Scheduled Antimalware Time: **120 (23)**
 
-    -   \_artifacts Location: **https://raw.githubusercontent.com/polichtm/301-storage-spaces-direct-md/master**
+    -   \_artifacts Location: **https://raw.githubusercontent.com/polichtm/301-storage-spaces-direct-md/master (24)**
 
-    -   \_artifacts Location Sas Token: **Leave the default value**
+    -   Click on **Review + Create (25)**
   
-           ![](../images/3.md/az-1203b4a2.png)
+        ![](../images/3.md/az-1203b4a2.png)
     
-           ![](../images/3.md/az-1203b4a3.png)
+        ![](../images/3.md/az-1203b4a3.png)
 
 
 1.  The deployment might take about 20 minutes. Do not wait for the deployment to complete but instead proceed to the next task.
