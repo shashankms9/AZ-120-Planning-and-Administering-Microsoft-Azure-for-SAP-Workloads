@@ -503,7 +503,7 @@ In this exercise, you will configure operating system of Azure VMs running Windo
 
 1. Click on **Connect**.
 
-    ![](..//images/3.md/conenct.png)
+    ![](../images/3.md/conenct.png)
     
 3.  From the **az12003b-vm0** blade, connect to the Azure VM az12003b-vm0 via Remote Desktop. When prompted, provide the following credentials:
 
@@ -541,17 +541,19 @@ In this exercise, you will configure operating system of Azure VMs running Windo
 
     > **Note**: This might result in restart of the guest operating system of all four Azure VMs.
 
-1.  On the lab VM, in the Azure Portal, click **+ Create a resource**.
+1.  On the Azure Portal, search for **Storage account (1)** in the search box and select it **(2)**.
 
-1.  From the **New** blade, initiate creation of a new **Storage account** with the following settings:
+      ![](../images/3.md/createstaccaccount.png)
+
+1.  On the **Basics** tab, specify the following instructions:
 
     -   Subscription: Select your **Azure subscription (1)**
 
-    -   Resource group: *the name of the resource group into which you deployed the Azure VMs which will host highly available SAP NetWeaver deployment*
+    -   Resource group: Choose the resource group **az12003b-sap-RG**
 
-    -   Storage account name: *any unique name consisting of between 3 and 24 letters and digits*
+    -   Storage account name: Enter **stac<inject key="Deployment ID" enableCopy="false"/>
 
-    -   Location: *the same Azure region where you deployed the Azure VMs in the previous exercise*
+    -   Location: Choose **<inject key="Region" enableCopy="false"/>**
 
     -   Performance: **Standard**
 
