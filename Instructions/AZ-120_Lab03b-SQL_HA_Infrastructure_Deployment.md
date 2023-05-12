@@ -541,11 +541,11 @@ In this exercise, you will configure operating system of Azure VMs running Windo
 
     > **Note**: This might result in restart of the guest operating system of all four Azure VMs.
 
-1.  On the lab computer, in the Azure Portal, click **+ Create a resource**.
+1.  On the lab VM, in the Azure Portal, click **+ Create a resource**.
 
 1.  From the **New** blade, initiate creation of a new **Storage account** with the following settings:
 
-    -   Subscription: *the name of your Azure subscription*
+    -   Subscription: Select your **Azure subscription (1)**
 
     -   Resource group: *the name of the resource group into which you deployed the Azure VMs which will host highly available SAP NetWeaver deployment*
 
