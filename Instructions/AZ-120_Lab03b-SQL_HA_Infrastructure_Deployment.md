@@ -216,42 +216,39 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 1.  Back on the **sap-3-tier-marketplace-image-md** blade, specify the following settings, click **Review + create**, and then click **Create** to initiate the deployment:
 
-    -   Subscription: *the name of your Azure subscription*
+    -   Subscription: Select your **Azure subscription (1)**
 
-    -   Resource group: *the name of a new resource group* **az12003b-sap-RG**
+    -   Resource group: **Choose the resource group* **az12003b-sap-RG (2)**
 
-    -   Location: *the same Azure region that you specified in the first task of this exercise*
+    -   Location: Choose **<inject key="Region" enableCopy="false"/> (3)**
 
-    -   SAP System Id: **I20**
+    -   SAP System Id: Enter **I20 (4)**
 
-    -   Stack Type: **ABAP**
+    -   Stack Type: Select **ABAP (5)**
 
-    -   Os Type: **Windows Server 2016 Datacenter**
+    -   Os Type: Choose **Windows Server 2016 Datacenter (6)**
 
-    -   Dbtype: **SQL**
+    -   Dbtype: Select **SQL (7)**
 
-    -   Sap System Size: **Demo**
+    -   Sap System Size: Select **Demo (8)**
 
-    -   System Availability: **HA**
+    -   System Availability: Choose **HA (9)**
 
-    -   Admin Username: **Student**
+    -   Admin Username: Enter **Student (10)**
 
-    -   Authentication Type: **password**
+    -   Authentication Type: Select **password (11)**
 
-    -   Admin Password Or Key: **Pa55w.rd1234**
+    -   Admin Password Or Key: Enter **Pa55w.rd1234 (12)**
 
-    -   Subnet Id: *the value you copied into Clipboard in the previous task*
+    -   Subnet Id: **the value you copied into Clipboard in the previous task (13)**
 
-    -   Availability Zones: **1,2**
+    -   Availability Zones: Enter **1,2 (14)**
 
-    -   Location: **[resourceGroup().location]**
+    -   _artifacts Location: **https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/application-workloads/sap/sap-3-tier-marketplace-image-md/ (15)**
 
-    -   _artifacts Location: **https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/application-workloads/sap/sap-3-tier-marketplace-image-md/**
-
-    -   _artifacts Location Sas Token: *leave blank*
-
+    -   Click on **Review + Create (16)**
       
-         ![](../images/az-1203b3.png)
+         ![](../images/3.md/saptemplatedeployment.png)
 
 1.  Do not wait for the deployment to complete but instead proceed to the next task. 
 
