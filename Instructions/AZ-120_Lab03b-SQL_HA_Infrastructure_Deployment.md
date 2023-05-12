@@ -373,7 +373,7 @@ In this task, you will deploy the scale-out file server (SOFS) cluster that will
 
     -   Image: Choose **Windows Server 2019 Datacenter Gen2* (6)*
  
-        ![](../images/3.md/vm.png)
+        ![](../images/3.md/vm1.1.png)
        
     -   Size: Choose **Standard_D2s_v3 (7)**
 
