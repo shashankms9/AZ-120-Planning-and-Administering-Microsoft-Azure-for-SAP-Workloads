@@ -351,69 +351,103 @@ In this task, you will deploy the scale-out file server (SOFS) cluster that will
 
    > **Note**: Since Azure VMs you deployed in the previous task are not accessible from Internet, you will deploy an Azure VM running Windows Server 2016 Datacenter that will serve as a jump host. 
 
-1.  From the lab computer, in the Azure portal interface, click **+ Create a resource**.
+1. On Azure portal **Home** page, search for **Virtual machines (1)** and select it **(2)**.
 
-1.  From the **New** blade, initiate creation of a new Azure VM based on the **Windows Server 2019 Datacenter - Gen1** image.
+    ![](../images/1.md/virtualmachine.png)
+    
+1. On the **Virtual machines** blade, select **+ Create (1)** and, in the drop-down menu, select **Azure virtual machine (2)**.
 
-1.  Provision a Azure VM with the following settings:
+    ![Picture 1](../images/1.md/createvm.png)
 
-    -   Subscription: *the name of your Azure subscription*
+1.  On the **Basics** tab of the **Create a virtual machine** blade, specify the following settings :
 
-    -   Resource group: *the name of a new resource group* **az12003b-dmz-RG**
+    -   Subscription: Select your **Azure subscription (1)**
 
-    -   Virtual machine name: **az12003b-vm0**
+    -   Resource group: Enter the name of the resource group **az12003b-dmz-RG (2)**
 
-    -   Region: *the same Azure region where you deployed Azure VMs in the previous tasks of this exercise*
+    -   Virtual machine name: ENter **az12003b-vm0 (3)**
 
-    -   Availability options: **No infrastructure redundancy required**
+    -   Region: Choose **<inject key="Region" enableCopy="false"/> (4)**
 
-    -   Image: **Windows Server 2019 Datacenter Gen2**
+    -   Availability options: Select **No infrastructure redundancy required (5)**
 
-    -   Size: **Standard_D2s_v3**
+    -   Image: Choose **Windows Server 2019 Datacenter Gen2* (6)*
+ 
+        ![](../images/3.md/vm.png)
+       
+    -   Size: Choose **Standard_D2s_v3 (7)**
 
-    -   Username: **Student**
+    -   Username: Enter **Student (8)**
 
-    -   Password: **Pa55w.rd1234**
+    -   Password: Enter **Pa55w.rd1234 (9)**
 
-    -   Public inbound ports: **Allow selected ports**
+    -   Confirm password : Enter **Pa55w.rd1234 (10)**
 
-    -   Select inbound ports: **RDP (3389)**
+    -   Public inbound ports: Choose **Allow selected ports (11)**
 
-    -   Already have a Windows license?: **No**
+    -   Select inbound ports: **RDP (3389) (12)**
 
-    -   OS disk type: **Standard HDD**
+    -   Already have a Windows license?: **No (13)**
 
-    -   Virtual network: **adVNET**
+    -   Click on **Next : Disks> (14)**
+    
+        ![](../images/3.md/vm1.png)
+  
+1. On **Disks** tab, follo the below instructions :
 
-    -   Subnet: *a new subnet named* **dmzSubnet (10.0.255.0/24)**
+    -   OS disk type: **Standard HDD (1)**
+    -   Click on **Next : Networking > (2)**
 
-    -   Public IP: *a new IP address named* **az12003b-vm0-ip**
+        ![](../images/3.md/vmdisk.png)
 
-    -   NIC network security group: **Basic**
+1. On **Networking** tab, follow the below instructions:
 
-    -   Public inbound ports: **Allow selected ports**
 
-    -   Select inbound ports: **RDP (3389)**
+    -   Virtual network: Slect **adVNET (1)**
 
-    -   Accelerated networking: **Off**
+    -   Click on **Manage subnet configuration (2)** to create a new subnet.
 
-    -   Place this virtual machine behind an existing load balancing solutions: **No**
+         ![](../images/3.md/vmnetworking.png)
+   
+    -  On Subnet page, follow the below instructions:
+    
+         - Click on ** + Subnet (1)**
+         - Name : Enter **dmzSubnet (2)**
+         - Subent address range : Enter **10.0.255.0/24 (3)**
+         - Click on **Save (4)**
 
-    -   Boot diagnostics: **Off**
+          ![](../images/3.md/vmsubnet1.png)
+          
+    -   Subnet: Choose **dmzSubnet (10.0.255.0/24) (2)**
 
-    -   OS guest diagnostics: **Off**
+    -   Public IP:  **az12003b-vm0-ip (3)**
 
-    -   System assigned managed identity: **Off**
+    -   NIC network security group: **Basic (4)**
 
-    -   Login with AAD credentials (Preview): **Off**
+    -   Public inbound ports: **Allow selected ports (5)**
 
-    -   Enable auto-shutdown: **Off**
+    -   Select inbound ports: **RDP (3389) (6)**
 
-    -   Enable backup: **Off**
+    -   Accelerated networking: **Off (7)**
 
-    -   Extensions: *None*
+    -   Place this virtual machine behind an existing load balancing solutions: **No (8)**
 
-    -   Tags: **None**
+    -   Click on **Next : Management > (9)**
+
+        ![](../images/3.md/vmnetworking1.png)
+        
+1. Leave everythig as default under **Management** tab, click on **Next > Monitoring**.
+
+    ![](../images/3.md/vmmanagement.png)
+
+1. On **Monitoring** tab, follow the below instructions:
+
+    -   Boot diagnostics: Choose **Disable (1)
+    -   Click on **Review + Create (2)
+
+        ![](../images/3.md/vmmonitoring.png)
+        
+    
 
 1.  Wait for the provisioning to complete. This should take a few minutes.
 
