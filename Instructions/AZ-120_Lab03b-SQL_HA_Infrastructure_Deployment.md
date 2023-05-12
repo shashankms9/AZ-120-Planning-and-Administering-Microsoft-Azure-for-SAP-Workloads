@@ -447,7 +447,7 @@ In this task, you will deploy the scale-out file server (SOFS) cluster that will
 
         ![](../images/3.md/vmmonitoring.png)
         
-    
+1. Review the configration and click on **Create**    
 
 1.  Wait for the provisioning to complete. This should take a few minutes.
 
