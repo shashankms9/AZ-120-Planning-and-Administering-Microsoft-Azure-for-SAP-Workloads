@@ -472,6 +472,9 @@ In this exercise, you will configure operating system of Azure VMs running Windo
 
 1.  In the Azure Portal, start a PowerShell session in Cloud Shell. 
 
+    ![](../images/selectcloudshell.png)
+
+    
 1. In the Cloud Shell pane, run the following command to set the value of the variable `$resourceGroupName` to the name of the resource group containing the resources you provisioned in the previous task:
 
     ```
