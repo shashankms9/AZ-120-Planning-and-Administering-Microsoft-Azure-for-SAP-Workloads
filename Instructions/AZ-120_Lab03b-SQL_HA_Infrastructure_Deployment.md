@@ -545,31 +545,41 @@ In this exercise, you will configure operating system of Azure VMs running Windo
 
       ![](../images/3.md/createstaccaccount.png)
 
-1.  On the **Basics** tab, specify the following instructions:
+1. Click on **+ Create**.
+
+    ![](../images/3.md/createsta.png)
+    
+3.  On the **Basics** tab, specify the following instructions:
 
     -   Subscription: Select your **Azure subscription (1)**
 
-    -   Resource group: Choose the resource group **az12003b-sap-RG**
+    -   Resource group: Choose the resource group **az12003b-sap-RG (2)**
 
-    -   Storage account name: Enter **stac<inject key="Deployment ID" enableCopy="false"/>
+    -   Storage account name: Enter **stac<inject key="Deployment ID" enableCopy="false"/> (3)**
 
-    -   Location: Choose **<inject key="Region" enableCopy="false"/>**
+    -   Location: Choose **<inject key="Region" enableCopy="false"/> (4)**
 
-    -   Performance: **Standard**
+    -   Performance: **Standard (5)**
 
-    -   Replication: **Locally-redundant storage (LRS)**
+    -   Replication: **Locally-redundant storage (LRS) (6)**
 
-    -   Connectivity method: **Public endpoint (all networks)**
+    -   Click on **Next : Advanced > (7)**.
 
-    -   Require secure transfer for REST API operations: **Enabled**
+         ![](../images/3.md/basicstacc.png)
+  
+1. Leave everything as default in **Advanced** tab, click on **Next : Networking >**.
 
-    -   Large file shares: **Disabled**
+     ![](../images/3.md/staccnetworking.png)
+     
+1. Leave everything as default in **Networking** tab, click on **Review**.
 
-    -   Blob, container, and file share soft delete: **Disabled**
+    ![](../images/3.md/reviewstacc.png)
+    
+1. Review the configurationa and click on **Create**.
 
-    -   Hierarchical namespace: **Disabled**
+    ![](../images/3.md/createstacc.png)
 
-
+   
 ### Task 4: Configure Failover Clustering on Azure VMs running Windows Server 2016 to support a highly available database tier of the SAP NetWeaver installation.
 
 1.  If needed, from the RDP session to az12003b-vm0, use Remote Desktop to re-connect to **i20-db-0.adatum.com** Azure VM. When prompted, provide the following credentials:
