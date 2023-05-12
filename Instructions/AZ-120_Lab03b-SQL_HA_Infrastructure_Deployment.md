@@ -497,9 +497,15 @@ In this exercise, you will configure operating system of Azure VMs running Windo
 
 ### Task 2: Examine the storage configuration of the database tier Azure VMs.
 
-1.  From the lab computer, in the Azure portal, navigate to the **az12003b-vm0** blade.
+1.  Navigate to the **az12003b-vm0** blade, click on **Connect (1)** and click on **Download RDP File (2)**.
 
-1.  From the **az12003b-vm0** blade, connect to the Azure VM az12003b-vm0 via Remote Desktop. When prompted, provide the following credentials:
+     ![](../images/3.md/conenctvm.png)
+
+1. Click on **Connect**.
+
+    ![](..//images/3.md/conenct.png)
+    
+3.  From the **az12003b-vm0** blade, connect to the Azure VM az12003b-vm0 via Remote Desktop. When prompted, provide the following credentials:
 
     -   Login as: **student**
 
@@ -515,9 +521,12 @@ In this exercise, you will configure operating system of Azure VMs running Windo
 
 1.  Within the RDP session to i20-db-0.adatum.com, use File and Storage Services in the Server Manager to examine the disk configuration. Notice that a single data disk has been configured via volume mounts to provide storage for database and log files. 
 
+    ![](../images/3.md/vmdb0.png)
+    
 1.  Within the RDP session to i20-db-1.adatum.com, use File and Storage Services in the Server Manager to examine the disk configuration. Notice that a single data disk has been configured via volume mounts to provide storage for database and log files. 
 
-
+     ![](../images/3.md/vmdb1.png)
+     
 ### Task 3: Prepare for configuration of Failover Clustering on Azure VMs running Windows Server 2016 to support a highly available SAP NetWeaver installation.
 
 1.  Within the RDP session to i20-db-0.adatum.com, start a Windows PowerShell ISE session and install Failover Clustering and Remote Administrative tools features by running the following on the pair of the ASCS and DB servers that will become nodes of the ASCS and SQL Server clusters, respectively:
