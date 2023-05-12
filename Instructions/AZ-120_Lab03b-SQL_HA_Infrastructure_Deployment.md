@@ -411,7 +411,7 @@ In this task, you will deploy the scale-out file server (SOFS) cluster that will
    
     -  On Subnet page, follow the below instructions:
     
-         - Click on ** + Subnet (1)**
+         - Click on **+ Subnet (1)**
          - Name : Enter **dmzSubnet (2)**
          - Subent address range : Enter **10.0.255.0/24 (3)**
          - Click on **Save (4)**
@@ -428,7 +428,7 @@ In this task, you will deploy the scale-out file server (SOFS) cluster that will
 
     -   Select inbound ports: **RDP (3389) (6)**
 
-    -   Accelerated networking: **Off (7)**
+    -   Enable Accelerate networking: **Off (7)**
 
     -   Place this virtual machine behind an existing load balancing solutions: **No (8)**
 
