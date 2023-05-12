@@ -160,7 +160,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
     - Name: **s2dSubnet**
 
-    - Subnet address range: Enter **10.0.1.0/24 (2)**
+    - Subnet address range: Enter **10.0.2.0/24 (2)**
 
     - Click on **Save (3)**
 
