@@ -442,8 +442,8 @@ In this task, you will deploy the scale-out file server (SOFS) cluster that will
 
 1. On **Monitoring** tab, follow the below instructions:
 
-    -   Boot diagnostics: Choose **Disable (1)
-    -   Click on **Review + Create (2)
+    -   Boot diagnostics: Choose **Disable (1)**
+    -   Click on **Review + Create (2)**
 
         ![](../images/3.md/vmmonitoring.png)
         
