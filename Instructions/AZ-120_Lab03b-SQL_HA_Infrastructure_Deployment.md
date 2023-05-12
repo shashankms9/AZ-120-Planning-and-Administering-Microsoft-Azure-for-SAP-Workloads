@@ -196,18 +196,20 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 ### Task 3: Deploy Azure Resource Manager template provisioning Azure VMs running Windows Server 2016 that will host a highly available SAP NetWeaver deployment
 
-1.  On the lab computer, in the Azure portal, search for and select **Template deployment (deploy using custom template)**.
-   
-       ![](../images/3.md/az-1203b1.png)
+1.  Type **Deploy a custom template (1)** in the search box of the Azure portal menu, and select it **(2)**.
 
-1.  On the **Custom deployment** blade, in the **Quickstart template (disclaimer)** drop-down list, type **application-workloads/sap/sap-3-tier-marketplace-image-md** and click **Select template**.
-   
-      ![](../images/3.md/az-1203b2.png)
+     ![](../images/3.md/deploytemplate.png)
+
+1.  From the Custom deployment blade, scroll down to **Quickstart template (disclaimer) (1)** and select the **application-workloads/sap/sap-3-tier-marketplace-image-md (2)**, from the drop-down list then click **Select template (3)**.
+
+      ![](../images/3.md/deployemplate1.png)
 
     > **Note**: Make sure to use Microsoft Edge or a third party browser. Do not use Internet Explorer.
 
 1.  On the **sap-3-tier-marketplace-image-md** blade, select **Edit template**.
 
+     ![](../images/3.md/edittemplate.png)
+     
 1.  On the **Edit template** blade, apply the following change and select **Save**:
 
     -   in the line **197**, replace `"dbVMSize": "Standard_E8s_v3",` with `"dbVMSize": "Standard_D4s_v3",`
