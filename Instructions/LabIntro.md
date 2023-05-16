@@ -22,7 +22,7 @@
    
 1. On the next window, click on **Continue without this data**.
 
-   ![](https://github.com/CloudLabsAI-Azure/AIW-Azure-Network-Solutions/blob/main/media/continuewithoutthis.png)
+    ![](https://github.com/CloudLabsAI-Azure/AIW-Azure-Network-Solutions/blob/main/media/continuewithoutthis.png)
    
 1. Click on **Confirm and start browsing**.
 
