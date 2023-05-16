@@ -855,7 +855,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
    -  Click on **Save (11)**.
 
-     ![](../images/1.md/addlbrules.png)
+    [](../images/1.md/addlbrules.png)
 
 ### Task 3: Create and configure Azure Load Balancers handling outbound traffic
 
