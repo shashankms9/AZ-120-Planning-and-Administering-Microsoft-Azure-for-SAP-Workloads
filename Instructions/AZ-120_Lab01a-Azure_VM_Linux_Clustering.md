@@ -754,7 +754,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
    
    - Click on **Next: Frontend IP Configuration (7)**
      
-   ![](../images/1.md/basiclb.png)
+    ![](../images/1.md/basiclb.png)
    
 1. On the **Frontend IP configuration** screen, click **Add a frontend IP configuration (1)** and follow the below instructions:
 
@@ -772,7 +772,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
    -  Click on **Add (7)**
 
-    ![](../images/1.md/frontendip.png)
+     ![](../images/1.md/frontendip.png)
 
 1. Select **Review + create**
 
@@ -806,7 +806,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
    - Click on **Save (6)**
 
-    ![](../images/1.md/addbackendpool.png)
+     ![](../images/1.md/addbackendpool.png)
     
 1. On the **az12001a-lb0** blade, select **Health probes (1)** select **+ Add (2)**.
 
@@ -824,12 +824,12 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
    - click on **Add (5)**
 
-   ![](../images/1.md/healthprob1.png)
+    ![](../images/1.md/healthprob1.png)
 
 
 1. On the **az12001a-lb0** blade, select **Load balancing rules (1)**, select **+ Add (2)**.
 
-    ![](../images/1.md/loadbalancingrule.png)
+     ![](../images/1.md/loadbalancingrule.png)
 
 1. On the **Add load balancing rule** blade, specify the following settings:
 
@@ -855,7 +855,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
    -  Click on **Save (11)**.
 
-    ![](../images/1.md/addlbrules.png)
+     ![](../images/1.md/addlbrules.png)
 
 ### Task 3: Create and configure Azure Load Balancers handling outbound traffic
 
