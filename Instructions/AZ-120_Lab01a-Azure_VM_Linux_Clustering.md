@@ -827,11 +827,11 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
     ![](../images/1.md/healthprob1.png)
 
 
-1. On the **az12001a-lb0** blade, select **Load balancing rules (1)**, select **+ Add (2)**.
+12. On the **az12001a-lb0** blade, select **Load balancing rules (1)**, select **+ Add (2)**.
 
      ![](../images/1.md/loadbalancingrule.png)
 
-1. On the **Add load balancing rule** blade, specify the following settings:
+13. On the **Add load balancing rule** blade, specify the following settings:
 
    - Name: Enter **az12001a-lb0-lbruleAll (1)**
 
