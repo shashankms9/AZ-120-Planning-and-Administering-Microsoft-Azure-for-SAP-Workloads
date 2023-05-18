@@ -649,11 +649,11 @@ Duration: 40 minutes
 
     -   Subscription: *the name of your Azure subscription*
 
-    -   Resource group: *the name of the resource group containing the pair of **Windows Server 2022 Datacenter** Azure VMs you provisioned in the previous exercise*
+    -   Resource group: Choose the RG **az12001b-cl-vm1**
 
-    -   Storage account name: *any unique name consisting of between 3 and 24 letters and digits*
+    -   Storage account name: Enter **storageaccount<inject key="Deployment ID" enableCopy="false"/>**
 
-    -   Location: *the same Azure region where you deployed the Azure VMs in the previous exercise*
+    -   Location: Choose **<inject key="Region" enableCopy="false"/>**
 
     -   Performance: **Standard**
 
