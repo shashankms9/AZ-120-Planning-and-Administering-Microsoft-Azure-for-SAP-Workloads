@@ -76,7 +76,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
     
     - Click on **Review + Create (12)**.
     
-    ![](../images/3.md/customdeployment.png)
+     ![](../images/3.md/customdeployment.png)
 
 1. Review the configuration and click on **Create**
     > **Note**: The deployment should take about 35 minutes. Wait for the deployment to complete before you proceed to the next task.
@@ -316,9 +316,9 @@ In this task, you will deploy the scale-out file server (SOFS) cluster that will
 
     -   Click on **Review + Create (25)**
   
-        ![](../images/3.md/az-1203b4a2.png)
+     ![](../images/3.md/az-1203b4a2.png)
     
-        ![](../images/3.md/az-1203b4a3.png)
+     ![](../images/3.md/az-1203b4a3.png)
 
 
 1.  The deployment might take about 20 minutes. Do not wait for the deployment to complete but instead proceed to the next task.
