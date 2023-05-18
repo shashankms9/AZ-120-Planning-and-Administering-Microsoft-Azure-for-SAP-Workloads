@@ -1059,7 +1059,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
 1.  From the lab computer, in the Azure portal, navigate to the **Virtual machines** blade, click **+ Create**, and, from the drop-down menu, select **Azure virtual machine**.
 
-1.  From the **Create a virtual machine** blade, initiate provisioning of a **Windows Server 2022 Datacenter: Azure Edition - Gen2** 1.  In the Azure portal, in the Search resources, services, and docs text box at the top of the Azure portal page, type **Storage account** then press the Enter key and select **+ Create**.
+2.  From the **Create a virtual machine** blade, initiate provisioning of a **Windows Server 2022 Datacenter: Azure Edition - Gen2** 1.  In the Azure portal, in the Search resources, services, and docs text box at the top of the Azure portal page, type **Storage account** then press the Enter key and select **+ Create**.
 
     -   Subscription: *the name of your Azure subscription*
 
@@ -1086,52 +1086,25 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
     -   You already have a Windows license?: **No**
 
 
- 1. On **Disks** tab of **Create a virtual machine** blade specify the following and select **Next:Networking>**.
+3. On **Disks** tab of **Create a virtual machine** blade specify the following and select **Next:Networking>**.
 
-      -  OS disk type: **Standard HDD**
+     -  OS disk type: **Standard HDD**
 
  1. On **Networking** tab of **Create a virtual machine** blade specify the following and select **Next:Managemet>**.
       -   Virtual network: **adVNET**
-      -   Subnet: *a new subnet named* **bastionSubnet**
-      -   Address range: **10.0.255.0/24**
+      -   Subnet: Create a new subnet named* **bastionSubnet**
+      -   Address range: **10.0.255.0/24** 
+      
+      -   Public IP address: *a new IP address named* **az12001b-vm2-ip**
 
-     ![](../images/ex3-task1.png)
-     
-        - and click on save
+      -   NIC network security group: **Basic**
 
-1. Back on **Create a virtual machine** blade specify the following
+      -   Public inbound ports: **Allow selected ports**
 
-    -   Subnet: a new subnet named bastionSubnet 
+      -   Select inbound ports: **RDP (3389)**
 
-    -   System assigned managed identity: **Off**
-
-    -  Login with AAD credentials (Preview): **Off**
-
-    -   Virtual network: **adVNET**
-
-    -   Subnet: *a new subnet named* **bastionSubnet**
-
-    -   Address range: **10.0.255.0/24**
-
-    -   Public IP address: *a new IP address named* **az12001b-vm2-ip**
-
-    -   NIC network security group: **Basic**
-
-    -   Public inbound ports: **Allow selected ports**
-
-    -   Select inbound ports: **RDP (3389)**
-
-    -   Accelerated networking: **Off**
+      -   Accelerated networking: **Off**
     
-    management
--   System assigned managed identity: **Off**
-    -   Place this virtual machine behind an existing load balancing solutions: **No**
-
-   Login with AAD credentials (Preview): **Off**
-
-    -   Enable auto-shutdown: **Off**
-
-    -   Enable backup: **Off**
 
 1. On **Management** tab of **Create a virtual machine** blade specify the following and select **Next:Monitoring>**
 
@@ -1152,7 +1125,8 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
     -   Tags: *None*
 
-1. Select **Review + Create**
+1. On **Monitoring** tab, leave everything as **Default** and click on **Review + Create**
+1. Review the configuration and click on **Create**
 
 1.  Wait for the provisioning to complete. This should take a few minutes.
 
