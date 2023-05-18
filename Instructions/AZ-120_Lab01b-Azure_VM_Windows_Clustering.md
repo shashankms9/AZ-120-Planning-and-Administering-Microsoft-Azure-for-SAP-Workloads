@@ -623,7 +623,7 @@ Duration: 40 minutes
 
          -  Volume label: **Log**
 
-    -   On **Confirmation selections** Wizard click on create 
+    -   On **Confirmation** selections Wizard click on create 
 
     -   On **Result** Wizard wait untill new volume successfully complete and click on close.
 
