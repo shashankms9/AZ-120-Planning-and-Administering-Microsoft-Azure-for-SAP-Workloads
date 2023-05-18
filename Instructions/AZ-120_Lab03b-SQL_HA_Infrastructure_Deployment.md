@@ -407,16 +407,16 @@ In this task, you will deploy the scale-out file server (SOFS) cluster that will
 
     -   Click on **Manage subnet configuration (2)** to create a new subnet.
 
-         ![](../images/3.md/vmnetworking.png)
+     ![](../images/3.md/vmnetworking.png)
    
     -  On Subnet page, follow the below instructions:
     
-         - Click on **+ Subnet (1)**
-         - Name : Enter **dmzSubnet (2)**
-         - Subent address range : Enter **10.0.255.0/24 (3)**
-         - Click on **Save (4)**
+        - Click on **+ Subnet (1)**
+        - Name : Enter **dmzSubnet (2)**
+        - Subent address range : Enter **10.0.255.0/24 (3)**
+        - Click on **Save (4)**
 
-          ![](../images/3.md/vmsubnet1.png)
+        ![](../images/3.md/vmsubnet1.png)
           
     -   Subnet: Choose **dmzSubnet (10.0.255.0/24) (2)**
 
