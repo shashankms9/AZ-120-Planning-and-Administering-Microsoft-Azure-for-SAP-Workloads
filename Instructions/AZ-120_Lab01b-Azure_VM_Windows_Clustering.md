@@ -486,8 +486,7 @@ Duration: 40 minutes
 
        ![](../images/task2(8).png)
 
-
-1.  Use the **New Virtual Disk Wizard** to create a new virtual disk with the following settings:
+7.  Use the **New Virtual Disk Wizard** to create a new virtual disk with the following settings:
 
     - Click on **Storage pools** from left pane then select newly created storage pool and under **Virtual Disks** from **TASKS** dropdown select **New Virtual Disks**
 
@@ -527,7 +526,7 @@ Duration: 40 minutes
 
 	 ![](../images/task-07-5.png)
 
-1.  Use the **New Volume Wizard** to create a new volume with the following settings:
+8.  Use the **New Volume Wizard** to create a new volume with the following settings:
 
     -   On **Before you begin** Wizard - select **Next>**
     
@@ -553,11 +552,11 @@ Duration: 40 minutes
 
 	 ![](../images/task-07-6.png)
 
-1.  Back in the **Storage Pools (1)**, from the top right corner select **TASKS (2)** in dropdown click on **New storage pool**.
+9.  Back in the **Storage Pools (1)**, from the top right corner select **TASKS (2)** in dropdown click on **New storage pool**.
 
      ![](../images/2.md/newstoragepool.png)
      
-1.  Use the **New Storage Pools Wizard** to create a new storage pool with the following settings:
+10.  Use the **New Storage Pools Wizard** to create a new storage pool with the following settings:
 
     - On **Before you begin** Wizard - select **Next>**
 
@@ -575,9 +574,9 @@ Duration: 40 minutes
 
     - On **Result** Wizard wait, untill Storage pool successfully complete and click on **Close**
 
-1.  Back on **Storage pools**, under **Virtual Disks** from **TASKS** dropdown select **New Virtual Disks**
+11.  Back on **Storage pools**, under **Virtual Disks** from **TASKS** dropdown select **New Virtual Disks**
 
-1.  Use the **New Virtual Disk Wizard** to create a new virtual disk with the following settings:
+12.  Use the **New Virtual Disk Wizard** to create a new virtual disk with the following settings:
  
     -  On **Before you begin** Wizard - select **Next>**
   
@@ -604,7 +603,7 @@ Duration: 40 minutes
     -   On **Result** Wizard wait untill new virtual disk successfully complete and click on close.
 
 
-1.  Use the **New Volume Wizard** to create a new volume with the following settings:
+13.  Use the **New Volume Wizard** to create a new volume with the following settings:
 
     -  On **Before you begin** Wizard - select **Next>**
     
@@ -628,7 +627,7 @@ Duration: 40 minutes
 
     -   On **Result** Wizard wait untill new volume successfully complete and click on close.
 
-1.  Repeat the previous step in this task to configure storage on az12001b-cl-vm1.
+14.  Repeat the previous step in this task to configure storage on az12001b-cl-vm1.
 
 ### Task 3: Prepare for configuration of Failover Clustering on Azure VMs running Windows Server 2022 to support a highly available SAP NetWeaver installation.
 
