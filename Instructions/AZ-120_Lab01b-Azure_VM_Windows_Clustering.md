@@ -1063,11 +1063,11 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
     -   Subscription: *the name of your Azure subscription*
 
-    -   Resource group: *the name of the resource group containing the pair of **Windows Server 2022 Datacenter: Azure Edition - Gen2** Azure VMs you provisioned in the first exercise of this lab*
+    -   Resource group: Choose **az12001b-cl-RG**
 
     -   Virtual machine name: **az12001b-vm2**
 
-    -   Region: *the same Azure region where you deployed Azure VMs in the first exercise of this lab*
+    -   Region: <inject key="Region" enableCopy="true"/>
 
     -   Availability options: **No infrastructure redundancy required**
 
