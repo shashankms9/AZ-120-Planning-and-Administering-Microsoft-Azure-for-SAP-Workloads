@@ -1075,9 +1075,9 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
     -   Size: **Standard DS1 v2*** or similar*
 
-    -   Username: *the same username you specified when deploying the Bicep template in the first exercise of this lab*
+    -   Username: Enter **Student**
 
-    -   Password: *the same password you specified when deploying the Bicep template in the first exercise of this lab*
+    -   Password: Enter **Pa55w.rd1234**
 
     -   Public inbound ports: **Allow selected ports**
 
