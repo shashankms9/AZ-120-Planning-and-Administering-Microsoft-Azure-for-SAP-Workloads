@@ -476,7 +476,7 @@ Duration: 40 minutes
         - Select the 3 disks with disk numbers corresponding to the first three LUN numbers (0-2) and set their allocation to **Automatic**
         - Click on **Next>**
 
-    > **Note**: Use the entry in the **Chassis** column to identify the **LUN** number.
+      > **Note**: Use the entry in the **Chassis** column to identify the **LUN** number.
 
     -  On **Confirmation** Wizard
          
@@ -484,7 +484,7 @@ Duration: 40 minutes
 
     - On **Result** Wizard, wait untill Storage pool successfully complete and click on **Close**
 
-      ![](../images/task2(8).png)
+       ![](../images/task2(8).png)
 
 
 1.  Use the **New Virtual Disk Wizard** to create a new virtual disk with the following settings:
