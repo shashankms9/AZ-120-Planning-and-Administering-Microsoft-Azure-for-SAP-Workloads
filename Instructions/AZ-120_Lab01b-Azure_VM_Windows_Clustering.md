@@ -222,7 +222,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
    - Availability options: Select **Availability zone (5)**
 
-   - Availability zone: Choose **Zone 1 (6)**
+   - Availability zone: Choose **Zone 2 (6)**
 
    - Security type : Choose **Standard (7)**
    
