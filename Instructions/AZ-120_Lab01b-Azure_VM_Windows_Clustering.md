@@ -885,7 +885,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
     -  Click on **Add (8)**.
 
-     ![](../images/2.md/lbfrontendip.png)
+    ![](../images/2.md/lbfrontendip.png)
 
 1. Click on **Review + Create**
 
