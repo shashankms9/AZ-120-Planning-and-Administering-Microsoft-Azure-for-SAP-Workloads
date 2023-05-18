@@ -521,7 +521,7 @@ Duration: 40 minutes
          - Size: **Maximum size**
          - Click on **Next >**
 
-      -   On **Confirmation selections** Wizard click on create 
+      -   On **Confirmation selections** Wizard click on **Create**
 
       -   On **Result** Wizard, wait untill new virtual disk successfully complete and click on close.
 
