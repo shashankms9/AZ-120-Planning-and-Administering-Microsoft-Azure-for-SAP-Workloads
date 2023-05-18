@@ -402,12 +402,11 @@ In this task, you will deploy the scale-out file server (SOFS) cluster that will
 
 1. On **Networking** tab, follow the below instructions:
 
-
     -   Virtual network: Slect **adVNET (1)**
 
     -   Click on **Manage subnet configuration (2)** to create a new subnet.
 
-     ![](../images/3.md/vmnetworking.png)
+    ![](../images/3.md/vmnetworking.png)
    
     -  On Subnet page, follow the below instructions:
     
