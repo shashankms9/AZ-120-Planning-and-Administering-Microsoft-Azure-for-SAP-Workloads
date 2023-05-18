@@ -865,7 +865,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
     
     -   Click on **Next : Frontend IP configuration> (8)**
     
-       ![](../images/2.md/lbbasic.png)
+    ![](../images/2.md/lbbasic.png)
    
 1.  On **Frontend IP Configuration** tab, follow the below instructions:
 
