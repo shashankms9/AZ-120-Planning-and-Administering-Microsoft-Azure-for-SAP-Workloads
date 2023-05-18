@@ -22,7 +22,7 @@
    
 1. On the next window, click on **Continue without this data**.
 
-   ![]../images/continuewithoutthis.png)
+   ![](../images/continuewithoutthis.png)
    
 1. Click on **Confirm and start browsing**.
 
