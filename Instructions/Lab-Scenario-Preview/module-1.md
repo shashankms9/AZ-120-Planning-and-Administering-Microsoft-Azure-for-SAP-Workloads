@@ -14,3 +14,6 @@ After completing this lab, you will be able to:
 - Configure operating system of Azure VMs running Linux to support a highly available SAP HANA installation
 
 - Provision Azure network resources necessary to support highly available SAP HANA deployments
+
+
+### Architecture Diagram
