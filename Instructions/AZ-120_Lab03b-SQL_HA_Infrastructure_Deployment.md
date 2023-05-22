@@ -19,6 +19,9 @@ After completing this lab, you will be able to:
 
 -   Configure clustering on Azure VMs running Windows to support a highly available SAP NetWeaver deployment
 
+## Architecture Diagram
+
+  ![](../images/4.md/m4.png)
 
 # Exercise 1: Provision Azure resources necessary to support highly available SAP NetWeaver deployments
 
