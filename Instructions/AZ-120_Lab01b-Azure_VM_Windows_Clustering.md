@@ -19,13 +19,6 @@ After completing this lab, you will be able to:
 
 -   Provision Azure network resources necessary to support highly available SAP NetWeaver deployments.
 
-## Requirements
-
--   A Microsoft Azure subscription with the sufficient number of available DSv2 and Dsv3 vCPUs (one Standard_DS1_v2 VM with 1 vCPU and four Standard_D4s_v3 VMs with 4 vCPUs each) in the Azure region you intend to use for this lab
-
--   A lab computer with an Azure Cloud Shell-compatible web browser and access to Azure
-
-> **Note**: Make sure that the Azure region you choose for deployment of your resources supports availability zones. For the list of such regions, refer to (https://docs.microsoft.com/en-us/azure/availability-zones/az-overview). Consider using **East US** or **East US2**.
 
 # Exercise 1: Provision Azure compute resources necessary to support highly available SAP NetWeaver deployments
 
