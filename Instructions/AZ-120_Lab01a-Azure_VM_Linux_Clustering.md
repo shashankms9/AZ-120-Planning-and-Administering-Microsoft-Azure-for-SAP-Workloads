@@ -20,6 +20,9 @@ After completing this lab, you will be able to:
 
 - Provision Azure network resources necessary to support highly available SAP HANA deployments
 
+## Architecture Diagram
+
+![](../images/1.md/m1.png)
 
 # Exercise 1: Provision Azure compute resources necessary to support highly available SAP HANA deployments
 
