@@ -14,6 +14,6 @@ After completing this lab, you will be able to:
 
 -   Provision Azure network resources necessary to support highly available SAP NetWeaver deployments.
 
-### Architecture Diagram
+## Architecture Diagram
 
  ![](https://github.com/CloudLabs-MOC/AZ-120-Planning-and-Administering-Microsoft-Azure-for-SAP-Workloads/blob/prod/images/2.md/m2.png?raw=true)
