@@ -4,11 +4,8 @@
 
 Estimated Time: 90 minutes
 
-All tasks in this lab are performed from the Azure portal (including the Bash Cloud Shell session)  
+This particular lab is under the module Explore the foundations of IaaS for SAP on Azure
 
-   > **Note**: When not using Cloud Shell, the lab virtual machine must have Azure CLI installed [**https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-windows**](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-windows) and include an SSH client e.g. PuTTY, available from [**https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html**](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
-
-Lab files: none
 
 ## Scenario
   
@@ -30,13 +27,13 @@ After completing this lab, you will be able to:
 
 - A lab computer with an Azure Cloud Shell-compatible web browser and access to Azure
 
-## Exercise 1: Provision Azure compute resources necessary to support highly available SAP HANA deployments
+# Exercise 1: Provision Azure compute resources necessary to support highly available SAP HANA deployments
 
 Duration: 30 minutes
 
 In this exercise, you will deploy Azure infrastructure compute components necessary to configure Linux clustering. This will involve creating a pair of Azure VMs running Linux SUSE in the same availability set.
 
-### Task 1: Deploy Azure VMs running Linux SUSE
+## Task 1: Deploy Azure VMs running Linux SUSE
 
 1. Type **Proximity placement (1)** groups in the search box of the Azure portal menu, and select it **(2)**.
 
@@ -259,7 +256,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 
 
-### Task 2: Create and configure Azure VMs disks
+## Task 2: Create and configure Azure VMs disks
 
 1. Open a Cloud Shell prompt by selecting the icon shown below. 
 
@@ -350,13 +347,13 @@ In this exercise, you will deploy Azure infrastructure compute components necess
   > **Result**: After you completed this exercise, you have provisioned Azure compute resources necessary to support highly available SAP HANA deployments.
 
 
-## Exercise 2: Configure operating system of Azure VMs running Linux to support a highly available SAP HANA installation
+# Exercise 2: Configure operating system of Azure VMs running Linux to support a highly available SAP HANA installation
 
 Duration: 30 minutes
 
 In this exercise, you will configure operating system and storage on Azure VMs running SUSE Linux Enterprise Server to accommodate clustered installations of SAP HANA.
 
-### Task 1: Connect to Azure Linux VMs
+## Task 1: Connect to Azure Linux VMs
 
 1. In the Cloud Shell pane, run the following command to set the value of the variable `RESOURCE_GROUP_NAME` to the name of the resource group containing the resources you provisioned in the previous exercise:
 
@@ -397,7 +394,7 @@ In this exercise, you will configure operating system and storage on Azure VMs r
    ```
    
 
-### Task 2: Configure storage of Azure VMs running Linux
+## Task 2: Configure storage of Azure VMs running Linux
 
 1. In the Cloud Shell pane, in the SSH session to az12001a-vm0, run the following command to elevate privileges: 
 
@@ -525,7 +522,7 @@ In this exercise, you will configure operating system and storage on Azure VMs r
 1. Switch to the Cloud Shell Bash session to az12001a-vm1 and repeat all of the steps in this tasks to configure storage on **az12001a-vm1**.
 
 
-### Task 3: Enable cross-node password-less SSH access
+## Task 3: Enable cross-node password-less SSH access
 
 1. In the Cloud Shell pane, in the SSH session to az12001a-vm0, generate passphrase-less SSH key by running:
 
@@ -667,14 +664,14 @@ In this exercise, you will configure operating system and storage on Azure VMs r
 > **Result**: After you completed this exercise, you have configured operating system of Azure VMs running Linux to support a highly available SAP HANA installation
 
 
-## Exercise 3: Provision Azure network resources necessary to support highly available SAP HANA deployments
+# Exercise 3: Provision Azure network resources necessary to support highly available SAP HANA deployments
 
 Duration: 30 minutes
 
 In this exercise, you will implement Azure Load Balancers to accommodate clustered installations of SAP HANA.
 
 
-### Task 1: Configure Azure VMs to facilitate load balancing setup.
+## Task 1: Configure Azure VMs to facilitate load balancing setup.
 
    > **Note**: Since you will be setting up a pair of Azure Load Balancer of the Stardard SKU, you need to first remove the public IP addresses associated with network adapters of two Azure VMs that will be serving as the load-balanced backend pool.
 
@@ -857,7 +854,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
     [](../images/1.md/addlbrules.png)
 
-### Task 3: Create and configure Azure Load Balancers handling outbound traffic
+## Task 3: Create and configure Azure Load Balancers handling outbound traffic
 
 1. In the Azure Portal, start a Bash session in Cloud Shell. 
 
@@ -918,7 +915,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
         ![Picture 1](../images/azbp.png)
    
 
-### Task 4: Deploy a jump host
+## Task 4: Deploy a jump host
 
    > **Note**: Since two clustered Azure VMs are no longer directly accessible from Internet, you will deploy an Azure VM running Windows Server 2019 Datacenter that will serve as a jump host. 
 
