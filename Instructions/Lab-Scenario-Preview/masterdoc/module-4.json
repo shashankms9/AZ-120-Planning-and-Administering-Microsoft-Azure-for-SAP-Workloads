@@ -1,0 +1,12 @@
+[
+    {
+     "Name": "Lab Scenario Preview: AZ-120: Implement SAP architecture on Azure VMs running Windows",
+     "Language": "English",
+     "Files": [
+         {
+           "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/AZ-120-Planning-and-Administering-Microsoft-Azure-for-SAP-Workloads/prod/Instructions/Lab-Scenario-Preview/module-4.md",
+           "Order": 1
+         }
+      ]  
+    } 
+ ]
