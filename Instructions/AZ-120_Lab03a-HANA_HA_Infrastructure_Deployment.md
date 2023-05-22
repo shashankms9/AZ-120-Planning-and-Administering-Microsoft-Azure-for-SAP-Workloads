@@ -1,13 +1,8 @@
-# AZ 120 Module 4: Deploy SAP on Azure
 # Lab 4a: Implement SAP architecture on Azure VMs running Linux
 
 Estimated Time: 100 minutes
 
-All tasks in this lab are performed from the Azure portal (including the Bash Cloud Shell session)  
-
-   > **Note**: When not using Cloud Shell, the lab virtual machine must have Azure CLI installed [**https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-windows**](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-windows).
-
-Lab files: none
+This particular lab is under the module Deploy SAP on Azure
 
 ## Scenario
   
@@ -30,13 +25,13 @@ After completing this lab, you will be able to:
 -   A lab computer with an Azure Cloud Shell-compatible web browser and access to Azure
 
 
-## Exercise 1: Provision Azure resources necessary to support highly available SAP NetWeaver deployments
+# Exercise 1: Provision Azure resources necessary to support highly available SAP NetWeaver deployments
 
 Duration: 30 minutes
 
 In this exercise, you will deploy Azure infrastructure compute components necessary to configure Linux clustering. This will involve creating a pair of Azure VMs running Linux SUSE in the same availability set.
 
-### Task 1: Create a virtual network that will host a highly available SAP NetWeaver deployment.
+## Task 1: Create a virtual network that will host a highly available SAP NetWeaver deployment.
 
 1.  In the Azure Portal, start a Bash session in Cloud Shell. 
 
@@ -79,7 +74,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
 1.  Copy the resulting value to Clipboard. You will need it in the next task.
 
-### Task 2: Deploy Azure Resource Manager template provisioning Azure VMs running Linux SUSE that will host a highly available SAP NetWeaver deployment
+## Task 2: Deploy Azure Resource Manager template provisioning Azure VMs running Linux SUSE that will host a highly available SAP NetWeaver deployment
 
 1.  On the lab computer, start a browser and browse to [**https://github.com/Azure/azure-quickstart-templates/tree/master/application-workloads/sap/sap-3-tier-marketplace-image-md**](https://github.com/Azure/azure-quickstart-templates/tree/master/application-workloads/sap/sap-3-tier-marketplace-image-md)
 
@@ -148,7 +143,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
      - in the Azure portal, navigate to the **az12003a-sap-RG** resource group blade, select **Deployments**, select the link to the failed deployment, and select **Redeploy**, select the target resource group (**az12003a-sap-RG**) and provide the password for the root account (**Pa55w.rd1234**).
 
 
-### Task 3: Deploy a jump host
+## Task 3: Deploy a jump host
 
    > **Note**: Since Azure VMs you deployed in the previous task are not accessible from Internet, you will deploy an Azure VM running Windows Server 2019 Datacenter that will serve as a jump host. 
 
@@ -241,13 +236,13 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 > **Result**: After you completed this exercise, you have provisioned Azure resources necessary to support highly available SAP NetWeaver deployments
 
 
-## Exercise 2: Configure Azure VMs running Linux to support a highly available SAP NetWeaver deployment
+# Exercise 2: Configure Azure VMs running Linux to support a highly available SAP NetWeaver deployment
 
 Duration: 30 minutes
 
 In this exercise, you will configure Azure VMs running SUSE Linux Enterprise Server to accommodate a highly available SAP NetWeaver deployment.
 
-### Task 1: Configure networking of the database tier Azure VMs.
+## Task 1: Configure networking of the database tier Azure VMs.
 
    > **Note**: Before you start this task, ensure that the template deployments you initiated in the previous exercise have successfully completed. 
 
@@ -292,7 +287,7 @@ In this exercise, you will configure Azure VMs running SUSE Linux Enterprise Ser
       ![](../images/az120-4ab-21.png)
 
 
-### Task 2: Connect to the database tier Azure VMs.
+## Task 2: Connect to the database tier Azure VMs.
 
 1.  From the lab computer, in the Azure portal, navigate to the **az12003a-vm0** blade.
 
@@ -347,7 +342,7 @@ In this exercise, you will configure Azure VMs running SUSE Linux Enterprise Ser
 1.  Use PuTTY to connect via SSH to **i20-db-1** Azure VM with the same credentials.
 
 
-### Task 3: Examine the storage configuration of the database tier Azure VMs.
+## Task 3: Examine the storage configuration of the database tier Azure VMs.
 
 1.  From within the PuTTY SSH session to i20-db-0 Azure VM, run the following command to elevate privileges: 
 
@@ -366,7 +361,7 @@ In this exercise, you will configure Azure VMs running SUSE Linux Enterprise Ser
 1.  Repeat the previous steps on the **i20-db-1** Azure VM.
 
 
-### Task 4: Enable cross-node password-less SSH access
+## Task 4: Enable cross-node password-less SSH access
 
 1.  In the SSH session to **i20-db-0**, generate passphrase-less SSH key by running:
 
@@ -450,7 +445,7 @@ In this exercise, you will configure Azure VMs running SUSE Linux Enterprise Ser
     exit
     ```
 
-### Task 5: Add YaST packages, update the Linux operating system, and install HA Extensions
+## Task 5: Add YaST packages, update the Linux operating system, and install HA Extensions
 
 1.  In the SSH session to **i20-db-0**, run the following to launch YaST:
 
@@ -515,13 +510,13 @@ In this exercise, you will configure Azure VMs running SUSE Linux Enterprise Ser
 
 > **Result**: After you completed this exercise, you have onfigured operating system of Azure VMs running Linux to support a highly available SAP NetWeaver deployment
 
-## Exercise 3: Configure clustering on Azure VMs running Linux to support a highly available SAP NetWeaver deployment
+# Exercise 3: Configure clustering on Azure VMs running Linux to support a highly available SAP NetWeaver deployment
 
 Duration: 30 minutes
 
 In this exercise, you will configure clustering on Azure VMs running Linux to support a highly available SAP NetWeaver deployment.
 
-### Task 1: Configure clustering
+## Task 1: Configure clustering
 
 1.  Within the RDP session to az12003a-vm0, in the PuTTY-based SSH session to i20-db-0, run the following to initiate configuration of an HA cluster on i20-db-0:
 
@@ -565,7 +560,7 @@ In this exercise, you will configure clustering on Azure VMs running Linux to su
 
 1.  Repeat the previous step on **i20-db-1**.
 
-### Task 2: Review corosync configuration
+## Task 2: Review corosync configuration
 
 1.  Within the RDP session to az12003a-vm0, in the PuTTY-based SSH session to i20-db-0, open the **/etc/corosync/corosync.conf** file by running:
 
@@ -604,7 +599,7 @@ In this exercise, you will configure clustering on Azure VMs running Linux to su
 1.  Repeat the previous steps on i20-db-1.
 
 
-### Task 3: Identify the value of the Azure subscription Id and the Azure AD tenant Id
+## Task 3: Identify the value of the Azure subscription Id and the Azure AD tenant Id
 
 1.  From the lab computer, in the browser window, in the Azure portal at **https://portal.azure.com**, ensure that you are signed in with the user account that has the Global Administrator role in the Azure AD tenant associated with your subscription.
 
@@ -619,7 +614,7 @@ In this exercise, you will configure clustering on Azure VMs running Linux to su
 1.  Copy the resulting values to Notepad. You will need it in the next task.
 
 
-### Task 4: Create an Azure AD application for the STONITH device
+## Task 4: Create an Azure AD application for the STONITH device
 
 1.  In the Azure portal, navigate to the Azure Active Directory blade.
 
@@ -651,7 +646,7 @@ In this exercise, you will configure clustering on Azure VMs running Linux to su
 
       ![](../images/az120-4ab-34.png)
       
-### Task 5: Grant permissions to Azure VMs to the service principal of the **STONITH app<inject key="DeploymentID" enableCopy="false"/>** 
+## Task 5: Grant permissions to Azure VMs to the service principal of the **STONITH app<inject key="DeploymentID" enableCopy="false"/>** 
 
 1.  In the Azure portal, navigate to the blade of the **i20-db-0** Azure VM
 
@@ -674,7 +669,7 @@ In this exercise, you will configure clustering on Azure VMs running Linux to su
 1.  Repeat the previous steps to assign the Stonith app the Virtual Machine Contributor role to the **i20-db-1** Azure VM
 
 
-### Task 6: Configure the STONITH cluster device 
+## Task 6: Configure the STONITH cluster device 
 
 1.  Within the RDP session to az12003a-vm0, switch to the PuTTY-based SSH session to i20-db-0.
 
@@ -693,7 +688,7 @@ In this exercise, you will configure clustering on Azure VMs running Linux to su
     sudo crm configure property stonith-timeout=900
     ```
 
-### Task 7: Review clustering configuration on Azure VMs running Linux by using Hawk
+## Task 7: Review clustering configuration on Azure VMs running Linux by using Hawk
 
 1.  Within the RDP session to az12003a-vm0, start Internet Explorer and navigate to **https://i20-db-0:7630**. This should display the SUSE Hawk sign-in page.
 
