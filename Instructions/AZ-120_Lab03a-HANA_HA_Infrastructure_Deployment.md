@@ -18,12 +18,6 @@ After completing this lab, you will be able to:
 
 -   Configure clustering on Azure VMs running Linux to support a highly available SAP NetWeaver deployment
 
-## Requirements
-
--   A Microsoft Azure subscription with the sufficient number of available Dsv3 vCPUs (four Standard_D2s_v3 VMs with 2 vCPUs each and two Standard_D4s_v3 VMs with 4 vCPUs each) in an Azure region that supports availability zones
-
--   A lab computer with an Azure Cloud Shell-compatible web browser and access to Azure
-
 
 # Exercise 1: Provision Azure resources necessary to support highly available SAP NetWeaver deployments
 
