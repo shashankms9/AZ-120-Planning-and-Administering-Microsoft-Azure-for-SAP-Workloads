@@ -16,6 +16,6 @@ After completing this lab, you will be able to:
 - Provision Azure network resources necessary to support highly available SAP HANA deployments
 
 
-### Architecture Diagram
+## Architecture Diagram
 
 ![](https://github.com/CloudLabs-MOC/AZ-120-Planning-and-Administering-Microsoft-Azure-for-SAP-Workloads/blob/prod/images/1.md/m1.png?raw=true)
