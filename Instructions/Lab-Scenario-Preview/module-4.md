@@ -13,3 +13,7 @@ After completing this lab, you will be able to:
 -   Configure operating system of Azure VMs running Windows to support a highly available SAP NetWeaver deployment
 
 -   Configure clustering on Azure VMs running Windows to support a highly available SAP NetWeaver deployment
+
+## Architecture Diagram
+
+![](https://github.com/CloudLabs-MOC/AZ-120-Planning-and-Administering-Microsoft-Azure-for-SAP-Workloads/blob/prod/images/4.md/m4.png?raw=true)
