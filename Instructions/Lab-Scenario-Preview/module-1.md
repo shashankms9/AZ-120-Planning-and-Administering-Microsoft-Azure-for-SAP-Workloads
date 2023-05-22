@@ -18,4 +18,4 @@ After completing this lab, you will be able to:
 
 ### Architecture Diagram
 
-![](../images/1.md/m1.png)
+![](https://github.com/CloudLabs-MOC/AZ-120-Planning-and-Administering-Microsoft-Azure-for-SAP-Workloads/blob/prod/images/1.md/m1.png?raw=true)
