@@ -803,11 +803,11 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
       ![](../images/2.md/vm0nic.png)
 
-
  1.  From the blade of the network interface of the az12001a-vm0, navigate to its **IP configurations (1)** blade and, and click on **ipconfig1 (2)** .
+
     
       ![](../images/2.md/vm0ipconfig.png)
-      
+
  1.  On the **Edit IP configurations** blade, set the private IP address allocation to **Static (1)** and **Save (2)** the change.
       
       
