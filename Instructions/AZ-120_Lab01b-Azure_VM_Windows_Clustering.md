@@ -7,7 +7,7 @@ This particular lab is under the module Explore the foundations of IaaS for SAP 
 
 ## Scenario
   
-In preparation for deployment of SAP NetWeaver on Azure, with SQL Server as the database management system, Adatum Corporation wants to explore the process of implementing clustering on Azure VMs running Windows Server 2022.
+In preparation for the deployment of SAP NetWeaver on Azure, with SQL Server as the database management system, Adatum Corporation wants to explore the process of implementing clustering on Azure VMs running Windows Server 2022.
 
 ## Objectives
   
@@ -15,7 +15,7 @@ After completing this lab, you will be able to:
 
 -   Provision Azure compute resources necessary to support highly available SAP NetWeaver deployments.
 
--   Configure operating system of Azure VMs running Windows Server 2022 to support a highly available SAP NetWeaver deployment.
+-   Configure the operating system of Azure VMs running Windows Server 2022 to support a highly available SAP NetWeaver deployment.
 
 -   Provision Azure network resources necessary to support highly available SAP NetWeaver deployments.
 
@@ -549,64 +549,64 @@ Duration: 40 minutes
      
 10.  Use the **New Storage Pools Wizard** to create a new storage pool with the following settings:
 
-    - On **Before you begin** Wizard - select **Next>**
+     - On **Before you begin** Wizard - select **Next>**
 
-    - On **Storage Pool Name** Wizard
+     - On **Storage Pool Name** Wizard
       
-        - Name : enter **Log Storage Pool**
+          - Name : enter **Log Storage Pool**
 
-    - On **Physical Disks** Wizard
+     - On **Physical Disks** Wizard
  
-        - *select the last of 4th  disks and set its allocation to* **Automatic**  
+        - *select* the last of 4th  disks and set its allocation to* **Automatic**  
 
-    -  On **Confirmation** Wizard
+    	-  On **Confirmation** Wizard
          
         - Review and click on **Create**
 
-    - On **Result** Wizard wait, untill Storage pool successfully complete and click on **Close**
+     - On **Result** Wizard wait, until the Storage pool is successfully complete and click on **Close**
 
 11.  Back on **Storage pools**, under **Virtual Disks** from **TASKS** dropdown select **New Virtual Disks**
 
 12.  Use the **New Virtual Disk Wizard** to create a new virtual disk with the following settings:
  
-    -  On **Before you begin** Wizard - select **Next>**
+     -  On **Before you begin** Wizard - select **Next>**
   
-    -  On **Virtual Disk Name** Wizard
+     -  On **Virtual Disk Name** Wizard
 
         - Virtual Disk Name: **Log Virtual Disk**
 
-    -  On **Enclosure Awareness** Wizard - select **Next>**
+      -  On **Enclosure Awareness** Wizard - select **Next>**
 
-    -  On **Storage Layout** Wizard
+        -  On **Storage Layout** Wizard
     
         - Storage Layout: **Simple**
 
-    -  On **Provisioning** Wizard
+     -  On **Provisioning** Wizard
       
          - Select Provisioning type : **Fixed**
 
-    -   On **Size** Wizard
+     -   On **Size** Wizard
        
          - Size: **Maximum size**
 
-    -   On **Confirmation selections** Wizard click on create 
+     -   On **Confirmation selections** Wizard click on create 
 
-    -   On **Result** Wizard wait untill new virtual disk successfully complete and click on close.
+     -   On **Result** Wizard wait until the new virtual disk is successfully complete and click on close.
 
 
 13.  Use the **New Volume Wizard** to create a new volume with the following settings:
 
-    -  On **Before you begin** Wizard - select **Next>**
+     -  On **Before you begin** Wizard - select **Next>**
     
-    -   Server and Disk: *accept the default values*
+      -   Server and Disk: *accept the default values*
 
-    -   Size: *accept the default values*
+     -   Size: *accept the default values*
     
-    -   On **Drive letter and folder** Wizard
+     -   On **Drive letter and folder** Wizard
 
          - Drive letter: **L**
 
-    -   On **File system** Wizard
+     -   On **File system** Wizard
 
          -  File system: **ReFS**
 
@@ -614,9 +614,9 @@ Duration: 40 minutes
 
          -  Volume label: **Log**
 
-    -   On **Confirmation** selections Wizard click on create 
+     -   On **Confirmation** selections Wizard click on create 
 
-    -   On **Result** Wizard wait untill new volume successfully complete and click on close.
+     -   On **Result** Wizard wait until the new volume is successfully complete and click on close.
 
 14.  Repeat the previous step in this task to configure storage on az12001b-cl-vm1.
 
