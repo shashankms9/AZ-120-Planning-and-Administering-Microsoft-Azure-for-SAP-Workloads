@@ -35,7 +35,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
 
      ![](../images/az120-4ab-1.png)
 
-1.  When *no storage mounted* is prompted, then select Show advanced settings and then select Use existing and choose **az12003a-dmz-RG** resource group. Then select Create new against Storage account and enter **cloudstore<inject key="DeploymentID" enableCopy="false"/>** as well as for File Share, select Create new and enter **blob** and then click on Create storage, and wait for the Azure Cloud Shell to initialize.
+1.  When *no storage mounted* is prompted, then select Show advanced settings and then select Use existing and choose **az12003a-dmz-RG** resource group. Then select Create new against Storage account and enter **cloudstore <inject key="DeploymentID" enableCopy="false"/>** and for File Share, select Create new and enter **blob** and then click on Create storage, and wait for the Azure Cloud Shell to initialize.
 
      ![](../images/az120-4ab-2.png)
      
@@ -187,7 +187,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
       
       ![](../images/az120-4ab-10.png)    
       
- 1. After creating the new subnet, move back to the **Networking** tab of Create a virtual machine, and fill the other remaining details (leave all others with their default values) and click on **Next:Management**:
+ 1. After creating the new subnet, move back to the **Networking** tab of Create a virtual machine, and fill the other remaining details as given (leave all others with their default values) then click on **Next: Management**:
 
     | Setting | Value |
     |   --    |  --   |
@@ -246,43 +246,43 @@ In this exercise, you will configure Azure VMs running SUSE Linux Enterprise Ser
 
 1.  From the lab computer, in the Azure portal, navigate to the blade of the **i20-db-0** Azure VM.
 
-      ![](../images/az120-4ab-12.png)
+    ![](../images/az120-4ab-12.png)
 
 1.  From the **i20-db-0** blade, navigate to its **Networking** blade. 
 
-      ![](../images/az120-4ab-13.png)
+    ![](../images/az120-4ab-13.png)
 
 1.  From the **i20-db-0 - Networking** blade, navigate to the network interface of the i20-db-0. 
 
-      ![](../images/az120-4ab-14.png)
+    ![](../images/az120-4ab-14.png)
 
 1.  From the blade of the network interface of the i20-db-0, navigate to its IP configurations blade and, from there, display its **ipconfig1** blade.
 
-      ![](../images/az120-4ab-15.png)
+    ![](../images/az120-4ab-15.png)
 
 1.  On the **ipconfig1** blade, change its assignment to **Static**, set the private IP address to **10.3.0.20** and save the change.
 
-      ![](../images/az120-4ab-16.png)
+    ![](../images/az120-4ab-16.png)
 
 1.  In the Azure portal, navigate to the blade of the **i20-db-1** Azure VM.
 
-      ![](../images/az120-4ab-17.png)
+    ![](../images/az120-4ab-17.png)
 
 1.  From the **i20-db-1** blade, navigate to its **Networking** blade. 
 
-      ![](../images/az120-4ab-18.png)
+    ![](../images/az120-4ab-18.png)
 
 1.  From the **i20-db-1 - Networking** blade, navigate to the network interface of the i20-db-1. 
 
-      ![](../images/az120-4ab-19.png)
+    ![](../images/az120-4ab-19.png)
 
 1.  From the blade of the network interface of the i20-db-1, navigate to its IP configurations blade and, from there, display its **ipconfig1** blade.
 
-      ![](../images/az120-4ab-20.png)
+    ![](../images/az120-4ab-20.png)
 
 1.  On the **ipconfig1** blade, change its assignment to **Static**, set the private IP address to **10.3.0.21** and save the change.
 
-      ![](../images/az120-4ab-21.png)
+    ![](../images/az120-4ab-21.png)
 
 
 ## Task 2: Connect to the database tier Azure VMs.
@@ -291,31 +291,31 @@ In this exercise, you will configure Azure VMs running SUSE Linux Enterprise Ser
 
 1.  From the **az12003a-vm0** blade, connect to the Azure VM az12003a-vm0 via Remote Desktop, select **Download RDP file** and click on *keep* to download the file and open the downloaded RDP file, click on **Connect**. 
 
-      ![](../images/az120-4ab-22.png)
+    ![](../images/az120-4ab-22.png)
       
-      ![](../images/az120-4ab-23.png)
+    ![](../images/az120-4ab-23.png)
       
-      ![](../images/az120-4ab-24.png)
+    ![](../images/az120-4ab-24.png)
       
-      ![](../images/az120-4ab-25.png)
+    ![](../images/az120-4ab-25.png)
       
  1.  Use the below credientials to connect. 
 
-      -   Login as: **.\student**
+      -   Login as: **student**
 
       -   Password: **Pa55w.rd1234**
 
 1.  Within the RDP session to az12003a-vm0, in Server Manager, navigate to the **Local Server** view and turn off **IE Enhanced Security Configuration**.
 
-      ![](../images/az120-4ab-26.png)
+    ![](../images/az120-4ab-26.png)
       
 1.  Within the RDP session to az12003a-vm0, Open Internet Explorer and click on **Ask me later** within the pop-up.
 
-      ![](../images/az120-4ab-27.png)
+    ![](../images/az120-4ab-27.png)
       
 1.  Open a new tab, the edge browser welcome screen will come up, select **Start without your data**.
 
-   ![](https://github.com/CloudLabsAI-Azure/AIW-Azure-Network-Solutions/blob/main/media/startwithoutdata.png)
+    ![](https://github.com/CloudLabsAI-Azure/AIW-Azure-Network-Solutions/blob/main/media/startwithoutdata.png)
    
 1.  On the next window, click on **Continue without this data**.
 
@@ -327,11 +327,11 @@ In this exercise, you will configure Azure VMs running SUSE Linux Enterprise Ser
 
 1.  Now download and install PuTTY from [**https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html**](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
 
-      ![](../images/az120-4ab-28.png)
+    ![](../images/az120-4ab-28.png)
 
 1.  Use PuTTY to connect via SSH to **i20-db-0** Azure VM. Acknowledge the security alert and click on **Accept** and, when prompted, provide the following credentials:
 
-      ![](../images/az120-4ab-29.png)
+    ![](../images/az120-4ab-29.png)
       
     -   Login as: **student**
 
