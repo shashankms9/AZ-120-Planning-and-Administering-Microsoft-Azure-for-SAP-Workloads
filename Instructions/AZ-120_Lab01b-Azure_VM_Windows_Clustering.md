@@ -800,27 +800,27 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
      
      > **Note :** Click on **Yes** on **Disassociate Confirmation** tab.
      
-1.  In the Azure portal, navigate to the blade of the **az12001b-vm0** Azure VM, clck on **Networking (1)** blade then click on **Network Interface (2)**
+ 1.  In the Azure portal, navigate to the blade of the **az12001b-vm0** Azure VM, clck on **Networking (1)** blade then click on **Network Interface (2)**
 
       ![](../images/2.md/vm0nic.png)
 
 
-1.  From the blade of the network interface of the az12001a-vm0, navigate to its **IP configurations (1)** blade and, and click on **ipconfig1 (2)** .
+ 1.  From the blade of the network interface of the az12001a-vm0, navigate to its **IP configurations (1)** blade and, and click on **ipconfig1 (2)** .
     
       ![](../images/2.md/vm0ipconfig.png)
       
-1.  On the **Edit IP configurations** blade, set the private IP address allocation to **Static (1)** and **Save (2)** the change.
+ 1.  On the **Edit IP configurations** blade, set the private IP address allocation to **Static (1)** and **Save (2)** the change.
       
       
-1.  In the Azure portal, navigate to the blade of the **az12001a-vm1** Azure VM, clck on **Networking (1)** blade then click on **Network Interface (2)**
+ 1.  In the Azure portal, navigate to the blade of the **az12001a-vm1** Azure VM, clck on **Networking (1)** blade then click on **Network Interface (2)**
   
       ![](../images/2.md/vm1network.png)
       
-1.  From the blade of the network interface of the az12001a-vm1, navigate to its **IP configurations (1)** blade and, and click on **ipconfig1 (2)** .
+ 1.  From the blade of the network interface of the az12001a-vm1, navigate to its **IP configurations (1)** blade and, and click on **ipconfig1 (2)** .
     
       ![](../images/2.md/vm1ipconfig.png)
       
-1.   On the **Edit IP configurations** blade, set the private IP address allocation to **Static (1)** and **Save (2)** the change.
+ 1.  On the **Edit IP configurations** blade, set the private IP address allocation to **Static (1)** and **Save (2)** the change.
        
 
 ## Task 2: Create and configure Azure Load Balancers handling inbound traffic
