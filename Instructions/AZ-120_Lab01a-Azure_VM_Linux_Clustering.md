@@ -974,7 +974,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
     ![](../images/1.md/vm3networking.png)
 
-1. On the **Management** tab of the **Create a virtual machine** blade, choose **Manual updates (1)** for Guest OS updates (patch orchestration options) and leave all other settings with their default value, then click on **Next: Advanced > (2)**.
+1. On the **Management** tab of the **Create a virtual machine** blade, choose **Manual updates (1)** for Guest OS updates (patch orchestration options) and leave all other settings with their default value, then click on **Next: Monitoring > (2)**.
 
     ![](../images/1.md/vm3management.png)
 
@@ -997,5 +997,10 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
 > **Result**: After you completed this exercise, you have provisioned Azure network resources necessary to support highly available SAP HANA deployments
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help.
 
-
+**You have successfully completed the lab!**
