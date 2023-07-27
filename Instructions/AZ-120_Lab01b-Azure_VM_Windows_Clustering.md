@@ -577,9 +577,9 @@ Duration: 40 minutes
 
       -  On **Enclosure Awareness** Wizard - select **Next>**
 
-        -  On **Storage Layout** Wizard
+         -  On **Storage Layout** Wizard
     
-        - Storage Layout: **Simple**
+         - Storage Layout: **Simple**
 
      -  On **Provisioning** Wizard
       
