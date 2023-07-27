@@ -313,18 +313,6 @@ In this exercise, you will configure Azure VMs running SUSE Linux Enterprise Ser
 
     ![](../images/az120-4ab-27.png)
       
-1.  Open a new tab, the edge browser welcome screen will come up, select **Start without your data**.
-
-    ![](https://github.com/CloudLabsAI-Azure/AIW-Azure-Network-Solutions/blob/main/media/startwithoutdata.png)
-   
-1.  On the next window, click on **Continue without this data**.
-
-    ![](https://github.com/CloudLabsAI-Azure/AIW-Azure-Network-Solutions/blob/main/media/continuewithoutthis.png)
-   
-1.  Click on **Confirm and start browsing**.
-
-    ![](https://github.com/CloudLabsAI-Azure/AIW-Azure-Network-Solutions/blob/main/media/confirmandstartbrowsing.png)   
-
 1.  Now download and install PuTTY from [**https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html**](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
 
     ![](../images/az120-4ab-28.png)
@@ -383,7 +371,7 @@ In this exercise, you will configure Azure VMs running SUSE Linux Enterprise Ser
 
 1.  In the vi editor, paste the key you generated on **i20-db-0**.(Enter **I** to switch to Insert Mode to perform this step)
 
-1.  Save the changes and close the editor.(Press **esc key** and enter **:wq** to perform this step)
+1.  Save the changes and close the editor.(Press **Ctrl + C key** and enter **:wq** to perform this step)
 
      >**Note**: If you are unable to save and close the editor, connect to the Labvm via RDP with the credientials provided at the environment details page from your machine.
 
