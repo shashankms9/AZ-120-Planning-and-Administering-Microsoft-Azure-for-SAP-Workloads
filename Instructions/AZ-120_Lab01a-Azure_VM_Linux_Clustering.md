@@ -98,7 +98,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
      
         ![Picture 1](../images/1.md/createas.png)
      
-   -  Securuty type: Leave it as **Default (12)**
+   -  Security type: Leave it as **Default (12)**
    
    - Image: **SUSE Enterprise Linux for SAP 12 SP5 - BYOS - Gen 1 (13)**
    
@@ -849,7 +849,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
    -  Click on **Save (11)**.
 
-    [](../images/1.md/addlbrules.png)
+      [](../images/1.md/addlbrules.png)
 
 ## Task 3: Create and configure Azure Load Balancers handling outbound traffic
 
