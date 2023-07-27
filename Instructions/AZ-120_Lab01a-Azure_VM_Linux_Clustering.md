@@ -502,7 +502,7 @@ In this exercise, you will configure operating system and storage on Azure VMs r
    /dev/disk/by-uuid/<UUID of /dev/vg_usr_sap-usr_sap (/dev/sdj)> /usr/sap xfs  defaults,nofail  0  2
    ```
 
-1. Save the changes and close the editor using **:wq!**.
+1. Press **I** to insert text then press **Ctrl + C** to enter the console. Save the changes and close the editor using **:wq**.
 
 1. In the Cloud Shell pane, in the SSH session to az12001a-vm0, mount the new volumes by running:
 
@@ -552,7 +552,7 @@ In this exercise, you will configure operating system and storage on Azure VMs r
 
 1. In the editor window, paste the key you generated on az12001a-vm0.
 
-1. Save the changes and close the editor using **:wq!**.
+1. Press **I** to insert text then press **Ctrl + C** to enter the console. Save the changes and close the editor using **:wq!**.
 
 1. In the Cloud Shell pane, in the SSH session to az12001a-vm1, generate passphrase-less SSH key by running:
 
@@ -584,7 +584,7 @@ In this exercise, you will configure operating system and storage on Azure VMs r
 
 1. In the editor window, paste the key you generated on az12001a-vm1.
 
-1. Save the changes and close the editor using **:wq!**.
+1. Press **I** to insert text then press **Ctrl + C** to enter the console. Save the changes and close the editor using **:wq!**.
 
 1. In the Cloud Shell pane, in the SSH session to az12001a-vm1, generate passphrase-less SSH key by running:
 
@@ -604,7 +604,7 @@ In this exercise, you will configure operating system and storage on Azure VMs r
    AuthorizedKeysFile  /root/.ssh/authorized_keys
    ```
 
-1. Save the changes and close the editor using **:wq!**.
+1. Press **I** to insert text then press **Ctrl + C** to enter the console. Save the changes and close the editor using **:wq!**.
 
 1. In the Cloud Shell pane, in the SSH session to az12001a-vm0, restart sshd daemon by running:
 
