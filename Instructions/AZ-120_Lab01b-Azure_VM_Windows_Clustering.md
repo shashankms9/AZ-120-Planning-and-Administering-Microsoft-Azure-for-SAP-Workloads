@@ -800,7 +800,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
      
      > **Note :** Click on **Yes** on **Disassociate Confirmation** tab.
      
-1.  In the Azure portal, navigate to the blade of the **az12001a-vm0** Azure VM, clck on **Networking (1)** blade then click on **Network Interface (2)**
+1.  In the Azure portal, navigate to the blade of the **az12001b-vm0** Azure VM, clck on **Networking (1)** blade then click on **Network Interface (2)**
 
       ![](../images/2.md/vm0nic.png)
 
@@ -1050,7 +1050,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
 1.  From the lab computer, in the Azure portal, navigate to the **Virtual machines** blade, click **+ Create**, and, from the drop-down menu, select **Azure virtual machine**.
 
-2.  From the **Create a virtual machine** blade, initiate provisioning of a **Windows Server 2022 Datacenter: Azure Edition - Gen2** 1.  In the Azure portal, in the Search resources, services, and docs text box at the top of the Azure portal page, type **Storage account** then press the Enter key and select **+ Create**.
+2.  From the **Create a virtual machine** blade, initiate provisioning of a **Windows Server 2022 Datacenter: Azure Edition - Gen2**.
 
     -   Subscription: *the name of your Azure subscription*
 
