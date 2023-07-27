@@ -895,9 +895,9 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
     -   Backend Pool Configuration: **IP address**
 
-    -   IP address: **10.0.1.4** Resource Name **az1201b-cl-vm0**
+    -   IP address: **10.0.0.6** Resource Name **az1201b-cl-vm0**
 
-    -   IP address: **10.0.1.5** Resource Name **az1201b-cl-vm1**
+    -   IP address: **10.0.1.4** Resource Name **az1201b-cl-vm1**
     -   Click on **Save**
 
 1.  From the **az12001b-cl-lb0** blade, add a health probe with the following settings:
@@ -909,8 +909,6 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
     -   Port: **59999**
 
     -   Interval: **5** *seconds*
-
-    -   Unhealthy threshold: **2** *consecutive failures*
 
 1.  From the **az12001b-cl-lb0** blade, add a network load balancing rule with the following settings:
 
@@ -1119,7 +1117,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
 1.  Connect to the newly provisioned Azure VM via RDP. 
 
-1.  Within the RDP session to az12001b-vm2, ensure that you can establish RDP session to both az12001b-cl-vm0 and az12001b-cl-vm1 via their private IP addresses (10.0.1.4 and 10.0.1.5, respectively). 
+1.  Within the RDP session to az12001b-vm2, ensure that you can establish RDP session to both az12001b-cl-vm0 and az12001b-cl-vm1 via their private IP addresses (10.0.0.6 and 10.0.1.4, respectively). 
 
 > **Result**: After you completed this exercise, you have provisioned Azure network resources necessary to support highly available SAP NetWeaver deployments
 
