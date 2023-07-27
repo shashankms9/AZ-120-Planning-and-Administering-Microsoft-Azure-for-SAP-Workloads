@@ -284,7 +284,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
     ![](../images/2.md/createvm.png)
 
 
-1.  Wait for the provisioning to complete. This should take a few minutes.
+ 1.  Wait for the provisioning to complete. This should take a few minutes.
 
 ## Task 3: Create and configure Azure VMs disks
 
