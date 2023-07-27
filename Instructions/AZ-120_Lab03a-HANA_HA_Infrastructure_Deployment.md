@@ -606,7 +606,7 @@ In this exercise, you will configure clustering on Azure VMs running Linux to su
 
 1.  From the Azure Active Directory blade, navigate to the **App registrations** blade and then click **+ New registration**:
 
-      ![](../images/az120-4ab-30.png)
+    ![](../images/az120-4ab-30.png)
 
 1.  On the **Register an application** blade, specify the following settings, and click **Register**:
 
@@ -616,21 +616,21 @@ In this exercise, you will configure clustering on Azure VMs running Linux to su
 
 1.  On the **Stonith app** blade, copy the value of **Application (client) ID** to Notepad. This will be referred to as **login_id** later in this exercise:
 
-      ![](../images/az120-4ab-31.png)
+    ![](../images/az120-4ab-31.png)
 
 1.  On the **Stonith app** blade, click **Certificates & secrets**.
 
-      ![](../images/az120-4ab-32.png)
+    ![](../images/az120-4ab-32.png)
 
 1.  On the **Stonith app - Certificates & secrets** blade, click **+ New client secret**.
 
 1.  In the **Add a client secret** pane, in the **Description** text box, type **STONITH app key**, in the **Expires** section, leave the default **Recommended: 6 months**, and then click **Add**.
 
-      ![](../images/az120-4ab-33.png)
+    ![](../images/az120-4ab-33.png)
 
 1.  Copy the resulting **Value** to Notepad (this entry is displayed only once, after you click **Add**). This will be referred to as **password** later in this exercise:
 
-      ![](../images/az120-4ab-34.png)
+    ![](../images/az120-4ab-34.png)
       
 ## Task 5: Grant permissions to Azure VMs to the service principal of the **STONITH app<inject key="DeploymentID" enableCopy="false"/>** 
 
@@ -638,19 +638,17 @@ In this exercise, you will configure clustering on Azure VMs running Linux to su
 
 1.  From the  **i20-db-0** blade, display the **i20-db-0 - Access control (IAM)** blade.
 
-      ![](../images/az120-4ab-35.png)
+    ![](../images/az120-4ab-35.png)
 
 1.  From the **i20-db-0 - Access control (IAM)** blade, add a role assignment with the following settings:
 
-    -   Assignment type: *Leave the default setting* and click on **Next**
-
     -   Role: Search and select **Virtual Machine Contributor** and click on **Next**
 
-    -   Assign access to: **user, group, or service principal** and click on **+select members** and search and select **Stonith app<inject key="DeploymentID" enableCopy="false"/>** and click on **Add** and click on **Review + assign** twice to create the role assignment.
+    -   Assign access to: **user, group, or service principal** and click on **+select members** and search and select **Stonith app <inject key="DeploymentID" enableCopy="false"/>** and click on **Add** and click on **Review + assign** twice to create the role assignment.
 
-      ![](../images/az120-4ab-36.png)
+    ![](../images/az120-4ab-36.png)
       
-      ![](../images/az120-4ab-37.png)      
+    ![](../images/az120-4ab-37.png)      
 
 1.  Repeat the previous steps to assign the Stonith app the Virtual Machine Contributor role to the **i20-db-1** Azure VM
 
@@ -699,7 +697,4 @@ In this exercise, you will configure clustering on Azure VMs running Linux to su
 > - Hit the Validate button for the corresponding task.If you receive a success message, you can proceed to the next task. 
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
 > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
-
-
-
 
