@@ -98,7 +98,7 @@ In this exercise, you will deploy Azure infrastructure compute components necess
      
         ![Picture 1](../images/1.md/createas.png)
      
-   -  Securuty type: Leave it as **Default (12)**
+   -  Security type: Leave it as **Default (12)**
    
    - Image: **SUSE Enterprise Linux for SAP 12 SP5 - BYOS - Gen 1 (13)**
    
@@ -502,7 +502,7 @@ In this exercise, you will configure operating system and storage on Azure VMs r
    /dev/disk/by-uuid/<UUID of /dev/vg_usr_sap-usr_sap (/dev/sdj)> /usr/sap xfs  defaults,nofail  0  2
    ```
 
-1. Save the changes and close the editor using **:wq!**.
+1. Press **I** to insert text then press **Ctrl + C** to enter the console. Save the changes and close the editor using **:wq**.
 
 1. In the Cloud Shell pane, in the SSH session to az12001a-vm0, mount the new volumes by running:
 
@@ -552,7 +552,7 @@ In this exercise, you will configure operating system and storage on Azure VMs r
 
 1. In the editor window, paste the key you generated on az12001a-vm0.
 
-1. Save the changes and close the editor using **:wq!**.
+1. Press **I** to insert text then press **Ctrl + C** to enter the console. Save the changes and close the editor using **:wq!**.
 
 1. In the Cloud Shell pane, in the SSH session to az12001a-vm1, generate passphrase-less SSH key by running:
 
@@ -584,7 +584,7 @@ In this exercise, you will configure operating system and storage on Azure VMs r
 
 1. In the editor window, paste the key you generated on az12001a-vm1.
 
-1. Save the changes and close the editor using **:wq!**.
+1. Press **I** to insert text then press **Ctrl + C** to enter the console. Save the changes and close the editor using **:wq!**.
 
 1. In the Cloud Shell pane, in the SSH session to az12001a-vm1, generate passphrase-less SSH key by running:
 
@@ -604,7 +604,7 @@ In this exercise, you will configure operating system and storage on Azure VMs r
    AuthorizedKeysFile  /root/.ssh/authorized_keys
    ```
 
-1. Save the changes and close the editor using **:wq!**.
+1. Press **I** to insert text then press **Ctrl + C** to enter the console. Save the changes and close the editor using **:wq!**.
 
 1. In the Cloud Shell pane, in the SSH session to az12001a-vm0, restart sshd daemon by running:
 
@@ -849,7 +849,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
    -  Click on **Save (11)**.
 
-    [](../images/1.md/addlbrules.png)
+      [](../images/1.md/addlbrules.png)
 
 ## Task 3: Create and configure Azure Load Balancers handling outbound traffic
 
@@ -974,7 +974,7 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
     ![](../images/1.md/vm3networking.png)
 
-1. On the **Management** tab of the **Create a virtual machine** blade, choose **Manual updates (1)** for Guest OS updates (patch orchestration options) and leave all other settings with their default value, then click on **Next: Advanced > (2)**.
+1. On the **Management** tab of the **Create a virtual machine** blade, choose **Manual updates (1)** for Guest OS updates (patch orchestration options) and leave all other settings with their default value, then click on **Next: Monitoring > (2)**.
 
     ![](../images/1.md/vm3management.png)
 
@@ -997,5 +997,10 @@ In this exercise, you will implement Azure Load Balancers to accommodate cluster
 
 > **Result**: After you completed this exercise, you have provisioned Azure network resources necessary to support highly available SAP HANA deployments
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help.
 
-
+**You have successfully completed the lab!**
