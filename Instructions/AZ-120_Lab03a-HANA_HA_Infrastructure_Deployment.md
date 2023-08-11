@@ -1,4 +1,4 @@
-# Lab 3: Implement SAP architecture on Azure VMs running Linux
+# Lab 03: Implement SAP architecture on Azure VMs running Linux
 
 Estimated Time: 100 minutes
 

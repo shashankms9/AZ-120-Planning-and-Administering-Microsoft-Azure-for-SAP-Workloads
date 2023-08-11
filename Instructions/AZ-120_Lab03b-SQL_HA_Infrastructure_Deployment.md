@@ -1,4 +1,4 @@
-# Lab 4: Implement SAP architecture on Azure VMs running Windows
+# Lab 04: Implement SAP architecture on Azure VMs running Windows
 
 Estimated Time: 150 minutes
 
