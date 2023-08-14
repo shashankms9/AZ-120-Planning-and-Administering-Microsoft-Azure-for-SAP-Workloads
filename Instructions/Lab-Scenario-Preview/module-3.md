@@ -20,4 +20,4 @@ After completing this lab, you will be able to:
 
  ![](https://github.com/CloudLabs-MOC/AZ-120-Planning-and-Administering-Microsoft-Azure-for-SAP-Workloads/blob/prod/images/3.md/m3.png?raw=true)
 
-Now that you know what the lab is going to be all about, you can launch next item **Hands-on Lab** which includes lab environment and lab guide. You can also preview the full lab guide [here](https://experience.cloudlabs.ai/#/labguidepreview/d8408806-a59c-43f4-9181-3bf2218b879f) if you want to go through detailed guide prior to launching lab environment.
+Once you understand the lab's content, you can start the Hands-on Lab by clicking the **Launch** button located in the top right corner. This will lead you to the lab environment and guide. You can also preview the full lab guide [here](https://experience.cloudlabs.ai/#/labguidepreview/d8408806-a59c-43f4-9181-3bf2218b879f) if you want to go through detailed guide prior to launching lab environment.
